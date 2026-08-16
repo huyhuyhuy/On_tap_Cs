@@ -41,6 +41,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,ico,png,woff2}'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/data\//],
         runtimeCaching: [
           {
             urlPattern: /\/data\/.*\.json$/i,
@@ -50,6 +51,9 @@ export default defineConfig({
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+              cacheableResponse: {
+                statuses: [200],
               },
             },
           },

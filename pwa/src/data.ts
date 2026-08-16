@@ -1,15 +1,26 @@
 import type { Catalog, LessonFile } from './types'
 
-const BASE = `${import.meta.env.BASE_URL}data`
+const BASE = `${import.meta.env.BASE_URL}data`.replace(/\/+$/, '')
 
 export function lessonKey(topicId: string, lessonId: string): string {
   return `${topicId}/${lessonId}`
 }
 
+async function fetchJson<T>(url: string, failMessage: string): Promise<T> {
+  const res = await fetch(url)
+  const text = await res.text()
+  if (!res.ok || text.trimStart().startsWith('<')) {
+    throw new Error(failMessage)
+  }
+  try {
+    return JSON.parse(text) as T
+  } catch {
+    throw new Error(failMessage)
+  }
+}
+
 export async function loadCatalog(): Promise<Catalog> {
-  const res = await fetch(`${BASE}/index.json`)
-  if (!res.ok) throw new Error('Không tải được danh mục bài.')
-  return res.json()
+  return fetchJson<Catalog>(`${BASE}/index.json`, 'Không tải được danh mục bài.')
 }
 
 export async function loadLesson(path: string): Promise<LessonFile> {
@@ -17,9 +28,7 @@ export async function loadLesson(path: string): Promise<LessonFile> {
     .split('/')
     .map((part) => encodeURIComponent(part))
     .join('/')
-  const res = await fetch(`${BASE}/${encoded}`)
-  if (!res.ok) throw new Error('Không tải được bài học.')
-  return res.json()
+  return fetchJson<LessonFile>(`${BASE}/${encoded}`, 'Không tải được bài học.')
 }
 
 export function displayTitle(raw: string): string {
