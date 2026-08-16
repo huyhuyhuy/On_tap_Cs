@@ -187,7 +187,7 @@ export default function Mix() {
         </Link>
         <div className="quiz-head">
           <div>
-            <p className="kicker">{mode === 'review' ? 'Cần ôn' : 'Đề random'}</p>
+            <p className="kicker">{mode === 'review' ? 'Cần ôn' : 'Đề ngẫu nhiên'}</p>
             <p className="quiz-progress">
               Câu {index + 1} / {queue.length}
               {retryItems?.length ? ' · làm lại câu sai' : ''}

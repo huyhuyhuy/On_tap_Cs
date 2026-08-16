@@ -41,7 +41,7 @@ export default function MixResult() {
   const correct = result.answers.filter((a) => a.correct).length
   const wrong = result.answers.filter((a) => !a.correct)
   const pct = total ? Math.round((correct / total) * 100) : 0
-  const title = result.mode === 'review' ? 'Cần ôn' : 'Đề random'
+  const title = result.mode === 'review' ? 'Cần ôn' : 'Đề ngẫu nhiên'
 
   function retryWrong() {
     const wrongItems = result.items.filter((_, index) => {

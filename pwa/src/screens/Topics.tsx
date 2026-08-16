@@ -24,10 +24,10 @@ export default function Topics() {
       <Link className="back" to="/">
         ← Trang chủ
       </Link>
-      <header className="hero compact">
+      <header className="hero compact hero-row">
         <h1>{catalog.topicCount} chủ đề</h1>
         <p className="lede">
-          {catalog.questionCount} câu. Từ cơ bản, đến nâng cao.
+          - {catalog.questionCount} câu hỏi -
         </p>
       </header>
 

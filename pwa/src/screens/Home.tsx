@@ -24,7 +24,7 @@ export default function Home() {
       <header className="hero">
         <h1>Ôn tập C#</h1>
         <p className="lede">
-          {catalog.topicCount} chủ đề · {catalog.questionCount} câu.
+          {catalog.topicCount} chủ đề · {catalog.questionCount} câu hỏi.
         </p>
       </header>
 
@@ -40,7 +40,7 @@ export default function Home() {
           <span className="home-tile-mark" aria-hidden="true">
             ?
           </span>
-          <span className="home-tile-title">Đề random</span>
+          <span className="home-tile-title">Ngẫu nhiên</span>
           <span className="home-tile-sub">10–15 câu</span>
         </Link>
         <Link className="home-tile accent-red" to="/mix/review">
