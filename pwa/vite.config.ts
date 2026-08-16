@@ -10,7 +10,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'pwa-192.png', 'pwa-512.png'],
       manifest: {
         name: 'Ôn tập C#',
-        short_name: 'Ôn C#',
+        short_name: 'C# on tap',
         description: 'Luyện thi trắc nghiệm C# theo chủ đề',
         theme_color: '#0e141b',
         background_color: '#0e141b',
@@ -18,12 +18,6 @@ export default defineConfig({
         start_url: '/',
         lang: 'vi',
         icons: [
-          {
-            src: 'favicon.svg',
-            sizes: 'any',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
           {
             src: 'pwa-192.png',
             sizes: '192x192',
@@ -35,6 +29,12 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
+          },
+          {
+            src: 'favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any',
           },
         ],
       },

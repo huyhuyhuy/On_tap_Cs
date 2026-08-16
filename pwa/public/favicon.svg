@@ -1,5 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0e141b"/>
-  <circle cx="32" cy="32" r="18" fill="#5b9dff"/>
-  <text x="32" y="39" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" fill="#071018">C#</text>
+  <rect width="64" height="64" fill="#0e141b"/>
+  <path
+    d="M36.6 21.2a15.4 15.4 0 1 0 0 21.6"
+    fill="none"
+    stroke="#8bc4ff"
+    stroke-width="9.6"
+    stroke-linecap="round"
+  />
+  <g fill="#8bc4ff">
+    <rect x="37.1" y="15.4" width="3.5" height="33.3" transform="rotate(-8 38.8 32)"/>
+    <rect x="46.1" y="15.4" width="3.5" height="33.3" transform="rotate(-8 47.8 32)"/>
+    <rect x="33.3" y="24.3" width="20.5" height="3.5" transform="rotate(-8 43.5 26)"/>
+    <rect x="33.3" y="35.8" width="20.5" height="3.5" transform="rotate(-8 43.5 37.5)"/>
+  </g>
 </svg>
