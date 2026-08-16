@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import CodeBlock from '../CodeBlock'
 import { newRunId } from '../celebrate'
 import { displayTitle, hasExplanation, lessonKey, loadCatalog, loadLesson } from '../data'
 import { saveLessonProgress } from '../progress'
@@ -192,7 +193,7 @@ export default function Quiz() {
           <h1 className="question-text">
             {index + 1}. {current.question}
           </h1>
-          {current.code ? <pre className="code-block">{current.code}</pre> : null}
+          {current.code ? <CodeBlock code={current.code} /> : null}
 
           <ul className="options">
             {current.options.map((option) => {
@@ -235,7 +236,7 @@ export default function Quiz() {
               <p className="quiz-dock-status">
                 {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
               </p>
-              {lesson.sourceUrl ? (
+              {lesson.sourceUrl && current.origin !== 'local' ? (
                 <a
                   className="source-link"
                   href={lesson.sourceUrl}

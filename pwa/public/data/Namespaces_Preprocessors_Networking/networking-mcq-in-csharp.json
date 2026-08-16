@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-fundamental-networking/",
   "sourceFile": "Networking MCQ in C# - Sanfoundry.html",
   "description": "This section of our 1000+ C# MCQs focuses on Networking in C# Programming Language.",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -208,31 +208,6 @@
     },
     {
       "number": 9,
-      "question": "Which of the following classes is used to encapsulate IP address and DNS?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "DatagramPacket"
-        },
-        {
-          "key": "b",
-          "text": "URL"
-        },
-        {
-          "key": "c",
-          "text": "InetAddress"
-        },
-        {
-          "key": "d",
-          "text": "ContentHandler"
-        }
-      ],
-      "answer": "c",
-      "explanation": "InetAddress class encapsulates both IP address and DNS. We can interact with this class by using the name of an IP host."
-    },
-    {
-      "number": 10,
       "question": "Which of the following are the protocols defined by .NET runtime?",
       "code": null,
       "options": [

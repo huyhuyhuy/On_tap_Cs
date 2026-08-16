@@ -47,7 +47,7 @@ export default defineConfig({
             urlPattern: /\/data\/.*\.json$/i,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'ontap-cs-json-v2',
+              cacheName: 'ontap-cs-json-v4',
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 365,

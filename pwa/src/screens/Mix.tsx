@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import CodeBlock from '../CodeBlock'
 import { newRunId } from '../celebrate'
 import { hasExplanation, loadCatalog } from '../data'
 import { buildMix } from '../mix'
@@ -208,7 +209,7 @@ export default function Mix() {
           <h1 className="question-text">
             {index + 1}. {question.question}
           </h1>
-          {question.code ? <pre className="code-block">{question.code}</pre> : null}
+          {question.code ? <CodeBlock code={question.code} /> : null}
 
           <ul className="options">
             {question.options.map((option) => {
@@ -253,7 +254,7 @@ export default function Mix() {
                   ? 'Đúng'
                   : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
               </p>
-              {current.sourceUrl ? (
+              {current.sourceUrl && question.origin !== 'local' ? (
                 <a
                   className="source-link"
                   href={current.sourceUrl}

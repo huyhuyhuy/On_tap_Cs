@@ -53,8 +53,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "b",
-      "explanation": "By Definition."
+      "answer": "c",
+      "explanation": "C# has both implicit conversion (widening, no cast) and explicit conversion (narrowing, requires a cast).",
+      "origin": "local"
     },
     {
       "number": 3,

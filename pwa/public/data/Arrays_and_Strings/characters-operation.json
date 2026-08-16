@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-operation-characters/",
   "sourceFile": "Characters Operation - C# Questions & Answers - Sanfoundry.html",
   "description": "This section of our 1000+ C# multiple choice questions focuses on operation of characters in C# Programming Language.",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -83,31 +83,6 @@
     },
     {
       "number": 4,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": " static void main(String args[])\n {\n     char chars[] = {'x', 'y', 'z'};\n     String s = new String(chars);\n     Console.WriteLine(s);\n }",
-      "options": [
-        {
-          "key": "a",
-          "text": "x"
-        },
-        {
-          "key": "b",
-          "text": "xy"
-        },
-        {
-          "key": "c",
-          "text": "z"
-        },
-        {
-          "key": "d",
-          "text": "xyz"
-        }
-      ],
-      "answer": "d",
-      "explanation": "String(chars) is a constructor of class string, it initializes string s with the values stored in character array chars, therefore s contains \"xyz\".\n\nOutput :\n\nxyz"
-    },
-    {
-      "number": 5,
       "question": "Choose the effective stringBuilder method which helps in producing output for the following C# code?",
       "code": " static void Main(string[] args)\n {\n     StringBuilder s = new StringBuilder(\"object\");\n     s./*______*/(\"Oriented Language\");\n     Console.WriteLine(s);\n     Console.ReadLine();\n }\nOutput : objectOriented Language",
       "options": [
@@ -132,7 +107,7 @@
       "explanation": "static void Main(string[] args)\n              {\n               StringBuilder s = new StringBuilder(\"object\");\n               s.Append(\"Oriented Language\");\n               Console.WriteLine(s);\n               Console.ReadLine();\n               }\nOutput : objectOriented Language"
     },
     {
-      "number": 6,
+      "number": 5,
       "question": "What will be the output of the following C# code?",
       "code": "  static void Main(string[] args)\n  {\n      string s = \" i love you\";\n      Console.WriteLine(s.IndexOf('l') + \"  \" + s.lastIndexOf('o') + \"  \" + s.IndexOf('e'));\n      Console.ReadLine();\n  }",
       "options": [
@@ -157,7 +132,7 @@
       "explanation": "indexof('l') and lastIndexof('o') are pre defined functions which are used to get the index of first and last occurrence of the character pointed by l and c respectively in the given array.\n\nOutput :\n\n 3, 9, 6"
     },
     {
-      "number": 7,
+      "number": 6,
       "question": "Which of these methods of class String is used to extract all the characters from a String object?",
       "code": null,
       "options": [
@@ -182,7 +157,7 @@
       "explanation": "Replace() replaces all instances of a character with a new character while Remove extracts characters from the string."
     },
     {
-      "number": 8,
+      "number": 7,
       "question": "What will be the output of the following C# code snippet?",
       "code": " static void Main(string[] args)\n {\n     string c = \"hello\";\n     string  c1 = c.Remove(1);\n     Console.WriteLine(c1);\n     Console.ReadLine();\n }",
       "options": [
@@ -207,7 +182,7 @@
       "explanation": "The remove() deletes characters from the string except the character which is specified with its given position.\n\nOutput :\n\nh"
     },
     {
-      "number": 9,
+      "number": 8,
       "question": "How is a string typically processed?",
       "code": null,
       "options": [
@@ -232,7 +207,7 @@
       "explanation": "None."
     },
     {
-      "number": 10,
+      "number": 9,
       "question": "How to print \\\\ on the screen?",
       "code": null,
       "options": [

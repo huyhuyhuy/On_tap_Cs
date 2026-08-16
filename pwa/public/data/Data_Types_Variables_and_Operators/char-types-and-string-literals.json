@@ -175,11 +175,12 @@
         },
         {
           "key": "d",
-          "text": "DelhiJaipur"
+          "text": "Run time error"
         }
       ],
       "answer": "d",
-      "explanation": "Insert method() of string class used to join two strings s1 and s2.\n\nOutput :\n\nDelhiJaipur"
+      "explanation": "\"Delhi\" has length 5. Insert(6, ...) uses a start index past the end of the string, so it throws ArgumentOutOfRangeException.",
+      "origin": "local"
     },
     {
       "number": 8,

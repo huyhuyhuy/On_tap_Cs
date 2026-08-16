@@ -253,8 +253,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "Solving the expression for 'c' we get c==10 in if first condition as (c == Convert.ToInt32(Math.Sqrt(a * a + b *  b))). The logical condition when d == (c = 10) suits here. Similarly, going for second condition where c ==10 as '&&' operator exists between both given condition and at last both are evaluated to true as c == 10. So, only first statement is executed.\n\nOutput :\n\nFigure is square"
+      "answer": "b",
+      "explanation": "d equals 10 and the assignment c = sqrt(8*8+6*6) also yields 10, so both sides of && are true and the if branch prints \"figure is hypotenuse\".",
+      "origin": "local"
     }
   ]
 }

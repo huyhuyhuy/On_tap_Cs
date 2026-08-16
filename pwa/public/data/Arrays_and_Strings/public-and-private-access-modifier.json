@@ -253,8 +253,9 @@
           "text": "none of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "By default main() is declared private if no other access specifier is used for it."
+      "answer": "d",
+      "explanation": "Main does not require a specific access modifier. public, private, internal, and protected (on a nested type) can all work as an entry point.",
+      "origin": "local"
     }
   ]
 }

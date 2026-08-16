@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-interview-questions-answers/",
   "sourceFile": "C# Questions & Answers - String Formatting Operations - 2 - Sanfoundry.html",
   "description": "This set of C# Interview Questions and Answers focuses on \"String Formatting Operations - 2\".",
-  "questionCount": 11,
+  "questionCount": 10,
   "questions": [
     {
       "number": 1,
@@ -233,31 +233,6 @@
     },
     {
       "number": 10,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": " static void main(String args[])\n {\n     char chars[] = {'a', 'b', 'c'};\n     String s = new String(chars);\n     Console.WriteLine(s);\n }",
-      "options": [
-        {
-          "key": "a",
-          "text": "a"
-        },
-        {
-          "key": "b",
-          "text": "b"
-        },
-        {
-          "key": "c",
-          "text": "ab"
-        },
-        {
-          "key": "d",
-          "text": "abc"
-        }
-      ],
-      "answer": "d",
-      "explanation": "None.\n\nOutput:\n\nabc"
-    },
-    {
-      "number": 11,
       "question": "What will be the output of the following C# code snippet?",
       "code": " static void Main(string[] args)\n {\n     string s = \" i love you\";\n     Console.WriteLine(s.IndexOf('l') + \"  \" + s.lastIndexOf('o') + \"  \" + s.IndexOf('e'));\n     Console.ReadLine();\n }",
       "options": [

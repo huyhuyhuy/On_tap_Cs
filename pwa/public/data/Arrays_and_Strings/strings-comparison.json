@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-comparison-of-strings/",
   "sourceFile": "Strings Comparison - C# Questions & Answers - Sanfoundry.html",
   "description": "This section of our 1000+ C# multiple choice questions focuses on comparison of two strings in C# Programming Language.",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -133,31 +133,6 @@
     },
     {
       "number": 6,
-      "question": "Which of these data type values is returned by equals() method of String class?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "char"
-        },
-        {
-          "key": "b",
-          "text": "int"
-        },
-        {
-          "key": "c",
-          "text": "boolean"
-        },
-        {
-          "key": "d",
-          "text": "all of the mentioned"
-        }
-      ],
-      "answer": "c",
-      "explanation": "equals() method of string class returns boolean value true if both the strings are equal and false if they are unequal."
-    },
-    {
-      "number": 7,
       "question": "What will be the output of the following C# code?",
       "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String c = \"i love Csharp\";\n         bool a;\n         a = c.StartsWith(\"I\");\n         Console.WriteLine(a);\n         Console.ReadLine();\n     }\n }",
       "options": [
@@ -182,7 +157,7 @@
       "explanation": "StartsWith() method is case sensitive \"i\" and \"I\" are treated differently, hence false is stored in a.\n\nOutput:\n\nfalse"
     },
     {
-      "number": 8,
+      "number": 7,
       "question": "What will be the output of the following C# code?",
       "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String s1 = \"I love You\";\n        String s2 = s1;\n        Console.WriteLine((s1 == s2) + \" \" + s1.Equals(s2));\n        Console.ReadLine();\n    }\n}",
       "options": [
@@ -207,7 +182,7 @@
       "explanation": "The '==' operator tests the equality of strings and since s1 = \"I love You\" and also s2 = s1. So, true is returned. Similarly, Equals() returns true.\n\nsince the content of both s1 and s2 are equal in nature.\n\nOutput :\n\ntrue true"
     },
     {
-      "number": 9,
+      "number": 8,
       "question": "What will be the output of the following C# code?",
       "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String []chars = {\"z\", \"x\", \"y\", \"z\", \"y\"};\n         for (int i = 0; i < chars.Length; ++i)\n         for (int j = i + 1; j < chars.Length; ++j)\n         if(chars[i].CompareTo(chars[j]) == 0)\n         Console.WriteLine(chars[j]);\n         Console.ReadLine();\n     }\n }",
       "options": [
@@ -232,7 +207,7 @@
       "explanation": "compareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared To 4.\n\nOutput :\n\nzy"
     },
     {
-      "number": 10,
+      "number": 9,
       "question": "What will be the output of the following C# code?",
       "code": "String a = \"Csharp\";\nString b = \"CSHARP\";\nint c;\nc = a.CompareTo(b);\nConsole.WriteLine(c);",
       "options": [

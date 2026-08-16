@@ -1,7 +1,7 @@
 {
   "title": "Ôn tập C#",
   "topicCount": 11,
-  "questionCount": 917,
+  "questionCount": 893,
   "topics": [
     {
       "id": "Data_Types_Variables_and_Operators",
@@ -175,7 +175,7 @@
       "title": "Arrays, strings",
       "blurb": "Arrays, strings, ref/out, params.",
       "order": 4,
-      "questionCount": 90,
+      "questionCount": 86,
       "lessons": [
         {
           "id": "array-mcq-in-csharp",
@@ -196,7 +196,7 @@
           "file": "Strings Comparison - C# Questions & Answers - Sanfoundry.json",
           "path": "Arrays_and_Strings/strings-comparison.json",
           "title": "C# Questions & Answers - Comparison of Strings",
-          "questionCount": 10
+          "questionCount": 9
         },
         {
           "id": "searching-and-modifying-strings",
@@ -210,7 +210,7 @@
           "file": "Characters Operation - C# Questions & Answers - Sanfoundry.json",
           "path": "Arrays_and_Strings/characters-operation.json",
           "title": "C# Questions & Answers - Operation on Characters",
-          "questionCount": 10
+          "questionCount": 9
         },
         {
           "id": "string-class-with-description",
@@ -238,7 +238,7 @@
           "file": "C# Questions & Answers – Use of Variable Number of Arguments - Sanfoundry.json",
           "path": "Arrays_and_Strings/csharp-questions-and-answers-use-of-variable-number-of-arguments.json",
           "title": "C# Questions & Answers - Use of Variable Number of Arguments",
-          "questionCount": 10
+          "questionCount": 8
         }
       ]
     },
@@ -247,7 +247,7 @@
       "title": "OOP",
       "blurb": "Inheritance, polymorphism, interfaces.",
       "order": 5,
-      "questionCount": 147,
+      "questionCount": 143,
       "lessons": [
         {
           "id": "structures",
@@ -338,7 +338,7 @@
           "file": "Recursion - C# Questions & Answers - Sanfoundry.json",
           "path": "Object_Oriented_Concepts/recursion.json",
           "title": "C# Questions & Answers - Recursion",
-          "questionCount": 10
+          "questionCount": 6
         }
       ]
     },
@@ -347,7 +347,7 @@
       "title": "Indexers, exceptions",
       "blurb": "Indexers, properties, try/catch.",
       "order": 6,
-      "questionCount": 72,
+      "questionCount": 68,
       "lessons": [
         {
           "id": "indexers-basics",
@@ -382,7 +382,7 @@
           "file": "Try & Catch - C# Questions & Answers - Sanfoundry.json",
           "path": "Indexers_and_Exception_Handling/try-and-catch.json",
           "title": "C#Questions & Answers - Try & Catch in Detail",
-          "questionCount": 10
+          "questionCount": 7
         },
         {
           "id": "exception-handling-implementation",
@@ -396,7 +396,7 @@
           "file": "C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions - Sanfoundry.json",
           "path": "Indexers_and_Exception_Handling/exceptions-of-type-finally-and-built-in-exceptions.json",
           "title": "C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions",
-          "questionCount": 10
+          "questionCount": 9
         }
       ]
     },
@@ -405,7 +405,7 @@
       "title": "Console I/O, streams",
       "blurb": "Console I/O, byte/char streams.",
       "order": 7,
-      "questionCount": 72,
+      "questionCount": 69,
       "lessons": [
         {
           "id": "introduction-of-console-i-o-operations",
@@ -419,7 +419,7 @@
           "file": "Reading Console Input Operations - C# Questions & Answers - Sanfoundry.json",
           "path": "Console_IO_Operations_and_Stream_Classes/reading-console-input-operations.json",
           "title": "C# Questions & Answers - Reading Console Input Operations",
-          "questionCount": 10
+          "questionCount": 9
         },
         {
           "id": "writing-console-output-operations",
@@ -440,7 +440,7 @@
           "file": "Byte Stream - C# Questions & Answers - Sanfoundry.json",
           "path": "Console_IO_Operations_and_Stream_Classes/byte-stream.json",
           "title": "C# Questions & Answers - Byte Stream",
-          "questionCount": 10
+          "questionCount": 8
         },
         {
           "id": "character-stream",
@@ -528,7 +528,7 @@
       "title": "Namespaces, preprocessors, networking",
       "blurb": "Namespaces, #define, URI.",
       "order": 9,
-      "questionCount": 70,
+      "questionCount": 63,
       "lessons": [
         {
           "id": "namespaces-mcq-in-csharp",
@@ -549,7 +549,7 @@
           "file": "Parameters Method - C# Questions & Answers - Sanfoundry.json",
           "path": "Namespaces_Preprocessors_Networking/parameters-method.json",
           "title": "C# Questions & Answers - Method with Parameters",
-          "questionCount": 10
+          "questionCount": 8
         },
         {
           "id": "type-interface",
@@ -563,21 +563,21 @@
           "file": "Networking MCQ in C# - Sanfoundry.json",
           "path": "Namespaces_Preprocessors_Networking/networking-mcq-in-csharp.json",
           "title": "C# Multiple Choice Questions - Networking",
-          "questionCount": 10
+          "questionCount": 9
         },
         {
           "id": "uri-class",
           "file": "UrI Class - C# Questions & Answers - Sanfoundry.json",
           "path": "Namespaces_Preprocessors_Networking/uri-class.json",
           "title": "C# Questions & Answers - UrI Class",
-          "questionCount": 10
+          "questionCount": 7
         },
         {
           "id": "network-errors-handling",
           "file": "Network Errors handling - C# Questions & Answers - Sanfoundry.json",
           "path": "Namespaces_Preprocessors_Networking/network-errors-handling.json",
           "title": "C# Questions & Answers - Network Errors Handling",
-          "questionCount": 10
+          "questionCount": 9
         }
       ]
     },
@@ -586,7 +586,7 @@
       "title": "Reflection, threads, collections, math",
       "blurb": "Reflection, collections, Math, threads.",
       "order": 10,
-      "questionCount": 73,
+      "questionCount": 72,
       "lessons": [
         {
           "id": "reflections-basics",
@@ -635,7 +635,7 @@
           "file": "C# Questions & Answers - Multithreaded Programming - 2 - Sanfoundry.json",
           "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/multithreaded-programming-2.json",
           "title": "C# Questions & Answers - Multithreaded Programming - 2",
-          "questionCount": 10
+          "questionCount": 9
         }
       ]
     },
@@ -644,7 +644,7 @@
       "title": "Miscellaneous",
       "blurb": "Formatting, pointers, unsafe.",
       "order": 11,
-      "questionCount": 82,
+      "questionCount": 81,
       "lessons": [
         {
           "id": "string-formatting-mcq-in-csharp",
@@ -665,7 +665,7 @@
           "file": "C# Questions & Answers - String Formatting Operations - 2 - Sanfoundry.json",
           "path": "Miscellaneous/string-formatting-operations-2.json",
           "title": "C# Questions & Answers - String Formatting Operations - 2",
-          "questionCount": 11
+          "questionCount": 10
         },
         {
           "id": "accessor-controls-of-class",

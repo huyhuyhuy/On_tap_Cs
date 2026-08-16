@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-reading-console-operations/",
   "sourceFile": "Reading Console Input Operations - C# Questions & Answers - Sanfoundry.html",
   "description": "This section of our 1000+ C# multiple choice questions focuses on reading console input operations in C# Programming Language.",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -208,31 +208,6 @@
     },
     {
       "number": 9,
-      "question": "Which of these classes are used by Byte streams for input and output operation?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "InputStream"
-        },
-        {
-          "key": "b",
-          "text": "InputOutputStream"
-        },
-        {
-          "key": "c",
-          "text": "Reader"
-        },
-        {
-          "key": "d",
-          "text": "All of the mentioned"
-        }
-      ],
-      "answer": "b",
-      "explanation": "Byte stream uses InputStream and OutputStream classes for input and output operation."
-    },
-    {
-      "number": 10,
       "question": "Which of these method/methods are used to read block or array of bytes from the file?",
       "code": null,
       "options": [

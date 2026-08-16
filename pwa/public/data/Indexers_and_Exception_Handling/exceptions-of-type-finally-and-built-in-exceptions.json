@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-interview-questions-answers-experienced/",
   "sourceFile": "C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions - Sanfoundry.html",
   "description": "This set of C# Questions and Answers focuses on \"Exceptions of Type Finally and Built in Exceptions\".",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -208,31 +208,6 @@
     },
     {
       "number": 9,
-      "question": "Which of the following keywords is used by the calling function to guard against the exception that is thrown by called function?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "try"
-        },
-        {
-          "key": "b",
-          "text": "throw"
-        },
-        {
-          "key": "c",
-          "text": "throws"
-        },
-        {
-          "key": "d",
-          "text": "catch"
-        }
-      ],
-      "answer": "c",
-      "explanation": "If a method is capable of causing an exception that it does not handle. It must specify this behaviour so that callers of the method can guard themselves against that exception. This is done by using throws clause in methods declaration."
-    },
-    {
-      "number": 10,
       "question": "Which of these classes is related to all the exceptions that are explicitly thrown in C#?",
       "code": null,
       "options": [

@@ -103,8 +103,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "b",
-      "explanation": "We cannot use query against the DataTable's Rows collection, since DataRowCollection doesn't implement IEnumerable<T>. We need to use the AsEnumerable() extension for DataTable. As an example:\n\n                    var results = from myRow in myDataTable.AsEnumerable()\n                    where myRow.Field<int>(\"RowNo\") == 1\n                    select myRow;"
+      "answer": "a",
+      "explanation": "Yes. DataTable.AsEnumerable() (System.Data.DataSetExtensions) exposes rows as IEnumerable<DataRow>, so LINQ can query a DataTable.",
+      "origin": "local"
     },
     {
       "number": 5,

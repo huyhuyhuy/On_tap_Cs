@@ -178,8 +178,9 @@
           "text": "All of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "C# instance methods are not virtual by default. If a derived class does not override a virtual method, the base implementation is used.",
+      "origin": "local"
     },
     {
       "number": 8,

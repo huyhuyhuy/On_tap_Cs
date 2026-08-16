@@ -153,8 +153,9 @@
           "text": "long"
         }
       ],
-      "answer": "a",
-      "explanation": "Wider data type like int, long takes more time for manipulation of a program."
+      "answer": "c",
+      "explanation": "int is the natural 32-bit word size on .NET. Using sbyte or short usually needs extra conversions and is not faster for a simple value like 35.",
+      "origin": "local"
     },
     {
       "number": 7,

@@ -1,0 +1,282 @@
+To: corrections@sanfoundry.com
+Subject: Corrections for C# MCQs — wrong answers and Java content on C# pages
+
+Hello Sanfoundry team,
+
+I have been studying your 1000 C# MCQs:
+https://www.sanfoundry.com/1000-csharp-questions-answers/
+
+I found two kinds of problems:
+
+A) The published answer key is wrong for C#.
+B) Some C# questions are copied from Java (classes, keywords, or code). They do not compile or are not valid in C#, and often none of the options is a correct C# answer.
+
+Question numbers below are the numbers on each page (1, 2, 3, …). I also include the page title, the full URL, and the question text so you can find each item quickly.
+
+Thank you for your work on these quizzes.
+
+---
+
+A) WRONG ANSWER KEY (C# facts)
+
+Please check these 14 items. Your current key is listed first, then the C# correction.
+
+1)
+Page: Type Conversion in Expressions
+URL: https://www.sanfoundry.com/csharp-questions-answers-mcqs/
+Q2. Types of 'Data Conversion' in C#?
+Your answer: b) Explicit Conversion
+Should be: c) Implicit Conversion and Explicit Conversion
+Note: C# has both implicit (widening) and explicit (narrowing) conversions.
+
+2)
+Page: Char Types and String Literals
+URL: https://www.sanfoundry.com/csharp-mcqs-char-types-string-literals/
+Q7. Output of: string s1 = "Delhi"; s2 = s1.Insert(6, "Jaipur");
+Your answer: d) DelhiJaipur
+Should be: runtime error (ArgumentOutOfRangeException)
+Note: "Delhi" has length 5. Insert(6, ...) is past the end of the string. Option d currently says "DelhiJaipur"; that output never happens.
+
+3)
+Page: Integer Data Types
+URL: https://www.sanfoundry.com/csharp-mcqs-integer-data-types/
+Q6. Which data type should be more preferred for storing a simple number like 35 to improve execution speed of a program?
+Your answer: a) sbyte
+Should be: c) int
+Note: int is the native 32-bit type on .NET. sbyte/short usually need extra conversions and are not faster here.
+
+4)
+Page: Relational and Logical Operators
+URL: https://www.sanfoundry.com/csharp-mcqs-relational-logical-operators/
+Q10. Output of the if with d == (c = sqrt(8*8+6*6)) && c == 10
+Your answer: a) Figure is square
+Should be: b) figure is hypotenuse
+Note: d is 10 and c becomes 10, so both sides of && are true. The if branch runs.
+
+5)
+Page: Methods in Class
+URL: https://www.sanfoundry.com/csharp-mcqs-methods-class/
+Q10. Output of Main calling local function p() which prints "hi"
+Your answer: a) Compile time error
+Should be: b) hi
+Note: Local functions inside a method are valid from C# 7. The program prints hi once.
+
+6)
+Page: Try & Catch in Detail
+URL: https://www.sanfoundry.com/csharp-mcqs-try-catch/
+Q2. try { int c = 9 / 5 - 5; Console.WriteLine("Hello"); } catch { "C" } finally { "sharp" }
+Your answer: d) Csharp
+Should be: c) Hellosharp
+Note: Integer division: 9/5 is 1, then 1-5 is -4. There is no divide-by-zero. try prints Hello, finally prints sharp.
+Also: the sample uses Java-style main(String args[]). In C# it should be Main(string[] args).
+
+7)
+Page: Try & Catch in Detail
+URL: https://www.sanfoundry.com/csharp-mcqs-try-catch/
+Q4. try { int c = 10 / 5 - 5; Console.WriteLine("Hi"); } catch { "hello" }
+Your answer: b) hello
+Should be: a) Hi
+Note: 10/5 is 2, then 2-5 is -3. No exception, so only Hi is printed.
+Also: same Java-style main(String args[]) as Q2.
+
+8)
+Page: Iterators
+URL: https://www.sanfoundry.com/csharp-mcqs-iterators/
+Q5. for (int i = 20; i >= 0; --i) if (i == 10) yield break; yield return (char)((chrs + i));
+Your answer: c) U T S R Q P O N M L
+Should be: d) Compile time error
+Note: The for loop has no braces, so its body is only the if. The next line uses i after the loop. i is out of scope.
+
+9)
+Page: LINQ
+URL: https://www.sanfoundry.com/csharp-mcqs-fundamental-linq/
+Q4. Can we use linq to query against a DataTable?
+Your answer: b) No
+Should be: a) Yes
+Note: Use DataTable.AsEnumerable() (System.Data.DataSetExtensions). Your own explanation already shows that pattern.
+
+10)
+Page: Fundamentals of Inheritance
+URL: https://www.sanfoundry.com/csharp-mcqs-fundamentals-inheritance/
+Q8. A class member declared protected becomes member of subclass of which type?
+Your answer: d) static member
+Should be: c) protected member
+Note: In C#, a protected member stays protected in a derived class. It does not become private or static.
+
+11)
+Page: Fundamentals of Inheritance
+URL: https://www.sanfoundry.com/csharp-mcqs-fundamentals-inheritance/
+Q15. If no access modifier for a class is specified, then class accessibility is defined as?
+Your answer: c) private
+Should be: d) internal
+Note: A top-level class with no modifier is internal. private is the default only for nested types.
+
+12)
+Page: Polymorphism
+URL: https://www.sanfoundry.com/csharp-questions-answers-polymorphism/
+Q7. Which of the following statements is correct?
+Your answer: c) By default methods are virtual
+Should be: b) If a derived class does not have its own version of virtual method then one in base class is used
+Note: C# instance methods are not virtual by default (that is Java).
+
+13)
+Page: Byte Stream
+URL: https://www.sanfoundry.com/csharp-mcqs-byte-stream/
+Q6. Which property among the following represents the current position of the stream?
+Your answer: a) long Length
+Should be: b) long Position
+Note: Position is the current offset. Length is the size of the stream.
+
+14)
+Page: Public and Private Access Modifier
+URL: https://www.sanfoundry.com/csharp-mcqs-public-private-modifier/
+Q10. Which of these access specifiers must be used for main() method?
+Your answer: a) private
+Should be: d) none of the mentioned
+Note: C# Main does not require a specific access modifier. public, private, or internal can all work as an entry point.
+
+---
+
+B) JAVA CONTENT ON C# PAGES
+
+These items look copied from Java MCQs. C# does not have these types/keywords, or the snippet uses Java syntax (main(String args[]), boolean, char name[], param instead of params). On several of them, none of a–d is a correct C# answer.
+
+Please either rewrite them for C#, or remove them from the C# set.
+
+--- Byte Stream ---
+URL: https://www.sanfoundry.com/csharp-mcqs-byte-stream/
+
+Q1. Which of these classes is used to read and write bytes in a file?
+Your answer: c) FileInputStream
+Problem: FileReader, FileWriter, FileInputStream, InputStreamReader are all Java. C# uses FileStream.
+
+Q3. Which of these classes is used for input and output operation when working with bytes?
+Your answer: a) InputStream
+Problem: InputStream / Reader / Writer are Java. C# uses Stream / FileStream.
+
+--- Reading Console Input Operations ---
+URL: https://www.sanfoundry.com/csharp-mcqs-reading-console-operations/
+
+Q9. Which of these classes are used by Byte streams for input and output operation?
+Your answer: b) InputOutputStream
+Problem: InputStream, InputOutputStream, Reader are Java (and InputOutputStream is not a real Java class either). C# uses Stream.
+
+--- UrI Class ---
+URL: https://www.sanfoundry.com/csharp-mcqs-url-class/
+
+Q2. Which of these exceptions is thrown by the URL class's constructors?
+Your answer: c) MalformedURLException
+Problem: MalformedURLException is Java. C# Uri throws UriFormatException, which is not in the options.
+
+Q4. Which of these classes is used to encapsulate IP address and DNS?
+Your answer: c) InetAddress
+Problem: InetAddress, DatagramPacket, ContentHandler are Java. C# uses IPAddress / Dns.
+
+Q10. Which of these classes is used to access actual bits or content information of a URL?
+Your answer: d) All of the mentioned (URL, URLDecoder, URLConnection)
+Problem: Those are Java classes. C# uses Uri / HttpClient (or WebRequest).
+
+--- Networking ---
+URL: https://www.sanfoundry.com/csharp-mcqs-fundamental-networking/
+
+Q9. Which of the following classes is used to encapsulate IP address and DNS?
+Your answer: c) InetAddress
+Problem: Same Java question as UrI Class Q4.
+
+--- Network Errors Handling ---
+URL: https://www.sanfoundry.com/csharp-mcqs-networking-error-handling/
+
+Q9. Which of these classes is used to create servers that listen to either local or remote client programs?
+Your answer: b) ServerSockets
+Problem: ServerSockets is Java. C# uses TcpListener / HttpListener / Socket.
+
+--- Multithreaded Programming - 2 ---
+Page title: Multithreaded Programming II
+URL: https://www.sanfoundry.com/csharp-interview-questions-answers-freshers/
+
+Q1. Which of these keywords are used to implement synchronization?
+Your answer: d) synchronized
+Problem: synchronized is Java. C# uses lock. lock is not in the options.
+
+--- Comparison of Strings ---
+URL: https://www.sanfoundry.com/csharp-mcqs-comparison-of-strings/
+
+Q6. Which of these data type values is returned by equals() method of String class?
+Your answer: c) boolean
+Problem: C# String.Equals returns bool, not Java boolean. bool is not in the options.
+
+--- Use of Variable Number of Arguments ---
+Page title: Use of Variable Number of Arguments
+URL: https://www.sanfoundry.com/csharp-questions-answers-experienced/
+
+Q2. The modifiers used to define an array of parameters or list of arguments is __________
+Your answer: c) param
+Problem: The C# keyword is params, not param. params is not in the options.
+
+Q8. Select the correct declaration of the defining array of parameters.
+Your answer: d) void fun(param int[] x)
+Problem: Both “param” options are invalid C#. It should be params int[] x.
+
+--- Operation of Characters ---
+URL: https://www.sanfoundry.com/csharp-mcqs-operation-characters/
+
+Q4. Output of: static void main(String args[]) { char chars[] = {'x','y','z'}; String s = new String(chars); ... }
+Your answer: d) xyz
+Problem: This is Java syntax (main, String args[], char chars[]). It does not compile as C#. Options are only output strings; there is no “compile time error”.
+
+--- String Formatting Operations - 2 ---
+Page title: String Formatting Operations - 2
+URL: https://www.sanfoundry.com/csharp-interview-questions-answers/
+
+Q10. Same pattern: static void main(String args[]) { char chars[] = {'a','b','c'}; String s = new String(chars); }
+Your answer: d) abc
+Problem: Same Java syntax as Characters Q4. Does not compile as C#.
+
+--- Method Parameters ---
+URL: https://www.sanfoundry.com/csharp-mcqs-method-parameters/
+
+Q6. Output of a sample that uses public static void main(String args[]) and a field plus method both named volume.
+Your answer: c) 6
+Problem: Java main. Also C# cannot have a field and a method with the same name. Does not compile. Options are only numbers.
+
+Q7. Sample uses boolean isequal() and main(String args[]).
+Your answer: b) true
+Problem: boolean is Java; C# uses bool. Plus Java main. Does not compile. Options are only true/false/0/1.
+
+--- Recursion ---
+URL: https://www.sanfoundry.com/csharp-mcqs-recursion/
+
+Q4, Q5, Q6, Q7. All “What will be the output…” samples use public static void main(String args[]) or static void main(String args[]).
+Your answers: Q4 a) 24, Q5 c) 1, Q6 d) 48, Q7 c) 72
+Problem: Java entry-point syntax. These do not compile as C#. Options are only numbers, no compile-error choice.
+
+--- Try & Catch in Detail ---
+URL: https://www.sanfoundry.com/csharp-mcqs-try-catch/
+
+Q7. try without catch/finally, Java main(String args[]).
+Your answer: d) Compile time error
+Note: A try with no catch/finally is a C# compile error, so the key happens to match — but the snippet is still Java (main(String args[])). Please rewrite the code in C#.
+
+Q8. try/finally, Java main(String args[]).
+Your answer: c) Csharp
+Problem: Java main, so as C# it does not compile. There is no “compile time error” option (only C / sharp / Csharp / None).
+
+Q9. try/catch printing Hi, Java main(String args[]).
+Your answer: a) Hi
+Problem: Java main. If left as Java, the C# result is a compile error (option d). If rewritten to Main(string[] args), then Hi is correct.
+
+--- Exceptions of Type Finally and Built in Exceptions ---
+Page title: Exceptions of Type Finally and Built in Exceptions
+URL: https://www.sanfoundry.com/csharp-interview-questions-answers-experienced/
+
+Q9. Which of the following keywords is used by the calling function to guard against the exception that is thrown by called function?
+Your answer: c) throws
+Problem: C# has no throws clause (that is Java). The caller uses try / catch, which are options a and d.
+
+---
+
+If you want, I can also send screenshots. Thank you for checking these.
+
+Best regards,
+[Your name]
+[Optional: city / country]

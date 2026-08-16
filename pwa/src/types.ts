@@ -10,6 +10,8 @@ export type Question = {
   options: Option[]
   answer: string
   explanation: string
+  /** Absent or "sanfoundry" = copied from Sanfoundry. "local" = rewritten here; hide source link. */
+  origin?: 'sanfoundry' | 'local'
 }
 
 export type LessonFile = {

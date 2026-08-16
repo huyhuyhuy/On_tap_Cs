@@ -530,6 +530,58 @@ button,
   white-space: pre-wrap;
 }
 
+.code-block code {
+  font: inherit;
+  color: inherit;
+  background: none;
+}
+
+.code-block .hljs-keyword,
+.code-block .hljs-built_in,
+.code-block .hljs-selector-tag {
+  color: #569cd6;
+}
+
+.code-block .hljs-type,
+.code-block .hljs-class .hljs-title {
+  color: #4ec9b0;
+}
+
+.code-block .hljs-string,
+.code-block .hljs-meta .hljs-string {
+  color: #ce9178;
+}
+
+.code-block .hljs-number,
+.code-block .hljs-literal {
+  color: #b5cea8;
+}
+
+.code-block .hljs-comment,
+.code-block .hljs-quote {
+  color: #6a9955;
+}
+
+.code-block .hljs-title,
+.code-block .hljs-title.function_ {
+  color: #dcdcaa;
+}
+
+.code-block .hljs-title.class_ {
+  color: #4ec9b0;
+}
+
+.code-block .hljs-params,
+.code-block .hljs-variable,
+.code-block .hljs-attr {
+  color: #9cdcfe;
+}
+
+.code-block .hljs-punctuation,
+.code-block .hljs-operator {
+  color: #d4d4d4;
+}
+
 .feedback .explain {
   margin: 0;
 }

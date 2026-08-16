@@ -253,8 +253,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "Invalid definition of function p() inside main()."
+      "answer": "b",
+      "explanation": "p() is a local function inside Main (valid since C# 7). It is called once and prints hi.",
+      "origin": "local"
     }
   ]
 }

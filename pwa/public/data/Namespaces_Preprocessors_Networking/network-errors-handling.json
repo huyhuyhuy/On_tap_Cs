@@ -4,7 +4,7 @@
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-networking-error-handling/",
   "sourceFile": "Network Errors handling - C# Questions & Answers - Sanfoundry.html",
   "description": "This section of our 1000+ C# MCQs focuses on networking errors in C# Programming Language.",
-  "questionCount": 10,
+  "questionCount": 9,
   "questions": [
     {
       "number": 1,
@@ -208,31 +208,6 @@
     },
     {
       "number": 9,
-      "question": "Which of these classes is used to create servers that listen to either local or remote client programs?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "httpServer"
-        },
-        {
-          "key": "b",
-          "text": "ServerSockets"
-        },
-        {
-          "key": "c",
-          "text": "MimeHeader"
-        },
-        {
-          "key": "d",
-          "text": "HttpResponse"
-        }
-      ],
-      "answer": "b",
-      "explanation": "None."
-    },
-    {
-      "number": 10,
       "question": "Which of these methods gives the full URL of an URL object?",
       "code": null,
       "options": [

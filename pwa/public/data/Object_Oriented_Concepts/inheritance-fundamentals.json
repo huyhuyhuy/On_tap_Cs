@@ -203,8 +203,9 @@
           "text": "static member"
         }
       ],
-      "answer": "d",
-      "explanation": "A class member declared protected becomes private member of subclass."
+      "answer": "c",
+      "explanation": "A protected member stays protected in a derived class. It is visible to the subclass and to further derived types, not as public or private.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -378,8 +379,9 @@
           "text": "internal"
         }
       ],
-      "answer": "c",
-      "explanation": "By default it is specified private in nature."
+      "answer": "d",
+      "explanation": "A top-level class with no access modifier is internal (visible in the same assembly). private is only the default for nested types.",
+      "origin": "local"
     }
   ]
 }

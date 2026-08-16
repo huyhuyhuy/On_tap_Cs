@@ -128,8 +128,9 @@
           "text": "Compile time error"
         }
       ],
-      "answer": "c",
-      "explanation": "The code to specify stoppage of the iterator using 'yield break' statement When this statement executes, the iterator signals that the end of the collection has been reached, which effectively stops the iterator.\n\nOutput:\n\n U T S R Q P O N M L"
+      "answer": "d",
+      "explanation": "The for loop has no braces, so its body is only the if. The next line uses i after the loop, but i is declared in the for and is out of scope. That is a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 6,
