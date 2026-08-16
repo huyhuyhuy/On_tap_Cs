@@ -37,3 +37,8 @@ export function displayTitle(raw: string): string {
     .replace(/\s*[–-]\s*Sanfoundry$/i, '')
     .trim()
 }
+
+export function hasExplanation(text: string | null | undefined): boolean {
+  const value = text?.trim().toLowerCase() ?? ''
+  return value !== '' && value !== 'none' && value !== 'none.'
+}

@@ -60,3 +60,37 @@ export type QuizAnswer = {
   selected: string
   correct: boolean
 }
+
+export type MixMode = 'random' | 'review'
+
+export type MixItem = {
+  topicId: string
+  lessonId: string
+  path: string
+  topicTitle: string
+  lessonTitle: string
+  question: Question
+}
+
+export type MixAnswer = {
+  topicId: string
+  lessonId: string
+  number: number
+  selected: string
+  correct: boolean
+}
+
+export type QuestionStat = {
+  seen: number
+  wrong: number
+  lastCorrect: boolean
+}
+
+export type StatsMap = Record<string, QuestionStat>
+
+export type StatRollup = {
+  seen: number
+  wrong: number
+  touched: number
+  needReview: number
+}

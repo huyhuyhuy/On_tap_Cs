@@ -1,62 +1,65 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { loadCatalog, lessonKey } from '../data'
-import { loadProgress, topicStats } from '../progress'
-import type { Catalog, ProgressMap } from '../types'
+import { loadCatalog } from '../data'
+import { formatReview, loadStats, rollupPrefix } from '../stats'
+import type { Catalog, StatRollup } from '../types'
 
 export default function Home() {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
-  const [progress, setProgress] = useState<ProgressMap>({})
+  const [review, setReview] = useState<StatRollup | null>(null)
   const [error, setError] = useState('')
 
   useEffect(() => {
     loadCatalog()
       .then(setCatalog)
       .catch((err: Error) => setError(err.message))
-    setProgress(loadProgress())
+    setReview(rollupPrefix(loadStats(), ''))
   }, [])
 
   if (error) return <p className="status error">{error}</p>
-  if (!catalog) return <p className="status">Đang tải danh mục…</p>
+  if (!catalog || !review) return <p className="status">Đang tải…</p>
 
   return (
     <div className="page">
       <header className="hero">
-        <p className="kicker">Luyện thi trắc nghiệm</p>
         <h1>Ôn tập C#</h1>
         <p className="lede">
-          {catalog.topicCount} chủ đề · {catalog.questionCount} câu. Học từ cơ bản,
-          mỗi màn một câu.
+          {catalog.topicCount} chủ đề · {catalog.questionCount} câu.
         </p>
       </header>
 
-      <ol className="topic-list">
-        {catalog.topics.map((topic, index) => {
-          const keys = topic.lessons.map((lesson) =>
-            lessonKey(topic.id, lesson.id),
-          )
-          const { done, total } = topicStats(keys, progress)
-          const pct = total ? Math.round((done / total) * 100) : 0
-          return (
-            <li key={topic.id}>
-              <Link className="topic-card" to={`/topic/${topic.id}`}>
-                <span className="topic-index">{String(index + 1).padStart(2, '0')}</span>
-                <span className="topic-body">
-                  <span className="topic-title">{topic.title}</span>
-                  <span className="topic-blurb">{topic.blurb}</span>
-                  <span className="topic-meta">
-                    {topic.lessons.length} bài · {topic.questionCount} câu
-                    {done > 0 ? ` · đã xong ${done}/${total}` : ''}
-                  </span>
-                  <span className="bar" aria-hidden="true">
-                    <span className="bar-fill" style={{ width: `${pct}%` }} />
-                  </span>
-                </span>
-              </Link>
-            </li>
-          )
-        })}
-      </ol>
+      <div className="home-grid">
+        <Link className="home-tile accent-blue" to="/topics">
+          <span className="home-tile-mark" aria-hidden="true">
+            01
+          </span>
+          <span className="home-tile-title">Theo chủ đề</span>
+          <span className="home-tile-sub">11 chủ đề</span>
+        </Link>
+        <Link className="home-tile accent-cyan" to="/mix/random">
+          <span className="home-tile-mark" aria-hidden="true">
+            ?
+          </span>
+          <span className="home-tile-title">Đề random</span>
+          <span className="home-tile-sub">10–15 câu</span>
+        </Link>
+        <Link className="home-tile accent-red" to="/mix/review">
+          <span className="home-tile-mark" aria-hidden="true">
+            !
+          </span>
+          <span className="home-tile-title">Cần ôn lại</span>
+          <span className={`home-tile-sub ${review.needReview ? 'tone-bad' : ''}`.trim()}>
+            {review.touched ? formatReview(review) : 'câu đang sai'}
+          </span>
+        </Link>
+        <Link className="home-tile accent-green" to="/stats">
+          <span className="home-tile-mark" aria-hidden="true">
+            ≡
+          </span>
+          <span className="home-tile-title">Thống kê</span>
+          <span className="home-tile-sub">trên máy này</span>
+        </Link>
+      </div>
     </div>
   )
 }

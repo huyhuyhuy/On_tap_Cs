@@ -5,8 +5,8 @@
   "topics": [
     {
       "id": "Data_Types_Variables_and_Operators",
-      "title": "Kiểu dữ liệu, biến và toán tử",
-      "blurb": "Nền tảng: int, float, biến, toán tử.",
+      "title": "Data types, variables, operators",
+      "blurb": "Int, float, char, operators.",
       "order": 1,
       "questionCount": 103,
       "lessons": [
@@ -77,8 +77,8 @@
     },
     {
       "id": "Looping_Statements",
-      "title": "Vòng lặp và rẽ nhánh",
-      "blurb": "if, switch, for, while, do-while.",
+      "title": "Looping statements",
+      "blurb": "if, switch, for, while.",
       "order": 2,
       "questionCount": 67,
       "lessons": [
@@ -128,8 +128,8 @@
     },
     {
       "id": "Classes",
-      "title": "Class",
-      "blurb": "Class, tham chiếu, phương thức, constructor.",
+      "title": "Classes",
+      "blurb": "Methods, constructors, destructors.",
       "order": 3,
       "questionCount": 56,
       "lessons": [
@@ -172,8 +172,8 @@
     },
     {
       "id": "Arrays_and_Strings",
-      "title": "Mảng và chuỗi",
-      "blurb": "Array, string, ref/out, params.",
+      "title": "Arrays, strings",
+      "blurb": "Arrays, strings, ref/out, params.",
       "order": 4,
       "questionCount": 90,
       "lessons": [
@@ -244,8 +244,8 @@
     },
     {
       "id": "Object_Oriented_Concepts",
-      "title": "Lập trình hướng đối tượng",
-      "blurb": "Kế thừa, đa hình, interface, overload.",
+      "title": "OOP",
+      "blurb": "Inheritance, polymorphism, interfaces.",
       "order": 5,
       "questionCount": 147,
       "lessons": [
@@ -344,8 +344,8 @@
     },
     {
       "id": "Indexers_and_Exception_Handling",
-      "title": "Indexer và exception",
-      "blurb": "Indexer, property, try/catch/finally.",
+      "title": "Indexers, exceptions",
+      "blurb": "Indexers, properties, try/catch.",
       "order": 6,
       "questionCount": 72,
       "lessons": [
@@ -402,8 +402,8 @@
     },
     {
       "id": "Console_IO_Operations_and_Stream_Classes",
-      "title": "Console I/O và stream",
-      "blurb": "Nhập xuất console, byte/character stream.",
+      "title": "Console I/O, streams",
+      "blurb": "Console I/O, byte/char streams.",
       "order": 7,
       "questionCount": 72,
       "lessons": [
@@ -460,8 +460,8 @@
     },
     {
       "id": "Delegates_Generics_and_LINQ",
-      "title": "Delegate, generic và LINQ",
-      "blurb": "Delegate, generic, LINQ, Array class.",
+      "title": "Delegates, generics, LINQ",
+      "blurb": "Delegates, generics, LINQ.",
       "order": 8,
       "questionCount": 85,
       "lessons": [
@@ -525,8 +525,8 @@
     },
     {
       "id": "Namespaces_Preprocessors_Networking",
-      "title": "Namespace, preprocessor, networking",
-      "blurb": "Namespace, #define, URI, network.",
+      "title": "Namespaces, preprocessors, networking",
+      "blurb": "Namespaces, #define, URI.",
       "order": 9,
       "questionCount": 70,
       "lessons": [
@@ -583,8 +583,8 @@
     },
     {
       "id": "Reflections_Multithreaded_Collection_Mathematical_Functions",
-      "title": "Reflection, thread, collection, math",
-      "blurb": "Reflection, collection, Math, multithread.",
+      "title": "Reflection, threads, collections, math",
+      "blurb": "Reflection, collections, Math, threads.",
       "order": 10,
       "questionCount": 73,
       "lessons": [
@@ -641,8 +641,8 @@
     },
     {
       "id": "Miscellaneous",
-      "title": "Linh tinh",
-      "blurb": "Format chuỗi, pointer, unsafe code.",
+      "title": "Miscellaneous",
+      "blurb": "Formatting, pointers, unsafe.",
       "order": 11,
       "questionCount": 82,
       "lessons": [

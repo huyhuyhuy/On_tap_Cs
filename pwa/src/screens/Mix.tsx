@@ -1,29 +1,32 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { displayTitle, hasExplanation, lessonKey, loadCatalog, loadLesson } from '../data'
-import { saveLessonProgress } from '../progress'
+import { hasExplanation, loadCatalog } from '../data'
+import { buildMix } from '../mix'
 import { recordAttempt } from '../stats'
-import type { LessonFile, LessonMeta, QuizAnswer, TopicMeta } from '../types'
+import type { MixAnswer, MixItem, MixMode } from '../types'
 
 type LocationState = {
-  numbers?: number[]
+  items?: MixItem[]
 }
 
-const SESSION_KEY = 'ontap-cs-last-session'
+const SESSION_KEY = 'ontap-cs-mix-session'
 
-export default function Quiz() {
-  const { topicId, lessonId } = useParams()
+function isMode(value: string | undefined): value is MixMode {
+  return value === 'random' || value === 'review'
+}
+
+export default function Mix() {
+  const { mode } = useParams()
   const location = useLocation()
   const navigate = useNavigate()
-  const retryNumbers = (location.state as LocationState | null)?.numbers
+  const retryItems = (location.state as LocationState | null)?.items
 
-  const [topic, setTopic] = useState<TopicMeta | null>(null)
-  const [lessonMeta, setLessonMeta] = useState<LessonMeta | null>(null)
-  const [lesson, setLesson] = useState<LessonFile | null>(null)
+  const [items, setItems] = useState<MixItem[] | null>(null)
   const [error, setError] = useState('')
+  const [empty, setEmpty] = useState(false)
   const [index, setIndex] = useState(0)
   const [picked, setPicked] = useState<string | null>(null)
-  const [answers, setAnswers] = useState<QuizAnswer[]>([])
+  const [answers, setAnswers] = useState<MixAnswer[]>([])
   const [showExplain, setShowExplain] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
   const explainRef = useRef<HTMLDivElement>(null)
@@ -32,19 +35,31 @@ export default function Quiz() {
   useEffect(() => {
     let cancelled = false
     async function boot() {
-      if (!topicId || !lessonId) return
+      if (!isMode(mode)) {
+        setError('Không tìm thấy đề.')
+        return
+      }
       try {
-        const catalog = await loadCatalog()
-        const foundTopic = catalog.topics.find((item) => item.id === topicId)
-        const foundLesson = foundTopic?.lessons.find((item) => item.id === lessonId)
-        if (!foundTopic || !foundLesson) {
-          throw new Error('Không tìm thấy bài.')
+        if (retryItems?.length) {
+          if (cancelled) return
+          setItems(retryItems)
+          setEmpty(false)
+          setIndex(0)
+          setPicked(null)
+          setAnswers([])
+          setShowExplain(false)
+          return
         }
-        const file = await loadLesson(foundLesson.path)
+        const catalog = await loadCatalog()
+        const mix = await buildMix(catalog, mode)
         if (cancelled) return
-        setTopic(foundTopic)
-        setLessonMeta(foundLesson)
-        setLesson(file)
+        if (!mix.length) {
+          setEmpty(true)
+          setItems([])
+          return
+        }
+        setEmpty(false)
+        setItems(mix)
         setIndex(0)
         setPicked(null)
         setAnswers([])
@@ -57,7 +72,7 @@ export default function Quiz() {
     return () => {
       cancelled = true
     }
-  }, [topicId, lessonId, retryNumbers])
+  }, [mode, retryItems])
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 })
@@ -82,14 +97,13 @@ export default function Quiz() {
     scroller.scrollTo({ top: 0, behavior: 'smooth' })
   }, [showExplain])
 
-  const queue = useMemo(() => {
-    if (!lesson) return []
-    if (retryNumbers?.length) {
-      const wanted = new Set(retryNumbers)
-      return lesson.questions.filter((q) => wanted.has(q.number))
-    }
-    return lesson.questions
-  }, [lesson, retryNumbers])
+  if (!isMode(mode)) {
+    return (
+      <p className="status error">
+        Không tìm thấy đề. <Link to="/">Về trang chủ</Link>
+      </p>
+    )
+  }
 
   if (error) {
     return (
@@ -98,33 +112,50 @@ export default function Quiz() {
       </p>
     )
   }
-  if (!topic || !lessonMeta || !lesson) {
-    return <p className="status">Đang tải câu hỏi…</p>
-  }
-  if (queue.length === 0) {
+
+  if (empty) {
     return (
-      <p className="status error">
-        Không có câu hỏi.{' '}
-        <Link to={`/topic/${topic.id}`}>Quay lại</Link>
-      </p>
+      <div className="page">
+        <Link className="back" to="/">
+          ← Trang chủ
+        </Link>
+        <header className="hero compact">
+          <h1>Chưa có câu cần ôn</h1>
+          <p className="lede">Làm vài bài theo chủ đề, câu sai sẽ hiện ở đây.</p>
+        </header>
+        <div className="actions">
+          <Link className="btn primary" to="/topics">
+            Học theo chủ đề
+          </Link>
+        </div>
+      </div>
     )
   }
 
+  if (!items) return <p className="status">Đang soạn đề…</p>
+  if (!items.length) return <p className="status">Đang soạn đề…</p>
+
+  const queue = items
   const current = queue[index]
+  if (!current) return <p className="status">Đang soạn đề…</p>
+
+  const question = current.question
   const revealed = picked !== null
-  const isCorrect = picked === current.answer
-  const hasExplain = hasExplanation(current.explanation)
+  const isCorrect = picked === question.answer
+  const hasExplain = hasExplanation(question.explanation)
   const pct = Math.round(((index + (revealed ? 1 : 0)) / queue.length) * 100)
 
   function choose(key: string) {
-    if (picked || !topicId || !lessonId) return
-    const correct = key === current.answer
+    if (picked) return
+    const correct = key === question.answer
     setPicked(key)
-    recordAttempt(topicId, lessonId, current.number, correct)
+    recordAttempt(current.topicId, current.lessonId, question.number, correct)
     setAnswers((prev) => [
       ...prev,
       {
-        number: current.number,
+        topicId: current.topicId,
+        lessonId: current.lessonId,
+        number: question.number,
         selected: key,
         correct,
       },
@@ -132,45 +163,33 @@ export default function Quiz() {
   }
 
   function goNext() {
-    if (!topicId || !lessonId || !topic || !lessonMeta) return
     if (index + 1 < queue.length) {
       setIndex((n) => n + 1)
       setPicked(null)
       setShowExplain(false)
       return
     }
-    const nextAnswers = answers
-    const correctCount = nextAnswers.filter((a) => a.correct).length
-    saveLessonProgress(lessonKey(topicId, lessonId), {
-      bestCorrect: correctCount,
-      bestTotal: nextAnswers.length,
-      completed: true,
-      lastAt: new Date().toISOString(),
-    })
     const session = {
-      topicId,
-      lessonId,
-      topicTitle: topic.title,
-      lessonTitle: displayTitle(lessonMeta.title),
-      answers: nextAnswers,
-      retry: Boolean(retryNumbers?.length),
+      mode,
+      items: queue,
+      answers,
     }
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(session))
-    navigate(`/quiz/${topicId}/${lessonId}/result`, { replace: true, state: session })
+    navigate(`/mix/${mode}/result`, { replace: true, state: session })
   }
 
   return (
     <div className="quiz-shell">
       <header className="quiz-top">
-        <Link className="back" to={`/topic/${topic.id}`}>
-          ← {topic.title}
+        <Link className="back" to="/">
+          ← Trang chủ
         </Link>
         <div className="quiz-head">
           <div>
-            <p className="kicker">{displayTitle(lessonMeta.title)}</p>
+            <p className="kicker">{current.lessonTitle}</p>
             <p className="quiz-progress">
               Câu {index + 1} / {queue.length}
-              {retryNumbers?.length ? ' · làm lại câu sai' : ''}
+              {retryItems?.length ? ' · làm lại câu sai' : ''}
             </p>
           </div>
           <div className="bar" aria-hidden="true">
@@ -182,15 +201,15 @@ export default function Quiz() {
       <div className="quiz-scroll" ref={scrollRef}>
         <article className="question-card">
           <h1 className="question-text">
-            {current.number}. {current.question}
+            {question.number}. {question.question}
           </h1>
-          {current.code ? <pre className="code-block">{current.code}</pre> : null}
+          {question.code ? <pre className="code-block">{question.code}</pre> : null}
 
           <ul className="options">
-            {current.options.map((option) => {
+            {question.options.map((option) => {
               let cls = 'option'
               if (revealed) {
-                if (option.key === current.answer) cls += ' correct'
+                if (option.key === question.answer) cls += ' correct'
                 else if (option.key === picked) cls += ' wrong'
               } else if (picked === option.key) {
                 cls += ' selected'
@@ -214,7 +233,7 @@ export default function Quiz() {
           {revealed && showExplain && hasExplain ? (
             <div className="feedback" ref={explainRef}>
               <p className="feedback-title">Giải thích</p>
-              <pre className="explain">{current.explanation}</pre>
+              <pre className="explain">{question.explanation}</pre>
             </div>
           ) : null}
         </article>
@@ -225,7 +244,9 @@ export default function Quiz() {
           {revealed ? (
             <>
               <p className="quiz-dock-status">
-                {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
+                {isCorrect
+                  ? 'Đúng'
+                  : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
               </p>
               <div className="quiz-dock-actions">
                 <button

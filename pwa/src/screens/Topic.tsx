@@ -31,11 +31,9 @@ export default function Topic() {
 
   return (
     <div className="page">
-      <nav className="crumb">
-        <Link to="/">Chủ đề</Link>
-        <span>/</span>
-        <span>{topic.title}</span>
-      </nav>
+      <Link className="back" to="/topics">
+        ← Chủ đề
+      </Link>
       <header className="hero compact">
         <h1>{topic.title}</h1>
         <p className="lede">{topic.blurb}</p>

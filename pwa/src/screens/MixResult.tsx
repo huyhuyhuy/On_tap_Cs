@@ -1,20 +1,17 @@
 import { useMemo } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import type { QuizAnswer } from '../types'
+import type { MixAnswer, MixItem, MixMode } from '../types'
 
 type Session = {
-  topicId: string
-  lessonId: string
-  topicTitle: string
-  lessonTitle: string
-  answers: QuizAnswer[]
-  retry: boolean
+  mode: MixMode
+  items: MixItem[]
+  answers: MixAnswer[]
 }
 
-const SESSION_KEY = 'ontap-cs-last-session'
+const SESSION_KEY = 'ontap-cs-mix-session'
 
 function readSession(state: unknown): Session | null {
-  if (state && typeof state === 'object' && 'answers' in state) {
+  if (state && typeof state === 'object' && 'answers' in state && 'items' in state) {
     return state as Session
   }
   try {
@@ -25,17 +22,16 @@ function readSession(state: unknown): Session | null {
   }
 }
 
-export default function Result() {
-  const { topicId, lessonId } = useParams()
+export default function MixResult() {
+  const { mode } = useParams()
   const location = useLocation()
   const navigate = useNavigate()
   const session = useMemo(() => readSession(location.state), [location.state])
 
-  if (!session || session.topicId !== topicId || session.lessonId !== lessonId) {
+  if (!session || session.mode !== mode) {
     return (
       <p className="status">
-        Chưa có kết quả bài này.{' '}
-        <Link to={topicId ? `/topic/${topicId}` : '/'}>Quay lại</Link>
+        Chưa có kết quả đề này. <Link to="/">Về trang chủ</Link>
       </p>
     )
   }
@@ -45,21 +41,24 @@ export default function Result() {
   const correct = result.answers.filter((a) => a.correct).length
   const wrong = result.answers.filter((a) => !a.correct)
   const pct = total ? Math.round((correct / total) * 100) : 0
+  const title = result.mode === 'review' ? 'Cần ôn' : 'Đề random'
 
   function retryWrong() {
-    navigate(`/quiz/${result.topicId}/${result.lessonId}`, {
-      state: { numbers: wrong.map((a) => a.number) },
+    const wrongItems = result.items.filter((_, index) => {
+      const answer = result.answers[index]
+      return Boolean(answer && !answer.correct)
     })
+    navigate(`/mix/${result.mode}`, { state: { items: wrongItems } })
   }
 
   return (
     <div className="page">
-      <Link className="back" to={`/topic/${result.topicId}`}>
-        ← {result.topicTitle}
+      <Link className="back" to="/">
+        ← Trang chủ
       </Link>
 
       <header className="hero compact">
-        <p className="kicker">{result.lessonTitle}</p>
+        <p className="kicker">{title}</p>
         <h1>Tổng kết</h1>
       </header>
 
@@ -70,10 +69,10 @@ export default function Result() {
         <p className="score-pct">{pct}% đúng</p>
         <p className="score-note">
           {pct === 100
-            ? 'Làm tốt. Có thể chuyển bài tiếp theo.'
+            ? 'Làm tốt.'
             : pct >= 70
               ? 'Khá ổn. Nên xem lại các câu sai.'
-              : 'Nên làm lại bài này.'}
+              : 'Nên ôn lại các câu sai.'}
         </p>
       </section>
 
@@ -82,7 +81,7 @@ export default function Result() {
           <h2>Câu sai ({wrong.length})</h2>
           <ol>
             {wrong.map((item) => (
-              <li key={item.number}>
+              <li key={`${item.topicId}/${item.lessonId}/${item.number}`}>
                 Câu {item.number}: chọn {item.selected.toUpperCase()}
               </li>
             ))}
@@ -93,16 +92,16 @@ export default function Result() {
       )}
 
       <div className="actions">
-        <Link className="btn primary" to={`/quiz/${result.topicId}/${result.lessonId}`}>
-          Làm lại cả bài
+        <Link className="btn primary" to={`/mix/${result.mode}`}>
+          Làm đề mới
         </Link>
         {wrong.length > 0 ? (
           <button type="button" className="btn" onClick={retryWrong}>
             Làm lại câu sai
           </button>
         ) : null}
-        <Link className="btn" to={`/topic/${result.topicId}`}>
-          Về chủ đề
+        <Link className="btn" to="/">
+          Về trang chủ
         </Link>
       </div>
     </div>

@@ -10,6 +10,7 @@
   --accent-2: #8ec0ff;
   --ok: #3ecf8e;
   --ok-bg: #123528;
+  --warn: #f0b429;
   --bad: #ff6b6b;
   --bad-bg: #3a1518;
   --code: #0b1016;
@@ -99,22 +100,100 @@ button,
   color: var(--muted);
 }
 
-.lede {
-  margin: 0;
-  max-width: 40rem;
+.hero .actions {
+  margin-top: 16px;
 }
 
-.crumb {
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.home-tile {
+  position: relative;
+  min-height: 8.6rem;
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 18px;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  overflow: hidden;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-top-width: 3px;
+  color: inherit;
+  box-shadow: var(--shadow);
 }
 
-.crumb span:last-child {
+.home-tile.accent-blue {
+  border-top-color: var(--accent);
+}
+
+.home-tile.accent-cyan {
+  border-top-color: var(--accent-2);
+}
+
+.home-tile.accent-red {
+  border-top-color: var(--bad);
+}
+
+.home-tile.accent-green {
+  border-top-color: var(--ok);
+}
+
+.home-tile:hover {
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+
+.home-tile-mark {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
   color: var(--text);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.home-tile-title {
+  font-size: 1.2rem;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.home-tile-sub {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.tone-ok {
+  color: var(--ok);
+}
+
+.tone-warn {
+  color: var(--warn);
+}
+
+.tone-bad {
+  color: var(--bad);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.quiz-top .back {
+  margin-bottom: 10px;
 }
 
 .topic-list,
@@ -173,6 +252,9 @@ button,
 .topic-title,
 .lesson-title {
   font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bar {
@@ -188,6 +270,10 @@ button,
   display: block;
   height: 100%;
   background: linear-gradient(90deg, #3d8bfd, #3ecf8e);
+}
+
+.bar-fill.bad {
+  background: linear-gradient(90deg, #ff8a5b, #ff6b6b);
 }
 
 .pill {
@@ -206,11 +292,111 @@ button,
 }
 
 .quiz-head {
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .quiz-head .bar {
   margin-top: 12px;
+}
+
+.quiz-shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #1a2a44 0%, transparent 55%),
+    var(--bg);
+}
+
+.quiz-top {
+  flex-shrink: 0;
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: max(12px, env(safe-area-inset-top)) 0 10px;
+}
+
+.quiz-top .back {
+  margin-bottom: 10px;
+}
+
+.quiz-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+
+.quiz-dock {
+  flex-shrink: 0;
+  border-top: 1px solid var(--line);
+  background: #121a24;
+}
+
+.quiz-dock-inner {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+}
+
+.quiz-dock-status {
+  margin: 0;
+  font-weight: 700;
+}
+
+.quiz-dock-status.muted {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.quiz-dock .btn.primary,
+.quiz-dock .explain-btn {
+  width: 100%;
+  min-height: 44px;
+}
+
+.quiz-dock-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn.explain-btn {
+  border: 2px solid transparent;
+  background: #2a3340;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.btn.explain-btn.on {
+  border-color: #fff;
+}
+
+.btn.explain-btn:disabled {
+  background: #2a3340;
+  color: var(--muted);
+  border: 2px solid transparent;
+  box-shadow: none;
+  font-weight: 600;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.btn.explain-btn:disabled:hover {
+  filter: none;
+}
+
+@media (min-width: 640px) {
+  .quiz-dock .btn.primary,
+  .quiz-dock .explain-btn {
+    min-width: 0;
+  }
 }
 
 .question-card {
@@ -240,6 +426,10 @@ button,
   font-size: 0.86rem;
   line-height: 1.45;
   white-space: pre-wrap;
+}
+
+.feedback .explain {
+  margin: 0;
 }
 
 .options {
