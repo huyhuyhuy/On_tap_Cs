@@ -1,0 +1,260 @@
+{
+  "title": "C# Multiple Choice Questions - Namespaces",
+  "topic": "Namespaces_Preprocessors_Networking",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-fundamentals-namespaces/",
+  "sourceFile": "Namespaces MCQ in C# - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on namespaces in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of the following is not a namespace in the .NET Framework Class Library?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Process"
+        },
+        {
+          "key": "b",
+          "text": "System.Security"
+        },
+        {
+          "key": "c",
+          "text": "System.Threading"
+        },
+        {
+          "key": "d",
+          "text": "System.xml"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which is the correct statement about the namespaces in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Nesting of namespaces is permitted, provided all the inner namespaces are declared in the same file"
+        },
+        {
+          "key": "b",
+          "text": "A namespace cannot be tested"
+        },
+        {
+          "key": "c",
+          "text": "There is no limit on the number of levels while nesting namespaces"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which among the following does not belong to the C#.NET namespace?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "class"
+        },
+        {
+          "key": "b",
+          "text": "struct"
+        },
+        {
+          "key": "c",
+          "text": "enum"
+        },
+        {
+          "key": "d",
+          "text": "data"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "Which among the following is a correct statement about namespace used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Classes must belong to a namespace, whereas structures need not"
+        },
+        {
+          "key": "b",
+          "text": "All elements of the namespace must to belong to one file"
+        },
+        {
+          "key": "c",
+          "text": "If not mentioned, a namespace takes the name of the current project"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Which among the given is not a correct way to call the method Issue() defined in the following C# code snippet? 🔥 Enroll Now for Free Python Certification - August 2026",
+      "code": "class Book\n{\n    public void issue()\n    {\n      /* code */\n    }\n}\nclass Journel\n{\n     public void issue()\n     {\n         /* code */\n     }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "College.Lib.Book b = new College.Lib.Book();\nb.issue();"
+        },
+        {
+          "key": "b",
+          "text": "Book b = new Book();\nb.issue();"
+        },
+        {
+          "key": "c",
+          "text": "using College.Lib;\nBook b = new Book();\nb.issue();"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Which among the following statements are not correct about a namespace used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Nested namespaces are allowed"
+        },
+        {
+          "key": "b",
+          "text": "Importing outer namespaces imports inner namespace"
+        },
+        {
+          "key": "c",
+          "text": "Nested namespaces are allowed"
+        },
+        {
+          "key": "d",
+          "text": "Importing outer namespace does not import inner namespace"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "Which among the following is a .NET namespace?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Web"
+        },
+        {
+          "key": "b",
+          "text": "System.Process"
+        },
+        {
+          "key": "c",
+          "text": "System.Drawing2D"
+        },
+        {
+          "key": "d",
+          "text": "System.Drawing3D"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "If a class named csharp is present in namespace n1 as well as in namespace n2, then which of the following is the correct way to use csharp class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "class Program\n   {\n     static void Main(string[] args)\n     {\n        import n1;\n        csharp x = new csharp();\n        x.fun();\n        import n2;\n        csharp y = new csharp();\n        y.fun();\n     }\n   }"
+        },
+        {
+          "key": "b",
+          "text": "import n1;\n   import n2;\n   namespace ConsoleApplication1\n   {\n      class Program\n   {\n     static void Main(string[] args)\n     {\n\n       n1.csharp x = new n1.csharp();\n        x.fun();\n        import n2;\n        n2.csharp y = new n2.csharp();\n        y.fun();\n     }\n   }\n}"
+        },
+        {
+          "key": "c",
+          "text": "class Program\n   {\n     static void Main(string[] args)\n     {\n       using n1;\n       csharp x = new csharp();\n       x.fun();\n       using n2;\n       csharp y = new csharp();\n        y.fun();\n     }\n   }"
+        },
+        {
+          "key": "d",
+          "text": "using n1;\n   using n2;\n   namespace ConsoleApplication1\n   {\n      class Program\n   {\n     static void Main(string[] args)\n     {\n\n       n1.csharp x = new n1.csharp();\n        x.fun();\n        import n2;\n        n2.csharp y = new n2.csharp();\n        y.fun();\n     }\n   }\n}"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "If ListBox is the class of System.Windows.Forms namespace. Then, the correct way to create an object of ListBox class is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "using System.Windows.Forms;\nListBox I = new ListBox();"
+        },
+        {
+          "key": "b",
+          "text": "System.Windows.Forms.ListBox I = new System.Windows.Forms.ListBox();"
+        },
+        {
+          "key": "c",
+          "text": "using LBControl I = new System.Windows.Forms.ListBox;"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Which among the following is the correct statement about the using statement used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A C#.NET source code file consists of any number of using statement"
+        },
+        {
+          "key": "b",
+          "text": "By using 'using' statement it's possible to create an alias for the namespace but not for the namespace element"
+        },
+        {
+          "key": "c",
+          "text": "It is permitted to define a member at namespace level using alias"
+        },
+        {
+          "key": "d",
+          "text": "Using statement can be placed anywhere in the C#.NET source code file"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    }
+  ]
+}

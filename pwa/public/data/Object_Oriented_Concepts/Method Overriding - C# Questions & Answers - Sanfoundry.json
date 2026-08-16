@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Method Overriding",
+  "topic": "Object_Oriented_Concepts",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-method-overriding/",
+  "sourceFile": "Method Overriding - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on method overriding in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which keyword is used to declare a base class method while performing overriding of base class methods?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "this"
+        },
+        {
+          "key": "b",
+          "text": "virtual"
+        },
+        {
+          "key": "c",
+          "text": "override"
+        },
+        {
+          "key": "d",
+          "text": "extend"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "The process of defining a method in a subclass having same name & type signature as a method in its superclass is known as?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Method overloading"
+        },
+        {
+          "key": "b",
+          "text": "Method overriding"
+        },
+        {
+          "key": "c",
+          "text": "Method hiding"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which of the given modifiers can be used to prevent Method overriding?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Static"
+        },
+        {
+          "key": "b",
+          "text": "Constant"
+        },
+        {
+          "key": "c",
+          "text": "Sealed"
+        },
+        {
+          "key": "d",
+          "text": "final"
+        }
+      ],
+      "answer": "c",
+      "explanation": "When an instance method declaration includes the sealed modifier, the method is said to be sealed method. It means a derived class cannot override this method."
+    },
+    {
+      "number": 4,
+      "question": "Select the correct statement from the following?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Static methods can be a virtual method"
+        },
+        {
+          "key": "b",
+          "text": "Abstract methods can be a virtual method"
+        },
+        {
+          "key": "c",
+          "text": "When overriding a method, the names and type signatures of the override method must be the same as the virtual method that is being overridden"
+        },
+        {
+          "key": "d",
+          "text": "We can override virtual as well as nonvirtual methods"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Which of the following cannot be used to declare a class as a virtual?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Methods"
+        },
+        {
+          "key": "b",
+          "text": "Properties"
+        },
+        {
+          "key": "c",
+          "text": "Events"
+        },
+        {
+          "key": "d",
+          "text": "Fields"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " class A\n {\n     public int i;\n     public void display()\n     {\n         Console.WriteLine(i);\n     }\n }\n class B: A\n {\n     public int j;\n     public void display()\n     {\n         Console.WriteLine(j);\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         B obj = new B();\n         obj.i = 1;\n         obj.j = 2;\n         obj.display();\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "When method display() is called using objects of class 'B'. The method 'display()' for class 'B' is called instead of class 'A' as class 'B' is inherited by class 'A'.\n\nOutput :\n\n2"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": " class A\n {\n     public virtual void display()\n     {\n         Console.WriteLine(\"A\");\n     }\n }\n class B: A\n {\n    public override void display()\n    {\n        Console.WriteLine(\" B \");\n    }\n }\nclass Program\n{\n    static void Main(string[] args)\n    {\n        A obj1 = new A();\n        B obj2 = new B();\n        A r;\n        r = obj1;\n        r.display();\n        r = obj2;\n        r.display();\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "A, A"
+        },
+        {
+          "key": "b",
+          "text": "B, B"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "A, B"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The method overriding procedure has been used to produce the values from two display().\n\nOutput:\n\nA  B"
+    },
+    {
+      "number": 8,
+      "question": "The modifier used to hide the base class methods is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Virtual"
+        },
+        {
+          "key": "b",
+          "text": "New"
+        },
+        {
+          "key": "c",
+          "text": "Override"
+        },
+        {
+          "key": "d",
+          "text": "Sealed"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Used in condition when we cannot use virtually to override a base class method. Hence, we use 'New' to hide the base class methods and redefine the method defined in the subclass."
+    },
+    {
+      "number": 9,
+      "question": "To override a method in the subclass, the base class method should be defined as?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Virtual"
+        },
+        {
+          "key": "b",
+          "text": "Abstract"
+        },
+        {
+          "key": "c",
+          "text": "Override"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " class a\n {\n     public  void fun()\n     {\n         Console.WriteLine(\"base method\");\n     }\n }\n class b: a\n {\n     public new void fun()\n     {\n         Console.WriteLine(\" derived method \");\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         b k = new b();\n         k.fun();\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Base method"
+        },
+        {
+          "key": "b",
+          "text": "Derived method"
+        },
+        {
+          "key": "c",
+          "text": "Code runs successfully prints nothing"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Use of 'new' modifier hides the inherited member i.e it makes only inherited member inaccessible in derived class and hence calls suitable method().\n\nOutput :\n\nderived method"
+    }
+  ]
+}

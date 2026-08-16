@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Comparison of Strings",
+  "topic": "Arrays_and_Strings",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-comparison-of-strings/",
+  "sourceFile": "Strings Comparison - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on comparison of two strings in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of these methods of class String is used to compare two String objects for their equality?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "equals()"
+        },
+        {
+          "key": "b",
+          "text": "Equals()"
+        },
+        {
+          "key": "c",
+          "text": "isequal()"
+        },
+        {
+          "key": "d",
+          "text": "Isequal()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which of these methods is used to compare two strings such that after comparison output returns different integer values as (0 for false, 1 for true)?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Equals ()"
+        },
+        {
+          "key": "b",
+          "text": "== operator"
+        },
+        {
+          "key": "c",
+          "text": "Compare()"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The comparison is case sensitive in nature and hence different integer values are returned for different conditions as under:\n\n             1. zero integer (0), if string s1 equal to string s2.\n\n             2. positive integer(+1), if string s1 greater than s2.\n\n             3. Negative integer(-1), if string s1 is less than s2."
+    },
+    {
+      "number": 3,
+      "question": "Which of these methods of class String is used to check whether a substring exists at the beginning of the particular string?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "StartsWith()"
+        },
+        {
+          "key": "b",
+          "text": "EndsWith()"
+        },
+        {
+          "key": "c",
+          "text": "Starts()"
+        },
+        {
+          "key": "d",
+          "text": "ends()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Method startswith() of string class is used to check whether a substring exists in the beginning of string or not."
+    },
+    {
+      "number": 4,
+      "question": "Which of these methods returns the string such that some characters which are specified to be removed from the end of strings are removed from string by mentioning the number of characters to be removed?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Trim()"
+        },
+        {
+          "key": "b",
+          "text": "Remove()"
+        },
+        {
+          "key": "c",
+          "text": "TrimEnd()"
+        },
+        {
+          "key": "d",
+          "text": "Split()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Removes a string of characters from the end of string by mentioning the number of characters to be removed from the string."
+    },
+    {
+      "number": 5,
+      "question": "What is the value returned by function compareTo() if the invoking string is less than the string compared?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "zero"
+        },
+        {
+          "key": "b",
+          "text": "value less than zero"
+        },
+        {
+          "key": "c",
+          "text": "value greater than zero"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "compareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared to."
+    },
+    {
+      "number": 6,
+      "question": "Which of these data type values is returned by equals() method of String class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "char"
+        },
+        {
+          "key": "b",
+          "text": "int"
+        },
+        {
+          "key": "c",
+          "text": "boolean"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "equals() method of string class returns boolean value true if both the strings are equal and false if they are unequal."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String c = \"i love Csharp\";\n         bool a;\n         a = c.StartsWith(\"I\");\n         Console.WriteLine(a);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "true"
+        },
+        {
+          "key": "b",
+          "text": "false"
+        },
+        {
+          "key": "c",
+          "text": "0"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answer": "b",
+      "explanation": "StartsWith() method is case sensitive \"i\" and \"I\" are treated differently, hence false is stored in a.\n\nOutput:\n\nfalse"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String s1 = \"I love You\";\n        String s2 = s1;\n        Console.WriteLine((s1 == s2) + \" \" + s1.Equals(s2));\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "true true"
+        },
+        {
+          "key": "b",
+          "text": "false false"
+        },
+        {
+          "key": "c",
+          "text": "true false"
+        },
+        {
+          "key": "d",
+          "text": "false true"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The '==' operator tests the equality of strings and since s1 = \"I love You\" and also s2 = s1. So, true is returned. Similarly, Equals() returns true.\n\nsince the content of both s1 and s2 are equal in nature.\n\nOutput :\n\ntrue true"
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String []chars = {\"z\", \"x\", \"y\", \"z\", \"y\"};\n         for (int i = 0; i < chars.Length; ++i)\n         for (int j = i + 1; j < chars.Length; ++j)\n         if(chars[i].CompareTo(chars[j]) == 0)\n         Console.WriteLine(chars[j]);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "zx"
+        },
+        {
+          "key": "b",
+          "text": "xy"
+        },
+        {
+          "key": "c",
+          "text": "zy"
+        },
+        {
+          "key": "d",
+          "text": "yz"
+        }
+      ],
+      "answer": "c",
+      "explanation": "compareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared To 4.\n\nOutput :\n\nzy"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": "String a = \"Csharp\";\nString b = \"CSHARP\";\nint c;\nc = a.CompareTo(b);\nConsole.WriteLine(c);",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "-2"
+        },
+        {
+          "key": "d",
+          "text": "-1"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Negative integer -1 is returned as 'a' is less than 'b' by CompareTo() method.\n\nOutput :\n\n-1"
+    }
+  ]
+}

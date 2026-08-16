@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Public & Private Access Modifier",
+  "topic": "Arrays_and_Strings",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-public-private-modifier/",
+  "sourceFile": "Public & Private Access Modifier - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on public and private access modifiers in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of these is used as a default specifier for a member of the class if no access specifier is used for it?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "private"
+        },
+        {
+          "key": "b",
+          "text": "public"
+        },
+        {
+          "key": "c",
+          "text": "public, within its own class"
+        },
+        {
+          "key": "d",
+          "text": "protected"
+        }
+      ],
+      "answer": "a",
+      "explanation": "By definition if a class has no access specifiers, it defaults to private accessibility."
+    },
+    {
+      "number": 2,
+      "question": "Which of these is used to access members of class before the object of that class is created?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public"
+        },
+        {
+          "key": "b",
+          "text": "private"
+        },
+        {
+          "key": "c",
+          "text": "static"
+        },
+        {
+          "key": "d",
+          "text": "protected"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which of these base classes are accessible to the derived class members?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "static"
+        },
+        {
+          "key": "b",
+          "text": "protected"
+        },
+        {
+          "key": "c",
+          "text": "private"
+        },
+        {
+          "key": "d",
+          "text": "Shared"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What is the process by which we can control parts of a program that can access the members of a class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Polymorphism"
+        },
+        {
+          "key": "b",
+          "text": "Abstraction"
+        },
+        {
+          "key": "c",
+          "text": "Encapsulation"
+        },
+        {
+          "key": "d",
+          "text": "Recursion"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code? ⚡ Hurry! Secure Your Free Cyber Security Certification - August 2026",
+      "code": " class sum\n {\n     public int x;\n     private int y;\n     public void math(int a, int b)\n     {\n         x = a * 4;\n         y = b;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         sum p = new sum();\n         p.math(12, 30);\n         Console.WriteLine(p.x + \"  \" + p.y);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "48, 30"
+        },
+        {
+          "key": "b",
+          "text": "48, 0"
+        },
+        {
+          "key": "c",
+          "text": "0, 0"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "d",
+      "explanation": "variable 'y' is not accessible due to its access level.\n\nOutput :\n\nChange private y to public y"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " class sum\n {\n     public int x;\n     public int y;\n     public  int add (int a,  int b)\n     {\n         x = a + b;\n         y = x + b;\n         return 0;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         sum obj1 = new sum();\n         sum obj2 = new sum();\n         int a = 2;\n         obj1.add(a,  a + 1);\n         obj2.add(5,  a);\n         Console.WriteLine(obj1.x + \"  \" + obj2.y);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "6, 9"
+        },
+        {
+          "key": "b",
+          "text": "5, 9"
+        },
+        {
+          "key": "c",
+          "text": "9, 10"
+        },
+        {
+          "key": "d",
+          "text": "3, 2"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Here, a = 2,  a + 1 = 2 + 1 = 3.\n\nSo, a = 2,  b = 3.\n\nx = 2 + 3  = 5.\n\ny = 5 + 3 = 8.\n\nSimilarly, a = 5,  b = a + 1 = 4.\n\ny =  5 + 4 = 9.\n\nOutput :\n\n5, 9"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": " class math\n {\n     public int a,b;\n     public math(int i,  int j)\n     {\n         a = i;\n         b = j;\n     }\n     public  void sum(math m)\n     {\n         m.a *= 2;\n         m.b += 2;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         math t = new math(20,  10);\n         t.sum(t);\n         Console.WriteLine(t.a + \"  \" + t.b);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "10, 20"
+        },
+        {
+          "key": "b",
+          "text": "20, 10"
+        },
+        {
+          "key": "c",
+          "text": "40, 12"
+        },
+        {
+          "key": "d",
+          "text": "5, 40"
+        }
+      ],
+      "answer": "c",
+      "explanation": "t.sum(t) sends object 't' as parameter whose variables a & b are multiplied and added by 2 respectively by sum() function of class math. Hence, a & b become 40 and 12 respectively.\n\nOutput :\n\n 40, 12"
+    },
+    {
+      "number": 8,
+      "question": "Accessibility modifier defined in a class are?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public, private, protected"
+        },
+        {
+          "key": "b",
+          "text": "public, internal, protected internal"
+        },
+        {
+          "key": "c",
+          "text": "public, private, internal, protected internal"
+        },
+        {
+          "key": "d",
+          "text": "public, private, protected, internal, protected internal"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Choose the statements which are false in nature?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "The base class member functions can access public member functions of derived class"
+        },
+        {
+          "key": "b",
+          "text": "An object of a derived class cannot access private member of the base class"
+        },
+        {
+          "key": "c",
+          "text": "Private members of the base class cannot be accessed by derived class member functions or objects of derived class"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Which of these access specifiers must be used for main() method?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "private"
+        },
+        {
+          "key": "b",
+          "text": "public"
+        },
+        {
+          "key": "c",
+          "text": "protected"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "By default main() is declared private if no other access specifier is used for it."
+    }
+  ]
+}

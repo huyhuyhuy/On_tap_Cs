@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Use of Variable Number of Arguments",
+  "topic": "Arrays_and_Strings",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-questions-answers-experienced/",
+  "sourceFile": "C# Questions & Answers – Use of Variable Number of Arguments - Sanfoundry.html",
+  "description": "This set of C# Multiple Choice Questions & Answers (MCQs) focuses on \"Use of Variable Number of Arguments\".",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "The method in which large or variable number of arguments are handled is known as ________________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Value parameters"
+        },
+        {
+          "key": "b",
+          "text": "Output parameters"
+        },
+        {
+          "key": "c",
+          "text": "Parameter arrays"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "The modifiers used to define an array of parameters or list of arguments is __________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "ref"
+        },
+        {
+          "key": "b",
+          "text": "out"
+        },
+        {
+          "key": "c",
+          "text": "param"
+        },
+        {
+          "key": "d",
+          "text": "var"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     object[] a = {\" 1 \", 4.0f, \" harsh \"};\n     fun(a);\n     Console.ReadLine();\n }\n static void fun(params object[] b)\n {\n     for (int i = 0; i < b.Length - 1; i++)\n         Console.WriteLine(b[i] + \" \");\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "1 4.0 harsh"
+        },
+        {
+          "key": "b",
+          "text": "1 4"
+        },
+        {
+          "key": "c",
+          "text": "1 4 hars"
+        },
+        {
+          "key": "d",
+          "text": "1 4 harsh"
+        }
+      ],
+      "answer": "d",
+      "explanation": "'a' is declared as array of objects which is passed as a parameter to a single method fun() using variable number of parameters.\n\nOutput :\n\n    🔥 Enroll for\n - August 2026\n\n 1 4 harsh"
+    },
+    {
+      "number": 4,
+      "question": "Which of the following statements are correct?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "C SHARP allows a function to have arguments with default values"
+        },
+        {
+          "key": "b",
+          "text": "C SHARP allows a function to have variable number of arguments"
+        },
+        {
+          "key": "c",
+          "text": "Params are used to specify the syntax for a function having arguments"
+        },
+        {
+          "key": "d",
+          "text": "Omitting the return value type in method definition results into an exception"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": "static void Main(string[] args)\n{\n    int [] a = {1, 2, 3, 4, 5};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b )\n{\n    int[] k = { 3, 4, 7, 8,'\\0' };\n    for (int i = 0; i < b.Length; i++)\n    {\n        b[i] = b[i] + k[i] ;\n        Console.WriteLine( b[i] + \" \");\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "3, 4, 7, 8, 5"
+        },
+        {
+          "key": "c",
+          "text": "3, 4, 7, 8, 5, 1, 2, 3, 4, 5"
+        },
+        {
+          "key": "d",
+          "text": "4, 6, 10, 12, 5"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Passing of array parameters declared in main() and hence adding elements of array passed using param to another array k[] declared in fun() method.\n\nOutput :\n\n4, 6, 10, 12, 5"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int [] a = {1, 2, 3, 4, 5};\n     fun(a);\n     Console.ReadLine();\n }\n static void fun(params int[] b )\n {\n     for (int i = 0; i < b.Length; i++)\n     {\n         b[i] = b[i] * 5 ;\n         Console.WriteLine(b[i] + \"\");\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "1, 2, 3, 4, 5"
+        },
+        {
+          "key": "b",
+          "text": "5, 10, 15, 20, 25"
+        },
+        {
+          "key": "c",
+          "text": "5, 25, 125, 625, 3125"
+        },
+        {
+          "key": "d",
+          "text": "6, 12, 18, 24, 30"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput :\n\n 5, 10, 15, 20, 25"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "static void Main(string[] args)\n{\n  int[] a = {2, 21, 34, 46, 85, 88, 90};\n  fun(a);\n  Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n  int[] c = {1, 2, 3, 4, 5, 6, 7};\n  int i, j = 0;\n  for (i = 0; i < b.Length; i++)\n    if (b[i] % 2 == 0)\n    {\n      c[j++] = b[i];\n    }\n\n  for (i = 0; i < j; i++)\n  {\n    Console.Write(c[i] + \" \");\n  }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "2, 21, 34, 4, 6, 46, 88, 90"
+        },
+        {
+          "key": "c",
+          "text": "2, 4, 34, 46, 6, 88, 90"
+        },
+        {
+          "key": "d",
+          "text": "2, 34, 46, 88, 90"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The program is finding even numbers in a given array, storing it into another array and then displaying that to the console."
+    },
+    {
+      "number": 8,
+      "question": "Select the correct declaration of the defining array of parameters.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "void func(int[] x)\n   {\n\n   }"
+        },
+        {
+          "key": "b",
+          "text": "void func(int x)\n   {\n\n   }"
+        },
+        {
+          "key": "c",
+          "text": "void func(param int[])\n   {\n\n   }"
+        },
+        {
+          "key": "d",
+          "text": "void fun(param int[] x)\n   {\n\n   }"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int[] x = { 80, 82, 65, 72, 83, 67 };\n     fun(x);\n     Console.ReadLine();\n }\n static void fun(params int [] b )\n {\n     int i;\n     for (i = 5; i >=0 ; i--)\n     {\n         Console.WriteLine(Convert.ToChar(b[i]));\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "67 83 72 65 82 80"
+        },
+        {
+          "key": "b",
+          "text": "P R A H S C"
+        },
+        {
+          "key": "c",
+          "text": "C S H A R P"
+        },
+        {
+          "key": "d",
+          "text": "80 82 65 72 83 67"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int[] x = {65, 66, 67, 68, 69, 70};\n     fun(x);\n     Console.ReadLine();\n }\n static void fun(params int[] b )\n {\n     int i;\n     for (i = 5; i > 0 ; i--)\n     {\n         b[i] = b[i] + 32;\n         Console.WriteLine(Convert.ToChar(b[i]));\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "A, B, C, D, E, F"
+        },
+        {
+          "key": "b",
+          "text": "F, E, D, C, B, A"
+        },
+        {
+          "key": "c",
+          "text": "f, e, d, c, b"
+        },
+        {
+          "key": "d",
+          "text": "b, c, d, e, f"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    }
+  ]
+}

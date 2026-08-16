@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Interfaces Implementation",
+  "topic": "Object_Oriented_Concepts",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-interfaces-implementation/",
+  "sourceFile": "Interfaces Implementation - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on implementation of the interfaces in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the Correct statement in the following C# code?",
+      "code": "interface a1\n{\n    void f1();\n    int f2();\n}\nclass a :a1\n{\n    void f1()\n    {\n    }\n    int a1.f2()\n    {\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "class a is an abstract class"
+        },
+        {
+          "key": "b",
+          "text": "A method table would not be created for class a"
+        },
+        {
+          "key": "c",
+          "text": "The definition of f1() in class a should be void a1.f1()"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Choose the wrong statement about 'INTERFACE' in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "An explicitly implemented member could be accessed from an instance of the interface"
+        },
+        {
+          "key": "b",
+          "text": "Interfaces are declared public automatically"
+        },
+        {
+          "key": "c",
+          "text": "An interface could not contain signature of the indexer"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "What will be the Correct statement in the following C# code? 👉 Apply Now for Free C Certification - August 2026",
+      "code": " interface a1\n {\n     void f1();\n     void f2();\n }\n class a :a1\n {\n     private int i;\n     void a1.f1()\n     {\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Class a could not have an instance data"
+        },
+        {
+          "key": "b",
+          "text": "Class a is an abstract class"
+        },
+        {
+          "key": "c",
+          "text": "Class a fully implements the interface a1"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What will be the Correct statement in the following C# code?",
+      "code": " interface abc\n {\n     String FirstName\n     {\n         get;\n         set;\n     }\n    String LastName\n    {\n        get;\n        set;\n    }\n    void print();\n    void stock();\n    int fun();\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Functions should be declared inside an interface"
+        },
+        {
+          "key": "b",
+          "text": "It is workable code"
+        },
+        {
+          "key": "c",
+          "text": "Properties cannot be declared inside an interface"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": " interface calc\n {\n     void cal(int i);\n }\n public  class maths :calc\n {\n     public int x;\n     public void cal(int i)\n     {\n         x = i * i;\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         display arr = new display();\n         arr.x = 0;\n         arr.cal(2);\n         Console.WriteLine(arr.x);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "4"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput :\n\n 4"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " interface calc\n {\n     void cal(int i);\n }\n class displayA :calc\n {\n     public int x;\n     public void cal(int i)\n     {\n         x = i * i;\n     }\n }\n class displayB :calc\n {\n     public int x;\n     public void cal(int i)\n     {\n         x = i / i;\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         displayA arr1 = new displayA();\n         displayB arr2 = new displayB();\n         arr1.x = 0;\n         arr2.x = 0;\n         arr1.cal(2);\n         arr2.cal(2);\n         Console.WriteLine(arr1.x + \" \" + arr2.x);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0 0"
+        },
+        {
+          "key": "b",
+          "text": "2 2"
+        },
+        {
+          "key": "c",
+          "text": "4 1"
+        },
+        {
+          "key": "d",
+          "text": "1 4"
+        }
+      ],
+      "answer": "c",
+      "explanation": "class displayA executes the interface calculate by doubling the value of item. Similarly class displayB implements the interface by dividing item by item. So, variable x of class displayA stores 4 and variable x of class displayB stores 1.\n\nOutput :\n\n 4, 1"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "interface i1\n{\n    void fun();\n}\ninterface i2\n{\n    void fun();\n}\npublic class maths :i1, i2\n{\n    void i1.fun()\n    {\n        Console.WriteLine(\"i1.fun\");\n    }\n    void i2.fun()\n    {\n        Console.WriteLine(\"i2.fun\");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Sample obj = new Sample();\n        i1 i = (i1) obj;\n        i.fun();\n        i2 ii = (i2) obj;\n        ii.fun();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "i1.fun"
+        },
+        {
+          "key": "b",
+          "text": "i2.fun\ni1.fun"
+        },
+        {
+          "key": "c",
+          "text": "0"
+        },
+        {
+          "key": "d",
+          "text": "i1.fun\ni2.fun"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "What will be the correct way to implement the interface in the following C# code?",
+      "code": "  interface abc\n   {\n       string name\n       {\n           get;\n           set;\n       }\n   }",
+      "options": [
+        {
+          "key": "a",
+          "text": "class emp :employee\n   {\n       private string str;\n       public string firstname;\n       {\n           get\n           {\n               return str;\n           }\n           set\n           {\n               str = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "b",
+          "text": "class emp :implements person\n  {\n      private string str;\n      public string firstname\n      {\n          get\n          {\n              return str;\n          }\n          set\n          {\n              str = value;\n          }\n      }\n  }"
+        },
+        {
+          "key": "c",
+          "text": "class emp: implements person\n {\n     private string str;\n     public string person.firstname\n     {\n         get\n         {\n             return str;\n         }\n         set\n         {\n             str = value;\n         }\n     }\n }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": " interface i1\n {\n     void f1();\n }\n interface i2 :i1\n {\n     void f2();\n }\n public class maths :i2\n {\n     public void f2()\n     {\n         Console.WriteLine(\"fun2\");\n     }\n     public void f1()\n     {\n         Console.WriteLine(\"fun1\");\n     }\n }\n class Program\n {\n     static Void Main()\n     {\n         maths m = new maths();\n         m.f1();\n         m.f2();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "fun2"
+        },
+        {
+          "key": "b",
+          "text": "fun1"
+        },
+        {
+          "key": "c",
+          "text": "fun1\nfun2"
+        },
+        {
+          "key": "d",
+          "text": "fun2\nfun1"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "In order to avoid ambiguity among an interface derived from two base interfaces with same method name(and signature), the right code among the following C# codes is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "interface i1\n {\n     void m1();\n }\n interface i2\n {\n     void m1();\n }\n interface i3 :i1, i2\n {\n }\n class c3 :i3\n {\n     void i1.m1()\n     {\n     }\n     void i1.m1()\n     {\n     }\n }"
+        },
+        {
+          "key": "b",
+          "text": "interface i1\n {\n     void m1();\n }\n     interface i2\n     {\n         void m1();\n     }\n     interface i3 :i1, i2\n     {\n     }\n     class c3 :i3\n     {\n         void i1.i2.m1()\n         {\n         }\n     }"
+        },
+        {
+          "key": "c",
+          "text": "interface i1\n  {\n      void m1();\n  }\n  interface i2\n  {\n      void m1();\n  }\n  interface i3 :i1, i2\n  {\n  }\n  class c3 :i3\n  {\n      void i1.m1()\n      {\n      }\n      void i2.m1()\n      {\n      }\n  }"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    }
+  ]
+}

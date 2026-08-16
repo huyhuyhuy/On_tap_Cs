@@ -1,0 +1,385 @@
+{
+  "title": "C# Questions & Answers - Unsafe code & Pointers Basics",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-problems/",
+  "sourceFile": "Unsafe Code and Pointers MCQ - Sanfoundry.html",
+  "description": "This set of C# Problems focuses on \"Unsafe code & Pointers Basics\".",
+  "questionCount": 15,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Pointer variable is used to hold the _________ of the variable.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Value"
+        },
+        {
+          "key": "b",
+          "text": "Address"
+        },
+        {
+          "key": "c",
+          "text": "Value and Address"
+        },
+        {
+          "key": "d",
+          "text": "Name of the variable"
+        }
+      ],
+      "answer": "b",
+      "explanation": "By definition."
+    },
+    {
+      "number": 2,
+      "question": "Which among the given operators is referred to as 'address of' operator?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "*"
+        },
+        {
+          "key": "b",
+          "text": "^"
+        },
+        {
+          "key": "c",
+          "text": "&"
+        },
+        {
+          "key": "d",
+          "text": "~"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The '&' is a unary operator that returns the memory address of its operand.\n\n              For example,\n\n                           int* ip;\n                           int num = 10;\n                           ip = &num;\n\nputs into ip the memory address of the variable num. This address is the location of the variable in the computer's internal memory."
+    },
+    {
+      "number": 3,
+      "question": "Choose the correct statement among the given statements?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Use of return statement is necessary in every function"
+        },
+        {
+          "key": "b",
+          "text": "Return statement may not be followed by a parenthesis"
+        },
+        {
+          "key": "c",
+          "text": "A program may contain more than one return statement"
+        },
+        {
+          "key": "d",
+          "text": "Return statement may not return a value"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What is the size of a char pointer?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "1 byte"
+        },
+        {
+          "key": "b",
+          "text": "2 byte"
+        },
+        {
+          "key": "c",
+          "text": "3 byte"
+        },
+        {
+          "key": "d",
+          "text": "4 byte"
+        }
+      ],
+      "answer": "b",
+      "explanation": "class UnsafeCode\n             {\n                 unsafe static void Main()\n                 {\n                  char ch;\n                  Console.WriteLine(sizeof(char));\n                  Console.ReadLine();\n                 }\n            }\n\nThe sizeof() method helps in calculating size of char pointer."
+    },
+    {
+      "number": 5,
+      "question": "After incrementing a float pointer ptr by 1 it would be incremented by __________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "1 byte"
+        },
+        {
+          "key": "b",
+          "text": "2 bytes"
+        },
+        {
+          "key": "c",
+          "text": "3 bytes"
+        },
+        {
+          "key": "d",
+          "text": "4 bytes"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Which of the following job is done by the instruction ++*p for an integer pointer p?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "increment value contained at address p"
+        },
+        {
+          "key": "b",
+          "text": "increment address contained in p"
+        },
+        {
+          "key": "c",
+          "text": "Both increment value contained at address p and increment address contained in p"
+        },
+        {
+          "key": "d",
+          "text": "neither increment value contained at address p nor increment address contained in p"
+        }
+      ],
+      "answer": "a",
+      "explanation": "class UnsafeCode\n             {\n                 unsafe static void Main()\n                 {\n                      int n = 10;\n                      int* p = &n;\n                      Console.WriteLine(*p);\n                 }\n             }\n\nOutput :\n\n10 +  1 = 11."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int a = 2;\n        int b = 4;\n        int *a1 = &a;\n        int *b1 = &b;\n        Console.WriteLine(*a1 + *b1);\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "6"
+        },
+        {
+          "key": "b",
+          "text": "print garbage value"
+        },
+        {
+          "key": "c",
+          "text": "print -6"
+        },
+        {
+          "key": "d",
+          "text": "print address of b + a"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The (*) operator prints the value stored at address (&) of 'a'.\n\nOutput :\n\n 4 + 2 = 6"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code segment?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n         int n = 10;\n         void* p = &n;\n         Console.WriteLine(*p);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "The program will print 10"
+        },
+        {
+          "key": "b",
+          "text": "Run time error"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "Output is the address contained in p"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The program will result in compile time error because void pointer cannot point anywhere."
+    },
+    {
+      "number": 9,
+      "question": "Which among the following is referred as an array of pointers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int *p;"
+        },
+        {
+          "key": "b",
+          "text": "int (*)p;"
+        },
+        {
+          "key": "c",
+          "text": "int p[4];"
+        },
+        {
+          "key": "d",
+          "text": "int*[4] p;"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Among the given pointer which of the following cannot be incremented?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int"
+        },
+        {
+          "key": "b",
+          "text": "char"
+        },
+        {
+          "key": "c",
+          "text": "float"
+        },
+        {
+          "key": "d",
+          "text": "void"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 11,
+      "question": "How many values can be returned from a function simultaneously using pointers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "3"
+        },
+        {
+          "key": "d",
+          "text": "as many as user wants"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 12,
+      "question": "Consider an integer pointer . *a.++*a will increment ___________ while *a++ will increment __________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "value at a, address contained in a"
+        },
+        {
+          "key": "b",
+          "text": "value at a,value at a"
+        },
+        {
+          "key": "c",
+          "text": "address contained in a, address contained in a"
+        },
+        {
+          "key": "d",
+          "text": "address contained in a, value at a"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 13,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int* a;\n        int a1 = 10;\n        int b1;\n        b1 = *&a1;\n        a = &b1;\n        {\n            Console.WriteLine(*a);\n            Console.ReadLine();\n        }\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "program will print garbage value"
+        },
+        {
+          "key": "b",
+          "text": "program will print address of a"
+        },
+        {
+          "key": "c",
+          "text": "program will print value of a1"
+        },
+        {
+          "key": "d",
+          "text": "program will print address of a1"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The address of variable a1 is stored in variable b1 by making a1 as a pointer to variable b1. Later, variable b1 address is stored in pointer a and hence using pointer operation value of a1 is displayed in a.\n\nOutput : 10"
+    },
+    {
+      "number": 14,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int n = 10;\n        int* p = &n;\n        int** p1 = &p;\n        int*** p2 = &p1;\n        Console.WriteLine(*p * **p1 * ***p2);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "compile time error"
+        },
+        {
+          "key": "b",
+          "text": "garbage value is printed"
+        },
+        {
+          "key": "c",
+          "text": "program will print 1000"
+        },
+        {
+          "key": "d",
+          "text": "program will print 100"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput :1000"
+    },
+    {
+      "number": 15,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n            int* p;\n            p = (int*)(65535);\n            Console.WriteLine((uint)p);\n            Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "compile time error"
+        },
+        {
+          "key": "b",
+          "text": "garbage value"
+        },
+        {
+          "key": "c",
+          "text": "program prints value at address 65535"
+        },
+        {
+          "key": "d",
+          "text": "program prints 65535"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput :\n\n65535"
+    }
+  ]
+}

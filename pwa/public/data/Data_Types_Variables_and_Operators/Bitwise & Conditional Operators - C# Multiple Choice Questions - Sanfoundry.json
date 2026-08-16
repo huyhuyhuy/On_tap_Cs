@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Bitwise and Conditional Operators",
+  "topic": "Data_Types_Variables_and_Operators",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-multiple-choice-questions-answers/",
+  "sourceFile": "Bitwise & Conditional Operators - C# Multiple Choice Questions - Sanfoundry.html",
+  "description": "This set of C# Multiple Choice Questions & Answers focuses on \"Bitwise and Conditional Operators\".",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     byte varA = 10;\n     byte varB = 20;\n     long result = varA & varB;\n     Console.WriteLine(\"{0}  AND  {1} Result :{2}\", varA, varB, result);\n     varA = 10;\n     varB = 10;\n     result = varA & varB;\n     Console.WriteLine(\"{0}  AND  {1} Result : {2}\", varA, varB, result);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0, 20"
+        },
+        {
+          "key": "b",
+          "text": "10, 10"
+        },
+        {
+          "key": "c",
+          "text": "0, 10"
+        },
+        {
+          "key": "d",
+          "text": "0, 0"
+        }
+      ],
+      "answer": "c",
+      "explanation": "When 'OR' operations is done on the binary values following are the results of OR.\n\n              'OR' means addition(+) operation.\n\n                 0 (false) +   0(false)  =   0 (false)\n\t         1 (True)  +   0(false)  =   1 (True)\n\t         0(false)  +   1(True)   =   1 (True)\n\t         1(True)   +   1(True)   =   1 (True)\n\n When using OR operation it gives FALSE only when both the values are FALSE. In all other cases 'OR' operation gives 'true'.\n\n Output :\n\n    🔥 Enroll Now for\n - August 2026\n\n          10  AND  20 Result :0.\n          10  AND  10 Result :10."
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code?",
+      "code": " public static void Main()\n {\n     byte varA = 10;\n     byte varB = 20;\n     long result = varA | varB;\n     Console.WriteLine(\"{0}  OR  {1} Result :{2}\", varA, varB, result);\n     varA = 10;\n     varB = 10;\n     result = varA | varB;\n     Console.WriteLine(\"{0}  OR  {1} Result : {2}\", varA, varB, result);\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "20, 10"
+        },
+        {
+          "key": "b",
+          "text": "30, 10"
+        },
+        {
+          "key": "c",
+          "text": "10, 20"
+        },
+        {
+          "key": "d",
+          "text": "10, 10"
+        }
+      ],
+      "answer": "b",
+      "explanation": "There are two kinds of Shift operations \"Right Shift\" and \"Left Shift\". Right Shift operation is used for shifting the bit positions towards right side. Left Shift operation is used for shifting the bit positions towards left side. When Right Shift operations are done on a binary value the bits are shifted one position towards the right.\n\nOutput :\n\n        10  OR  20 Result :30.\n        10  OR  10 Result :10."
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     byte b1 = 0 * AB;\n     byte b2 = 0 * 99;\n     byte temp;\n     temp = (byte) ~b2;\n     Console.Write( temp + \" \");\n     temp = (byte) (b1 << b2);\n     Console.Write(temp + \" \");\n     temp = (byte)(b2  >> 2);\n     Console.WriteLine(temp);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "101 0 34"
+        },
+        {
+          "key": "b",
+          "text": "103 2 38"
+        },
+        {
+          "key": "c",
+          "text": "102 0 38"
+        },
+        {
+          "key": "d",
+          "text": "101 1 35"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\n102 0 38."
+    },
+    {
+      "number": 4,
+      "question": "Which of the following options is not a Bitwise Operator in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "&, |"
+        },
+        {
+          "key": "b",
+          "text": "^, ~"
+        },
+        {
+          "key": "c",
+          "text": "<<, >>"
+        },
+        {
+          "key": "d",
+          "text": "+=, -="
+        }
+      ],
+      "answer": "d",
+      "explanation": "+=, -= are Assignment Operators in C#."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": "  bool a = true;\n  bool b = false;\n  a |= b;\n  Console.WriteLine(a);\n  Console.ReadLine();",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "True"
+        },
+        {
+          "key": "d",
+          "text": "False"
+        }
+      ],
+      "answer": "c",
+      "explanation": "'bools' are single bits, and so a bit-wise OR is the same as a logical OR.\n\nOutput :\n\nTrue."
+    },
+    {
+      "number": 6,
+      "question": "Select the relevant C# code set to fill up the blank for the following C# program?",
+      "code": "  static void Main(string[] args)\n  {\n      int x = 10, y = 20;\n      int res;\n      /*_______________*/\n      Console.WriteLine(res);\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "x % y == 0 ? (x == y ? (x += 2):(y = x + y)):y = y*10;"
+        },
+        {
+          "key": "b",
+          "text": "x % y == 0 ? y += 10:(x += 10);"
+        },
+        {
+          "key": "c",
+          "text": "x % y == 0 ? return(x) : return (y);"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput :\n\n         {\n              int x = 10, y = 20;\n              int res;\n              x % y == 0 ? y += 10:(x += 10);\n              Console.WriteLine(res);\n          }"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int y = 5;\n     int x;\n     int k = (!(Convert.ToInt32(y) > 10))?  x = y + 3 : x = y + 10;\n     Console.WriteLine(x);\n     Console.WriteLine(y);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "5, 8"
+        },
+        {
+          "key": "b",
+          "text": "10, 4"
+        },
+        {
+          "key": "c",
+          "text": "8, 5"
+        },
+        {
+          "key": "d",
+          "text": "11, 8"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Since condition y > 10 is false and !(false) = true. So, first statement x = y + 3 is executed which is x = 8 with y = 5.\n\nOutput:\n\n8, 5."
+    },
+    {
+      "number": 8,
+      "question": "Which among the following is a conditional operator?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "':?'"
+        },
+        {
+          "key": "b",
+          "text": "?;"
+        },
+        {
+          "key": "c",
+          "text": "?:"
+        },
+        {
+          "key": "d",
+          "text": "??"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": "public static void Main(string[] args)\n{\n    int a = 4;\n    int c = 2;\n    bool b = (a % c == 0 ? true : false);\n    Console.WriteLine(b.ToString());\n    if (a/c == 2)\n    {\n        Console.WriteLine(\"true\");\n    }\n    else\n    {\n        Console.WriteLine(\"false\");\n    }\n    Console.ReadLine();\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "True\nFalse"
+        },
+        {
+          "key": "b",
+          "text": "False\nTrue"
+        },
+        {
+          "key": "c",
+          "text": "True\nTrue"
+        },
+        {
+          "key": "d",
+          "text": "False\nFalse"
+        }
+      ],
+      "answer": "c",
+      "explanation": "a % c == 0 condition is true as (4 % 2  == 0). So, b is evaluated as true. Now (a/c == 2) which means if condition is also true hence it is evaluated as true.\n\nOutput:\n\n        True\n        True"
+    },
+    {
+      "number": 10,
+      "question": "Arrange the operators in the increasing order as defined in C#.",
+      "code": "    !=,   ?:,   &,   ++,  &&",
+      "options": [
+        {
+          "key": "a",
+          "text": "?: < && < != < & < ++"
+        },
+        {
+          "key": "b",
+          "text": "?: < && < != < ++ < &"
+        },
+        {
+          "key": "c",
+          "text": "?: < && < & <!= < ++"
+        },
+        {
+          "key": "d",
+          "text": "?: < && < != < & < ++"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    }
+  ]
+}

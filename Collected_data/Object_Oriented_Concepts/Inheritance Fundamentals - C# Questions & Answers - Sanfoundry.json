@@ -1,0 +1,385 @@
+{
+  "title": "C# Questions & Answers - Fundamentals of Inheritance",
+  "topic": "Object_Oriented_Concepts",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-fundamentals-inheritance/",
+  "sourceFile": "Inheritance Fundamentals - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on fundamental of inheritance in C# Programming Language.",
+  "questionCount": 15,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which procedure among the following should be used to implement a 'Has a' or a 'Kind of' relationship between two entities?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Polymorphism"
+        },
+        {
+          "key": "b",
+          "text": "Inheritance"
+        },
+        {
+          "key": "c",
+          "text": "Templates"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "The number of levels of inheritance are?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "5"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "3"
+        },
+        {
+          "key": "d",
+          "text": "2"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "What does the following C# code signify?",
+      "code": " class a\n {\n\n }\n class b : a\n {\n     variable declaration;\n     method declaration;\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Declaration of a base class"
+        },
+        {
+          "key": "b",
+          "text": "Declaration of a subclass"
+        },
+        {
+          "key": "c",
+          "text": "Declaration of base class & subclass and how subclass inherits the base class"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "In an inheritance chain through which of the following, the base class and its components are accessible to the derived class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Scope resolution operator(:)"
+        },
+        {
+          "key": "b",
+          "text": "Class visibility modifiers (public,private etc.)"
+        },
+        {
+          "key": "c",
+          "text": "Dot operator (.)"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Select the class visibility modifiers among the following:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Private, protected, public, internal"
+        },
+        {
+          "key": "b",
+          "text": "Private, protected, public, internal, protected internal"
+        },
+        {
+          "key": "c",
+          "text": "Private, protected, public"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "In Inheritance concept, which of the following members of base class are accessible to derived class members?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "static"
+        },
+        {
+          "key": "b",
+          "text": "protected"
+        },
+        {
+          "key": "c",
+          "text": "private"
+        },
+        {
+          "key": "d",
+          "text": "shared"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "Wrong statement about inheritance in C# .NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "In inheritance chain, object construction begins from base class towards derived class"
+        },
+        {
+          "key": "b",
+          "text": "Inheritance cannot extend base class functionality"
+        },
+        {
+          "key": "c",
+          "text": "A derived class object contains all base class data"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "A class member declared protected becomes member of subclass of which type?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public member"
+        },
+        {
+          "key": "b",
+          "text": "private member"
+        },
+        {
+          "key": "c",
+          "text": "protected member"
+        },
+        {
+          "key": "d",
+          "text": "static member"
+        }
+      ],
+      "answer": "d",
+      "explanation": "A class member declared protected becomes private member of subclass."
+    },
+    {
+      "number": 9,
+      "question": "Which of the following functionality is facilitated by inheritance mechanism?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Use the existing functionality of base class"
+        },
+        {
+          "key": "b",
+          "text": "Override the existing functionality of base class"
+        },
+        {
+          "key": "c",
+          "text": "Implements new functionality in derived class"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Which statements among following are correct?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "We can derive a class from a base class even if source code of base class not available"
+        },
+        {
+          "key": "b",
+          "text": "Multiple inheritance is different from multiple levels of inheritance"
+        },
+        {
+          "key": "c",
+          "text": "It is legal to make objects of one class as members of another class"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 11,
+      "question": "If base class consist of two private integers, one static integer and derived class consist of two static integers and one private integer. What would be the size of derived class object?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "size of object depends on sizes of its non static data members"
+        },
+        {
+          "key": "b",
+          "text": "size of a derived class object is sum of sizes of non static data members of base class and derived class"
+        },
+        {
+          "key": "c",
+          "text": "size of object is calculated using sizeof() method"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 12,
+      "question": "Which is the correct way to create an object of the given class abc?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Declaring existing class as sealed"
+        },
+        {
+          "key": "b",
+          "text": "Declaring existing class as override"
+        },
+        {
+          "key": "c",
+          "text": "Declaring existing class as overloads"
+        },
+        {
+          "key": "d",
+          "text": "Declaring existing class as shadows"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 13,
+      "question": "Given class sample is inherited by class sample 1. Which are the correct statements about construction of object of class sample?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "While creating the object firstly the constructor of class sample will be called followed by constructor of class sample 1"
+        },
+        {
+          "key": "b",
+          "text": "The constructor of only sample class will be called"
+        },
+        {
+          "key": "c",
+          "text": "While creating the object firstly constructor of class sample 1 will be called followed by constructor of class sample"
+        },
+        {
+          "key": "d",
+          "text": "The order of calling constructors depend on whether constructors in class sample and sample 1 are private or public"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 14,
+      "question": "Which form of inheritance is not supported directly by C# .NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Multiple inheritance"
+        },
+        {
+          "key": "b",
+          "text": "Multilevel inheritance"
+        },
+        {
+          "key": "c",
+          "text": "Single inheritance"
+        },
+        {
+          "key": "d",
+          "text": "Hierarchical inheritance"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Supported in form of interfaces in secondary form."
+    },
+    {
+      "number": 15,
+      "question": "If no access modifier for a class is specified, then class accessibility is defined as?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public"
+        },
+        {
+          "key": "b",
+          "text": "protected"
+        },
+        {
+          "key": "c",
+          "text": "private"
+        },
+        {
+          "key": "d",
+          "text": "internal"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By default it is specified private in nature."
+    }
+  ]
+}

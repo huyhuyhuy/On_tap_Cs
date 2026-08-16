@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Properties and its Applications",
+  "topic": "Indexers_and_Exception_Handling",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-questions-answers-entrance-exams/",
+  "sourceFile": "C# Questions & Answers - Properties and its Applications - Sanfoundry.html",
+  "description": "This set of C# Multiple Choice Questions & Answers (MCQs) focuses on \"Properties and its Applications\".",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "The correct way to implement a read only property add, in a math class is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           get\n           {\n               return ad;\n           }\n       }\n\n   }"
+        },
+        {
+          "key": "b",
+          "text": "class math\n   {\n      public int add\n      {\n          get\n          {\n              return ad;\n          }\n      }\n  }"
+        },
+        {
+          "key": "c",
+          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           get\n           {\n               return ad;\n           }\n           set\n           {\n               ad = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "The correct way to implement a write only property add in a math class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "class math\n   {\n       public int add\n       {\n           set\n           {\n                add = value;\n            }\n        }\n    }"
+        },
+        {
+          "key": "b",
+          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           set\n           {\n               ad = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "c",
+          "text": "class math\n  {\n      int ad;\n      public int add\n      {\n          get\n          {\n              return ad;\n          }\n          set\n          {\n              ad = value;\n          }\n      }\n  }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Select the correct statement about properties of read and write in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A property can simultaneously be read or write only"
+        },
+        {
+          "key": "b",
+          "text": "A property cannot be either read only or write only"
+        },
+        {
+          "key": "c",
+          "text": "A write only property will only have get accessor"
+        },
+        {
+          "key": "d",
+          "text": "A read only property will only have get accessor"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code?",
+      "code": " class number\n {\n     private int num1;\n     private int num2;\n     public int anumber\n     {\n         get\n         {\n             return num1;\n         }\n         set\n         {\n             num1 = value;\n         }\n     }\n     public int anumber1\n     {\n         get\n         {\n             return num2;\n         }\n         set\n         {\n             num2 = value;\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         number p = new number();\n         p.anumber = 20;\n         number k = new number();\n         k.anumber1 = 40;\n         int m = p.anumber;\n         int t = k.anumber1;\n         int r = p.anumber + k.anumber1;\n         System.Console.WriteLine(\"number1 = \" +m);\n         System.Console.WriteLine(\"number2 = \" +t);\n         System.Console.WriteLine(\"sum = \" +r);\n         System.Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "20"
+        },
+        {
+          "key": "b",
+          "text": "number1 = 30\nnumber2 = 40\nsum = 70"
+        },
+        {
+          "key": "c",
+          "text": "number1 = 20\nnumber2 = 40\nsum = 60"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput :\n\nnumber1 = 20\nnumber2 = 40\nsum = 60"
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class number\n  {\n      private int num1 = 60;\n      private int num2 = 20;\n      public int anumber\n      {\n          get\n          {\n              return num1;\n          }\n          set\n          {\n              num1 = value;\n          }\n      }\n      public int anumber1\n      {\n          get\n          {\n              return num2;\n          }\n          set\n          {\n              num2 = value;\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          number p = new number();\n          number k = new number();\n          int m = p.anumber;\n          int t = k.anumber1;\n          int r = p.anumber * k.anumber1;\n          Console.WriteLine(\"sum = \" + r);\n          Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "120"
+        },
+        {
+          "key": "c",
+          "text": "1200"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput :\n\n 1200"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " class number\n {\n     int length = 50;\n     public int number1\n     {\n         get\n         {\n             return length;\n         }\n         set\n         {\n             length = value;\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         number p = new number();\n         p.number1 = p.number1 + 40;\n         int k = p.number1 * 3 / 9;\n         Console.WriteLine(k);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "180"
+        },
+        {
+          "key": "c",
+          "text": "30"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput :\n\n30"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class number\n  {\n      int length = 60;\n      public int number1\n      {\n          get\n          {\n              return length;\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          number p = new number();\n          int l;\n          l = p.number1 + 40;\n          int k = l * 3 / 4;\n          Console.WriteLine(k);\n          Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "30"
+        },
+        {
+          "key": "b",
+          "text": "75"
+        },
+        {
+          "key": "c",
+          "text": "80"
+        },
+        {
+          "key": "d",
+          "text": "0"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput :\n\n75"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class student\n  {\n      int []scores = new int[5] {23, 42, 54, 11, 65};\n      public int this[int index]\n      {\n          get\n          {\n              if (index < 5)\n              return scores[index];\n              else\n              {\n                  Console.WriteLine(\"invalid index\");\n                  return 0;\n              }\n          }\n          set\n          {\n              if (index < 5)\n              scores[index] = value;\n              else\n              Console.WriteLine(\"invalid index\");\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          student s = new student();\n          Console.WriteLine(s[4] + 8);\n          Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "73"
+        },
+        {
+          "key": "b",
+          "text": "37"
+        },
+        {
+          "key": "c",
+          "text": "0"
+        },
+        {
+          "key": "d",
+          "text": "Run time error"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None.\n\nOutput :\n\n73"
+    },
+    {
+      "number": 9,
+      "question": "The correct way to implement the property for which property reports the error \"invalid index\" if user attempts to cross bounds of the array for a student class with 5 integer arrays.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "class student\n {\n     int []scores = new int[5] {23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 5)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n         set\n         {\n             if (index < 5)\n             scores[index] = value;\n             else\n             Console.WriteLine(\"invalid index\");\n         }\n     }\n }"
+        },
+        {
+          "key": "b",
+          "text": "class student\n {\n     int []scores = new int[5] {23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 5)\n             return scores[index];\n         }\n     }\n }"
+        },
+        {
+          "key": "c",
+          "text": "class student\n {\n     int []scores = new int[5]{23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         set\n         {\n             if (index < 5)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n     }\n }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " class student\n {\n     int []scores = new int[3] {13, 32, 24};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 3)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n         private  set\n         {\n             if (index < 3)\n             scores[index] = value;\n             else\n             Console.WriteLine(\"invalid index\");\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         student s = new student();\n         int[] scores1 = new int[3] {8, 19, 40};\n         for (int i = 0; i < 3; i++)\n         {\n             if (scores1[i] > s[i])\n             {\n                 Console.WriteLine(\" scores1 had greater value :\" + scores1[i]);\n             }\n             else\n             {\n                 Console.WriteLine(\"scores had greater value :\" + s[i]);\n             }\n         }\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "Compile time error"
+        },
+        {
+          "key": "c",
+          "text": "Run time error"
+        },
+        {
+          "key": "d",
+          "text": "scores had greater value : 13\nscores had greater value : 32\nscores1 had greater value : 40"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput :\n\n        scores had greater value : 13\n         scores had greater value : 32\n        scores1 had greater value : 40"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "title": "C# Questions & Answers - String Formatting Operations- 1",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-string-formatting-1/",
+  "sourceFile": "String Formatting Operations - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on string formatting operations in C# Programming Language.",
+  "questionCount": 12,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " static void Main(string[] args)\n {\n     string s1 = \"olleH\";\n     string s2 = \"olleh\";\n     if (s1 == s2)\n     Console.WriteLine(\"Equal\");\n     else\n     Console.WriteLine(\"Unequal\");\n     if (s1.Equals(s2))\n     Console.WriteLine(\"Equal\");\n     else\n     Console.WriteLine(\"Unequal\");\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Equal\n   Unequal"
+        },
+        {
+          "key": "b",
+          "text": "Unequal\n   Equal"
+        },
+        {
+          "key": "c",
+          "text": "Equal\n   Equal\n🔥 Enroll Now for Free Python Certification - August 2026"
+        },
+        {
+          "key": "d",
+          "text": "Unequal\n   Unequal"
+        }
+      ],
+      "answer": "d",
+      "explanation": "In the first comparison it is being checked if two strings are equal or not, but in the second comparison it is checked if two string references are equal or not. Also the length of the string and characters match is tested for the equality of strings.\n\nOutput :\n\nUnequal\nUnequal"
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \" Ixg\";\n    string s2 = s1.Insert(3,\"i\");\n    string s3 = s2.Insert(5, \"o\");\n    for (int i = 0; i < s3.Length; i++)\n    Console.WriteLine(s3[i]);\n    Console.ReadLine();\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ixgo"
+        },
+        {
+          "key": "b",
+          "text": "Ixig"
+        },
+        {
+          "key": "c",
+          "text": "Ixigo"
+        },
+        {
+          "key": "d",
+          "text": "Ixg"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Insert() the built in method inserts characters at specified position mentioned with index positions.\n\nOutput:\n\nIxigo"
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         char []chars = {'a', 'b', 'c'};\n         String s = new String(chars);\n         Console.WriteLine(s);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "a"
+        },
+        {
+          "key": "b",
+          "text": "b"
+        },
+        {
+          "key": "c",
+          "text": "c"
+        },
+        {
+          "key": "d",
+          "text": "abc"
+        }
+      ],
+      "answer": "d",
+      "explanation": "String(chars) is a constructor of class string, it initializes string s with the values stored in character array chars,So s contains \"abc\".\n\nOutput :\n\nabc"
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of given code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         char []chars = {'a', 'b', 'c'};\n         String s = new String(chars);\n         String s1 = \"abcd\";\n         int len1 = s1.Length;\n         int len2 = s.Length;\n         Console.WriteLine(len1 + \" \" + len2);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "4 0"
+        },
+        {
+          "key": "b",
+          "text": "3 0"
+        },
+        {
+          "key": "c",
+          "text": "3 4"
+        },
+        {
+          "key": "d",
+          "text": "4 3"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput :\n\n4 3"
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class A\n {\n     int i;\n     int j;\n     public A()\n     {\n         i = 1;\n         j = 2;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         A obj1 = new A();\n\t Console.WriteLine(obj1.ToString());\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "True"
+        },
+        {
+          "key": "b",
+          "text": "False"
+        },
+        {
+          "key": "c",
+          "text": "String associated with obj1"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "ToString() is the method of class Object, since it is the superclass of every class, every object has this method. ToString() returns the string associated with the calling object.\n\nOutput :\n\nConsoleApplication19.A"
+    },
+    {
+      "number": 6,
+      "question": "Which of these constructors is used to create an empty String object?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "String()"
+        },
+        {
+          "key": "b",
+          "text": "String(void)"
+        },
+        {
+          "key": "c",
+          "text": "String(0)"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "Which of these method of class String is used to obtain length of String object?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "get()"
+        },
+        {
+          "key": "b",
+          "text": "Sizeof()"
+        },
+        {
+          "key": "c",
+          "text": "Lengthof()"
+        },
+        {
+          "key": "d",
+          "text": "Length()"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Method Length() of string class is used to get the length of the object which invoked the method Length()."
+    },
+    {
+      "number": 8,
+      "question": "Choose the base class for string() method.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Array"
+        },
+        {
+          "key": "b",
+          "text": "System.char"
+        },
+        {
+          "key": "c",
+          "text": "System.String"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "String is an alias for the predefined \"System.string\" class from which most of the string() methods are derived."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String c = \"Hello i love Csharp\";\n         Boolean var;\n\t var = c.StartsWith(\"hello\");\n         Console.WriteLine(var);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "True"
+        },
+        {
+          "key": "b",
+          "text": "False"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "Run time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "StartsWith() method is case sensitive \"hello\" and \"Hello\" are treated differently, hence false is stored in var."
+    },
+    {
+      "number": 10,
+      "question": "What is the value returned by the function CompareTo() if the invoking string is less than the string compared?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "zero"
+        },
+        {
+          "key": "b",
+          "text": "value less than zero"
+        },
+        {
+          "key": "c",
+          "text": "value greater than zero"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "CompareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared to."
+    },
+    {
+      "number": 11,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String s1 = \"Hello i love Csharp\";\n        StringBuilder s2 = new  StringBuilder(s1);\n        Console.WriteLine(s1.Equals(s2));\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "True"
+        },
+        {
+          "key": "b",
+          "text": "False"
+        },
+        {
+          "key": "c",
+          "text": "0"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Equals() compares the content of two strings. StringBuilder class supports many methods which are useful for manipulating dynamic strings.\n\nOutput: False"
+    },
+    {
+      "number": 12,
+      "question": "Which of these methods of class String is used to check whether a given string starts with a particular substring or not?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "StartsWith()"
+        },
+        {
+          "key": "b",
+          "text": "EndsWith()"
+        },
+        {
+          "key": "c",
+          "text": "Starts()"
+        },
+        {
+          "key": "d",
+          "text": "Ends()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The StartsWith() determines whether a substring exists at the beginning of the string."
+    }
+  ]
+}

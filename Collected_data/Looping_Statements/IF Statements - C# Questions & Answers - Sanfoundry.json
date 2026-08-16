@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - IF Statements",
+  "topic": "Looping_Statements",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-if-statements/",
+  "sourceFile": "IF Statements - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on relational and logical operators in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int i = 30;\n     int j = 25 % 25;\n     if (Convert.ToBoolean(Convert.ToInt32(i = j)))\n     {\n         Console.WriteLine(\"In if\");\n     }\n     else\n     {\n         Console.WriteLine(\"In else\");\n     }\n     Console.WriteLine(\"In main\");\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "In if"
+        },
+        {
+          "key": "b",
+          "text": "In else"
+        },
+        {
+          "key": "c",
+          "text": "In if\nIn main"
+        },
+        {
+          "key": "d",
+          "text": "In else\nIn main"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Usage of '=' operator instead of  '==' operator. Hence, the condition is not true.\n\nOutput:\n\n         In else\n         In main"
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int i;\n     int b = 8, a = 32;\n     for (i = 0; i <= 10; i++)\n     {\n         if ((a / b * 2)== 2)\n         {\n             Console.WriteLine( i + \" \");\n             continue;\n         }\n         else if (i != 4)\n             Console.Write(i + \" \");\n         else\n             break;\n    }\n    Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "1 2 3 4 5 6 7 8 9"
+        },
+        {
+          "key": "b",
+          "text": "0 1 2 3 4 5 6 7 8"
+        },
+        {
+          "key": "c",
+          "text": "0 1 2 3"
+        },
+        {
+          "key": "d",
+          "text": "0 1 2 3 4"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The if condition will never be fulfilled as ((a / b) * 2 == 2) is never true. Hence, only else part of condition will be executed until i! = 4 i.e i = 0, 1, 2, 3.\n\nOutput:\n\n0 1 2 3"
+    },
+    {
+      "number": 3,
+      "question": "Which of the following conditions are true in the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     Console.WriteLine(\"Enter a letter:\");\n     char c = (char)Console.Read();\n     if (Char.IsDigit(c) == true)\n         Console.WriteLine(\"A number\");\n     else if (char.IsLower(c) == true)\n         Console.WriteLine(\"A lowercase letter\");\n     else if (char.IsUpper(c) == true)\n         Console.WriteLine(\"An uppercase letter\");\n     Console.ReadLine();\n }\n a. Enter a letter :\n    a\n    An uppercase letter\n b. Enter a letter :\n    A\n    An uppercase letter\n c. Enter a letter :\n    2\n    A number\n d. Enter a letter :\n    2\n    A lowercase letter.",
+      "options": [
+        {
+          "key": "a",
+          "text": "a, b, c"
+        },
+        {
+          "key": "b",
+          "text": "b, c, d"
+        },
+        {
+          "key": "c",
+          "text": "a, d, b"
+        },
+        {
+          "key": "d",
+          "text": "b, c"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput:\n\n                    Enter a letter :\n                          A\n                          An uppercase letter\n                          Enter a letter :\n                          2\n                          A number"
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int i, j;\n      for (i = 2; i >= 0; i--)\n      {\n          for (j = 0; j <= 2; j++)\n          {\n              if (i == j)\n              {\n                  Console.WriteLine(\"1\");\n              }\n              else\n              {\n                  Console.WriteLine(\"0\");\n              }\n         }\n         Console.WriteLine(\"\\n\");\n         Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "1 0 0\n   0 1 0\n   0 0 1"
+        },
+        {
+          "key": "b",
+          "text": "0 1 0\n   1 0 0\n   0 0 1"
+        },
+        {
+          "key": "c",
+          "text": "0 0 1\n   0 1 0\n   1 0 0"
+        },
+        {
+          "key": "d",
+          "text": "1 0 0\n   0 0 1\n   0 1 0"
+        }
+      ],
+      "answer": "c",
+      "explanation": "In first row  for i = 2 : j = 0 == 0  as if condition fails for (i == j)\n\n                                i = 2 : j = 1 == 0  as again if condition fails for ( i == j)\n\n                                i = 2 : j = 2 == 1  as (i == j).\n\n              In Second row for i = 1 : j = 0 == 0  as if condition fails for (i == j)\n\n                                i = 1 : j = 1 == 1  (as i==j)\n\n                                i = 1 : j = 2 == 0  as (i==j) not true\n\n              In Third row  for i = 0 : j = 0 == 1 as (i==j) true\n\n                                i = 0 : j = 1 == 0 as (i==j) not true.\n\n                                i = 0 : j = 2 == 0 .\n\n              So, 0 0 1\n\n                  0 1 0\n\n                  1 0 0\n\n Output:  0 0 1\n\n          0 1 0\n\n          1 0 0"
+    },
+    {
+      "number": 5,
+      "question": "Select the correct 'if statement' to be filled in the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int []num = {50, 65, 56, 88, 43, 52};\n     int even = 0, odd = 0;\n     for (int i = 0 ;i < num.Length ;i++)\n     {\n          /*___________________________*/\n     }\n     Console.WriteLine(\"Even Numbers:\" +even);\n     Console.WriteLine(\"Odd Numbers:\" +odd);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "if ((num % 2) == 0)\n   {\n       even += 1;\n   }\n   else\n   {\n       odd += 1;\n   }"
+        },
+        {
+          "key": "b",
+          "text": "if((num * i) == 0)\n   {\n       even += 1;\n   }\n   else\n   {\n       odd += 1;\n   }"
+        },
+        {
+          "key": "c",
+          "text": "if(num[i] % 2 == 0)\n    {\n        even += 1;\n    }\n    else\n    {\n        odd += 1;\n    }"
+        },
+        {
+          "key": "d",
+          "text": "if(num[i] % 2 = 0)\n    {\n        even += 1;\n    }\n    else\n    {\n        odd += 1;\n    }"
+        }
+      ],
+      "answer": "c",
+      "explanation": "int []num = {50, 65, 56, 88, 43, 52};\n                int even = 0,odd = 0;\n                for (int i = 0 ;i &lt; num.Length ;i++)\n                {\n                    if (num[i] % 2 == 0)\n                    {\n                    even += 1;\n                    }\n                    else\n                    {\n                    odd += 1;\n                    }\n                }\n                Console.WriteLine(\"Even Numbers: \" +even);\n                Console.WriteLine(\"Odd Numbers: \" +odd);\n                Console.ReadLine();"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int a = 15, b = 10, c = 1;\n     if (Convert.ToBoolean(a) && (b > c))\n     {\n         Console.WriteLine(\"cquestionbank\");\n     }\n     else\n     {\n         break;\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "cquestionbank"
+        },
+        {
+          "key": "b",
+          "text": "It will print nothing"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "Run time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Keyword \"break\" is not part of if-else statement. This keyword is used in case of loop or switch case statement."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a = 5;\n      if (Convert.ToBoolean((.002f) -(0.1f)))\n      Console.WriteLine(\"Sachin Tendulkar\");\n      else if (a == 5)\n      Console.WriteLine(\"Rahul Dravid\");\n      else\n      Console.WriteLine(\"Ms Dhoni\");\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Rahul Dravid"
+        },
+        {
+          "key": "b",
+          "text": "Sachin Tendulkar"
+        },
+        {
+          "key": "c",
+          "text": "Ms Dhoni"
+        },
+        {
+          "key": "d",
+          "text": "Warning : Unreachable Code"
+        }
+      ],
+      "answer": "b",
+      "explanation": "(0.002 - 0.1f) not equivalent to zero hence it is true. So, only first if clause will execute and  print:Sachin Tendulkar on console. As, first condition is always true so no else if statement will be executed.\n\nOutput:\n\n Sachin Tendulkar"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a = -1;\n      int b = -1;\n      if (Convert.ToBoolean (++a = ++b))\n      Console.WriteLine(\"a\");\n      else\n      Console.WriteLine(\"b\");\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "a"
+        },
+        {
+          "key": "b",
+          "text": "b"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "Code execute successfully with no output"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Both a and b are constants. Illegal to assign a value to constant on left hand of '='operator. Hence, it must be some variable."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a = 5, b = 10;\n      if (Convert.ToBoolean(Convert.ToInt32(0xB)))\n      if (Convert.ToBoolean(Convert.ToInt32(022)))\n      if (Convert.ToBoolean(Convert.ToInt32('\\xeb')))\n      Console.WriteLine(\"java\");\n      else ;\n      else ;\n      else ;\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error: Misplaced else"
+        },
+        {
+          "key": "b",
+          "text": "Compile time error: Undefined symbol"
+        },
+        {
+          "key": "c",
+          "text": "java"
+        },
+        {
+          "key": "d",
+          "text": "Warning: Condition is always true"
+        }
+      ],
+      "answer": "c",
+      "explanation": "oxB: hexadecimal integer constant.\n                  022: It octal integer constant.\n                 '\\xeb': It is hexadecimal character constant.\n\n As zero is false and any non-zero number is true. All, constants return a non-zero value. So, all if conditions in the above program are true.\n\n Output:\n\n java."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int a = 5, b = 10;\n     if (Convert.ToBoolean(Convert.ToInt32(++a)) || Convert.ToBoolean(Convert.ToInt32(++b)))\n     {\n         Console.WriteLine(a + \"\\n\" + b);\n     }\n     else\n     Console.WriteLine(\" C# \");\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "6 11"
+        },
+        {
+          "key": "b",
+          "text": "6 16"
+        },
+        {
+          "key": "c",
+          "text": "6 12"
+        },
+        {
+          "key": "d",
+          "text": "6 10"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Consider the following expression:( ++a || ++b). In this expression || is 'Logical OR operator'. Two important  properties of this operator are:\n\n Property 1:\n\n (Expression1) || (Expression2)\n\n  || operator returns 0 if and only if both expressions return a zero otherwise || operator returns 1.\n\n  initial value of a is 5. So ++a will be 6. Since ++a is returning a non-zero so ++b will not execute.\n\n  Output :\n\n 6 10."
+    }
+  ]
+}

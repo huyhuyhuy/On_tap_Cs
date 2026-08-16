@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Delegates in Detail",
+  "topic": "Delegates_Generics_and_LINQ",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-basic-questions-answers/",
+  "sourceFile": "Delegates in Detail - C# Multiple Choice Questions - Sanfoundry.html",
+  "description": "This set of Basic C# Questions and Answers focuses on \"Delegates in Detail\".",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Choose the correct way to call subroutine fun() of the sample class?",
+      "code": "class a\n{\n    public void x(int p, double k)\n    {\n        Console.WriteLine(\"k : csharp!\");\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "delegate void del(int i);\n   x s = new x();\n   del d = new del(ref s.x);\n   d(8, 2.2f);"
+        },
+        {
+          "key": "b",
+          "text": "🔥 Enroll Now for Free Python Certification - August 2026\n\n   delegate void del(int p,  double k);\n   del d;\n   x s = new x();\n   d = new del(ref s.x);\n   d(8, 2.2f);"
+        },
+        {
+          "key": "c",
+          "text": "x s = new x();\n   delegate void d = new del(ref x);\n   d(8, 2.2f);"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which of the following is the correct way to call the function abc() of the given class in the following C# code?",
+      "code": "class csharp\n{\n    public int abc(int a)\n    {\n        Console.WriteLine(\"A:Just do it!\");\n        return 0;\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "delegate void del(int a);\n   csharp s = new csharp();\n   del d = new del(ref s.abc);\n   d(10);"
+        },
+        {
+          "key": "b",
+          "text": "csharp s = new csharp();\n   delegate void d = new del(ref abc);\n   d(10);"
+        },
+        {
+          "key": "c",
+          "text": "delegate int del(int a);\n   del d;\n   csharp s = new csharp();\n   d = new del(ref s.fun);\n   d(10);"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which of the following is the correct way to call the subroutine function abc() of the given class in the following C# code?",
+      "code": "class csharp\n{\n    void abc()\n    {\n        console.writeline(\"A:Just do it!\");\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "csharp c = new csharp();\n   delegate void d = new del(ref abc);\n   d();"
+        },
+        {
+          "key": "b",
+          "text": "delegate void del();\n   del d;\n   csharp s = new csharp();\n   d = new del(ref s.abc);\n   d();"
+        },
+        {
+          "key": "c",
+          "text": "csharp s = new csharp();\n   delegate void del = new delegate(ref abc);\n   del();"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "{\n    delegate void A(ref string str);\n    class sample\n    {\n        public static void fun( ref string a)\n        {\n            a = a.Substring( 7, a.Length - 7);\n        }\n    }\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            A str1;\n            string str = \"Test Your C#.net skills\";\n            str1 = sample.fun;\n            str1(ref str);\n            Console.WriteLine(str);\n        }\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Test Your"
+        },
+        {
+          "key": "b",
+          "text": "ur C#.NET"
+        },
+        {
+          "key": "c",
+          "text": "ur C#.NET Skills"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "using System;\n\n delegate string F(string str);\n    class sample\n    {\n        public static string fun(string a)\n        {\n            return a.Replace(',','-');\n        }\n    }\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            F str1 = new F(sample.fun);\n            string str = str1(\"Test Your c#.NET skills\");\n            Console.WriteLine(str);\n        }\n    }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Test Your"
+        },
+        {
+          "key": "b",
+          "text": "Test Your c#.NET skills"
+        },
+        {
+          "key": "c",
+          "text": "ur C#.NET Skills"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput:\n\nTest Your c#.NET skills"
+    },
+    {
+      "number": 6,
+      "question": "Choose the statements which makes delegate in C#.NET different from a normal class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Delegates in C#.NET is a base class for all delegates type"
+        },
+        {
+          "key": "b",
+          "text": "Delegates created in C#.NET are further not allowed to derive from the delegate types that are created"
+        },
+        {
+          "key": "c",
+          "text": "Only system and compilers can derive explicitly from the Delegate or MulticasteDelegate class"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "Which of the following are the correct statements about delegates?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Delegates can be used to implement callback notification"
+        },
+        {
+          "key": "b",
+          "text": "Delegates permit execution of a method on a secondary thread in an asynchronous manner"
+        },
+        {
+          "key": "c",
+          "text": "Delegate is a user defined type"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": "{\n delegate string f(string str);\n class sample\n {\n     public static string fun(string a)\n     {\n         return a.Replace('k', 'o');\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         f str1 = new f(sample.fun);\n         string str = str1(\"Test Ykur C#.NET Skills\");\n         Console.WriteLine(str);\n         Console.ReadLine();\n     }\n }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Test Ykur C#.NET Skills"
+        },
+        {
+          "key": "b",
+          "text": "Test Ykour C#.NET Skills"
+        },
+        {
+          "key": "c",
+          "text": "Test Your C#.NET Skills"
+        },
+        {
+          "key": "d",
+          "text": "Test ur C#.NET Skills"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\nTest Your C#.NET Skills"
+    },
+    {
+      "number": 9,
+      "question": "Incorrect statements about delegates are?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Delegates are reference types"
+        },
+        {
+          "key": "b",
+          "text": "Delegates are object oriented"
+        },
+        {
+          "key": "c",
+          "text": "Delegates are type safe"
+        },
+        {
+          "key": "d",
+          "text": "Only one method can be called using a delegate"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Select the modifiers which control the accessibility of the delegate?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "new"
+        },
+        {
+          "key": "b",
+          "text": "protected"
+        },
+        {
+          "key": "c",
+          "text": "public"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "By definition"
+    }
+  ]
+}

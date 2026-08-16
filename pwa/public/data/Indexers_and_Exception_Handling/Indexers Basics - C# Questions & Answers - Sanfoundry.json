@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Introduction of Indexers",
+  "topic": "Indexers_and_Exception_Handling",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-introduction-indexers/",
+  "sourceFile": "Indexers Basics - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on indexers and application of indexers in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Choose the correct statement among the followings?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Indexers are location indicators"
+        },
+        {
+          "key": "b",
+          "text": "Indexers are used to access class objects"
+        },
+        {
+          "key": "c",
+          "text": "Indexer is a form of property and works in the same way as a property"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "By definition."
+    },
+    {
+      "number": 2,
+      "question": "Choose the keyword which declares the indexer?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "base"
+        },
+        {
+          "key": "b",
+          "text": "this"
+        },
+        {
+          "key": "c",
+          "text": "super"
+        },
+        {
+          "key": "d",
+          "text": "extract"
+        }
+      ],
+      "answer": "b",
+      "explanation": "The indexer is declared using the name this."
+    },
+    {
+      "number": 3,
+      "question": "Choose the operator/operators which is/are not used to access the [] operator in indexers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "get"
+        },
+        {
+          "key": "b",
+          "text": "set"
+        },
+        {
+          "key": "c",
+          "text": "access"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The indexer is implemented through the get and set accessors for the [] operator as:\n\n              public double this[int idx]\n              {\n                 get\n                 {\n                   if()\n                  {\n                  }\n                 else\n                 {\n                    return([idx]);\n                 }\n\n              }\n                 set\n                 {\n                      array[idx];\n\n                 }\n           }"
+    },
+    {
+      "number": 4,
+      "question": "Choose the correct statement among the following?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A property can be a static member whereas an indexer is always an instance member"
+        },
+        {
+          "key": "b",
+          "text": "A get accessor of a property corresponds to a method with no parameters whereas get accessor of an indexer corresponds to a method with the same formal parameters lists as the indexer"
+        },
+        {
+          "key": "c",
+          "text": "It is an error for indexer to declare a local variable with the same name as indexer parameters"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "For a class student consisting of indexer, which among the following declaration of indexers runs the C# code successfully?",
+      "code": "   student a = new student();\n   a[1,2] = 20;",
+      "options": [
+        {
+          "key": "a",
+          "text": "class student\n   {\n       int[,] p = new int[6, 6];\n       public property WriteOnly int this[int i, int j]\n       {\n           set\n           {\n               a[i, j] = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "b",
+          "text": "class student\n   {\n       int[,] a = new int[6, 6];\n       public int this[int i, int j]\n       {\n           set\n           {\n               a[i, j] = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "c",
+          "text": "class student\n   {\n       int[,] a = new int[6, 6];\n       public int property WriteOnly\n       {\n           set\n           {\n               a[i, j] = value;\n           }\n       }\n   }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Which among the following are the advantages of using indexers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "To use collection of items at a large scale we make use of indexers as they utilize objects of class that represent the collection as an array"
+        },
+        {
+          "key": "b",
+          "text": "Indexers are also convenient as they can also make use of different types of indexers like int, string etc"
+        },
+        {
+          "key": "c",
+          "text": "An indexer allows an object to be indexed such as an array"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Indexers provides a view at large scale to visualize a collection of items as an array. It is really easy to use the object of the class that represents a collection as if it is an array. Hence, indexed properties allow us to represent such a view. Indexers can also use different types of indexes like int, string etc. Use int as an index where sequential access to a collection is desired. When symbolic access is needed, use string as an index."
+    },
+    {
+      "number": 7,
+      "question": "Choose the correct statement about properties describing the indexers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "No need to use the name of the property while using an indexed property"
+        },
+        {
+          "key": "b",
+          "text": "An indexer property should accept at least one argument"
+        },
+        {
+          "key": "c",
+          "text": "Indexers can be overloaded"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "Choose the correct alternative that utilizes the indexed property such that a group named class has indexed property which stores or retrieves value to/from an array of 5 numbers?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "group[3] = 34;"
+        },
+        {
+          "key": "b",
+          "text": "group g = group();"
+        },
+        {
+          "key": "c",
+          "text": "Console.WriteLine(group[3]);"
+        },
+        {
+          "key": "d",
+          "text": "group g = new group();\nConsole.WriteLine(g[3]);"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Choose the correct option among the following indexers which correctly allows to index in same way as an array?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A class"
+        },
+        {
+          "key": "b",
+          "text": "An interface"
+        },
+        {
+          "key": "c",
+          "text": "A function"
+        },
+        {
+          "key": "d",
+          "text": "A property"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " class list\n {\n     ArrayList array = new ArrayList();\n     public object this[int index]\n     {\n         get\n         {\n             if (index < 0 || index >= array.Count)\n             {\n                 return null;\n             }\n             else\n             {\n                 return (array[index]);\n             }\n         }\n         set\n         {\n             array[index] = value;\n         }\n     }\n     public int Count\n    {\n        get;\n        set;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        list list1 = new list();\n        list1[0] = \"123\";\n        list1[1] = \" abc \";\n        list1[2] = \"xyz\";\n        for (int i = 0; i<=list1.Count; i++)\n        Console.WriteLine(list1[i]);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "Run time error"
+        },
+        {
+          "key": "c",
+          "text": "123, abc, xyz"
+        },
+        {
+          "key": "d",
+          "text": "0"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Index out of range which arises only when index is non negative or less than the collection of size."
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - UrI Class",
+  "topic": "Namespaces_Preprocessors_Networking",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-url-class/",
+  "sourceFile": "UrI Class - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on Url class in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What does URL stand for?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Uniform Resource Locator"
+        },
+        {
+          "key": "b",
+          "text": "Uniform Resource Latch"
+        },
+        {
+          "key": "c",
+          "text": "Universal Resource Locator"
+        },
+        {
+          "key": "d",
+          "text": "Universal Resource Latch"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which of these exceptions is thrown by the URL class's constructors?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "URLNotFound"
+        },
+        {
+          "key": "b",
+          "text": "URLSourceNotFound"
+        },
+        {
+          "key": "c",
+          "text": "MalformedURLException"
+        },
+        {
+          "key": "d",
+          "text": "URLNotFoundException"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "What does the following form define?",
+      "code": "  Protocol://HostName/FilePath?Query",
+      "options": [
+        {
+          "key": "a",
+          "text": "Protocol specifies the protocol being used, such as HTTP"
+        },
+        {
+          "key": "b",
+          "text": "HostName identifies a specific server, such as mhprofessional.com or www.google.com"
+        },
+        {
+          "key": "c",
+          "text": "FilePath specifies the path to a specific file"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "By definition."
+    },
+    {
+      "number": 4,
+      "question": "Which of these classes is used to encapsulate IP address and DNS?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "DatagramPacket"
+        },
+        {
+          "key": "b",
+          "text": "URL"
+        },
+        {
+          "key": "c",
+          "text": "InetAddress"
+        },
+        {
+          "key": "d",
+          "text": "ContentHandler"
+        }
+      ],
+      "answer": "c",
+      "explanation": "InetAddress class encapsulates both IP address and DNS, we can interact with this class by using the name of an IP host."
+    },
+    {
+      "number": 5,
+      "question": "Which of these is a standard for communicating multimedia content over email?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "http"
+        },
+        {
+          "key": "b",
+          "text": "https"
+        },
+        {
+          "key": "c",
+          "text": "Mime"
+        },
+        {
+          "key": "d",
+          "text": "httpd"
+        }
+      ],
+      "answer": "c",
+      "explanation": "MIME is an internet standard for communicating multimedia content over email. The HTTP protocol uses and extends the notion of MIME headers to pass attribute pairs between HTTP client and server."
+    },
+    {
+      "number": 6,
+      "question": "What does the following method specify?",
+      "code": "   public static WebRequest Create(string requestUriString)",
+      "options": [
+        {
+          "key": "a",
+          "text": "Creates a WebRequest object for the URI specified by the string passed by requestUriString"
+        },
+        {
+          "key": "b",
+          "text": "The object returned will implement the protocol specified by the prefix of the URI"
+        },
+        {
+          "key": "c",
+          "text": "The object will be an instance of the class that inherits WebRequest"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Creates a WebRequest object for the URI specified by the string passed by requestUriString. The object returned will\n\nimplement the protocol specified by the prefix of the URI. Thus, the object will be an instance of a class that inherits WebRequest. A NotSupportedException is thrown if the requested protocol is not available. A UriFormatException is thrown if the URI format is invalid."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class Program\n  {\n      static void Main(string[] args)\n      {\n          int ch;\n          HttpWebRequest req = (HttpWebRequest) WebRequest.Create(\"http://www.McGraw-Hill.com\");\n          HttpWebResponse resp = (HttpWebResponse) req.GetResponse();\n          Stream istrm = resp.GetResponseStream();\n          for (int i = 1 ;  ;i++)\n          {\n              ch = istrm.ReadByte();\n              if (ch == -1)\n              break;\n              Console.Write((char)ch);\n              if ((i % 400) == 0)\n              {\n                  Console.Write(\"\\nPress Enter.\");\n                  Console.ReadLine();\n              }\n          }\n          resp.Close();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "html"
+        },
+        {
+          "key": "b",
+          "text": "text"
+        },
+        {
+          "key": "c",
+          "text": "html/text"
+        },
+        {
+          "key": "d",
+          "text": "text/html"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The following program obtains the hypertext contained at a specific website. The program displays the hypertext on the screen."
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         Uri obj = new Uri(\"https://www.sanfoundry.com/csharpmcq\");\n         Console.WriteLine(obj.AbsoluteUri);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "sanfoundry"
+        },
+        {
+          "key": "b",
+          "text": "sanfoundry.com"
+        },
+        {
+          "key": "c",
+          "text": "www.sanfoundry.com"
+        },
+        {
+          "key": "d",
+          "text": "https://www.sanfoundry.com/csharpmcq"
+        }
+      ],
+      "answer": "d",
+      "explanation": "AbsoluteUri is used to know the full URL of an URL object.\n\nOutput:\n\n https://www.sanfoundry.com/csharpmcq"
+    },
+    {
+      "number": 9,
+      "question": "Which of these data members of HttpResponse class is used to store the response from a http server?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "status"
+        },
+        {
+          "key": "b",
+          "text": "address"
+        },
+        {
+          "key": "c",
+          "text": "statusResponse"
+        },
+        {
+          "key": "d",
+          "text": "statusCode"
+        }
+      ],
+      "answer": "d",
+      "explanation": "When we send a request to http server it responds with a status code. This status code is stored in statusCode and the textual equivalent is stored in reasonPhrase."
+    },
+    {
+      "number": 10,
+      "question": "Which of these classes is used to access actual bits or content information of a URL?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "URL"
+        },
+        {
+          "key": "b",
+          "text": "URLDecoder"
+        },
+        {
+          "key": "c",
+          "text": "URLConnection"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "URL, URLDecoder and URLConnection - all these are used to access information stored in the URL."
+    }
+  ]
+}

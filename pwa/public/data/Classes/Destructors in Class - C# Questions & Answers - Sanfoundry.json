@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Destructors in Class",
+  "topic": "Classes",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-destructors-class/",
+  "sourceFile": "Destructors in Class - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on destructors in class in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which operator among the following signifies the destructor operator?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "::"
+        },
+        {
+          "key": "b",
+          "text": ":"
+        },
+        {
+          "key": "c",
+          "text": "~"
+        },
+        {
+          "key": "d",
+          "text": "&"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "The method called by clients of a class to explicitly release any resources like network, connection, open files etc. When the object is no longer required?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Finalize()"
+        },
+        {
+          "key": "b",
+          "text": "End()"
+        },
+        {
+          "key": "c",
+          "text": "Dispose()"
+        },
+        {
+          "key": "d",
+          "text": "Close()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Dispose() is only method called by clients of a class to explicitly release any resource like network connection, open files etc. When object is no longer required. Hence, Dispose() provides programmer with such programming control."
+    },
+    {
+      "number": 3,
+      "question": "Name a method which has the same name as that of class and which is used to destroy objects also called automatically when application is finally on process of being getting terminated.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Constructor"
+        },
+        {
+          "key": "b",
+          "text": "Finalize()"
+        },
+        {
+          "key": "c",
+          "text": "Destructor"
+        },
+        {
+          "key": "d",
+          "text": "End"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Definition of the destructor."
+    },
+    {
+      "number": 4,
+      "question": "Which of the following statements are correct?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "There is one garbage collector per program running in memory"
+        },
+        {
+          "key": "b",
+          "text": "There is one common garbage collector for all programs"
+        },
+        {
+          "key": "c",
+          "text": "To garbage collect an object set all references to it as null"
+        },
+        {
+          "key": "d",
+          "text": "Both There is one common garbage collector for all programs & To garbage collect an object set all references to it as null"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Operator used to free the memory when memory is allocated?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "new"
+        },
+        {
+          "key": "b",
+          "text": "free"
+        },
+        {
+          "key": "c",
+          "text": "delete"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "'New' is used to allocate memory in the constructors. Hence, we should use 'delete' to free that memory."
+    },
+    {
+      "number": 6,
+      "question": "Select wrong statement about destructor in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A class can have one destructor only"
+        },
+        {
+          "key": "b",
+          "text": "Destructors cannot be inherited or overloaded"
+        },
+        {
+          "key": "c",
+          "text": "Destructors can have modifiers or parameters"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class sample\n  {\n      int i;\n      double k;\n      public sample (int ii, double kk)\n      {\n          i = ii;\n          k = kk;\n          double j = (i) + (k);\n          Console.WriteLine(j);\n      }\n      ~sample()\n      {\n          double j = i - k;\n          Console.WriteLine(j);\n      }\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          sample s = new sample(8, 2.5);\n          Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0 0"
+        },
+        {
+          "key": "b",
+          "text": "10.5 0"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "10.5 5.5"
+        }
+      ],
+      "answer": "d",
+      "explanation": "First constructor 'sample' is called  and hence then destructor '~sample' is evaluated.\n\nOutput :\n\n10.5, 5.5"
+    },
+    {
+      "number": 8,
+      "question": "What is the return type of destructor?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int"
+        },
+        {
+          "key": "b",
+          "text": "void"
+        },
+        {
+          "key": "c",
+          "text": "float"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Destructors do not have any return type not even void."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": "   class box\n   {\n       public int volume;\n       int width;\n       int height;\n       int length;\n       public box ( int w, int h, int l)\n       {\n           width = w;\n           height = h;\n           length = l;\n       }\n      public ~box()\n      {\n          volume = width * length * height;\n\n      }\n\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          box b = new box(4, 5, 9);\n          Console.WriteLine(b.volume);\n          Console.ReadLine();\n      }\n\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "180"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "We cannot use any kind of modifier with destructor."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": "  class box\n  {\n      public int volume;\n      int width;\n      int height;\n      int length;\n      public box ( int w, int h, int l)\n      {\n          this.width = w;\n          this.height = h;\n          this.length = l;\n      }\n      ~ box()\n      {\n          volume = this.width * this.length * this.height;\n          console.writeline(volume);\n      }\n  }\n  class Program\n  {\n      public  static void Main(string[] args)\n      {\n          box b = new box(4, 5, 9);\n          Console.ReadLine();\n      }\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "Code executes successfully but prints nothing"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "180"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput:\n\n180."
+    }
+  ]
+}

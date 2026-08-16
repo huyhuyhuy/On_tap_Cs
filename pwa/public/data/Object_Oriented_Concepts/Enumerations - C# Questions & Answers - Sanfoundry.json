@@ -1,0 +1,285 @@
+{
+  "title": "C# Questions & Answers - Enumerations",
+  "topic": "Object_Oriented_Concepts",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-enumerations/",
+  "sourceFile": "Enumerations - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on enumerations of C# Programming Language.",
+  "questionCount": 11,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Choose the correct statements about enum used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "An enum variable cannot have a private access modifier"
+        },
+        {
+          "key": "b",
+          "text": "An enum variable can be defined inside a class or a namespace"
+        },
+        {
+          "key": "c",
+          "text": "An enum variable cannot have a protected access modifier"
+        },
+        {
+          "key": "d",
+          "text": "An enum variable cannot have a public access modifier"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which among the following cannot be used as a datatype for an enum in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "short"
+        },
+        {
+          "key": "b",
+          "text": "double"
+        },
+        {
+          "key": "c",
+          "text": "int"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code?",
+      "code": "enum days:int\n{\n    sunday = -3,\n    monday,\n    tuesday\n}\nConsole.WriteLine((int)days.sunday);\nConsole.WriteLine((int)days.monday);\nConsole.WriteLine((int)days.tuesday);",
+      "options": [
+        {
+          "key": "a",
+          "text": "-3 0 1"
+        },
+        {
+          "key": "b",
+          "text": "0 1 2"
+        },
+        {
+          "key": "c",
+          "text": "-3 -2 -1"
+        },
+        {
+          "key": "d",
+          "text": "sunday monday tuesday"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "What will be the correct statement of the following C# code?",
+      "code": "enum color:byte\n{\n    yellow = 500,\n    green = 1000,\n    pink = 1300\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "byte value cannot be assigned to enum elements"
+        },
+        {
+          "key": "b",
+          "text": "enum elements should always take successive values"
+        },
+        {
+          "key": "c",
+          "text": "enum must always be of int type"
+        },
+        {
+          "key": "d",
+          "text": "When the valid range of byte exceeds, the compiler will report an error"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Wrong statement about enum used in C#.NET is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "An enum can be declared inside a class"
+        },
+        {
+          "key": "b",
+          "text": "An object cannot be assigned to an enum variable"
+        },
+        {
+          "key": "c",
+          "text": "An enum can be declared outside a class"
+        },
+        {
+          "key": "d",
+          "text": "An enum can have Single and Double values"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": "  enum per\n {\n     a,\n     b,\n     c,\n     d,\n }\n per.a = 10;\n Console.writeline(per.b);",
+      "options": [
+        {
+          "key": "a",
+          "text": "11"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "2"
+        },
+        {
+          "key": "d",
+          "text": "compile time error"
+        }
+      ],
+      "answer": "d",
+      "explanation": "It will report an error since enum element cannot be assigned a value outside the enum declaration."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": "enum color:int\n{\n    red,\n    green,\n    blue = 5,\n    cyan,\n    pink = 10,\n    brown\n}\nconsole.writeline((int)color.green);\nconsole.writeline((int)color.brown);",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 10"
+        },
+        {
+          "key": "b",
+          "text": "2 11"
+        },
+        {
+          "key": "c",
+          "text": "1 11"
+        },
+        {
+          "key": "d",
+          "text": "1 5"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\n 1 11"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": "enum letters\n{\n    a,\n    b,\n    c\n}\nletters l;\nl = letters.a;\nConsole.writeline(l);",
+      "options": [
+        {
+          "key": "a",
+          "text": "-1"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "a"
+        },
+        {
+          "key": "d",
+          "text": "letters.a"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\na"
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": " enum colors\n {\n     red,\n     black,\n     pink\n }\n colors s = colors.black;\n type t;\n t = c.GetType();\n string[] str;\n str = Enum.GetNames(t);\n Console.WriteLine(str[0]);",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "black"
+        },
+        {
+          "key": "c",
+          "text": "red"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\n red"
+    },
+    {
+      "number": 10,
+      "question": "Choose the correct statement about enum used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "By default the first enumerator has a value equal to the number of elements present in the list"
+        },
+        {
+          "key": "b",
+          "text": "Values of the enum elements cannot be populated from database"
+        },
+        {
+          "key": "c",
+          "text": "The value of each successive enumerator is decreased by 1"
+        },
+        {
+          "key": "d",
+          "text": "An enumerator has a white space in its name"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 11,
+      "question": "Which among the following differentiates enum in C#.NET from enum in C language?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "C is strictly a typed language, C#.NET also is a strictly typed language"
+        },
+        {
+          "key": "b",
+          "text": "In C, language variables of enum types can be used interchangeably with integers using type casts while enum variables cannot be used as a normal integers in C#.NET"
+        },
+        {
+          "key": "c",
+          "text": "None of the mentioned"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    }
+  ]
+}

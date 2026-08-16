@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Methods in Class",
+  "topic": "Classes",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-methods-class/",
+  "sourceFile": "Class Methods - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on methods in class in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int a = 5;\n     int s = 0, c = 0;\n     Mul (a, ref s, ref c);\n     Console.WriteLine(s + \"t \" +c);\n     Console.ReadLine();\n }\n static void Mul (int x, ref int ss, ref int cc)\n {\n     ss = x * x;\n     cc = x * x * x;\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "125 25"
+        },
+        {
+          "key": "b",
+          "text": "25 125"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "0 0"
+        }
+      ],
+      "answer": "b",
+      "explanation": "The value of variable a is passed by value while value of variable s and c is passed by reference.\n\nOutput:\n\n 25 125"
+    },
+    {
+      "number": 2,
+      "question": "Which of the following statements are correct about functions?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "C# allows a function to have arguments with default values"
+        },
+        {
+          "key": "b",
+          "text": "Redefining a method parameter in the method's body causes an exception"
+        },
+        {
+          "key": "c",
+          "text": "C# allows function to have arguments with default values"
+        },
+        {
+          "key": "d",
+          "text": "Omitting the return type in method definition results into exception"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code?",
+      "code": "static void Main(string[] args)\n{\n    Mul();\n    m();\n    Console.ReadLine();\n}\nstatic void Mul()\n{\n    Console.WriteLine(\"4\");\n}\nstatic void m()\n{\n    Console.WriteLine(\"3\");\n    Mul();\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "4 3 3"
+        },
+        {
+          "key": "b",
+          "text": "4 4 3"
+        },
+        {
+          "key": "c",
+          "text": "4 3 4"
+        },
+        {
+          "key": "d",
+          "text": "3 4 4"
+        }
+      ],
+      "answer": "c",
+      "explanation": "First Mul() will be executed to print the number '4' after that function m() will be executed to print the number  '3' and at last mentioned function Mul() will be executed to print the statement 4 to return the output as 4 3 4.\n\nOutput:\n\n 4 3 4"
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     m();\n     Console.ReadLine();\n }\n static void m()\n {\n     Console.WriteLine(\"HI\");\n     m();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "HI HI HI"
+        },
+        {
+          "key": "b",
+          "text": "HI"
+        },
+        {
+          "key": "c",
+          "text": "Stack overflow exception"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Control of statement when enters for once in  m() does not go out, then it executes again and again inside the block until stack overflow exception occurs."
+    },
+    {
+      "number": 5,
+      "question": "When a function fun() is to receive an int, a single & a double and it is to return a decimal, then the correct way of defining this C# function is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "static fun(int i, single j, double k)\n   {\n       return decimal;\n   }"
+        },
+        {
+          "key": "b",
+          "text": "static decimal fun(int i, single, double k)\n   {\n\n   }"
+        },
+        {
+          "key": "c",
+          "text": "decimal fun(int i, single j, double k)\n   {\n\n   }"
+        },
+        {
+          "key": "d",
+          "text": "decimal static fun(int i, single j, double k)\n   {\n\n   }"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Correct way of declaration of function is defined as return_type name of function(return type)."
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int i = 10;\n     double d = 35.78;\n     fun(i);\n     fun(d);\n     Console.ReadLine();\n }\n static void fun(double d)\n {\n     Console.WriteLine(d);\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "35.78\n   10"
+        },
+        {
+          "key": "b",
+          "text": "10\n   35.00"
+        },
+        {
+          "key": "c",
+          "text": "10\n   35.78"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "'int' datatype is sub datatype of 'double'. Hence, when first part of func() is executed it is integer part and hence when the second part is executed it is double.\n\nOutput:\n\n       10\n       35.78"
+    },
+    {
+      "number": 7,
+      "question": "How many values does a function return?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "any number of values"
+        }
+      ],
+      "answer": "c",
+      "explanation": "A method can return only either single value or no value if no then it's declared as void method();"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int y = 3;\n     y++;\n     if (y <= 5)\n     {\n         Console.WriteLine(\"hi\");\n         Main(args);\n     }\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "hi hi"
+        },
+        {
+          "key": "b",
+          "text": "hi"
+        },
+        {
+          "key": "c",
+          "text": "Stack overflow exception"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "If loop never gets over, it will execute continuously. The control never goes out of 'if' statement.\n\nOutput: hi\n        hi\n         .\n         .\n         .\n        stack overflow exception"
+    },
+    {
+      "number": 9,
+      "question": "Which return statement correctly returns the output?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public int cube(int x)\n   {\n       return (x + x);\n   }"
+        },
+        {
+          "key": "b",
+          "text": "public int cube(int x)\n   return (x + x);"
+        },
+        {
+          "key": "c",
+          "text": "public int cube(int x)\n   {\n       return x + x;\n   }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The correct syntax of return statement is defined within block of statements as { return(statement);}."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " public static void Main(string[] args)\n {\n     p();\n     void p()\n     {\n         Console.WriteLine(\"hi\");\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "hi"
+        },
+        {
+          "key": "c",
+          "text": "hi infinite times"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Invalid definition of function p() inside main()."
+    }
+  ]
+}

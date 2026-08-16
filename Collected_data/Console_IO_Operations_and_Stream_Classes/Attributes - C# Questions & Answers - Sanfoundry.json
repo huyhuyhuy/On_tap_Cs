@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Attributes",
+  "topic": "Console_IO_Operations_and_Stream_Classes",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-attributes/",
+  "sourceFile": "Attributes - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on attributes in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of the following cannot further inspect the attribute that is once applied?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Linker"
+        },
+        {
+          "key": "b",
+          "text": "ASP.NET Runtime"
+        },
+        {
+          "key": "c",
+          "text": "Language compilers"
+        },
+        {
+          "key": "d",
+          "text": "CLR"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "To apply an attribute to an Assembly, the correct way of implementation is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "[AssemblyInfo: AssemblyDescription (\"Csharp\")]"
+        },
+        {
+          "key": "b",
+          "text": "[assembly: AssemblyDescription(\"Csharp\")]"
+        },
+        {
+          "key": "c",
+          "text": "[AssemblyDescription(\"Csharp\")]"
+        },
+        {
+          "key": "d",
+          "text": "(Assembly:AssemblyDescription(\"Csharp\")]"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "The correct method to pass a parameter to an attribute is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "By name"
+        },
+        {
+          "key": "b",
+          "text": "By address"
+        },
+        {
+          "key": "c",
+          "text": "By value"
+        },
+        {
+          "key": "d",
+          "text": "By reference"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "Which among the following is the correct form of applying an attribute?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "<Serializable()>class sample\n  {\n\n  }"
+        },
+        {
+          "key": "b",
+          "text": "🔥 Enroll Now for Free Python Certification - August 2026\n\n  (Serializable())class sample\n  {\n\n  }"
+        },
+        {
+          "key": "c",
+          "text": "[Serializable()] class sample\n  {\n\n  }"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    },
+    {
+      "number": 5,
+      "question": "Which among the following cannot be a target for a custom attribute?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Enum"
+        },
+        {
+          "key": "b",
+          "text": "Event"
+        },
+        {
+          "key": "c",
+          "text": "Interface"
+        },
+        {
+          "key": "d",
+          "text": "Namespace"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Select the correct statement about Attributes used in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "The CLR can change the behaviour of the code depending on attributes applied to it"
+        },
+        {
+          "key": "b",
+          "text": "If a bugFixAttribute is to receive three parameters, then the BugFixAttribute class should implement a zero argument constructor"
+        },
+        {
+          "key": "c",
+          "text": "To create a custom attribute we need to create a custom attribute structure and derive it from System.Attribute"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "The correct way to apply the custom attribute called Employer which receives two arguments - name of the employee and employeeid is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Custom attribute can be applied to an assembly"
+        },
+        {
+          "key": "b",
+          "text": "[assembly : Employer(\"Ankit\",employeeid.one)]"
+        },
+        {
+          "key": "c",
+          "text": "[ Employer(\"Ankit\",  employeeid.second)] class employee\n   {\n   }"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "Which of the following is the correct statement about inspecting an attribute in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "An attribute can be inspected at link time"
+        },
+        {
+          "key": "b",
+          "text": "An attribute can be inspected at design time"
+        },
+        {
+          "key": "c",
+          "text": "An attribute can be inspected at run time"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Attributes could be applied to ___________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Method"
+        },
+        {
+          "key": "b",
+          "text": "Class"
+        },
+        {
+          "key": "c",
+          "text": "Assembly"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "The [Serializable()] attributes gets inspected at _________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "compile time"
+        },
+        {
+          "key": "b",
+          "text": "run time"
+        },
+        {
+          "key": "c",
+          "text": "design time"
+        },
+        {
+          "key": "d",
+          "text": "linking time"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    }
+  ]
+}

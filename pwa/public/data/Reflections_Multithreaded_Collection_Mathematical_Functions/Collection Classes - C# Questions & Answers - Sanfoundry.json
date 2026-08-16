@@ -1,0 +1,335 @@
+{
+  "title": "C# Questions & Answers - Collection Classes",
+  "topic": "Reflections_Multithreaded_Collection_Mathematical_Functions",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-collection-classes/",
+  "sourceFile": "Collection Classes - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on collection in classes in C# Programming Language.",
+  "questionCount": 13,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which among the following is not the ordered collection class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "BitArray"
+        },
+        {
+          "key": "b",
+          "text": "Queue"
+        },
+        {
+          "key": "c",
+          "text": "Stack"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "Which among the following is not an interface declared in System.Collection namespace?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "IDictionaryComparer"
+        },
+        {
+          "key": "b",
+          "text": "IEnumerable"
+        },
+        {
+          "key": "c",
+          "text": "IEnumerator"
+        },
+        {
+          "key": "d",
+          "text": "Icomparer"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which among the following is the correct way to find out the number of elements currently present in an ArrayListCollection called arr?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "arr.Capacity"
+        },
+        {
+          "key": "b",
+          "text": "arr.Count"
+        },
+        {
+          "key": "c",
+          "text": "arr.MaxIndex"
+        },
+        {
+          "key": "d",
+          "text": "arr.UpperBound"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "Which statement is correct in the following C#.NET code snippet?",
+      "code": "Stack st = new Stack();\nst.Push(\"Csharp\");\nst.Push(7.3);\nst.Push(8);\nst.Push('b');\nst.Push(true);",
+      "options": [
+        {
+          "key": "a",
+          "text": "Unsimilar elements like \"Csharp\", 7.3, 8 cannot be stored in the same stack collection"
+        },
+        {
+          "key": "b",
+          "text": "Boolean values can never be stored in Stack collection"
+        },
+        {
+          "key": "c",
+          "text": "Perfectly workable code"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+    },
+    {
+      "number": 5,
+      "question": "Which is the correct statement about an ArrayList collection that implements the IEnumerable interface?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "To access members of ArrayList from the inner class, it is necessary to pass ArrayList class reference to it"
+        },
+        {
+          "key": "b",
+          "text": "The inner class of ArrayList can access ArrayList class members"
+        },
+        {
+          "key": "c",
+          "text": "The ArrayList class consist of inner class that implements the IEnumerator interface"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Which among the following is the correct way to access all the elements of the Stack collection created using the C#.NET code snippet given below?",
+      "code": "Stack st = new Stack();\nst.Push(10);\nst.Push(20);\nst.Push(-5);\nst.Push(30);\nst.Push(6);",
+      "options": [
+        {
+          "key": "a",
+          "text": "IEnumerable e;\n   e = st.GetEnumerator();\n   while (e.MoveNext())\n   Console.WriteLine(e.Current);"
+        },
+        {
+          "key": "b",
+          "text": "IEnumerator e;\n   e = st.GetEnumerator();\n   while(e.MoveNext())\n   Console.WriteLine(e.Current);"
+        },
+        {
+          "key": "c",
+          "text": "IEnumerable e;\n   e = st.GetEnumerable();\n   while(e.MoveNext())\n   Console.WriteLine(e.Current);"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "The correct code to access all the elements of the queue collection created using the following C#.NET code snippets?",
+      "code": "Queue q = new Queue();\nq.Enqueue(\"Harsh\");\nq.Enqueue('a');\nq.Enqueue(false);\nq.Enqueue(70);\nq.Enqueue(8.5);",
+      "options": [
+        {
+          "key": "a",
+          "text": "IEnumerator e;\n   e = q.GetEnumerator();\n   while(e.MoveNext())\n   Console.WriteLine(e.Current);"
+        },
+        {
+          "key": "b",
+          "text": "IEnumerable e;\n   e = q.GetEnumerator();\n   while(e.MoveNext())"
+        },
+        {
+          "key": "c",
+          "text": "IEnumerable e\n   e = q.GetEnumerable();\n   while(e.MoveNext())\n   Console.WriteLine(e.Current);"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "Which statements among the following are correct about the Collection Classes available in Framework Class Library?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Elements of a collection cannot be transmitted over a network"
+        },
+        {
+          "key": "b",
+          "text": "Elements stored in a collection can be modified only if all the elements are of similar types"
+        },
+        {
+          "key": "c",
+          "text": "Elements stored in a Collection can be retrieved but cannot be modified"
+        },
+        {
+          "key": "d",
+          "text": "Collection classes make use of efficient algorithms to manage the collection, hence improving the performance of the program"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Among the given collections which one is I/O index based?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "ArrayList"
+        },
+        {
+          "key": "b",
+          "text": "List"
+        },
+        {
+          "key": "c",
+          "text": "Stack"
+        },
+        {
+          "key": "d",
+          "text": "Queue"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 10,
+      "question": "Which among the given statements are correct about the Stack collection?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "It can be used for evaluation of expressions"
+        },
+        {
+          "key": "b",
+          "text": "It is used to maintain a FILO list"
+        },
+        {
+          "key": "c",
+          "text": "Top most element of the Stack collection can be accessed using the Peek()"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "A stack works on the FILO (First In, Last Out) principle. It is widely used to evaluate expressions like postfix and prefix. The Peek() operation allows accessing the top element of the stack without removing it, so all given statements are correct."
+    },
+    {
+      "number": 11,
+      "question": "A HashTable t maintains a collection of names of states and capital city of each state. Which among the following finds out whether \"New delhi\" state is present in the collection or not?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "t.HasValue(\"New delhi\");"
+        },
+        {
+          "key": "b",
+          "text": "t.ContainsKey(\"New delhi\");"
+        },
+        {
+          "key": "c",
+          "text": "t.HasKey(\"New delhi\");"
+        },
+        {
+          "key": "d",
+          "text": "t.ContainsValue(\"New delhi\");"
+        }
+      ],
+      "answer": "b",
+      "explanation": "The question explicitly states that \"New delhi\" is a state, so it must be stored as a key in the Hashtable. ContainsKey() is the correct method to check whether a given state exists in the collection."
+    },
+    {
+      "number": 12,
+      "question": "In which of the following collections is the I/O based on a key?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "BitArray"
+        },
+        {
+          "key": "b",
+          "text": "SortedList"
+        },
+        {
+          "key": "c",
+          "text": "Queue"
+        },
+        {
+          "key": "d",
+          "text": "Stack"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 13,
+      "question": "The wrong statements about a HashTable collection are?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "It is a keyed collection"
+        },
+        {
+          "key": "b",
+          "text": "It is a ordered collection"
+        },
+        {
+          "key": "c",
+          "text": "It's not an indexed collection"
+        },
+        {
+          "key": "d",
+          "text": "It implements a IDictionaryEnumerator interface in its inner class"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    }
+  ]
+}

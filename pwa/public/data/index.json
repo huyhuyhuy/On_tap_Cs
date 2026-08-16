@@ -1,0 +1,701 @@
+{
+  "title": "Ôn tập C#",
+  "topicCount": 11,
+  "questionCount": 917,
+  "topics": [
+    {
+      "id": "Data_Types_Variables_and_Operators",
+      "title": "Kiểu dữ liệu, biến và toán tử",
+      "blurb": "Nền tảng: int, float, biến, toán tử.",
+      "order": 1,
+      "questionCount": 103,
+      "lessons": [
+        {
+          "id": "integer-data-types",
+          "file": "Integer Data Types - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Integer Data Types - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Integer Data Types",
+          "questionCount": 12
+        },
+        {
+          "id": "floating-and-decimal-data-types",
+          "file": "Floating & Decimal Data Types - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Floating & Decimal Data Types - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Floating and Decimal Data Types",
+          "questionCount": 13
+        },
+        {
+          "id": "char-types-and-string-literals",
+          "file": "Char Types & String Literals - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Char Types & String Literals - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Char Types and String Literals",
+          "questionCount": 15
+        },
+        {
+          "id": "variables-intialization",
+          "file": "Variables Intialization - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Variables Intialization - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Initialization of Variables",
+          "questionCount": 10
+        },
+        {
+          "id": "variables-scope-and-lifetime",
+          "file": "Variables Scope & Lifetime - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Variables Scope & Lifetime - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Scope and Lifetime of Variables",
+          "questionCount": 13
+        },
+        {
+          "id": "expressions-type-conversion",
+          "file": "Expressions Type Conversion - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Expressions Type Conversion - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers -Type Conversion in Expressions",
+          "questionCount": 10
+        },
+        {
+          "id": "arithmetic-operators",
+          "file": "Arithmetic Operators - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Arithmetic Operators - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Arithmetic Operators",
+          "questionCount": 10
+        },
+        {
+          "id": "relational-and-logical-operators",
+          "file": "Relational & Logical Operators - C# Questions & Answers - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Relational & Logical Operators - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Relational and Logical Operators",
+          "questionCount": 10
+        },
+        {
+          "id": "bitwise-and-conditional-operators",
+          "file": "Bitwise & Conditional Operators - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Data_Types_Variables_and_Operators/Bitwise & Conditional Operators - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers - Bitwise and Conditional Operators",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Looping_Statements",
+      "title": "Vòng lặp và rẽ nhánh",
+      "blurb": "if, switch, for, while, do-while.",
+      "order": 2,
+      "questionCount": 67,
+      "lessons": [
+        {
+          "id": "if-statements",
+          "file": "IF Statements - C# Questions & Answers - Sanfoundry.json",
+          "path": "Looping_Statements/IF Statements - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - IF Statements",
+          "questionCount": 10
+        },
+        {
+          "id": "switch-statement-mcq-in-csharp",
+          "file": "Switch Statement MCQ in C# - Sanfoundry.json",
+          "path": "Looping_Statements/Switch Statement MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Switch Statement",
+          "questionCount": 10
+        },
+        {
+          "id": "for-loop-statements",
+          "file": "For Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "path": "Looping_Statements/For Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - For Loop Statements",
+          "questionCount": 13
+        },
+        {
+          "id": "while-loop-statements",
+          "file": "While Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "path": "Looping_Statements/While Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - While Loop Statements",
+          "questionCount": 12
+        },
+        {
+          "id": "do-while-loop-statements",
+          "file": "Do While Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "path": "Looping_Statements/Do While Loop Statements - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Do While Loop Statements",
+          "questionCount": 11
+        },
+        {
+          "id": "continue-and-goto-statements",
+          "file": "Continue & Goto Statements - C# Questions & Answers - Sanfoundry.json",
+          "path": "Looping_Statements/Continue & Goto Statements - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Continue, Goto Statements",
+          "questionCount": 11
+        }
+      ]
+    },
+    {
+      "id": "Classes",
+      "title": "Class",
+      "blurb": "Class, tham chiếu, phương thức, constructor.",
+      "order": 3,
+      "questionCount": 56,
+      "lessons": [
+        {
+          "id": "class-fundamentals",
+          "file": "Class Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "path": "Classes/Class Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Fundamentals of Class",
+          "questionCount": 13
+        },
+        {
+          "id": "reference-variables-and-assignment",
+          "file": "Reference Variables & Assignment - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Classes/Reference Variables & Assignment - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers - Reference Variables and Assignment",
+          "questionCount": 13
+        },
+        {
+          "id": "class-methods",
+          "file": "Class Methods - C# Questions & Answers - Sanfoundry.json",
+          "path": "Classes/Class Methods - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Methods in Class",
+          "questionCount": 10
+        },
+        {
+          "id": "class-constructors",
+          "file": "Class Constructors - C# Questions & Answers - Sanfoundry.json",
+          "path": "Classes/Class Constructors - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Constructors in Class",
+          "questionCount": 10
+        },
+        {
+          "id": "destructors-in-class",
+          "file": "Destructors in Class - C# Questions & Answers - Sanfoundry.json",
+          "path": "Classes/Destructors in Class - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Destructors in Class",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Arrays_and_Strings",
+      "title": "Mảng và chuỗi",
+      "blurb": "Array, string, ref/out, params.",
+      "order": 4,
+      "questionCount": 90,
+      "lessons": [
+        {
+          "id": "array-mcq-in-csharp",
+          "file": "Array MCQ in C# - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Array MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Array",
+          "questionCount": 10
+        },
+        {
+          "id": "strings-basic-operation",
+          "file": "Strings Basic Operation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Strings Basic Operation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Basic Operation on Strings",
+          "questionCount": 10
+        },
+        {
+          "id": "strings-comparison",
+          "file": "Strings Comparison - C# Questions & Answers - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Strings Comparison - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Comparison of Strings",
+          "questionCount": 10
+        },
+        {
+          "id": "searching-and-modifying-strings",
+          "file": "Searching & Modifying Strings - C# Questions & Answers - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Searching & Modifying Strings - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Searching and Modifying Strings",
+          "questionCount": 10
+        },
+        {
+          "id": "characters-operation",
+          "file": "Characters Operation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Characters Operation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Operation on Characters",
+          "questionCount": 10
+        },
+        {
+          "id": "string-class-with-description",
+          "file": "String Class with Description - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Arrays_and_Strings/String Class with Description - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers - String Class with Description",
+          "questionCount": 10
+        },
+        {
+          "id": "public-and-private-access-modifier",
+          "file": "Public & Private Access Modifier - C# Questions & Answers - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Public & Private Access Modifier - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Public & Private Access Modifier",
+          "questionCount": 10
+        },
+        {
+          "id": "ref-and-out-parameters",
+          "file": "Ref & Out Parameters - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Arrays_and_Strings/Ref & Out Parameters - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers - Use of Ref and Out Parameters",
+          "questionCount": 10
+        },
+        {
+          "id": "csharp-questions-and-answers-use-of-variable-number-of-arguments",
+          "file": "C# Questions & Answers – Use of Variable Number of Arguments - Sanfoundry.json",
+          "path": "Arrays_and_Strings/C# Questions & Answers – Use of Variable Number of Arguments - Sanfoundry.json",
+          "title": "C# Questions & Answers - Use of Variable Number of Arguments",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Object_Oriented_Concepts",
+      "title": "Lập trình hướng đối tượng",
+      "blurb": "Kế thừa, đa hình, interface, overload.",
+      "order": 5,
+      "questionCount": 147,
+      "lessons": [
+        {
+          "id": "structures",
+          "file": "Structures - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Structures - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Structures",
+          "questionCount": 13
+        },
+        {
+          "id": "enumerations",
+          "file": "Enumerations - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Enumerations - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Enumerations",
+          "questionCount": 11
+        },
+        {
+          "id": "method-overloading",
+          "file": "Method Overloading - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Method Overloading - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Method Overloading",
+          "questionCount": 12
+        },
+        {
+          "id": "constructor-overloading",
+          "file": "Constructor Overloading - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Constructor Overloading - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Constructor Overloading",
+          "questionCount": 10
+        },
+        {
+          "id": "inheritance-fundamentals",
+          "file": "Inheritance Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Inheritance Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Fundamentals of Inheritance",
+          "questionCount": 15
+        },
+        {
+          "id": "inheritance-implementation",
+          "file": "Inheritance Implementation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Inheritance Implementation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Inheritance Implementation",
+          "questionCount": 14
+        },
+        {
+          "id": "method-overriding",
+          "file": "Method Overriding - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Method Overriding - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Method Overriding",
+          "questionCount": 10
+        },
+        {
+          "id": "polymorphism",
+          "file": "Polymorphism - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Polymorphism - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Polymorphism",
+          "questionCount": 10
+        },
+        {
+          "id": "abstract-class-and-methods",
+          "file": "Abstract Class & Methods - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Abstract Class & Methods - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Abstract Class & Methods",
+          "questionCount": 10
+        },
+        {
+          "id": "interfaces-basics",
+          "file": "Interfaces Basics - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Interfaces Basics - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Interfaces Introduction",
+          "questionCount": 12
+        },
+        {
+          "id": "interfaces-implementation",
+          "file": "Interfaces Implementation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Interfaces Implementation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Interfaces Implementation",
+          "questionCount": 10
+        },
+        {
+          "id": "overloaded-operators",
+          "file": "Overloaded Operators - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Overloaded Operators - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Overloaded Operators",
+          "questionCount": 10
+        },
+        {
+          "id": "recursion",
+          "file": "Recursion - C# Questions & Answers - Sanfoundry.json",
+          "path": "Object_Oriented_Concepts/Recursion - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Recursion",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Indexers_and_Exception_Handling",
+      "title": "Indexer và exception",
+      "blurb": "Indexer, property, try/catch/finally.",
+      "order": 6,
+      "questionCount": 72,
+      "lessons": [
+        {
+          "id": "indexers-basics",
+          "file": "Indexers Basics - C# Questions & Answers - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/Indexers Basics - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Indexers",
+          "questionCount": 10
+        },
+        {
+          "id": "properties-basics",
+          "file": "Properties Basics - C# Questions & Answers - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/Properties Basics - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Properties",
+          "questionCount": 10
+        },
+        {
+          "id": "properties-and-its-applications",
+          "file": "C# Questions & Answers - Properties and its Applications - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/C# Questions & Answers - Properties and its Applications - Sanfoundry.json",
+          "title": "C# Questions & Answers - Properties and its Applications",
+          "questionCount": 10
+        },
+        {
+          "id": "exception-handling-fundamentals",
+          "file": "Exception Handling Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/Exception Handling Fundamentals - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Fundamentals of Exception Handling",
+          "questionCount": 12
+        },
+        {
+          "id": "try-and-catch",
+          "file": "Try & Catch - C# Questions & Answers - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/Try & Catch - C# Questions & Answers - Sanfoundry.json",
+          "title": "C#Questions & Answers - Try & Catch in Detail",
+          "questionCount": 10
+        },
+        {
+          "id": "exception-handling-implementation",
+          "file": "Exception Handling Implementation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/Exception Handling Implementation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Implementation of Exception Handling",
+          "questionCount": 10
+        },
+        {
+          "id": "exceptions-of-type-finally-and-built-in-exceptions",
+          "file": "C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions - Sanfoundry.json",
+          "path": "Indexers_and_Exception_Handling/C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions - Sanfoundry.json",
+          "title": "C# Questions & Answers - Exceptions of Type Finally and Built in Exceptions",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Console_IO_Operations_and_Stream_Classes",
+      "title": "Console I/O và stream",
+      "blurb": "Nhập xuất console, byte/character stream.",
+      "order": 7,
+      "questionCount": 72,
+      "lessons": [
+        {
+          "id": "introduction-of-console-i-o-operations",
+          "file": "C# Questions & Answers - Introduction of Console I_O Operations - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/C# Questions & Answers - Introduction of Console I_O Operations - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Console I/O Operations",
+          "questionCount": 12
+        },
+        {
+          "id": "reading-console-input-operations",
+          "file": "Reading Console Input Operations - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Reading Console Input Operations - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Reading Console Input Operations",
+          "questionCount": 10
+        },
+        {
+          "id": "writing-console-output-operations",
+          "file": "Writing Console Output Operations - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Writing Console Output Operations - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Writing Console Output Operations",
+          "questionCount": 10
+        },
+        {
+          "id": "stream-classes-basics",
+          "file": "Stream Classes Basics - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Stream Classes Basics - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Stream Classes",
+          "questionCount": 10
+        },
+        {
+          "id": "byte-stream",
+          "file": "Byte Stream - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Byte Stream - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Byte Stream",
+          "questionCount": 10
+        },
+        {
+          "id": "character-stream",
+          "file": "Character Stream - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Character Stream - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Character Stream",
+          "questionCount": 10
+        },
+        {
+          "id": "attributes",
+          "file": "Attributes - C# Questions & Answers - Sanfoundry.json",
+          "path": "Console_IO_Operations_and_Stream_Classes/Attributes - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Attributes",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Delegates_Generics_and_LINQ",
+      "title": "Delegate, generic và LINQ",
+      "blurb": "Delegate, generic, LINQ, Array class.",
+      "order": 8,
+      "questionCount": 85,
+      "lessons": [
+        {
+          "id": "delegates-mcq-in-csharp",
+          "file": "Delegates MCQ in C# - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/Delegates MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Delegates",
+          "questionCount": 10
+        },
+        {
+          "id": "delegates-in-detail",
+          "file": "Delegates in Detail - C# Multiple Choice Questions - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/Delegates in Detail - C# Multiple Choice Questions - Sanfoundry.json",
+          "title": "C# Questions & Answers - Delegates in Detail",
+          "questionCount": 10
+        },
+        {
+          "id": "generics-mcq-in-csharp",
+          "file": "Generics MCQ in C# - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/Generics MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Generics",
+          "questionCount": 12
+        },
+        {
+          "id": "generic-methods",
+          "file": "Generic Methods - C# Questions & Answers - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/Generic Methods - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Question & Answers - Generic Methods",
+          "questionCount": 12
+        },
+        {
+          "id": "introduction-of-array-class",
+          "file": "C# Questions & Answers - Introduction of Array Class - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/C# Questions & Answers - Introduction of Array Class - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Array Class",
+          "questionCount": 11
+        },
+        {
+          "id": "linq-mcq-in-csharp",
+          "file": "LINQ MCQ in C# - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/LINQ MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - LINQ",
+          "questionCount": 10
+        },
+        {
+          "id": "linq-operation",
+          "file": "LINQ Operation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/LINQ Operation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Operation with LINQ",
+          "questionCount": 10
+        },
+        {
+          "id": "runtime-type",
+          "file": "Runtime Type - C# Questions & Answers - Sanfoundry.json",
+          "path": "Delegates_Generics_and_LINQ/Runtime Type - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Question & Answers - Runtime Type",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Namespaces_Preprocessors_Networking",
+      "title": "Namespace, preprocessor, networking",
+      "blurb": "Namespace, #define, URI, network.",
+      "order": 9,
+      "questionCount": 70,
+      "lessons": [
+        {
+          "id": "namespaces-mcq-in-csharp",
+          "file": "Namespaces MCQ in C# - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Namespaces MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Namespaces",
+          "questionCount": 10
+        },
+        {
+          "id": "preprocessors-mcq-in-csharp",
+          "file": "Preprocessors MCQ in C# - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Preprocessors MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Preprocessors",
+          "questionCount": 10
+        },
+        {
+          "id": "parameters-method",
+          "file": "Parameters Method - C# Questions & Answers - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Parameters Method - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Method with Parameters",
+          "questionCount": 10
+        },
+        {
+          "id": "type-interface",
+          "file": "Type Interface - C# Questions & Answers - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Type Interface - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Type Interface",
+          "questionCount": 10
+        },
+        {
+          "id": "networking-mcq-in-csharp",
+          "file": "Networking MCQ in C# - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Networking MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Networking",
+          "questionCount": 10
+        },
+        {
+          "id": "uri-class",
+          "file": "UrI Class - C# Questions & Answers - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/UrI Class - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - UrI Class",
+          "questionCount": 10
+        },
+        {
+          "id": "network-errors-handling",
+          "file": "Network Errors handling - C# Questions & Answers - Sanfoundry.json",
+          "path": "Namespaces_Preprocessors_Networking/Network Errors handling - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Network Errors Handling",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Reflections_Multithreaded_Collection_Mathematical_Functions",
+      "title": "Reflection, thread, collection, math",
+      "blurb": "Reflection, collection, Math, multithread.",
+      "order": 10,
+      "questionCount": 73,
+      "lessons": [
+        {
+          "id": "reflections-basics",
+          "file": "Reflections Basics - C# Questions & Answers - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Reflections Basics - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Introduction of Reflections",
+          "questionCount": 10
+        },
+        {
+          "id": "collection-classes",
+          "file": "Collection Classes - C# Questions & Answers - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Collection Classes - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Collection Classes",
+          "questionCount": 13
+        },
+        {
+          "id": "iterators",
+          "file": "Iterators - C# Questions & Answers - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Iterators - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Question & Answers - Iterators",
+          "questionCount": 9
+        },
+        {
+          "id": "maths-class",
+          "file": "Maths Class - C# Questions & Answers - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Maths Class - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Question & Answers - Maths Class",
+          "questionCount": 10
+        },
+        {
+          "id": "rounding-functions",
+          "file": "Rounding Functions - C# Questions & Answers - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Rounding Functions - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Rounding Functions",
+          "questionCount": 10
+        },
+        {
+          "id": "multithreaded-programming-mcq-in-csharp",
+          "file": "Multithreaded Programming MCQ in C# - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/Multithreaded Programming MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - Multithreaded Programming",
+          "questionCount": 11
+        },
+        {
+          "id": "multithreaded-programming-2",
+          "file": "C# Questions & Answers - Multithreaded Programming - 2 - Sanfoundry.json",
+          "path": "Reflections_Multithreaded_Collection_Mathematical_Functions/C# Questions & Answers - Multithreaded Programming - 2 - Sanfoundry.json",
+          "title": "C# Questions & Answers - Multithreaded Programming - 2",
+          "questionCount": 10
+        }
+      ]
+    },
+    {
+      "id": "Miscellaneous",
+      "title": "Linh tinh",
+      "blurb": "Format chuỗi, pointer, unsafe code.",
+      "order": 11,
+      "questionCount": 82,
+      "lessons": [
+        {
+          "id": "string-formatting-mcq-in-csharp",
+          "file": "String Formatting MCQ in C# - Sanfoundry.json",
+          "path": "Miscellaneous/String Formatting MCQ in C# - Sanfoundry.json",
+          "title": "C# Multiple Choice Questions - String Formatting",
+          "questionCount": 12
+        },
+        {
+          "id": "string-formatting-operations",
+          "file": "String Formatting Operations - C# Questions & Answers - Sanfoundry.json",
+          "path": "Miscellaneous/String Formatting Operations - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - String Formatting Operations- 1",
+          "questionCount": 12
+        },
+        {
+          "id": "string-formatting-operations-2",
+          "file": "C# Questions & Answers - String Formatting Operations - 2 - Sanfoundry.json",
+          "path": "Miscellaneous/C# Questions & Answers - String Formatting Operations - 2 - Sanfoundry.json",
+          "title": "C# Questions & Answers - String Formatting Operations - 2",
+          "questionCount": 11
+        },
+        {
+          "id": "accessor-controls-of-class",
+          "file": "C# Questions & Answers - Accessor controls of class - Sanfoundry.json",
+          "path": "Miscellaneous/C# Questions & Answers - Accessor controls of class - Sanfoundry.json",
+          "title": "C# Questions & Answers - Accessor controls of class",
+          "questionCount": 12
+        },
+        {
+          "id": "unsafe-code-and-pointers-mcq",
+          "file": "Unsafe Code and Pointers MCQ - Sanfoundry.json",
+          "path": "Miscellaneous/Unsafe Code and Pointers MCQ - Sanfoundry.json",
+          "title": "C# Questions & Answers - Unsafe code & Pointers Basics",
+          "questionCount": 15
+        },
+        {
+          "id": "pointers-operation",
+          "file": "Pointers Operation - C# Questions & Answers - Sanfoundry.json",
+          "path": "Miscellaneous/Pointers Operation - C# Questions & Answers - Sanfoundry.json",
+          "title": "C# Questions & Answers - Pointers Operation - 1",
+          "questionCount": 10
+        },
+        {
+          "id": "pointers-operation-2",
+          "file": "C# Question & Answers - Pointers Operation - 2 - Sanfoundry.json",
+          "path": "Miscellaneous/C# Question & Answers - Pointers Operation - 2 - Sanfoundry.json",
+          "title": "C# Question & Answers - Pointers Operation - 2",
+          "questionCount": 10
+        }
+      ]
+    }
+  ]
+}

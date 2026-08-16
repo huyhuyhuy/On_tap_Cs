@@ -1,0 +1,310 @@
+{
+  "title": "C# Multiple Choice Questions - String Formatting",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-string-formatting-introduction/",
+  "sourceFile": "String Formatting MCQ in C# - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on basics of string formatting in C# Programming Language.",
+  "questionCount": 12,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What are strings in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "a sequence of characters"
+        },
+        {
+          "key": "b",
+          "text": "array of characters"
+        },
+        {
+          "key": "c",
+          "text": "objects of built-in data type"
+        },
+        {
+          "key": "d",
+          "text": "a reference type"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Generally, a string is defined as a sequence of characters but it is different in C#. In c++, the string is an array of characters. In case of C#, strings are objects of the built-in string data type. Thus, a string is a reference type."
+    },
+    {
+      "number": 2,
+      "question": "Select the namespace in which string class is built?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Text"
+        },
+        {
+          "key": "b",
+          "text": "System.Net"
+        },
+        {
+          "key": "c",
+          "text": "System.IO"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Select the interfaces defined by the string class?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "IComparable"
+        },
+        {
+          "key": "b",
+          "text": "IComparable<string>"
+        },
+        {
+          "key": "c",
+          "text": "ICloneable"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "Choose the constructor type used to build strings from character array.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "public String(value)"
+        },
+        {
+          "key": "b",
+          "text": "public String(char[ ] value, int startIndex, int length)"
+        },
+        {
+          "key": "c",
+          "text": "public String(char[ ])"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "public String(char[ ] value) - This form of constructor constructs a string that contains characters in value\n\npublic String(char[ ] value, int startIndex, int length) -The second form uses length characters from value, beginning at the index specified by startIndex."
+    },
+    {
+      "number": 5,
+      "question": "Select the operators used for checking the equality in strings:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "!="
+        },
+        {
+          "key": "b",
+          "text": ">"
+        },
+        {
+          "key": "c",
+          "text": "<"
+        },
+        {
+          "key": "d",
+          "text": ">="
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "What does the following C# code set specifies?",
+      "code": "public static int Compare(string strA, string strB)",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comparison is case and culture sensitive"
+        },
+        {
+          "key": "b",
+          "text": "Two strings A and B are compared with each other"
+        },
+        {
+          "key": "c",
+          "text": "Output is : >0 for (A > B), <0 for (A < B) else '0' for(A=B)"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Compares the string referred to by strA with strB. Returns greater than zero if strA is greater than strB, less than zero if strA is less than strB, and zero if strA and strB are equal. The comparison is case and culture-sensitive."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Hello\" + \"c\" + \"Sharp\";\n    Console.WriteLine(s1);\n    Console.ReadLine();\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hello c Sharp"
+        },
+        {
+          "key": "b",
+          "text": "HellocSharp"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "Hello"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Here '+' operator works as concatenation for strings.\n\nOutput :\n\nHello c Sharp"
+    },
+    {
+      "number": 8,
+      "question": "Which of these operators can be used to concatenate two or more String objects?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "+"
+        },
+        {
+          "key": "b",
+          "text": "+="
+        },
+        {
+          "key": "c",
+          "text": "&"
+        },
+        {
+          "key": "d",
+          "text": "||"
+        }
+      ],
+      "answer": "a",
+      "explanation": "string s1 = \"Hello\"+ \" I \" + \"Love\" + \" ComputerScience \";\n\nConsole.WriteLine(s1);\n\nOutput :\n\nHello I Love ComputerScience."
+    },
+    {
+      "number": 9,
+      "question": "What does the following C# code set specify?",
+      "code": "public static int Compare(string strA, int indexA, string strB, int indexB, int length, bool ignoreCase)",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comparison begins at strA[indexA] and strB[indexB] and runs for length of characters"
+        },
+        {
+          "key": "b",
+          "text": "Returns output > 0 for for strA > strB else < 0 for strA < strB else if strA = str B output is 0"
+        },
+        {
+          "key": "c",
+          "text": "Comparison is culture sensitive and if ignore case is true, comparison ignores case differences"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Compares portions of the strings referred to by strA and strB. The comparison begins at strA[indexA] and strB[indexB] and runs for length characters. Returns greater than zero if strA is greater than strB, less than zero if strA is less than strB, and zero if strA and strB are equal. If ignoreCase is true, the comparison ignores case differences. Otherwise, case differences matter. The comparison is culture-sensitive."
+    },
+    {
+      "number": 10,
+      "question": "Which string operation does the below-mentioned method define?",
+      "code": "public static string Concat(string str0, string str1)",
+      "options": [
+        {
+          "key": "a",
+          "text": "method returns a string"
+        },
+        {
+          "key": "b",
+          "text": "string str1 is concatenated to the end of str0"
+        },
+        {
+          "key": "c",
+          "text": "can be used to concatenate any number of strings"
+        },
+        {
+          "key": "d",
+          "text": "all of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "This method returns a string that contains str1 concatenated to the end of str0. Another form of Concat(), shown here, concatenates three strings:\n\npublic static string Concat(string str0, string str1, string str2). Hence, any number of strings can be concatenated using this method."
+    },
+    {
+      "number": 11,
+      "question": "Choose the base class for string() method.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Array"
+        },
+        {
+          "key": "b",
+          "text": "System.char"
+        },
+        {
+          "key": "c",
+          "text": "System.String"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "String is an alias for the predefined \"System.string\" class from which most of the string() methods are derived."
+    },
+    {
+      "number": 12,
+      "question": "Did method use to remove whitespace from the string?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Split()"
+        },
+        {
+          "key": "b",
+          "text": "Substring()"
+        },
+        {
+          "key": "c",
+          "text": "Trim()"
+        },
+        {
+          "key": "d",
+          "text": "TrimStart()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Perfectly removes whitespace from string whereas TrimStart() removes a string of characters from the end of the string.\n\nMore MCQs on C# String Formatting:"
+    }
+  ]
+}

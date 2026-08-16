@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Reading Console Input Operations",
+  "topic": "Console_IO_Operations_and_Stream_Classes",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-reading-console-operations/",
+  "sourceFile": "Reading Console Input Operations - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on reading console input operations in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Name the exception thrown by read() on failure.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "InterruptedException"
+        },
+        {
+          "key": "b",
+          "text": "SystemException"
+        },
+        {
+          "key": "c",
+          "text": "SystemInputException"
+        },
+        {
+          "key": "d",
+          "text": "I/O Exception"
+        }
+      ],
+      "answer": "d",
+      "explanation": "read() throws I/O exception on failure."
+    },
+    {
+      "number": 2,
+      "question": "Which of these methods are used to read single character from the console?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "get()"
+        },
+        {
+          "key": "b",
+          "text": "getline()"
+        },
+        {
+          "key": "c",
+          "text": "read()"
+        },
+        {
+          "key": "d",
+          "text": "readLine()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 3,
+      "question": "Which of these method used to read strings from the console?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "get()"
+        },
+        {
+          "key": "b",
+          "text": "getline()"
+        },
+        {
+          "key": "c",
+          "text": "read()"
+        },
+        {
+          "key": "d",
+          "text": "readLine()"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 4,
+      "question": "Which among the following methods are used to write characters to a string?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "StreamWriter"
+        },
+        {
+          "key": "b",
+          "text": "StreamReader"
+        },
+        {
+          "key": "c",
+          "text": "StringWriter"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The stream class method writes characters to the string."
+    },
+    {
+      "number": 5,
+      "question": "Which method in Console enables to read individual inputs directly from the keyboard in a non line buffered manner?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Read()"
+        },
+        {
+          "key": "b",
+          "text": "ReadKey()"
+        },
+        {
+          "key": "c",
+          "text": "ReadLine()"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "The .NET Framework includes a method in Console that enables you to read individual keystrokes directly from the keyboard, in a non-line-buffered manner. This method is called ReadKey(). When it is called, it waits until a key is pressed. When the key is pressed, ReadKey( ) returns the keystroke immediately."
+    },
+    {
+      "number": 6,
+      "question": "What is the output returned by Console if ReadLine() stores I/O error?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "False"
+        },
+        {
+          "key": "d",
+          "text": "I/O EXCEPTION ERROR"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output for following input from the console as a character?",
+      "code": " static void Main(string[] args)\n {\n     Console.WriteLine(\"what is your name?\");\n     char s;\n     s = Convert.ToChar(Console.ReadLine());\n     Console.WriteLine(\"how are you: \"+s);\n     Console.Read();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "Code run successfully prints nothing on console"
+        },
+        {
+          "key": "c",
+          "text": "Code runs successfully prints input on console"
+        },
+        {
+          "key": "d",
+          "text": "Run time error"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Since only a single character is required to be entered on console when a string is entered, a run time exception is being generated as we had not used Read() which reads single character but used readLine() which reads string and is converted into the char using convert.tochar()."
+    },
+    {
+      "number": 8,
+      "question": "Name the method/methods used to read byte streams from the file?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "ReadByte()"
+        },
+        {
+          "key": "b",
+          "text": "Read"
+        },
+        {
+          "key": "c",
+          "text": "Readkey()"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Which of these classes are used by Byte streams for input and output operation?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "InputStream"
+        },
+        {
+          "key": "b",
+          "text": "InputOutputStream"
+        },
+        {
+          "key": "c",
+          "text": "Reader"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Byte stream uses InputStream and OutputStream classes for input and output operation."
+    },
+    {
+      "number": 10,
+      "question": "Which of these method/methods are used to read block or array of bytes from the file?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Read()"
+        },
+        {
+          "key": "b",
+          "text": "ReadByte()"
+        },
+        {
+          "key": "c",
+          "text": "ReadLine()"
+        },
+        {
+          "key": "d",
+          "text": "Readkey()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "To read a block of bytes, use Read( ), which has this general form:\n\n              int Read(byte[ ] array, int offset, int count)."
+    }
+  ]
+}

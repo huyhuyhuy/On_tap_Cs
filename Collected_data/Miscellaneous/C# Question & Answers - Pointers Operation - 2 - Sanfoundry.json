@@ -1,0 +1,260 @@
+{
+  "title": "C# Question & Answers - Pointers Operation - 2",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-questions-answers-freshers/",
+  "sourceFile": "C# Question & Answers - Pointers Operation - 2 - Sanfoundry.html",
+  "description": "This set of C# Multiple Choice Questions & Answers (MCQs) focuses on \"Pointers Operation - 2\".",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    struct MyStruct\n    {\n        public int a;\n        public int b;\n        public int Sum()\n       {\n           return a * b;\n       }\n   }\n   unsafe static void Main()\n   {\n       MyStruct o = new MyStruct();\n       MyStruct* p;\n       p = &o;\n       p->a = 10;\n       p->b = 20;\n       Console.WriteLine(\"Value is \" + p->Sum());\n       Console.ReadLine();\n   }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "Run time error"
+        },
+        {
+          "key": "c",
+          "text": "200"
+        },
+        {
+          "key": "d",
+          "text": "30"
+        }
+      ],
+      "answer": "c",
+      "explanation": "A pointer can point to an object of a structure type as long as the structure does not contain reference types. When we access a member of a structure through a pointer, we must use the arrow operator, which is ->, rather than the dot (.) operator.\n\nOutput : 200"
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    struct MyStruct\n    {\n        public int a;\n        public int b;\n        public int Sum()\n       {\n           return a / b;\n       }\n   }\n   unsafe static void Main()\n   {\n       MyStruct o = new MyStruct();\n       MyStruct* p;\n       p = &o;\n       p->a = 60;\n       p->b = 15;\n       int c = 30;\n       Console.WriteLine(\"Value is : \" + p->Sum()*c);\n       Console.ReadLine();\n   }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "120"
+        },
+        {
+          "key": "c",
+          "text": "Run time error"
+        },
+        {
+          "key": "d",
+          "text": "4"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput :\n\n120"
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int[] nums = new int[10];\n        fixed (int* p = &nums[0], p2 = nums)\n        {\n            if (p == p2)\n            Console.WriteLine(\"p and p2 point to same address.\");\n            Console.ReadLine();\n        }\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Run time error"
+        },
+        {
+          "key": "b",
+          "text": "Compile time error"
+        },
+        {
+          "key": "c",
+          "text": "p and p2 point to the same address"
+        },
+        {
+          "key": "d",
+          "text": "Only p2"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput:\n\np and p2 point to same address"
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    static void Main()\n    {\n        int? count = null;\n        int? result = null;\n        int incr = 10;\n        result = count + incr;\n        if (result.HasValue)\n            Console.WriteLine(\"result has this value: \" + result.Value);\n        else\n            Console.WriteLine(\"result has no value\");\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Run time error"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "Result has no value"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "A nullable object can be used in expressions that are valid for its underlying type. When non-nullable and nullable types are mixed in an operation, the outcome is a nullable value.\n\nOutput:\n\nresult has no value"
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    static void Main()\n    {\n        int count = 100;\n        int? result = null;\n        int incr = 10;\n        result = count + incr;\n        if (result.HasValue)\n            Console.WriteLine(\"result has this value: \" + result.Value);\n        else\n            Console.WriteLine(\"result has no value\");\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Run time error"
+        },
+        {
+          "key": "b",
+          "text": "110"
+        },
+        {
+          "key": "c",
+          "text": "Result has no value"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput: result has this value :\n\n110"
+    },
+    {
+      "number": 6,
+      "question": "Choose the statement which defines the Nullable type Correctly:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A special version of a value type that is represented by a structure"
+        },
+        {
+          "key": "b",
+          "text": "A nullable type can also store the value null"
+        },
+        {
+          "key": "c",
+          "text": "Nullable types are objects of System.Nullable<T>, where T must be a non nullable value type"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "A nullable type is a special version of the value type that is represented by a structure. In addition to the values defined by the underlying type, a nullable type can also store the value null. Thus, a nullable type has the same range and characteristics as its underlying type. It simply adds the ability to represent a value which indicates that a variable of that type is unassigned. Nullable types are objects of System.Nullable<T>, where T must be a nonnullable value type."
+    },
+    {
+      "number": 7,
+      "question": "What does the following code depicts?",
+      "code": "   i. System.Nullable<int> count;\n   ii. bool? done;",
+      "options": [
+        {
+          "key": "a",
+          "text": "Code i declares the objects of nullable of type Nullable<T> defined in the System namespace"
+        },
+        {
+          "key": "b",
+          "text": "Code ii declares a nullable type in much shorter and in more commonly used way using '?'"
+        },
+        {
+          "key": "c",
+          "text": "Both Code i declares the objects of nullable of type Nullable<T> defined in the System namespace & Code ii declares a nullable type in much shorter and in more commonly used way using '?'"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "Which operator is commonly used to find the size of the type of C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "size()"
+        },
+        {
+          "key": "b",
+          "text": "sizeof(type)"
+        },
+        {
+          "key": "c",
+          "text": "both size() & sizeof(type)"
+        },
+        {
+          "key": "d",
+          "text": "none of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " unsafe struct FixedBankRecord\n {\n     public fixed byte Name[80];\n     public double Balance;\n     public long ID;\n }\n class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         Console.WriteLine(\"Size of FixedBankRecord is \" + sizeof(FixedBankRecord));\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Run time error"
+        },
+        {
+          "key": "b",
+          "text": "80"
+        },
+        {
+          "key": "c",
+          "text": "96"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The purpose of a fixed-size buffer is to allow the creation of a struct in which the array of elements that make up the buffer are contained within the struct. By using a fixed-size buffer, we let the entire array to be contained within the struct. The overall size of FixedBankRecord is 96, which is the sum of its members.\n\nOutput :\n\n96"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int* ptrs = stackalloc int[3];\n        ptrs[0] = 1;\n        ptrs[1] = 2;\n        ptrs[2] = 3;\n        for (int i = 2; i >=0; i--)\n        Console.WriteLine(ptrs[i]);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "3 2 1"
+        },
+        {
+          "key": "b",
+          "text": "1 2 3"
+        },
+        {
+          "key": "c",
+          "text": "None of the mentioned"
+        },
+        {
+          "key": "d",
+          "text": "Run time error"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Allocates memory from the stack by using stackalloc. Here, ptrs is a pointer that receives the address of the memory that is large enough to hold size of number of objects of  type 'int'. Here, type 'int' is a non reference type. Finally, stackalloc can be used only in an unsafe context.\n\nOutput :\n\n3 2 1"
+    }
+  ]
+}

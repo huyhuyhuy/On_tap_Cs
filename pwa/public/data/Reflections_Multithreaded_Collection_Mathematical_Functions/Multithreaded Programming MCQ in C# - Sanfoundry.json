@@ -1,0 +1,285 @@
+{
+  "title": "C# Multiple Choice Questions - Multithreaded Programming",
+  "topic": "Reflections_Multithreaded_Collection_Mathematical_Functions",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-multithreaded-programming-1/",
+  "sourceFile": "Multithreaded Programming MCQ in C# - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on multithreaded programming in C# Programming Language.",
+  "questionCount": 11,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Select the type of multitasking methods that exist:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "process based"
+        },
+        {
+          "key": "b",
+          "text": "thread based"
+        },
+        {
+          "key": "c",
+          "text": "only process"
+        },
+        {
+          "key": "d",
+          "text": "both process & thread based"
+        }
+      ],
+      "answer": "d",
+      "explanation": "There are two distinct types of multitasking: process-based and thread-based."
+    },
+    {
+      "number": 2,
+      "question": "Choose the correct statement about process-based multitasking.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A feature that allows our computer to run two or more programs concurrently"
+        },
+        {
+          "key": "b",
+          "text": "A program that acts as a small unit of code that can be dispatched by the scheduler"
+        },
+        {
+          "key": "c",
+          "text": "Only A program that acts as a small unit of code that can be dispatched by the scheduler"
+        },
+        {
+          "key": "d",
+          "text": "Both A feature that allows our computer to run two or more programs concurrently & A program that acts as a small unit of code that can be dispatched by the scheduler"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The process-based multitasking is the feature that allows your computer to run two or more programs concurrently. For example, process-based multitasking allows you to run a word processor at the same time you are using a spreadsheet or browsing the Internet. In process-based multitasking, a program is the smallest unit of code that can be dispatched by the scheduler."
+    },
+    {
+      "number": 3,
+      "question": "Choose the statements which indicate the differences between the thread based multitasking and process based multitasking.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Process-based multitasking handles the concurrent execution of programs"
+        },
+        {
+          "key": "b",
+          "text": "Process-based multitasking handles the concurrent execution of pieces of the same program"
+        },
+        {
+          "key": "c",
+          "text": "Thread-based multitasking handles the concurrent execution of programs"
+        },
+        {
+          "key": "d",
+          "text": "Thread-based multitasking deals with the concurrent execution of pieces of the same program"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The differences between process-based and thread-based multitasking can be summarized like this:Process-based multitasking handles the concurrent execution of programs. Thread-based multitasking deals with the concurrent execution of pieces of the same program."
+    },
+    {
+      "number": 4,
+      "question": "What is the advantage of the multithreading program?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Enables to utilize the idle and executing time present in most programs"
+        },
+        {
+          "key": "b",
+          "text": "Enables to utilize the idle time present in most programs"
+        },
+        {
+          "key": "c",
+          "text": "Both Enables to utilize the idle and executing time present in most programs & Enables to utilize the idle time present in most programs"
+        },
+        {
+          "key": "d",
+          "text": "Only Enables to utilize the idle time present in most programs"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The principal advantage of multithreading is that it enables us to write very efficient programs because it lets us utilize the idle time that is present in most programs."
+    },
+    {
+      "number": 5,
+      "question": "Select the two type of threads mentioned in the concept of multithreading:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "foreground"
+        },
+        {
+          "key": "b",
+          "text": "background"
+        },
+        {
+          "key": "c",
+          "text": "only foreground"
+        },
+        {
+          "key": "d",
+          "text": "both foreground & background"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "Number of threads that exists for each of the processes that occurs in the program:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "at most 1"
+        },
+        {
+          "key": "b",
+          "text": "atleast 1"
+        },
+        {
+          "key": "c",
+          "text": "only 1"
+        },
+        {
+          "key": "d",
+          "text": "both at most 1 & atleast 1"
+        }
+      ],
+      "answer": "d",
+      "explanation": "All processes have at least one thread for execution, which is usually called the main thread because it is the primary thread that is executed when our program begins. From the main thread, we can create other threads."
+    },
+    {
+      "number": 7,
+      "question": "Choose the namespace which supports multithreading programming?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.net"
+        },
+        {
+          "key": "b",
+          "text": "System.Linq"
+        },
+        {
+          "key": "c",
+          "text": "System.Threading"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The classes that support multithreaded programming are defined in the System.Threading namespace. Thus, you will usually include this statement at the start of any multithreaded program."
+    },
+    {
+      "number": 8,
+      "question": "What does the following C# code snippet specify?",
+      "code": "public Thread(ThreadStart start)",
+      "options": [
+        {
+          "key": "a",
+          "text": "Defines a thread"
+        },
+        {
+          "key": "b",
+          "text": "Declaration of a thread constructor"
+        },
+        {
+          "key": "c",
+          "text": "Only Defines a thread"
+        },
+        {
+          "key": "d",
+          "text": "Only Defines a thread & Declaration of a thread constructor"
+        }
+      ],
+      "answer": "d",
+      "explanation": "To create a thread, instantiate an object of type Thread, which is a class defined in System.Threading. The simplest Thread constructor is shown here:\n\n          public Thread(ThreadStart start)\n\nHere, start specifies the method that will be called to begin execution of the thread. In other words, it specifies the thread's entry point."
+    },
+    {
+      "number": 9,
+      "question": "Which of these classes is used to make a thread?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "String"
+        },
+        {
+          "key": "b",
+          "text": "System"
+        },
+        {
+          "key": "c",
+          "text": "Thread"
+        },
+        {
+          "key": "d",
+          "text": "Runnable"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The multithreading system is built upon the Thread class, which encapsulates a thread of execution. The Thread class is sealed, which means that it cannot be inherited. Thread defines several methods and properties that help manage threads."
+    },
+    {
+      "number": 10,
+      "question": "On call of which type of method the new created thread will not start executing?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Begin()"
+        },
+        {
+          "key": "b",
+          "text": "Start()"
+        },
+        {
+          "key": "c",
+          "text": "New()"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "In multithreading, when a thread is created, it is in the \"New\" state but does not start executing until explicitly started using a method like Start()."
+    },
+    {
+      "number": 11,
+      "question": "Which of these methods of Thread class is used to Suspend a thread for a period of time?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "sleep()"
+        },
+        {
+          "key": "b",
+          "text": "terminate()"
+        },
+        {
+          "key": "c",
+          "text": "suspend()"
+        },
+        {
+          "key": "d",
+          "text": "stop()"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None.\n\nMore MCQs on C# Multithreaded Programming:"
+    }
+  ]
+}

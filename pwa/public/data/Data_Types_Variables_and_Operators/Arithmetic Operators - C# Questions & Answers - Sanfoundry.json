@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Arithmetic Operators",
+  "topic": "Data_Types_Variables_and_Operators",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-arithmetic-operators/",
+  "sourceFile": "Arithmetic Operators - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on arithmetic operators in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     float a = 16.4f;\n     int b = 12;\n     float c;\n     c =  a * ( b + a) / (a - b) ;\n     Console.WriteLine(\"result is :\" +c);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "106"
+        },
+        {
+          "key": "b",
+          "text": "104.789"
+        },
+        {
+          "key": "c",
+          "text": "105.8546"
+        },
+        {
+          "key": "d",
+          "text": "103.45"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The first expression evaluated is 'b+a' as both are combined. Next the expression is multiplied by operand 'a' i.e a (b+a) the whole result of numerator is combined and divided by denominator expression (a - b).\n\nOutput:\n\n result is : 105.8546."
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a, b, c, x;\n      a = 90;\n      b = 15;\n      c = 3;\n      x = a - b / 3 + c * 2 - 1;\n      Console.WriteLine(x);\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "92"
+        },
+        {
+          "key": "b",
+          "text": "89"
+        },
+        {
+          "key": "c",
+          "text": "90"
+        },
+        {
+          "key": "d",
+          "text": "88"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The basic evaluation process includes two left to right passes through the expression. During first pass, the high priority operators are applied and during second pass, the low priority operators are applied as they are encountered.\n\nFirst pass :\n       step 1 : x = 90 - 15 / 3 + 3 * 2 - 1 (15 / 3 evaluated)\n       step 2 : x = 90 - 5 + 3 * 2 - 1\n       step 3 : x = 90 - 5 + 3 * 2 -1 (3 * 2 is evaluated)\n       step 4 : x = 90 - 5 + 6 - 1\n Second pass :\n       step 5 : x = 85 + 6 - 1 (90 - 5 is evaluated)\n       step 6 : x = 91 - 1(85 + 6 is evaluated)\n       step 7 : x = 90(91 - 1 is evaluated)\nOutput : 90."
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a, b, c, x;\n      a = 80;\n      b = 15;\n      c = 2;\n      x = a - b / (3 * c) * ( a + c);\n      Console.WriteLine(x);\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "78"
+        },
+        {
+          "key": "b",
+          "text": "-84"
+        },
+        {
+          "key": "c",
+          "text": "80"
+        },
+        {
+          "key": "d",
+          "text": "98"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Whenever the parentheses are used, the expressions within parentheses assumes higher priority. If Two or more sets of parentheses appear one after another as shown above, the expression contained on the left side is evaluated first and right hand side last.\n\n  First pass:\n      Step 1: 80 - 15/(3*2)*(80 + 2)\n      Step 2: 80 - 15/6*82 ((3 * 2) evaluated first and (80 + 2) evaluated later)\n  Second pass:\n      Step 3: 80 - 2*82\n      Step 4: 80 - 164.\n  Third pass:\n     Step 5 : -84. (80 - 164 is evaluated)\nOutput : -84 ."
+    },
+    {
+      "number": 4,
+      "question": "Correct order of priorities are:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "'/' > '%' > '*' > '+'"
+        },
+        {
+          "key": "b",
+          "text": "'/' > '*' > '%' > '+'"
+        },
+        {
+          "key": "c",
+          "text": "'*' > '/' > '%' > '+'"
+        },
+        {
+          "key": "d",
+          "text": "'%' > '*' > '/' > '+'"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": "    int i, j = 1, k;\n    for (i = 0; i < 3; i++)\n    {\n        k = j++ - ++j;\n        Console.Write(k + \" \");\n    }",
+      "options": [
+        {
+          "key": "a",
+          "text": "-4 -3 -2"
+        },
+        {
+          "key": "b",
+          "text": "-6 -4 -1"
+        },
+        {
+          "key": "c",
+          "text": "-2 -2 -2"
+        },
+        {
+          "key": "d",
+          "text": "-4 -4 -4"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Here i = 0, j = 1.\n                     k = 1 - 3 ( j++ = 2 and ++j = 3)\n                     k = -2.\n                     i = 1 , j = 3.\n                     k = 3 - 5 ( j++ = 4 and ++j = 5)\n                     k = -2.\n                     i = 2 , j = 5.\n                     k = 5 - 7 (j++ = 6  and ++j = 7)\n                     k = -2.\nOutput : -2 , -2 , -2."
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int b= 11;\n      int c = 7;\n      int r = 5;\n      int e = 2;\n      int l;\n      int v = 109;\n      int k;\n      int z,t,p;\n      z = b * c;\n      t = b * b;\n      p = b * r * 2;\n      l = (b * c) + (r * e) + 10;\n      k = v - 8;\n      Console.WriteLine(Convert.ToString(Convert.ToChar(z)) + Convert.ToString(Convert.ToChar(t)) + \" \" + Convert.ToString(Convert.ToChar(p)) +   Convert.ToString(Convert.ToChar(l)) + Convert.ToString(Convert.ToChar(v)) + Convert.ToString(Convert.ToChar(k)));\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "My Name"
+        },
+        {
+          "key": "b",
+          "text": "My nAme"
+        },
+        {
+          "key": "c",
+          "text": "My name"
+        },
+        {
+          "key": "d",
+          "text": "Myname"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Solving the expression l = (b * c) + (r * e) + 10. While from left to right the parentheses are given preference first.\n\n Step 1 : b * c is evaluated first inside first parentheses.\n Step 2 : r * e is evaluated second on right side of first addition symbol.\n Step 3 : After evaluating both parentheses 10 is added to value of both.\nOutput : My name."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int n = 5;\n     int x = 4;\n     int z, c, k;\n     for (c = 1; c <= n; c++)\n     {\n         for (k = 1; k <= c; k++)\n     {\n         z = 3 * x * x + 2 * x + 4 / x + 8;\n         Console.Write(Convert.ToString(Convert.ToChar(z)));\n     }\n         Console.WriteLine(\"\\n\");\n     }\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "A\nAA\nAAA\nAAAA"
+        },
+        {
+          "key": "b",
+          "text": "A\nAB\nABC\nABCD"
+        },
+        {
+          "key": "c",
+          "text": "A\nAA\nAAA\nAAAA\nAAAAA"
+        },
+        {
+          "key": "d",
+          "text": "A\nBC\nDEF\nDEFG"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Solving the expression for value of 'z'as 65. With, each passage of loop value number of 'z' increases for each row as\n\n                           Row 1: A\n                           Row 2: AA\n                                  -\n                                  -\n                           Row 5: AAAAA\n Output : A\n          AA\n          AAA\n          AAAA\n          AAAAA"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int n = 5;\n     int x = 4;\n     int z, c, k;\n     z = 3 * x * x + 2 * x + 4 / x + 8;\n     for (c = 1; c <= n; c++)\n     {\n         for (k = 1; k <= c; k++)\n         {\n             Console.Write(Convert.ToString(Convert.ToChar(z)));\n             z++;\n         }\n         Console.WriteLine(\"\\n\");\n     }\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "A\nAA\nAAA\nAAAA\nAAAAA"
+        },
+        {
+          "key": "b",
+          "text": "A\nAB\nABC\nABCD\nABCDE"
+        },
+        {
+          "key": "c",
+          "text": "A\nBC\nDEF\nGHIJ\nKLMNO"
+        },
+        {
+          "key": "d",
+          "text": "A\nAB\nBC\nBCD\nBCDE"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Solving expression 'z' value is 65. Before going inside first loop\n\n Step 1: c = 1, n = 5\n\n         k = 1, k <= 1. (as c = 1)\n\n         z = 65 converted to 'A' as ascii value of 'A' is 65.\n\n         z++ increment for next loop condition by '1'as 66.\n\n         Row 1: A\n\n Step 2: c = 2, n = 5\n\n         k = 2, k <= 2. (as c = 2)\n\n         z = 66 from step 1 converted value of 66 is 'B'. Since, k < =2\n\n         loop will again loop to second value after 66 which is 67 as z is\n\n         incremented from 66 to +1 as '67'. So, converting ascii value of 67 to character as 'C'.\n\n         Row 2: B C\n\nSimilarly,\n\n Step 3:\n\n         Row 3: D E F\n\n Step 4:\n\n        Row 4: G H I J\n\n Step 5:\n\n        Row 5: K L M N O.\n\nOutput:  A\n         BC\n         DEF\n         GHIJ\n         KLMNO"
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code?",
+      "code": "  static void Main(string[] args)\n  {\n      int a , b;\n      int c = 10;\n      int d = 12;\n      int e = 5;\n      int f = 6;\n      a = c * (d + e) / f + d;\n      Console.WriteLine(a);\n      b = c * ( d + e / f + d);\n      Console.WriteLine(b);\n      if (a < b)\n      {\n          Console.WriteLine(\" parentheses changes values\");\n      }\n      else if (a > b)\n      {\n          Counterintelligence(\"they have same value\");\n      }\n      Console.ReadLine();\n  }",
+      "options": [
+        {
+          "key": "a",
+          "text": "They have same value"
+        },
+        {
+          "key": "b",
+          "text": "Parentheses changes values"
+        },
+        {
+          "key": "c",
+          "text": "Since both have equal values, no conclusion"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Solving for expression 'a' expression inside parentheses are given preference evaluating (d+e) as 17.\n\na = 10 * 17/6 + 12.\na = 40.\nSolving for expression 'b' expression inside parentheses (d + e /f + d)\nare evaluated as (12 + 5/6 + 12)\nb = 10 *(12 + 5/6 + 12).\nb = 240.\nOutput : 40\n         240\n         parentheses changes values."
+    },
+    {
+      "number": 10,
+      "question": "The correct way of incrementing the operators are:",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "++ a ++"
+        },
+        {
+          "key": "b",
+          "text": "b ++ 1"
+        },
+        {
+          "key": "c",
+          "text": "c += 1"
+        },
+        {
+          "key": "d",
+          "text": "d =+ 1"
+        }
+      ],
+      "answer": "c",
+      "explanation": "This += is known as short hand operator which is same as variable = variable +1. Similarly, a-= 1 is a = a-1, a*=1 is a = a * 1. They are used to make code short and efficient."
+    }
+  ]
+}

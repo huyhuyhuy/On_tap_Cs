@@ -1,0 +1,335 @@
+{
+  "title": "C# Questions & Answers - Structures",
+  "topic": "Object_Oriented_Concepts",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-structures/",
+  "sourceFile": "Structures - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on structures of C# Programming Language.",
+  "questionCount": 13,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the correct statement in the following C# code?",
+      "code": "struct book\n{\n    private String name;\n    private int pages;\n    private Single price;\n}\nbook b = new book();",
+      "options": [
+        {
+          "key": "a",
+          "text": "New structure can be inherited from struct book"
+        },
+        {
+          "key": "b",
+          "text": "When the program terminates, variable b will get garbage collected"
+        },
+        {
+          "key": "c",
+          "text": "The structure variable 'b' will be created on the stack"
+        },
+        {
+          "key": "d",
+          "text": "When the program terminates, variable b will get garbage collected"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "What will be the correct statement in the following C# code?",
+      "code": "class trial\n{\n    int i;\n    float d;\n}\nstruct sample\n{\n    private int x;\n    private Single y;\n    private trial z;\n}\nsample s = new sample();",
+      "options": [
+        {
+          "key": "a",
+          "text": "trial object referred by z is created on the stack"
+        },
+        {
+          "key": "b",
+          "text": "z is created on the heap"
+        },
+        {
+          "key": "c",
+          "text": "Both s and z will be created on the heap"
+        },
+        {
+          "key": "d",
+          "text": "s will be created on the stack"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+    },
+    {
+      "number": 3,
+      "question": "Choose the correct statement among the following which supports the fact that C# does not allow the creation of empty structures?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "C#.NET supports creation of abstract user-defined data types using structures"
+        },
+        {
+          "key": "b",
+          "text": "By having empty structures, it would mean that the new data types have no data associated with, which does not make any sense in C#.NET"
+        },
+        {
+          "key": "c",
+          "text": "Basic reason to create structures is the inability to represent real life objects using standard data types offered by the language"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Basic definition of structures in C#.NET."
+    },
+    {
+      "number": 4,
+      "question": "Choose the correct statement about structures as to why they are defined as value types but not reference types?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Since space required for structure variables is allocated on stack which is a form of memory that is automatically available when a variable to be used is in scope"
+        },
+        {
+          "key": "b",
+          "text": "Structures generally are used to represent user defined data types that consists of small amount of data in them. Hence using stack for declaration of such variables is not a problem"
+        },
+        {
+          "key": "c",
+          "text": "All of the mentioned"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "Choose the wrong statement about structures in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Structures can be declared within a procedure"
+        },
+        {
+          "key": "b",
+          "text": "Structures can implement an interface but they cannot inherit from another structure"
+        },
+        {
+          "key": "c",
+          "text": "Structure members cannot be declared as protected"
+        },
+        {
+          "key": "d",
+          "text": "A structure cannot be empty"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "The correct way to define a variable of type struct abc in the following C# code?",
+      "code": " struct abc\n {\n     public string name;\n     protected internal int age;\n     private Single sal;\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "abc e = new abc();"
+        },
+        {
+          "key": "b",
+          "text": "abc();"
+        },
+        {
+          "key": "c",
+          "text": "abc e;\ne = new abc;"
+        },
+        {
+          "key": "d",
+          "text": "abc e = new abc;"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "Which of the following is the correct way to settle down values into the structure variable 'e' defined in the following C# code snippet?",
+      "code": " struct emp\n {\n     public String name;\n     public int age;\n     public Single sal;\n }\n emp e = new emp();",
+      "options": [
+        {
+          "key": "a",
+          "text": "e.name = \"Ankit\";\n     e.age = 24;\n     e.sal = 200;"
+        },
+        {
+          "key": "b",
+          "text": "With emp e\n   {\n     .name = \"Ankit\";\n     .age = 24;\n     .sal = 200;\n   }"
+        },
+        {
+          "key": "c",
+          "text": "name = \"Ankit\";\n   age = 24;\n   sal = 200;"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 8,
+      "question": "When does a structure variable get destroyed?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "When no reference refers to it, it will get garbage collected"
+        },
+        {
+          "key": "b",
+          "text": "Depends on whether it is created using new or without new operator"
+        },
+        {
+          "key": "c",
+          "text": "As variable goes out of the scope"
+        },
+        {
+          "key": "d",
+          "text": "Depends on either we free its memory using free() or delete()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "Calculate the number of bytes a structure variable s occupies in the memory if it is defined as follows.",
+      "code": "  class abc\n  {\n      int i;\n      Decimal d;\n  }\n  struct sample\n  {\n     private int x;\n     private Single y;\n     private trial z;\n  }\n  sample s = new sample();",
+      "options": [
+        {
+          "key": "a",
+          "text": "24 bytes"
+        },
+        {
+          "key": "b",
+          "text": "8 bytes"
+        },
+        {
+          "key": "c",
+          "text": "16 bytes"
+        },
+        {
+          "key": "d",
+          "text": "12 bytes"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput -\n\n12 bytes"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": "{\n    struct abc\n    {\n        public int i;\n    }\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            sample a = new sample();\n            a.i = 10;\n            fun(ref a);\n            Console.WriteLine(a.i);\n        }\n        public static voidn fun(ref sample x)\n        {\n            x.i = 20;\n            Console.WriteLine(x.i);\n        }\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "10\n   10"
+        },
+        {
+          "key": "b",
+          "text": "20\n   10"
+        },
+        {
+          "key": "c",
+          "text": "10\n   20"
+        },
+        {
+          "key": "d",
+          "text": "20\n   20"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput -\n\n         20\n         20"
+    },
+    {
+      "number": 11,
+      "question": "Select the wrong statements among the following?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A structure can contain properties"
+        },
+        {
+          "key": "b",
+          "text": "A structure can contain constructors"
+        },
+        {
+          "key": "c",
+          "text": "A structure can contain protected data members"
+        },
+        {
+          "key": "d",
+          "text": "A structure can contain constants"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 12,
+      "question": "Which of the following is the correct result for the given statement in the C#.NET statement given below? p = q",
+      "code": "struct employee\n{\n    private int employee id;\n    private string city;\n}\nemployee q = new employee();\nemployee p;\np = q;",
+      "options": [
+        {
+          "key": "a",
+          "text": "Elements of 'q' will be copied into corresponding elements of p"
+        },
+        {
+          "key": "b",
+          "text": "Address stored in q will get copied into p"
+        },
+        {
+          "key": "c",
+          "text": "Address of first element of q will get copied into p"
+        },
+        {
+          "key": "d",
+          "text": "Once assignment is over. q will go out of scope and hence get exited forever"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None."
+    },
+    {
+      "number": 13,
+      "question": "What will be the output of the following C# code?",
+      "code": " {\n     struct abc\n     {\n         int i;\n     }\n     class Program\n     {\n         static void Main(string[] args)\n         {\n             abc x = new abc();\n             abc z;\n             x.i = 10;\n             z = x;\n             z.i = 15;\n             console.Writeline(x.i + \"  \" + y.i)\n         }\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "10 10"
+        },
+        {
+          "key": "b",
+          "text": "10 15"
+        },
+        {
+          "key": "c",
+          "text": "15 10"
+        },
+        {
+          "key": "d",
+          "text": "15 15"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput:\n\n 10 15"
+    }
+  ]
+}

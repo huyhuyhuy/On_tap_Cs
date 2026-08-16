@@ -1,0 +1,285 @@
+{
+  "title": "C# Questions & Answers - String Formatting Operations - 2",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-interview-questions-answers/",
+  "sourceFile": "C# Questions & Answers - String Formatting Operations - 2 - Sanfoundry.html",
+  "description": "This set of C# Interview Questions and Answers focuses on \"String Formatting Operations - 2\".",
+  "questionCount": 11,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of these methods of class String is used to extract a substring from a String object?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "substring()"
+        },
+        {
+          "key": "b",
+          "text": "Substring()"
+        },
+        {
+          "key": "c",
+          "text": "SubString()"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None."
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String s1 = \"one\";\n        String s2 = string.Concat(s1 + \" \" + \"two\");\n        Console.WriteLine(s2);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "one"
+        },
+        {
+          "key": "b",
+          "text": "two"
+        },
+        {
+          "key": "c",
+          "text": "one two"
+        },
+        {
+          "key": "d",
+          "text": "two one"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Two strings can be concatenated using Concat() method.\n\nOutput:\n\none two"
+    },
+    {
+      "number": 3,
+      "question": "Which of these methods of class String is used to remove leading and trailing whitespaces?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "startsWith()"
+        },
+        {
+          "key": "b",
+          "text": "TrimEnd()"
+        },
+        {
+          "key": "c",
+          "text": "Trim()"
+        },
+        {
+          "key": "d",
+          "text": "TrimStart()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Removes white space from the string."
+    },
+    {
+      "number": 4,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String c = \"  Hello World  \";\n        String s = c.Trim();\n        Console.WriteLine(\"\"\"+s+\"\"\");\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "\" Hello World \""
+        },
+        {
+          "key": "b",
+          "text": "\"HelloWorld\""
+        },
+        {
+          "key": "c",
+          "text": "\"Hello World\""
+        },
+        {
+          "key": "d",
+          "text": "\"Hello\""
+        }
+      ],
+      "answer": "c",
+      "explanation": "Trim() method is used to remove leading and trailing whitespaces in a string.\n\nOutput:\n\n\"Hello World\""
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String s1 = \"CSHARP\";\n         String s2 = s1.Replace('H','L');\n         Console.WriteLine(s2);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "CSHAP"
+        },
+        {
+          "key": "b",
+          "text": "CSHP"
+        },
+        {
+          "key": "c",
+          "text": "CSLARP"
+        },
+        {
+          "key": "d",
+          "text": "CSHALP"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Replace() method replaces all occurrences of a single character in invoking strings with another character. s1.Replace('H','L') replaces every occurrence of 'H' in CSHARP by 'L', giving CSLARP.\n\nOutput:\n\nCSLARP"
+    },
+    {
+      "number": 6,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String s1 = \"Hello World\";\n         String s2 = s1.Substring(0, 4);\n         Console.WriteLine(s2);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hello"
+        },
+        {
+          "key": "b",
+          "text": "Hell"
+        },
+        {
+          "key": "c",
+          "text": "H"
+        },
+        {
+          "key": "d",
+          "text": "Hello World"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput:\n\nHell"
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String s = \"Hello World\";\n         int i = s.IndexOf('o');\n         int j = s.LastIndexOf('l');\n         Console.WriteLine(i + \" \" + j);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "9 5"
+        },
+        {
+          "key": "b",
+          "text": "4 9"
+        },
+        {
+          "key": "c",
+          "text": "9 0"
+        },
+        {
+          "key": "d",
+          "text": "9 4"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput:\n\n4 9"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String c = \"i love Csharp\";\n        bool a;\n        a = c.StartsWith(\"I\");\n        Console.WriteLine(a);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "true"
+        },
+        {
+          "key": "b",
+          "text": "false"
+        },
+        {
+          "key": "c",
+          "text": "0"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answer": "b",
+      "explanation": "StartsWith() method is case sensitive \"i\" and \"I\" are treated differently, hence false is stored in a.\n\nOutput:\n\nfalse"
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String []chars = {\"z\", \"x\", \"y\", \"z\", \"y\"};\n        for (int i = 0; i < chars.Length; ++i)\n        for (int j = i + 1; j < chars.Length; ++j)\n        if(chars[i].CompareTo(chars[j]) == 0)\n        Console.WriteLine(chars[j]);\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "zx"
+        },
+        {
+          "key": "b",
+          "text": "xy"
+        },
+        {
+          "key": "c",
+          "text": "zy"
+        },
+        {
+          "key": "d",
+          "text": "yz"
+        }
+      ],
+      "answer": "c",
+      "explanation": "compareTo() function returns zero when both the strings are equal. It returns a value less than zero if the invoking string is less than the other string being compared and a value greater than zero if the invoking string is greater than the string compared to 4\n\nOutput:\n\nzy"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " static void main(String args[])\n {\n     char chars[] = {'a', 'b', 'c'};\n     String s = new String(chars);\n     Console.WriteLine(s);\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "a"
+        },
+        {
+          "key": "b",
+          "text": "b"
+        },
+        {
+          "key": "c",
+          "text": "ab"
+        },
+        {
+          "key": "d",
+          "text": "abc"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput:\n\nabc"
+    },
+    {
+      "number": 11,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " static void Main(string[] args)\n {\n     string s = \" i love you\";\n     Console.WriteLine(s.IndexOf('l') + \"  \" + s.lastIndexOf('o') + \"  \" + s.IndexOf('e'));\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "3 5 7"
+        },
+        {
+          "key": "b",
+          "text": "4 5 6"
+        },
+        {
+          "key": "c",
+          "text": "3 9 6"
+        },
+        {
+          "key": "d",
+          "text": "2 4 6"
+        }
+      ],
+      "answer": "c",
+      "explanation": "indexof('l') and lastIndexof('o') are pre-defined function which are used to get the index of first and last occurrence of the character pointed by l and c respectively in the given array.\n\nOutput:\n\n3, 9, 6"
+    }
+  ]
+}

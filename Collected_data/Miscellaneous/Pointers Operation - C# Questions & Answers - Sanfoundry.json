@@ -1,0 +1,260 @@
+{
+  "title": "C# Questions & Answers - Pointers Operation - 1",
+  "topic": "Miscellaneous",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-pointers-operation-one/",
+  "sourceFile": "Pointers Operation - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# MCQs focuses on operation on pointers in C# Programming Language.",
+  "questionCount": 10,
+  "questions": [
+    {
+      "number": 1,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         int m = 10;\n         int *mptr = &m;\n         int **ptr = &mptr;\n         int n = 20;\n         int *nptr = &n;\n         int **prt = &nptr;\n         m = **prt + *nptr;\n         n = *mptr* **prt;\n         Console.WriteLine(n + \" \" + m);\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "20 200"
+        },
+        {
+          "key": "b",
+          "text": "40 200"
+        },
+        {
+          "key": "c",
+          "text": "800 40"
+        },
+        {
+          "key": "d",
+          "text": "40 800"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput: 800 40"
+    },
+    {
+      "number": 2,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " unsafe static void Main()\n {\n     int a = 5;\n     int b = 5;\n     int c = 5;\n     int*[] ptr = new int* [3];\n     ptr[0] = &a;\n     ptr[1] = &b;\n     ptr[2] = &c;\n     for (a = 0; a < 3; a++)\n     {\n         c += *ptr[a];\n         Console.WriteLine(c);\n     }\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "5 10"
+        },
+        {
+          "key": "b",
+          "text": "10 20"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "5 10 20"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None.\n\nOutput:5 10 20"
+    },
+    {
+      "number": 3,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n{\n    unsafe static void Main()\n    {\n        int* ptrs = stackalloc int[3];\n        ptrs[0] = 1;\n        ptrs[1] = 2;\n        ptrs[2] = 3;\n        for (int i = 2; i >= 0; --i)\n        {\n            ptrs[i] = ptrs[i]* 3;\n            ptrs[i] = ptrs[i] + 4;\n            Console.WriteLine(ptrs[i]);\n        }\n        Console.ReadLine();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "20, 10, 7"
+        },
+        {
+          "key": "b",
+          "text": "13, 10, 7"
+        },
+        {
+          "key": "c",
+          "text": "6, 9, 3"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput: 13, 10, 7"
+    },
+    {
+      "number": 4,
+      "question": "Among the given pointers which of the following cannot be incremented?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int"
+        },
+        {
+          "key": "b",
+          "text": "char"
+        },
+        {
+          "key": "c",
+          "text": "float"
+        },
+        {
+          "key": "d",
+          "text": "void"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 5,
+      "question": "A structure pointer points to __________",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "first member of structure"
+        },
+        {
+          "key": "b",
+          "text": "first two members of structure"
+        },
+        {
+          "key": "c",
+          "text": "whole structure"
+        },
+        {
+          "key": "d",
+          "text": "only to the last member of structure"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 6,
+      "question": "What will be the declaration of the variable ptr as the pointer to array of 6 floats?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "float *ptr[6]"
+        },
+        {
+          "key": "b",
+          "text": "float [6]*ptr"
+        },
+        {
+          "key": "c",
+          "text": "float(*ptr)[6]"
+        },
+        {
+          "key": "d",
+          "text": "float(*ptr)(6)."
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 7,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         char[] arr = { 'A', 'B', 'C', 'D', 'E' };\n         fixed (char* P = arr)\n         {\n             int i;\n             for (i = 0 ;i < 5 ;i++)\n             if (*P % 2 == 0)\n             ++*P;\n             else\n             (*P)++;\n             Console.WriteLine(arr);\n         }\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "ACCEE"
+        },
+        {
+          "key": "b",
+          "text": "FBCDE"
+        },
+        {
+          "key": "c",
+          "text": "BBDDF"
+        },
+        {
+          "key": "d",
+          "text": "BBCEE"
+        }
+      ],
+      "answer": "b",
+      "explanation": "None.\n\nOutput:FBCDE"
+    },
+    {
+      "number": 8,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         int[] nums = new int[10];\n         Console.WriteLine(\"Index pointer like array.\");\n         fixed (int* p = nums)\n         {\n             for (int i = 0 ;i <10 ;i++)\n             p[i] = i;\n             for (int i = 10 ;i >0 ;i--)\n             Console.WriteLine(\"p[{0}]: {1} \", i, p[i]);\n             Console.ReadLine();\n         }\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "p[10] :0, p[9] :9, p[8] :8…..p[1]:1"
+        },
+        {
+          "key": "b",
+          "text": "p[10] : 1, p[9] :2, p[8] :3…..p[1] :0"
+        },
+        {
+          "key": "c",
+          "text": "p[1] : 1, p[2] :2, p[3] :3…..p[10] :0"
+        },
+        {
+          "key": "d",
+          "text": "Compile time error"
+        }
+      ],
+      "answer": "a",
+      "explanation": "None.\n\nOutput:Index pointer like array:\n\n        p[10] :0, p[9] :9, p[8] :8…p[1]:1"
+    },
+    {
+      "number": 9,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         string str = \"this is a test\";\n\n             fixed (char* p = str)\n            {\n                for (int i = str.Length-1 ;p[i] != 0 ;i--)\n                Console.Write(p[i]);\n            }\n        Console.ReadLine();\n    }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "test a is this"
+        },
+        {
+          "key": "b",
+          "text": "compile time error"
+        },
+        {
+          "key": "c",
+          "text": "tset a si siht"
+        },
+        {
+          "key": "d",
+          "text": "run time error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Reversal of string using pointers.\n\nOutput:tset a si siht"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code snippet?",
+      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         int* p ;\n         int ch = 13*5;\n         p = &(ch);\n         Console.WriteLine(Convert.ToChar(*p));\n         if (*p == 'A')\n         Console.WriteLine(Convert.ToBoolean(1));\n         else\n         Console.WriteLine(Convert.ToBoolean(0));\n         Console.ReadLine();\n     }\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "65 False"
+        },
+        {
+          "key": "b",
+          "text": "65 1"
+        },
+        {
+          "key": "c",
+          "text": "A True"
+        },
+        {
+          "key": "d",
+          "text": "A 1"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Convert.Tochar(*p) = A\n\n              Convert.ToBoolean(1) = True\n\nOutput: A\n\n         True"
+    }
+  ]
+}

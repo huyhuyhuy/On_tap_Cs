@@ -1,0 +1,302 @@
+{
+  "title": "C# Questions & Answers - Integer Data Types",
+  "topic": "Data_Types_Variables_and_Operators",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-integer-data-types/",
+  "sourceFile": "Integer Data Types - C# Questions & Answers - Sanfoundry.html",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on various data types in integer in C# Programming Language.",
+  "questionCount": 12,
+  "questions": [
+    {
+      "number": 1,
+      "question": "How many Bytes are stored by 'Long' Data type in C# .net?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "8"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "2"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answer": "a",
+      "explanation": "'Long' is the data type keyword used for storing data of unlimited length so by definition its size is always maximum i.e 8."
+    },
+    {
+      "number": 2,
+      "question": "Choose \".NET class\" name from which data type \"UInt\" is derived?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Int16"
+        },
+        {
+          "key": "b",
+          "text": "System.UInt32"
+        },
+        {
+          "key": "c",
+          "text": "System.UInt64"
+        },
+        {
+          "key": "d",
+          "text": "System.UInt16"
+        }
+      ],
+      "answer": "b",
+      "explanation": "By Definition class assigned to\n\n              i) System.Int16 = short.\n\n              ii) System.UInt32 = UInt.\n\n              iii) System.UInt64 = ULong.\n\n              iv) System.UInt16 = UShort."
+    },
+    {
+      "number": 3,
+      "question": "Correct Declaration of Values to variables 'a' and 'b'?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int a = 32, b = 40.6;"
+        },
+        {
+          "key": "b",
+          "text": "int a = 42; b = 40;"
+        },
+        {
+          "key": "c",
+          "text": "int a = 32; int b = 40;"
+        },
+        {
+          "key": "d",
+          "text": "int a = b = 42;"
+        }
+      ],
+      "answer": "c",
+      "explanation": "i) Although, declaration of 'b' and 'a' are correct but initialization of value to 'b' should be 'int' data type not float.\n\nii) Missing declaration type of 'b'.\n\niii) correctly declared data types 'a' and 'b'.\n\niv) 'b' can't be assigned values before declaration."
+    },
+    {
+      "number": 4,
+      "question": "What will be the error in the following C# code?",
+      "code": " Static Void Main(String[] args)\n {\n     const int m = 100;\n     int n = 10;\n     const int k = n / 5 * 100 * n ;\n     Console.WriteLine(m * k);\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "'k' should not be declared constant"
+        },
+        {
+          "key": "b",
+          "text": "Expression assigned to 'k' should be constant in nature"
+        },
+        {
+          "key": "c",
+          "text": "Expression (m * k) is invalid"
+        },
+        {
+          "key": "d",
+          "text": "'m ' is declared in invalid format"
+        }
+      ],
+      "answer": "b",
+      "explanation": "'k' should be declared as const int k = 10/5 * 100*10 i.e only constant values should be assigned to a constant.\n\nOutput:\n\nError 1 - The expression being assigned to 'k' must be constant."
+    },
+    {
+      "number": 5,
+      "question": "Arrange the following data type in order of increasing magnitude sbyte, short, long, int.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "long < short < int < sbyte"
+        },
+        {
+          "key": "b",
+          "text": "sbyte < short < int < long"
+        },
+        {
+          "key": "c",
+          "text": "short < sbyte < int < long"
+        },
+        {
+          "key": "d",
+          "text": "short < int < sbyte < long"
+        }
+      ],
+      "answer": "b",
+      "explanation": "By definition."
+    },
+    {
+      "number": 6,
+      "question": "Which data type should be more preferred for storing a simple number like 35 to improve execution speed of a program?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "sbyte"
+        },
+        {
+          "key": "b",
+          "text": "short"
+        },
+        {
+          "key": "c",
+          "text": "int"
+        },
+        {
+          "key": "d",
+          "text": "long"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Wider data type like int, long takes more time for manipulation of a program."
+    },
+    {
+      "number": 7,
+      "question": "Which Conversion function of 'Convert.TOInt32()' and 'Int32.Parse()' is efficient?",
+      "code": "i) Int32.Parse() is only used for strings and throws argument exception for null string\nii) Convert.Int32() used for data types and returns directly '0' for null string",
+      "options": [
+        {
+          "key": "a",
+          "text": "ii"
+        },
+        {
+          "key": "b",
+          "text": "Both i, ii"
+        },
+        {
+          "key": "c",
+          "text": "i"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Convenient for every data type so mostly preferred."
+    },
+    {
+      "number": 8,
+      "question": "Correct way to assign values to variable 'c' when int a=12, float b=3.5, int c;",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "c = a + b;"
+        },
+        {
+          "key": "b",
+          "text": "c = a + int(float(b));"
+        },
+        {
+          "key": "c",
+          "text": "c = a + convert.ToInt32(b);"
+        },
+        {
+          "key": "d",
+          "text": "c = int(a + b);"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None."
+    },
+    {
+      "number": 9,
+      "question": "What will be Correct Set of C# Code for given data 'a' and 'b' to print output for 'c' as 74?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "int a = 12;\n   float b = 6.2f;\n   int c;\n   c = a / b + a * b;\n   Console.WriteLine(c);"
+        },
+        {
+          "key": "b",
+          "text": "int a = 12;\n   float b = 6.2f;\n   int c;\n   c = a / convert.ToInt32(b) + a * b;\n   Console.WriteLine(c);"
+        },
+        {
+          "key": "c",
+          "text": "int a = 12;\n   float b = 6.2f;\n   int c;\n   c = a / convert.ToInt32(b) + a * convert.ToInt32(b);\n   Console.WriteLine(c);"
+        },
+        {
+          "key": "d",
+          "text": "int a = 12;\n    float b = 6.2f;\n    int c;\n    c = convert.ToInt32(a / b + a * b);\n    Console.WriteLine(c);"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Usage of typecasting operation. Separately check each expression taking typecast operations in concern.\n\nOutput :\n\n 74"
+    },
+    {
+      "number": 10,
+      "question": "Does the output remain same or different for both cases? i) ii)",
+      "code": "  char l ='k';\n  float b = 19.0f;\n  int c;\n  c = (l / convert.ToInt32(b));\n  Console.Writeline(c);\n\n   char l ='k';\n   float b = 19.0f;\n   int c;\n   c = Convert.ToInt32(l / b);\n   console.writeline(c);",
+      "options": [
+        {
+          "key": "a",
+          "text": "Yes"
+        },
+        {
+          "key": "b",
+          "text": "No"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Output -\n\n         1) 5.\n         2) 6."
+    },
+    {
+      "number": 11,
+      "question": "Default Type of number without decimal is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Long Int"
+        },
+        {
+          "key": "b",
+          "text": "Unsigned Long"
+        },
+        {
+          "key": "c",
+          "text": "Int"
+        },
+        {
+          "key": "d",
+          "text": "Unsigned Int"
+        }
+      ],
+      "answer": "c",
+      "explanation": "By definition."
+    },
+    {
+      "number": 12,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     float a = 10.553f;\n     long b = 12L;\n     int  c;\n     c = Convert.ToInt32(a + b);\n     Console.WriteLine(c);\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "23.453"
+        },
+        {
+          "key": "b",
+          "text": "22"
+        },
+        {
+          "key": "c",
+          "text": "23"
+        },
+        {
+          "key": "d",
+          "text": "22.453"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The two data type 'float' and 'long' after arithmetic operation completely converted to nearest whole number 23.\n\nOutput :\n\n23"
+    }
+  ]
+}

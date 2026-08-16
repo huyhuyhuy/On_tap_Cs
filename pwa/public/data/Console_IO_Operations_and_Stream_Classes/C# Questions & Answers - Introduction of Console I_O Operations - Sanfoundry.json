@@ -1,0 +1,310 @@
+{
+  "title": "C# Questions & Answers - Introduction of Console I/O Operations",
+  "topic": "Console_IO_Operations_and_Stream_Classes",
+  "sourceUrl": "https://www.sanfoundry.com/csharp-questions-answers-campus-interviews/",
+  "sourceFile": "C# Questions & Answers - Introduction of Console I_O Operations - Sanfoundry.html",
+  "description": "This set of C# Questions and Answers focuses on \"Introduction of Console I/O operations\".",
+  "questionCount": 12,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of the classes provide the operation of reading from and writing to the console in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "System.Array"
+        },
+        {
+          "key": "b",
+          "text": "System.Output"
+        },
+        {
+          "key": "c",
+          "text": "System.ReadLine"
+        },
+        {
+          "key": "d",
+          "text": "System.Console"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The method for reading and writing to the console in C#.NET is provided by System.Console class. This class gives us access to the standard input, output and standard error streams."
+    },
+    {
+      "number": 2,
+      "question": "Which of the given stream methods provide access to the output console by default in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Console.In"
+        },
+        {
+          "key": "b",
+          "text": "Console.Out"
+        },
+        {
+          "key": "c",
+          "text": "Console.Error"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "The standard output stream Console.Out sends output to the screen by default."
+    },
+    {
+      "number": 3,
+      "question": "Which of the given stream methods provide access to the input console in C#.NET?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Console.Out"
+        },
+        {
+          "key": "b",
+          "text": "Console.Error"
+        },
+        {
+          "key": "c",
+          "text": "Console.In"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Console.In is an instance of TextReader, and we can use the methods and properties defined by TextReader to access it to read the input from the keyboard."
+    },
+    {
+      "number": 4,
+      "question": "The number of input methods defined by the stream method Console.In in C#.NET is?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "4"
+        },
+        {
+          "key": "b",
+          "text": "3"
+        },
+        {
+          "key": "c",
+          "text": "2"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Two basic methods : read() and readline() and third method readkey() introduced in .NET FrameWork 2.0."
+    },
+    {
+      "number": 5,
+      "question": "Select the correct methodS provided by Console.In?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Read(), ReadLine()"
+        },
+        {
+          "key": "b",
+          "text": "ReadKey(), ReadLine()"
+        },
+        {
+          "key": "c",
+          "text": "Read(), ReadLine(), ReadKey()"
+        },
+        {
+          "key": "d",
+          "text": "ReadKey(), ReadLine()"
+        }
+      ],
+      "answer": "c",
+      "explanation": "The two method Read() and ReadLine() available in .NET Framework 1.0 and Third method ReadKey() was added by .NET Framework 2.0."
+    },
+    {
+      "number": 6,
+      "question": "Choose the output returned when read() reads the character from the console?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "String"
+        },
+        {
+          "key": "b",
+          "text": "Char"
+        },
+        {
+          "key": "c",
+          "text": "Integer"
+        },
+        {
+          "key": "d",
+          "text": "Boolean"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Read() returns the character read from the console. It returns the result. The character is returned as an int, which should be cast to char."
+    },
+    {
+      "number": 7,
+      "question": "Choose the output returned when an error condition is generated while read() reads from the console.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "False"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "-1"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Read() returns -1 on error. This method also throws an IOException on failure."
+    },
+    {
+      "number": 8,
+      "question": "Choose the object of TextReader class.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Console.In"
+        },
+        {
+          "key": "b",
+          "text": "Console.Out"
+        },
+        {
+          "key": "c",
+          "text": "Console.Error"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Console.In is an instance(object) of TextReader class and we can use the methods and properties defined by TextReader to invoke the object console.in."
+    },
+    {
+      "number": 9,
+      "question": "Choose the object/objects defined by the Textwriter class.",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Console.In"
+        },
+        {
+          "key": "b",
+          "text": "Console"
+        },
+        {
+          "key": "c",
+          "text": "Console.Error"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Console.Out and Console.Error are objects of type TextWriter class."
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     int a = 10, b = 0;\n     int result;\n     Console.Out.WriteLine(\"This will generate an exception.\");\n     try\n     {\n         result = a / b; // generate an exception\n     }\n     catch (DivideByZeroException exc)\n     {\n         Console.Error.WriteLine(exc.Message);\n     }\n     Console.ReadLine();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "This will generate an exception"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "Compile time error"
+        },
+        {
+          "key": "d",
+          "text": "This will generate an exception\nAttempted to Divide by Zero"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 11,
+      "question": "Choose the methods provided by Console.Out and Console.Error?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Write"
+        },
+        {
+          "key": "b",
+          "text": "WriteLine"
+        },
+        {
+          "key": "c",
+          "text": "WriteKey"
+        },
+        {
+          "key": "d",
+          "text": "Write & WriteLine"
+        }
+      ],
+      "answer": "d",
+      "explanation": "None."
+    },
+    {
+      "number": 12,
+      "question": "What will be the output of the following C# code?",
+      "code": " static void Main(string[] args)\n {\n     Console.WriteLine(\"This is a Console Application:\");\n     Console.Write(\"Please enter your lucky number:\");\n     string val1 = Console.ReadLine();\n     int val2 = System.Convert.ToInt32(val1, 10);\n     val2 = val2 * val2;\n     Console.WriteLine(\"square of number is:\" +val2);\n     Console.Read();\n }",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile time error"
+        },
+        {
+          "key": "b",
+          "text": "Runs successfully does not print anything"
+        },
+        {
+          "key": "c",
+          "text": "Runs successfully, ask for input and hence displays the result"
+        },
+        {
+          "key": "d",
+          "text": "Syntax Error"
+        }
+      ],
+      "answer": "c",
+      "explanation": "None.\n\nOutput : This is a Console Application:\n\n         Please enter your lucky number: 3\n\n         Square of number is : 9"
+    }
+  ]
+}
