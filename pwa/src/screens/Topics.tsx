@@ -26,9 +26,6 @@ export default function Topics() {
       </Link>
       <header className="hero compact hero-row">
         <h1>{catalog.topicCount} chủ đề</h1>
-        <p className="lede">
-          - {catalog.questionCount} câu hỏi -
-        </p>
       </header>
 
       <ol className="topic-list">
