@@ -69,12 +69,14 @@ export type MixItem = {
   path: string
   topicTitle: string
   lessonTitle: string
+  sourceUrl: string
   question: Question
 }
 
 export type MixAnswer = {
   topicId: string
   lessonId: string
+  lessonTitle: string
   number: number
   selected: string
   correct: boolean

@@ -213,19 +213,19 @@
       "options": [
         {
           "key": "a",
-          "text": "for (i = 0;i &lt;= 4; i++)\n   {\n        for(j = 0;j &lt;= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 0;j <= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
         },
         {
           "key": "b",
-          "text": "for (i = 0;i &lt;= 4; i++)\n   {\n        for(j = 4;j &lt;= i; j--)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n   }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 4;j <= i; j--)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n   }"
         },
         {
           "key": "c",
-          "text": "for (i = 0;i &lt;= 4; i++)\n   {\n        for (j = i;j &lt;= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for (j = i;j <= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
         },
         {
           "key": "d",
-          "text": "for ( i = 0;i &lt;= 4; i++)\n   {\n        for (j = 0;j &lt;= i; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for ( i = 0;i <= 4; i++)\n   {\n        for (j = 0;j <= i; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
         }
       ],
       "answer": "c",

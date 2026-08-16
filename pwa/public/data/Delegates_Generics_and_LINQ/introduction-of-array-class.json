@@ -108,7 +108,7 @@
     },
     {
       "number": 5,
-      "question": "What does the following property defined in the array class defines in C#? 👉 Apply Now for Free C Certification - August 2026",
+      "question": "What does the following property defined in the array class defines in C#?",
       "code": " public bool IsReadOnly { get; }",
       "options": [
         {
@@ -134,7 +134,7 @@
     {
       "number": 6,
       "question": "What does the following property define in C#?",
-      "code": "public static int BinarySearch&lt;T&gt;(T[] array, int index, int length, T value)",
+      "code": "public static int BinarySearch<T>(T[] array, int index, int length, T value)",
       "options": [
         {
           "key": "a",

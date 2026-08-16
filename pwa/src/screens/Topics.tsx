@@ -17,7 +17,7 @@ export default function Topics() {
   }, [])
 
   if (error) return <p className="status error">{error}</p>
-  if (!catalog) return <p className="status">Đang tải danh mục…</p>
+  if (!catalog) return <p className="status">Đang tải…</p>
 
   return (
     <div className="page">
@@ -25,8 +25,7 @@ export default function Topics() {
         ← Trang chủ
       </Link>
       <header className="hero compact">
-        {/* <p className="kicker">Học theo chủ đề</p> */}
-        <h1>11 chủ đề</h1>
+        <h1>{catalog.topicCount} chủ đề</h1>
         <p className="lede">
           {catalog.questionCount} câu. Từ cơ bản, đến nâng cao.
         </p>

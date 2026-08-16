@@ -34,7 +34,7 @@
     {
       "number": 2,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class MyClass\n {\n     char[] chrs = { 'A', 'B', 'C', 'D' };\n     public System.Collections.IEnumerator GetEnumerator()\n     {\n         foreach (char ch in chrs)\n         yield return ch;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         foreach (char ch in mc)\n         Console.Write(ch + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
+      "code": "class MyClass\n {\n     char[] chrs = { 'A', 'B', 'C', 'D' };\n     public System.Collections.IEnumerator GetEnumerator()\n     {\n         foreach (char ch in chrs)\n         yield return ch;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         foreach (char ch in mc)\n         Console.Write(ch + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -58,8 +58,8 @@
     },
     {
       "number": 3,
-      "question": "Choose the correct statements for the following C# code? 👉 Apply Now for Free C Certification - August 2026",
-      "code": " public System.Collections.IEnumerator GetEnumerator()\n {\n     foreach (char ch in chrs)\n     yield return ch;\n }",
+      "question": "Choose the correct statements for the following C# code?",
+      "code": "public System.Collections.IEnumerator GetEnumerator()\n {\n     foreach (char ch in chrs)\n     yield return ch;\n }",
       "options": [
         {
           "key": "a",
@@ -84,30 +84,30 @@
     {
       "number": 4,
       "question": "What does the yield return statement specify in the following C# code snippet?",
-      "code": " public System.Collections.IEnumerator GetEnumerator()\n {\n     foreach (char ch in chrs)\n     yield return ch;\n }\na) returns the output\nb) returns the next object in the collection\nc) Both returns the output & returns the next object in the collection\nd) none of the mentioned\n[expand title=\"View Answer\"] Answer:  b\nExplanation: The yield return statement returns the next object in the collection, which in this case is the next character in chrs in the code.\n[/expand]\n\n5. What does the following C# code snippet specify?\n<pre lang=\"csharp\" line=\"1\" cssfile=\"hk1_style\">\nclass MyClass\n{\n    char chrs = 'A' ;\n    public IEnumerator GetEnumerator()\n    {\n        for (int i = 20; i >=0; --i)\n        yield return (char)((chrs + i));\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        MyClass mc = new MyClass();\n        foreach (char ch in mc)\n        Console.Write(ch + \" \");\n        Console.WriteLine();\n        Console.ReadLine();\n    }\n}",
+      "code": "public System.Collections.IEnumerator GetEnumerator()\n {\n     foreach (char ch in chrs)\n     yield return ch;\n }",
       "options": [
         {
           "key": "a",
-          "text": "A B C D E F G H I J K L M N O P Q R S T U V"
+          "text": "returns the output"
         },
         {
           "key": "b",
-          "text": "Run time error"
+          "text": "returns the next object in the collection"
         },
         {
           "key": "c",
-          "text": "U T S R Q P O N M L K J I H G F E D C B A"
+          "text": "Both returns the output & returns the next object in the collection"
         },
         {
           "key": "d",
-          "text": "Compile successfully prints nothing"
+          "text": "none of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n U T S R Q P O N M L K J I H G F E D C B A"
+      "answer": "b",
+      "explanation": "The yield return statement returns the next object in the collection, which in this case is the next character in chrs in the code."
     },
     {
-      "number": 6,
+      "number": 5,
       "question": "What will be the following C# code snippet specify?",
       "code": "class MyClass\n{\n    char chrs = 'A' ;\n    public IEnumerator GetEnumerator()\n    {\n        for (int i = 20; i >=0; --i)\n        if (i == 10) yield break;\n        yield return (char)((chrs + i));\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        MyClass mc = new MyClass();\n        foreach (char ch in mc)\n        Console.Write(ch + \" \");\n        Console.WriteLine();\n        Console.ReadLine();\n    }\n}",
       "options": [
@@ -132,9 +132,9 @@
       "explanation": "The code to specify stoppage of the iterator using 'yield break' statement When this statement executes, the iterator signals that the end of the collection has been reached, which effectively stops the iterator.\n\nOutput:\n\n U T S R Q P O N M L"
     },
     {
-      "number": 7,
+      "number": 6,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class MyClass\n {\n     int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};\n     public IEnumerator GetEnumerator()\n     {\n         for (int i = 0; i < 20; i++)\n         {\n             if (a[i] % 2 == 0)\n             yield return (int)(a[i]);\n         }\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         foreach (int i in mc)\n         Console.Write(i + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
+      "code": "class MyClass\n {\n     int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};\n     public IEnumerator GetEnumerator()\n     {\n         for (int i = 0; i < 20; i++)\n         {\n             if (a[i] % 2 == 0)\n             yield return (int)(a[i]);\n         }\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         foreach (int i in mc)\n         Console.Write(i + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -157,9 +157,9 @@
       "explanation": "None.\n\nOutput:\n\n2, 4, 6, 8, 10, 12, 14, 16, 18, 20"
     },
     {
-      "number": 8,
+      "number": 7,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class MyClass\n {\n     char ch = 'A';\n     public IEnumerable MyItr(int end)\n     {\n         for (int i = 0 ;i < end ;i++)\n         yield return (char)(ch + i);\n     }\n     public IEnumerable MyItr(int begin, int end)\n     {\n         for (int i = begin ;i < end ;i++)\n         yield return (char)(ch + i);\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         Console.WriteLine(\"Iterate the first 7 letters:\");\n         foreach (char ch in mc.MyItr(7))\n         Console.Write(ch + \" \");\n         Console.WriteLine(\"n\");\n         Console.WriteLine(\"Iterate letters from F to L:\");\n         foreach (char ch in mc.MyItr(7, 12))\n         Console.Write(ch + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
+      "code": "class MyClass\n {\n     char ch = 'A';\n     public IEnumerable MyItr(int end)\n     {\n         for (int i = 0 ;i < end ;i++)\n         yield return (char)(ch + i);\n     }\n     public IEnumerable MyItr(int begin, int end)\n     {\n         for (int i = begin ;i < end ;i++)\n         yield return (char)(ch + i);\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         MyClass mc = new MyClass();\n         Console.WriteLine(\"Iterate the first 7 letters:\");\n         foreach (char ch in mc.MyItr(7))\n         Console.Write(ch + \" \");\n         Console.WriteLine(\"n\");\n         Console.WriteLine(\"Iterate letters from F to L:\");\n         foreach (char ch in mc.MyItr(7, 12))\n         Console.Write(ch + \" \");\n         Console.WriteLine();\n         Console.ReadLine();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -182,7 +182,7 @@
       "explanation": "None.\n\nOutput:\n\n        Iterate the first 7 letters:\n         A B C D E F G\n        Iterate letters from F to L:\n        H I J K L"
     },
     {
-      "number": 9,
+      "number": 8,
       "question": "What will be the output of the following C# code snippet?",
       "code": "class MyClass\n{\n    char ch = 'A';\n    int e = 4;\n    int k = 9;\n    int z = 6;\n    public IEnumerator GetEnumerator()\n    {\n        for (int i = 0; i < 26; i++)\n        {\n            if (i == e*k /z) yield break;\n            yield return (int)(ch + i);\n        }\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        MyClass mc = new MyClass();\n        foreach(int ch in mc)\n        Console.Write(ch + \" \");\n        Console.WriteLine();\n        Console.ReadLine();\n    }\n}",
       "options": [
@@ -207,7 +207,7 @@
       "explanation": "None.\n\nOutput:\n\n 65 66 67 68 69 70"
     },
     {
-      "number": 10,
+      "number": 9,
       "question": "What are the advantages of the named iterator?",
       "code": null,
       "options": [

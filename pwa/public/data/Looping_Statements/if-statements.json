@@ -129,7 +129,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "int []num = {50, 65, 56, 88, 43, 52};\n                int even = 0,odd = 0;\n                for (int i = 0 ;i &lt; num.Length ;i++)\n                {\n                    if (num[i] % 2 == 0)\n                    {\n                    even += 1;\n                    }\n                    else\n                    {\n                    odd += 1;\n                    }\n                }\n                Console.WriteLine(\"Even Numbers: \" +even);\n                Console.WriteLine(\"Odd Numbers: \" +odd);\n                Console.ReadLine();"
+      "explanation": "int []num = {50, 65, 56, 88, 43, 52};\n                int even = 0,odd = 0;\n                for (int i = 0 ;i < num.Length ;i++)\n                {\n                    if (num[i] % 2 == 0)\n                    {\n                    even += 1;\n                    }\n                    else\n                    {\n                    odd += 1;\n                    }\n                }\n                Console.WriteLine(\"Even Numbers: \" +even);\n                Console.WriteLine(\"Odd Numbers: \" +odd);\n                Console.ReadLine();"
     },
     {
       "number": 6,

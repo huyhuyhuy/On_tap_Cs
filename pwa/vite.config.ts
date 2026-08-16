@@ -45,9 +45,9 @@ export default defineConfig({
         runtimeCaching: [
           {
             urlPattern: /\/data\/.*\.json$/i,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'ontap-cs-json',
+              cacheName: 'ontap-cs-json-v2',
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 365,

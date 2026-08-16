@@ -44,6 +44,7 @@ async function buildRandomMix(catalog: Catalog): Promise<MixItem[]> {
       path: slot.lesson.path,
       topicTitle: slot.topic.title,
       lessonTitle: displayTitle(slot.lesson.title),
+      sourceUrl: files[index]?.sourceUrl ?? '',
       question,
     }
   })
@@ -95,6 +96,7 @@ async function buildReviewMix(catalog: Catalog): Promise<MixItem[]> {
       path,
       topicTitle: meta.topicTitle,
       lessonTitle: meta.lessonTitle,
+      sourceUrl: byPath.get(path)?.sourceUrl ?? '',
       question,
     })
   }

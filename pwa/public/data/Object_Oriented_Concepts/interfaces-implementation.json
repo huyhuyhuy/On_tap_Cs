@@ -58,7 +58,7 @@
     },
     {
       "number": 3,
-      "question": "What will be the Correct statement in the following C# code? 👉 Apply Now for Free C Certification - August 2026",
+      "question": "What will be the Correct statement in the following C# code?",
       "code": " interface a1\n {\n     void f1();\n     void f2();\n }\n class a :a1\n {\n     private int i;\n     void a1.f1()\n     {\n     }\n }",
       "options": [
         {

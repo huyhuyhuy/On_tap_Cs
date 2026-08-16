@@ -108,7 +108,7 @@
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code snippet? 👉 Apply Now for Free C Certification - August 2026",
+      "question": "What will be the output of the following C# code snippet?",
       "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         int[] nums = { 1, -2, 3, 0, -4, 5};\n         var posNums = from n in nums\n                       where n >= 0\n                       select n;\n        foreach (int i in posNums)\n        Console.Write(i + \" \");\n        Console.WriteLine();\n        Console.ReadLine();\n    }\n}",
       "options": [
         {

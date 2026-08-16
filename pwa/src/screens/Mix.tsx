@@ -155,6 +155,7 @@ export default function Mix() {
       {
         topicId: current.topicId,
         lessonId: current.lessonId,
+        lessonTitle: current.lessonTitle,
         number: question.number,
         selected: key,
         correct,
@@ -186,10 +187,12 @@ export default function Mix() {
         </Link>
         <div className="quiz-head">
           <div>
-            <p className="kicker">{current.lessonTitle}</p>
+            <p className="kicker">{mode === 'review' ? 'Cần ôn' : 'Đề random'}</p>
             <p className="quiz-progress">
               Câu {index + 1} / {queue.length}
               {retryItems?.length ? ' · làm lại câu sai' : ''}
+              {' · '}
+              {current.lessonTitle}
             </p>
           </div>
           <div className="bar" aria-hidden="true">
@@ -201,7 +204,7 @@ export default function Mix() {
       <div className="quiz-scroll" ref={scrollRef}>
         <article className="question-card">
           <h1 className="question-text">
-            {question.number}. {question.question}
+            {index + 1}. {question.question}
           </h1>
           {question.code ? <pre className="code-block">{question.code}</pre> : null}
 
@@ -243,11 +246,24 @@ export default function Mix() {
         <div className="quiz-dock-inner">
           {revealed ? (
             <>
-              <p className="quiz-dock-status">
-                {isCorrect
-                  ? 'Đúng'
-                  : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
-              </p>
+              <div className="quiz-dock-status-row">
+                <p className="quiz-dock-status">
+                  {isCorrect
+                    ? 'Đúng'
+                    : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
+                </p>
+                {current.sourceUrl ? (
+                  <a
+                    className="source-link"
+                    href={current.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nguồn Sanfoundry"
+                  >
+                    <span aria-hidden="true">↗</span> Sanfoundry
+                  </a>
+                ) : null}
+              </div>
               <div className="quiz-dock-actions">
                 <button
                   type="button"

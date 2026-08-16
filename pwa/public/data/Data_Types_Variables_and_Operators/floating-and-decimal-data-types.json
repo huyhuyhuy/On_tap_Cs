@@ -104,7 +104,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "Const is a reserve keyword whenever they are declared with any variables. The value stored in that variable always remain fixed. Any modification done to change value of that variable results in error. Hence, options #define pi 6.28F, pi = 6.28F and const float pi, pi = 6.28F are rejected because the value is not declared fixed. Now,  for value only option 'const float pi = 6.28F' is correct because for value while declaring a constant variable we need to provide a constant value too as provided in const float pi = 6.28F. So, option const float pi = 6.28F is correct way of declaration of constant variable.\n\n👉 Apply Now for\nFree C Certification\n - August 2026"
+      "explanation": "Const is a reserve keyword whenever they are declared with any variables. The value stored in that variable always remain fixed. Any modification done to change value of that variable results in error. Hence, options #define pi 6.28F, pi = 6.28F and const float pi, pi = 6.28F are rejected because the value is not declared fixed. Now,  for value only option 'const float pi = 6.28F' is correct because for value while declaring a constant variable we need to provide a constant value too as provided in const float pi = 6.28F. So, option const float pi = 6.28F is correct way of declaration of constant variable."
     },
     {
       "number": 5,
@@ -246,7 +246,7 @@
         },
         {
           "key": "c",
-          "text": "0 * ABCD"
+          "text": "0xABCD"
         },
         {
           "key": "d",

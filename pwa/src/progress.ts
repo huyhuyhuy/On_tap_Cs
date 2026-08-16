@@ -13,13 +13,23 @@ export function loadProgress(): ProgressMap {
   }
 }
 
-export function saveLessonProgress(key: string, entry: LessonProgress): void {
+export function saveLessonProgress(
+  key: string,
+  entry: LessonProgress,
+  mode: 'full' | 'retry' = 'full',
+): void {
   const all = loadProgress()
   const prev = all[key]
-  const bestTotal = prev ? Math.max(prev.bestTotal, entry.bestTotal) : entry.bestTotal
-  const bestCorrect = prev
-    ? Math.max(prev.bestCorrect, entry.bestCorrect)
-    : entry.bestCorrect
+  let bestCorrect = prev?.bestCorrect ?? 0
+  let bestTotal = prev?.bestTotal ?? 0
+
+  if (mode === 'full') {
+    if (!prev?.bestTotal || isBetterFullScore(entry, prev)) {
+      bestCorrect = entry.bestCorrect
+      bestTotal = entry.bestTotal
+    }
+  }
+
   all[key] = {
     bestCorrect,
     bestTotal,
@@ -27,6 +37,13 @@ export function saveLessonProgress(key: string, entry: LessonProgress): void {
     lastAt: entry.lastAt,
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
+}
+
+function isBetterFullScore(entry: LessonProgress, prev: LessonProgress): boolean {
+  const next = entry.bestTotal ? entry.bestCorrect / entry.bestTotal : 0
+  const old = prev.bestTotal ? prev.bestCorrect / prev.bestTotal : 0
+  if (next !== old) return next > old
+  return entry.bestCorrect > prev.bestCorrect
 }
 
 export function topicStats(

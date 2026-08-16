@@ -20,7 +20,7 @@ export default function Home() {
   if (!catalog || !review) return <p className="status">Đang tải…</p>
 
   return (
-    <div className="page">
+    <div className="page home">
       <header className="hero">
         <h1>Ôn tập C#</h1>
         <p className="lede">
@@ -34,7 +34,7 @@ export default function Home() {
             01
           </span>
           <span className="home-tile-title">Theo chủ đề</span>
-          <span className="home-tile-sub">11 chủ đề</span>
+          <span className="home-tile-sub">{catalog.topicCount} chủ đề</span>
         </Link>
         <Link className="home-tile accent-cyan" to="/mix/random">
           <span className="home-tile-mark" aria-hidden="true">
@@ -60,6 +60,16 @@ export default function Home() {
           <span className="home-tile-sub">trên máy này</span>
         </Link>
       </div>
+
+      <p className="home-source">
+        <a
+          href="https://www.sanfoundry.com/1000-csharp-questions-answers/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Nguồn: Sanfoundry
+        </a>
+      </p>
     </div>
   )
 }

@@ -57,7 +57,7 @@ export default function Topic() {
                   <span className="lesson-title">{displayTitle(lesson.title)}</span>
                   <span className="lesson-meta">
                     {lesson.questionCount} câu
-                    {rec?.completed ? ` · tốt nhất ${score}` : ''}
+                    {rec?.completed ? ` · cao nhất ${score} (cả bài)` : ''}
                   </span>
                 </span>
                 <span className={`pill ${rec?.completed ? 'done' : ''}`}>

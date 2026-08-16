@@ -59,7 +59,7 @@
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     byte b1 = 0 * AB;\n     byte b2 = 0 * 99;\n     byte temp;\n     temp = (byte) ~b2;\n     Console.Write( temp + \" \");\n     temp = (byte) (b1 << b2);\n     Console.Write(temp + \" \");\n     temp = (byte)(b2  >> 2);\n     Console.WriteLine(temp);\n     Console.ReadLine();\n }",
+      "code": " static void Main(string[] args)\n {\n     byte b1 = 0xAB;\n     byte b2 = 0x99;\n     byte temp;\n     temp = (byte) ~b2;\n     Console.Write( temp + \" \");\n     temp = (byte) (b1 << b2);\n     Console.Write(temp + \" \");\n     temp = (byte)(b2  >> 2);\n     Console.WriteLine(temp);\n     Console.ReadLine();\n }",
       "options": [
         {
           "key": "a",

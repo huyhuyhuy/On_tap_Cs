@@ -80,11 +80,21 @@ export default function MixResult() {
         <section className="wrong-list">
           <h2>Câu sai ({wrong.length})</h2>
           <ol>
-            {wrong.map((item) => (
-              <li key={`${item.topicId}/${item.lessonId}/${item.number}`}>
-                Câu {item.number}: chọn {item.selected.toUpperCase()}
-              </li>
-            ))}
+            {wrong.map((item) => {
+              const source = result.items.find(
+                (mix) =>
+                  mix.topicId === item.topicId &&
+                  mix.lessonId === item.lessonId &&
+                  mix.question.number === item.number,
+              )
+              const lessonTitle = item.lessonTitle || source?.lessonTitle
+              return (
+                <li key={`${item.topicId}/${item.lessonId}/${item.number}`}>
+                  {lessonTitle ? `${lessonTitle} · ` : ''}
+                  câu {item.number}: chọn {item.selected.toUpperCase()}
+                </li>
+              )
+            })}
           </ol>
         </section>
       ) : (

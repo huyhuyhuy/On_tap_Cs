@@ -88,6 +88,37 @@ export function formatReview(rollup: StatRollup): string {
   return `${rollup.needReview} câu cần ôn`
 }
 
+export function formatTopicStat(
+  done: number,
+  total: number,
+  rollup: StatRollup,
+): string {
+  const bits: string[] = []
+  if (done > 0) bits.push(`đã xong ${done}/${total}`)
+  if (rollup.touched) bits.push(formatReview(rollup))
+  else if (done === 0) bits.push('chưa làm')
+  return bits.join(' · ')
+}
+
+export function formatLessonStat(completed: boolean, rollup: StatRollup): string {
+  const bits: string[] = []
+  if (completed) bits.push('đã làm')
+  if (rollup.touched) bits.push(formatReview(rollup))
+  else if (!completed) bits.push('chưa làm')
+  return bits.join(' · ')
+}
+
+export function combinedTone(
+  done: number,
+  total: number,
+  rollup: StatRollup,
+): string {
+  if (rollup.touched) return reviewTone(rollup)
+  if (done > 0 && done === total) return 'tone-ok'
+  if (done > 0) return 'tone-warn'
+  return ''
+}
+
 export function formatQuestionStat(stat: QuestionStat): string {
   if (!stat.seen) return 'chưa làm'
   if (stillWrong(stat)) {

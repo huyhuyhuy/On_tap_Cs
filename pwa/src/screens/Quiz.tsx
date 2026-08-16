@@ -141,12 +141,16 @@ export default function Quiz() {
     }
     const nextAnswers = answers
     const correctCount = nextAnswers.filter((a) => a.correct).length
-    saveLessonProgress(lessonKey(topicId, lessonId), {
-      bestCorrect: correctCount,
-      bestTotal: nextAnswers.length,
-      completed: true,
-      lastAt: new Date().toISOString(),
-    })
+    saveLessonProgress(
+      lessonKey(topicId, lessonId),
+      {
+        bestCorrect: correctCount,
+        bestTotal: nextAnswers.length,
+        completed: true,
+        lastAt: new Date().toISOString(),
+      },
+      retryNumbers?.length ? 'retry' : 'full',
+    )
     const session = {
       topicId,
       lessonId,
@@ -182,7 +186,7 @@ export default function Quiz() {
       <div className="quiz-scroll" ref={scrollRef}>
         <article className="question-card">
           <h1 className="question-text">
-            {current.number}. {current.question}
+            {index + 1}. {current.question}
           </h1>
           {current.code ? <pre className="code-block">{current.code}</pre> : null}
 
@@ -224,9 +228,22 @@ export default function Quiz() {
         <div className="quiz-dock-inner">
           {revealed ? (
             <>
-              <p className="quiz-dock-status">
-                {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
-              </p>
+              <div className="quiz-dock-status-row">
+                <p className="quiz-dock-status">
+                  {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
+                </p>
+                {lesson.sourceUrl ? (
+                  <a
+                    className="source-link"
+                    href={lesson.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nguồn Sanfoundry"
+                  >
+                    <span aria-hidden="true">↗</span> Sanfoundry
+                  </a>
+                ) : null}
+              </div>
               <div className="quiz-dock-actions">
                 <button
                   type="button"

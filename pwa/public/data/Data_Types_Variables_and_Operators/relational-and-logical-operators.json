@@ -179,7 +179,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "Step 1: Convert.ToInt32(u < b)(Evaluate result as 9 < 5 which is false in nature. So, solution is converted from 'false' to '0').\n\n             Step 2: (a + b--) evaluated as 4 + 5 = 9 + 2 = 11.\n             Step 3: u &lt; b evaluated as 'False' without being converted to '0'.\nOutput: 11\n         4\n         False."
+      "explanation": "Step 1: Convert.ToInt32(u < b)(Evaluate result as 9 < 5 which is false in nature. So, solution is converted from 'false' to '0').\n\n             Step 2: (a + b--) evaluated as 4 + 5 = 9 + 2 = 11.\n             Step 3: u < b evaluated as 'False' without being converted to '0'.\nOutput: 11\n         4\n         False."
     },
     {
       "number": 8,
