@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { newRunId } from '../celebrate'
 import { displayTitle, hasExplanation, lessonKey, loadCatalog, loadLesson } from '../data'
 import { saveLessonProgress } from '../progress'
 import { recordAttempt } from '../stats'
@@ -158,6 +159,7 @@ export default function Quiz() {
       lessonTitle: displayTitle(lessonMeta.title),
       answers: nextAnswers,
       retry: Boolean(retryNumbers?.length),
+      runId: newRunId(),
     }
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(session))
     navigate(`/quiz/${topicId}/${lessonId}/result`, { replace: true, state: session })
@@ -170,11 +172,13 @@ export default function Quiz() {
           ← {topic.title}
         </Link>
         <div className="quiz-head">
-          <div>
-            <p className="kicker">{displayTitle(lessonMeta.title)}</p>
+          <div className="quiz-head-row">
+            <p className="kicker" title={displayTitle(lessonMeta.title)}>
+              {displayTitle(lessonMeta.title)}
+            </p>
             <p className="quiz-progress">
-              Câu {index + 1} / {queue.length}
-              {retryNumbers?.length ? ' · làm lại câu sai' : ''}
+              {index + 1} / {queue.length}
+              {retryNumbers?.length ? ' · làm lại' : ''}
             </p>
           </div>
           <div className="bar" aria-hidden="true">
@@ -224,48 +228,44 @@ export default function Quiz() {
         </article>
       </div>
 
-      <footer className="quiz-dock">
-        <div className="quiz-dock-inner">
-          {revealed ? (
-            <>
-              <div className="quiz-dock-status-row">
-                <p className="quiz-dock-status">
-                  {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
-                </p>
-                {lesson.sourceUrl ? (
-                  <a
-                    className="source-link"
-                    href={lesson.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Nguồn Sanfoundry"
-                  >
-                    <span aria-hidden="true">↗</span> Sanfoundry
-                  </a>
-                ) : null}
-              </div>
-              <div className="quiz-dock-actions">
-                <button
-                  type="button"
-                  className={`btn explain-btn${showExplain ? ' on' : ''}`}
-                  disabled={!hasExplain}
-                  onClick={() => {
-                    userToggledExplain.current = true
-                    setShowExplain((open) => !open)
-                  }}
+      {revealed ? (
+        <footer className="quiz-dock">
+          <div className="quiz-dock-inner">
+            <div className="quiz-dock-status-row">
+              <p className="quiz-dock-status">
+                {isCorrect ? 'Đúng' : `Sai — đáp án đúng là ${current.answer.toUpperCase()}`}
+              </p>
+              {lesson.sourceUrl ? (
+                <a
+                  className="source-link"
+                  href={lesson.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nguồn Sanfoundry"
                 >
-                  Giải thích
-                </button>
-                <button type="button" className="btn primary" onClick={goNext}>
-                  {index + 1 < queue.length ? 'Câu tiếp' : 'Xem tổng kết'}
-                </button>
-              </div>
-            </>
-          ) : (
-            <p className="quiz-dock-status muted">Chọn một đáp án để kiểm tra.</p>
-          )}
-        </div>
-      </footer>
+                  <span aria-hidden="true">↗</span> Sanfoundry
+                </a>
+              ) : null}
+            </div>
+            <div className="quiz-dock-actions">
+              <button
+                type="button"
+                className={`btn explain-btn${showExplain ? ' on' : ''}`}
+                disabled={!hasExplain}
+                onClick={() => {
+                  userToggledExplain.current = true
+                  setShowExplain((open) => !open)
+                }}
+              >
+                Giải thích
+              </button>
+              <button type="button" className="btn primary" onClick={goNext}>
+                {index + 1 < queue.length ? 'Câu tiếp' : 'Xem tổng kết'}
+              </button>
+            </div>
+          </div>
+        </footer>
+      ) : null}
     </div>
   )
 }

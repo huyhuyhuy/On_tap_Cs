@@ -1,5 +1,6 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { maybeCelebrate } from '../celebrate'
 import type { QuizAnswer } from '../types'
 
 type Session = {
@@ -9,6 +10,7 @@ type Session = {
   lessonTitle: string
   answers: QuizAnswer[]
   retry: boolean
+  runId?: string
 }
 
 const SESSION_KEY = 'ontap-cs-last-session'
@@ -30,8 +32,21 @@ export default function Result() {
   const location = useLocation()
   const navigate = useNavigate()
   const session = useMemo(() => readSession(location.state), [location.state])
+  const matched =
+    Boolean(session) && session?.topicId === topicId && session?.lessonId === lessonId
+  const total = session?.answers.length ?? 0
+  const pct = total
+    ? Math.round(
+        ((session?.answers.filter((a) => a.correct).length ?? 0) / total) * 100,
+      )
+    : 0
 
-  if (!session || session.topicId !== topicId || session.lessonId !== lessonId) {
+  useEffect(() => {
+    if (!matched) return
+    maybeCelebrate(session?.runId, pct)
+  }, [matched, session?.runId, pct])
+
+  if (!session || !matched) {
     return (
       <p className="status">
         Chưa có kết quả bài này.{' '}
@@ -41,10 +56,8 @@ export default function Result() {
   }
 
   const result = session
-  const total = result.answers.length
   const correct = result.answers.filter((a) => a.correct).length
   const wrong = result.answers.filter((a) => !a.correct)
-  const pct = total ? Math.round((correct / total) * 100) : 0
 
   function retryWrong() {
     navigate(`/quiz/${result.topicId}/${result.lessonId}`, {
@@ -58,9 +71,8 @@ export default function Result() {
         ← {result.topicTitle}
       </Link>
 
-      <header className="hero compact">
+      <header className="hero compact result-head">
         <p className="kicker">{result.lessonTitle}</p>
-        <h1>Tổng kết</h1>
       </header>
 
       <section className="score-card">
@@ -68,13 +80,6 @@ export default function Result() {
           {correct}/{total}
         </p>
         <p className="score-pct">{pct}% đúng</p>
-        <p className="score-note">
-          {pct === 100
-            ? 'Làm tốt. Có thể chuyển bài tiếp theo.'
-            : pct >= 70
-              ? 'Khá ổn. Nên xem lại các câu sai.'
-              : 'Nên làm lại bài này.'}
-        </p>
       </section>
 
       {wrong.length > 0 ? (
@@ -83,7 +88,7 @@ export default function Result() {
           <ol>
             {wrong.map((item) => (
               <li key={item.number}>
-                Câu {item.number}: chọn {item.selected.toUpperCase()}
+                Câu {item.number}
               </li>
             ))}
           </ol>
@@ -92,7 +97,7 @@ export default function Result() {
         <p className="status">Không có câu sai.</p>
       )}
 
-      <div className="actions">
+      <div className="actions equal">
         <Link className="btn primary" to={`/quiz/${result.topicId}/${result.lessonId}`}>
           Làm lại cả bài
         </Link>
@@ -101,9 +106,6 @@ export default function Result() {
             Làm lại câu sai
           </button>
         ) : null}
-        <Link className="btn" to={`/topic/${result.topicId}`}>
-          Về chủ đề
-        </Link>
       </div>
     </div>
   )

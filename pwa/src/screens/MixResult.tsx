@@ -1,11 +1,13 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { maybeCelebrate } from '../celebrate'
 import type { MixAnswer, MixItem, MixMode } from '../types'
 
 type Session = {
   mode: MixMode
   items: MixItem[]
   answers: MixAnswer[]
+  runId?: string
 }
 
 const SESSION_KEY = 'ontap-cs-mix-session'
@@ -27,8 +29,20 @@ export default function MixResult() {
   const location = useLocation()
   const navigate = useNavigate()
   const session = useMemo(() => readSession(location.state), [location.state])
+  const matched = Boolean(session) && session?.mode === mode
+  const total = session?.answers.length ?? 0
+  const pct = total
+    ? Math.round(
+        ((session?.answers.filter((a) => a.correct).length ?? 0) / total) * 100,
+      )
+    : 0
 
-  if (!session || session.mode !== mode) {
+  useEffect(() => {
+    if (!matched) return
+    maybeCelebrate(session?.runId, pct)
+  }, [matched, session?.runId, pct])
+
+  if (!session || !matched) {
     return (
       <p className="status">
         Chưa có kết quả đề này. <Link to="/">Về trang chủ</Link>
@@ -37,11 +51,8 @@ export default function MixResult() {
   }
 
   const result = session
-  const total = result.answers.length
   const correct = result.answers.filter((a) => a.correct).length
   const wrong = result.answers.filter((a) => !a.correct)
-  const pct = total ? Math.round((correct / total) * 100) : 0
-  const title = result.mode === 'review' ? 'Cần ôn' : 'Đề ngẫu nhiên'
 
   function retryWrong() {
     const wrongItems = result.items.filter((_, index) => {
@@ -57,23 +68,11 @@ export default function MixResult() {
         ← Trang chủ
       </Link>
 
-      <header className="hero compact">
-        <p className="kicker">{title}</p>
-        <h1>Tổng kết</h1>
-      </header>
-
       <section className="score-card">
         <p className="score-big">
           {correct}/{total}
         </p>
         <p className="score-pct">{pct}% đúng</p>
-        <p className="score-note">
-          {pct === 100
-            ? 'Làm tốt.'
-            : pct >= 70
-              ? 'Khá ổn. Nên xem lại các câu sai.'
-              : 'Nên ôn lại các câu sai.'}
-        </p>
       </section>
 
       {wrong.length > 0 ? (
@@ -91,7 +90,7 @@ export default function MixResult() {
               return (
                 <li key={`${item.topicId}/${item.lessonId}/${item.number}`}>
                   {lessonTitle ? `${lessonTitle} · ` : ''}
-                  câu {item.number}: chọn {item.selected.toUpperCase()}
+                  câu {item.number}
                 </li>
               )
             })}
@@ -101,7 +100,7 @@ export default function MixResult() {
         <p className="status">Không có câu sai.</p>
       )}
 
-      <div className="actions">
+      <div className="actions equal">
         <Link className="btn primary" to={`/mix/${result.mode}`}>
           Làm đề mới
         </Link>
@@ -110,9 +109,6 @@ export default function MixResult() {
             Làm lại câu sai
           </button>
         ) : null}
-        <Link className="btn" to="/">
-          Về trang chủ
-        </Link>
       </div>
     </div>
   )

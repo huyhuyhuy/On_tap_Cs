@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { newRunId } from '../celebrate'
 import { hasExplanation, loadCatalog } from '../data'
 import { buildMix } from '../mix'
 import { recordAttempt } from '../stats'
@@ -174,6 +175,7 @@ export default function Mix() {
       mode,
       items: queue,
       answers,
+      runId: newRunId(),
     }
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(session))
     navigate(`/mix/${mode}/result`, { replace: true, state: session })
@@ -186,13 +188,13 @@ export default function Mix() {
           ← Trang chủ
         </Link>
         <div className="quiz-head">
-          <div>
-            <p className="kicker">{mode === 'review' ? 'Cần ôn' : 'Đề ngẫu nhiên'}</p>
-            <p className="quiz-progress">
-              Câu {index + 1} / {queue.length}
-              {retryItems?.length ? ' · làm lại câu sai' : ''}
-              {' · '}
+          <div className="quiz-head-row">
+            <p className="quiz-head-lesson" title={current.lessonTitle}>
               {current.lessonTitle}
+            </p>
+            <p className="quiz-progress">
+              {index + 1} / {queue.length}
+              {retryItems?.length ? ' · làm lại' : ''}
             </p>
           </div>
           <div className="bar" aria-hidden="true">
@@ -242,50 +244,46 @@ export default function Mix() {
         </article>
       </div>
 
-      <footer className="quiz-dock">
-        <div className="quiz-dock-inner">
-          {revealed ? (
-            <>
-              <div className="quiz-dock-status-row">
-                <p className="quiz-dock-status">
-                  {isCorrect
-                    ? 'Đúng'
-                    : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
-                </p>
-                {current.sourceUrl ? (
-                  <a
-                    className="source-link"
-                    href={current.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Nguồn Sanfoundry"
-                  >
-                    <span aria-hidden="true">↗</span> Sanfoundry
-                  </a>
-                ) : null}
-              </div>
-              <div className="quiz-dock-actions">
-                <button
-                  type="button"
-                  className={`btn explain-btn${showExplain ? ' on' : ''}`}
-                  disabled={!hasExplain}
-                  onClick={() => {
-                    userToggledExplain.current = true
-                    setShowExplain((open) => !open)
-                  }}
+      {revealed ? (
+        <footer className="quiz-dock">
+          <div className="quiz-dock-inner">
+            <div className="quiz-dock-status-row">
+              <p className="quiz-dock-status">
+                {isCorrect
+                  ? 'Đúng'
+                  : `Sai — đáp án đúng là ${question.answer.toUpperCase()}`}
+              </p>
+              {current.sourceUrl ? (
+                <a
+                  className="source-link"
+                  href={current.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nguồn Sanfoundry"
                 >
-                  Giải thích
-                </button>
-                <button type="button" className="btn primary" onClick={goNext}>
-                  {index + 1 < queue.length ? 'Câu tiếp' : 'Xem tổng kết'}
-                </button>
-              </div>
-            </>
-          ) : (
-            <p className="quiz-dock-status muted">Chọn một đáp án để kiểm tra.</p>
-          )}
-        </div>
-      </footer>
+                  <span aria-hidden="true">↗</span> Sanfoundry
+                </a>
+              ) : null}
+            </div>
+            <div className="quiz-dock-actions">
+              <button
+                type="button"
+                className={`btn explain-btn${showExplain ? ' on' : ''}`}
+                disabled={!hasExplain}
+                onClick={() => {
+                  userToggledExplain.current = true
+                  setShowExplain((open) => !open)
+                }}
+              >
+                Giải thích
+              </button>
+              <button type="button" className="btn primary" onClick={goNext}>
+                {index + 1 < queue.length ? 'Câu tiếp' : 'Xem tổng kết'}
+              </button>
+            </div>
+          </div>
+        </footer>
+      ) : null}
     </div>
   )
 }
