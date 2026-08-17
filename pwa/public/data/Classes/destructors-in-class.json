@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which operator among the following signifies the destructor operator?",
+      "question": "Which operator among the following signifies the destructor operator in C#?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "In C#, a destructor (also called a finalizer) is declared by prefixing the class name with the tilde (~) operator.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "The method called by clients of a class to explicitly release any resources like network, connection, open files etc. When the object is no longer required?",
+      "question": "Which method is called by clients of a class to explicitly release unmanaged resources (like network connections or file handles) when the object is no longer required?",
       "code": null,
       "options": [
         {
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Dispose() is only method called by clients of a class to explicitly release any resource like network connection, open files etc. When object is no longer required. Hence, Dispose() provides programmer with such programming control."
+      "explanation": "The 'Dispose()' method, part of the IDisposable interface, is used for deterministic release of unmanaged resources, as opposed to the non-deterministic nature of the Garbage Collector.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Name a method which has the same name as that of class and which is used to destroy objects also called automatically when application is finally on process of being getting terminated.",
+      "question": "Which method has the same name as the class (prefixed with ~) and is used to clean up an object when the instance is being reclaimed by the Garbage Collector?",
       "code": null,
       "options": [
         {
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Definition of the destructor."
+      "explanation": "A destructor (finalizer) is used to perform any necessary final clean-up when a class instance is being collected by the garbage collector.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of the following statements are correct?",
+      "question": "Which of the following statements about Garbage Collection (GC) in .NET are correct?",
       "code": null,
       "options": [
         {
@@ -92,23 +95,24 @@
         },
         {
           "key": "b",
-          "text": "There is one common garbage collector for all programs"
+          "text": "The Garbage Collector is a shared service of the CLR for all managed applications"
         },
         {
           "key": "c",
-          "text": "To garbage collect an object set all references to it as null"
+          "text": "Setting an object reference to null makes it eligible for garbage collection"
         },
         {
           "key": "d",
-          "text": "Both There is one common garbage collector for all programs & To garbage collect an object set all references to it as null"
+          "text": "Both B and C are correct"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The GC is a service provided by the Common Language Runtime (CLR). To allow an object to be collected, you should remove all references to it, such as by setting them to null.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Operator used to free the memory when memory is allocated?",
+      "question": "Which operator is used to manually free memory in C#?",
       "code": null,
       "options": [
         {
@@ -125,20 +129,21 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "'New' is used to allocate memory in the constructors. Hence, we should use 'delete' to free that memory."
+      "answer": "d",
+      "explanation": "C# does not have a 'delete' or 'free' operator for managed memory. Memory is automatically reclaimed by the Garbage Collector.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Select wrong statement about destructor in C#?",
+      "question": "Select the WRONG statement about destructors in C#:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "A class can have one destructor only"
+          "text": "A class can have only one destructor"
         },
         {
           "key": "b",
@@ -146,20 +151,21 @@
         },
         {
           "key": "c",
-          "text": "Destructors can have modifiers or parameters"
+          "text": "Destructors can have access modifiers (like public) or parameters"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "Destructors are called automatically by the GC"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Destructors cannot have access modifiers (public, private, etc.) and cannot take any parameters.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "  class sample\n  {\n      int i;\n      double k;\n      public sample (int ii, double kk)\n      {\n          i = ii;\n          k = kk;\n          double j = (i) + (k);\n          Console.WriteLine(j);\n      }\n      ~sample()\n      {\n          double j = i - k;\n          Console.WriteLine(j);\n      }\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          sample s = new sample(8, 2.5);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class sample\n{\n    int i;\n    double k;\n    public sample(int ii, double kk)\n    {\n        i = ii;\n        k = kk;\n        Console.Write((i + k) + \" \");\n    }\n    ~sample()\n    {\n        Console.Write((i - k) + \" \");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sample s = new sample(8, 2.5);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -179,11 +185,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "First constructor 'sample' is called  and hence then destructor '~sample' is evaluated.\n\nOutput :\n\n10.5, 5.5"
+      "explanation": "The constructor runs first (8 + 2.5 = 10.5). When the application ends or GC collects the object, the destructor runs (8 - 2.5 = 5.5).",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "What is the return type of destructor?",
+      "question": "What is the return type of a destructor in C#?",
       "code": null,
       "options": [
         {
@@ -200,16 +207,17 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "d",
-      "explanation": "Destructors do not have any return type not even void."
+      "explanation": "Destructors do not have a return type, not even 'void'.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "   class box\n   {\n       public int volume;\n       int width;\n       int height;\n       int length;\n       public box ( int w, int h, int l)\n       {\n           width = w;\n           height = h;\n           length = l;\n       }\n      public ~box()\n      {\n          volume = width * length * height;\n\n      }\n\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          box b = new box(4, 5, 9);\n          Console.WriteLine(b.volume);\n          Console.ReadLine();\n      }\n\n  }",
+      "code": "class box\n{\n    public int volume;\n    int width, height, length;\n    public box(int w, int h, int l)\n    {\n        width = w; height = h; length = l;\n    }\n    public ~box() // Access modifier used here\n    {\n        volume = width * length * height;\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -229,12 +237,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "We cannot use any kind of modifier with destructor."
+      "explanation": "A destructor cannot have an access modifier (like 'public'). This causes a compile-time error in C#.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": "  class box\n  {\n      public int volume;\n      int width;\n      int height;\n      int length;\n      public box ( int w, int h, int l)\n      {\n          this.width = w;\n          this.height = h;\n          this.length = l;\n      }\n      ~ box()\n      {\n          volume = this.width * this.length * this.height;\n          console.writeline(volume);\n      }\n  }\n  class Program\n  {\n      public  static void Main(string[] args)\n      {\n          box b = new box(4, 5, 9);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class box\n{\n    int width, height, length;\n    public box(int w, int h, int l)\n    {\n        this.width = w;\n        this.height = h;\n        this.length = l;\n    }\n    ~box()\n    {\n        int volume = this.width * this.length * this.height;\n        Console.WriteLine(volume);\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        box b = new box(4, 5, 9);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -242,7 +251,7 @@
         },
         {
           "key": "b",
-          "text": "Code executes successfully but prints nothing"
+          "text": "Code executes but prints nothing in Main"
         },
         {
           "key": "c",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n180."
+      "explanation": "The destructor calculates the volume (4 * 5 * 9 = 180) and prints it when the object is finalized by the Garbage Collector.",
+      "origin": "local"
     }
   ]
 }

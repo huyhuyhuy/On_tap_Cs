@@ -9,31 +9,32 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": " class sample\n {\n     public int i;\n     public int[] arr = new int[10];\n     public void fun(int i, int val)\n     {\n         arr[i] = val;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         sample s = new sample();\n         s.i = 10;\n         sample.fun(1, 5);\n         s.fun(1, 5);\n         Console.ReadLine();\n     }\n }",
+      "code": "class sample\n{\n    public int i;\n    public int[] arr = new int[10];\n    public void fun(int i, int val)\n    {\n        arr[i] = val;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sample s = new sample();\n        s.i = 10;\n        sample.fun(1, 5); \n        s.fun(1, 5);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "sample.fun(1, 5) will not work correctly"
+          "text": "Compile-time error at 'sample.fun(1, 5)'"
         },
         {
           "key": "b",
-          "text": "s.i = 10 cannot work as i is 'public'"
+          "text": "s.i = 10 will cause an error"
         },
         {
           "key": "c",
-          "text": "sample.fun(1, 5) will set value as 5 in arr[1]"
+          "text": "sample.fun(1, 5) will set value 5 in arr[1]"
         },
         {
           "key": "d",
-          "text": "s.fun(1, 5) will work correctly"
+          "text": "Code runs successfully"
         }
       ],
       "answer": "a",
-      "explanation": "An Object reference is required for non static field, method or property. i.e\n\n                      sample s = new sample();\n                      s.i = 10;\n                      sample.fun(1, 5);\n                      sample.fun(1, 5);\n                      Console.ReadLine();"
+      "explanation": "The method 'fun' is an instance method (non-static). In C#, instance methods must be called through an object reference ('s.fun'), not through the class name ('sample.fun'). Attempting to call it via the class name results in a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which of the following is used to define the member of a class externally?",
+      "question": "Which of the following is used to define the member of a class externally in C#?",
       "code": null,
       "options": [
         {
@@ -50,15 +51,16 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
-      "answer": "b",
-      "explanation": "By definition.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+      "answer": "d",
+      "explanation": "Unlike C++, C# does not allow members of a class to be defined outside of the class body using a scope resolution operator. All members (methods, fields, etc.) must be defined within the class definition.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "The operator used to access member function of a class?",
+      "question": "Which operator is used to access the member functions of a class?",
       "code": null,
       "options": [
         {
@@ -79,74 +81,77 @@
         }
       ],
       "answer": "c",
-      "explanation": "objectname.function name(actual arguments);"
+      "explanation": "In C#, the dot operator (.) is used to access members (fields, properties, and methods) of an object instance or static members of a class.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "What is the most specified using class declaration?",
+      "question": "What is primarily specified using a class declaration in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "type"
+          "text": "A new data type"
         },
         {
           "key": "b",
-          "text": "scope"
+          "text": "A scope for its members"
         },
         {
           "key": "c",
-          "text": "type & scope"
+          "text": "Both type and scope"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "General form of class declaration in C# is :\n\nclass  class_name\n{\n       member variables\n         variable1;\n         variable2;\n         variableN;\n         method1(parameter_list)\n       {\n             method body\n       }\n         method2(parameter_list)\n       {\n            method body\n       }\n         methodN(parameter_list)\n       {\n            method body\n       }\n}"
+      "explanation": "A class declaration defines a new reference type and creates a local scope for the members defined within that class.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": "  class sample\n  {\n      public int i;\n      public int j;\n      public void fun(int i, int j)\n      {\n          this.i = i;\n          this.j = j;\n      }\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          sample s = new sample();\n          s.i = 1;\n          s.j = 2;\n          s.fun(s.i, s.j);\n          Console.WriteLine(s.i + \" \" + s.j);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class sample\n{\n    public int i;\n    public int j;\n    public void fun(int i, int j)\n    {\n        this.i = i;\n        this.j = j;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sample s = new sample();\n        s.i = 1;\n        s.j = 2;\n        s.fun(10, 20);\n        Console.WriteLine(s.i + \" \" + s.j);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "Error while calling s.fun() due to inaccessible level"
-        },
-        {
-          "key": "b",
-          "text": "Error as 'this' reference would not be able to call 'i' and 'j'"
-        },
-        {
-          "key": "c",
           "text": "1 2"
         },
         {
+          "key": "b",
+          "text": "10 20"
+        },
+        {
+          "key": "c",
+          "text": "Compile-time error"
+        },
+        {
           "key": "d",
-          "text": "Runs successfully but prints nothing"
+          "text": "0 0"
         }
       ],
-      "answer": "c",
-      "explanation": "Variable 'i' and 'j' declared with scope public in sample class are accessed using object of class 'sample' which is 's'.\n\nOutput:\n\n1 2"
+      "answer": "b",
+      "explanation": "The 'this' keyword refers to the current instance of the class. Inside 'fun(10, 20)', 'this.i = i' sets the class field 'i' to 10, and 'this.j = j' sets it to 20.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which of the following statements about objects in \"C#\" is correct?",
+      "question": "Which of the following statements about objects in C# is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Everything you use in C# is an object, including Windows Forms and controls"
+          "text": "Almost everything in C# is an object or inherits from System.Object"
         },
         {
           "key": "b",
-          "text": "Objects have methods and events that allow them to perform actions"
+          "text": "Objects have members (methods, properties, events) that perform actions"
         },
         {
           "key": "c",
-          "text": "All objects created from a class will occupy equal number of bytes in memory"
+          "text": "Objects are instances of classes"
         },
         {
           "key": "d",
@@ -154,11 +159,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "In C#, objects are the building blocks of applications. They are instances of classes and follow the unified type system where everything derives from System.Object.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "\"A mechanism that binds together code and data in manipulates, and keeps both safe from outside interference and misuse. In short it isolates a particular code and data from all other codes and data. A well-defined interface controls access to that particular code and data.\"",
+      "question": "Which mechanism binds together code and data, keeping both safe from outside interference?",
       "code": null,
       "options": [
         {
@@ -179,37 +185,39 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "Encapsulation is an OOP principle that bundles data (fields) and the methods that operate on that data into a single unit (class) and restricts direct access to some of the object's components.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": "  class z\n  {\n      public int X;\n      public int Y;\n      public  const int c1 = 5;\n      public  const int c2 = c1 * 25;\n      public void set(int a, int b)\n      {\n          X = a;\n          Y = b;\n      }\n\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          z s = new z();\n          s.set(10, 20);\n          Console.WriteLine(s.X + \" \" + s.Y);\n          Console.WriteLine(z.c1 + \" \" + z.c2);\n          Console.ReadLine();\n      }\n   }",
+      "code": "class z\n{\n    public int X;\n    public int Y;\n    public const int c1 = 5;\n    public const int c2 = c1 * 25;\n    public void set(int a, int b)\n    {\n        X = a;\n        Y = b;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        z s = new z();\n        s.set(10, 20);\n        Console.WriteLine(s.X + \" \" + s.Y);\n        Console.WriteLine(z.c1 + \" \" + z.c2);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "10 20\n5  25"
+          "text": "10 20\n5 25"
         },
         {
           "key": "b",
-          "text": "20 10\n25 5"
-        },
-        {
-          "key": "c",
           "text": "10 20\n5 125"
         },
         {
-          "key": "d",
+          "key": "c",
           "text": "20 10\n125 5"
+        },
+        {
+          "key": "d",
+          "text": "Compile-time error"
         }
       ],
-      "answer": "c",
-      "explanation": "Member function() 'set' is accessed using object of class 'z' values are passed as parameter to 'a' and 'b'. Since, variable 'c1' and 'c2' are public data member of class 'z'. They are accessed using classname.\n\nOutput :\n\n           10 20\n           5  125"
+      "answer": "b",
+      "explanation": "X and Y are set to 10 and 20. Constants (c1 and c2) are implicitly static, so they are accessed using the class name 'z'. c2 = 5 * 25 = 125.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Correct way of declaration of object of the following class is?",
-      "code": " class name",
+      "question": "Which is the correct way to declare and instantiate an object for a class named 'name'?",
+      "code": null,
       "options": [
         {
           "key": "a",
@@ -229,20 +237,21 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "In C#, the standard way to create an object is to specify the type, the variable name, and the 'new' keyword followed by the constructor.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "The data members of a class by default are?",
+      "question": "By default, the data members of a class in C# are:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "protected, public"
+          "text": "protected"
         },
         {
           "key": "b",
-          "text": "private, public"
+          "text": "internal"
         },
         {
           "key": "c",
@@ -254,82 +263,86 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "If no access modifier is specified for a class member in C#, the default access level is 'private'.",
+      "origin": "local"
     },
     {
       "number": 11,
       "question": "What will be the output of the following C# code?",
-      "code": "  class z\n  {\n      public string name1;\n      public string address;\n      public void show()\n      {\n          Console.WriteLine(\"{0} is in city{1}\", name1, \" \", address);\n      }\n  }\n  class Program\n  {\n      static void Main(string[] args)\n      {\n          z n = new z();\n          n.name1 = \"harsh\";\n          n.address = \"new delhi\";\n          n.show();\n          Console.ReadLine();\n      }\n  }",
+      "code": "class z\n{\n    public string name1;\n    public string address;\n    public void show()\n    {\n        Console.WriteLine(\"{0} is in {1}\", name1, address);\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        z n = new z();\n        n.name1 = \"harsh\";\n        n.address = \"new delhi\";\n        n.show();\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "Syntax error"
+          "text": "harsh is in new delhi"
         },
         {
           "key": "b",
-          "text": "{0} is in city{1} harsh new delhi"
-        },
-        {
-          "key": "c",
           "text": "harsh is in city"
         },
         {
+          "key": "c",
+          "text": "new delhi is in harsh"
+        },
+        {
           "key": "d",
-          "text": "Run successfully prints nothing"
+          "text": "Compile-time error"
         }
       ],
-      "answer": "c",
-      "explanation": "Member function show() accessed using object of class 'z' which is 'n' as object.member().\n\nOutput :\n\nharsh is in city"
+      "answer": "a",
+      "explanation": "The placeholders {0} and {1} in Console.WriteLine correspond to 'name1' and 'address' respectively, producing 'harsh is in new delhi'.",
+      "origin": "local"
     },
     {
       "number": 12,
-      "question": "What does the following C# code imply?",
-      "code": "      csharp abc;\n      abc = new charp();",
+      "question": "What does the following C# code imply?\n\ncsharp abc;\nabc = new csharp();",
+      "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Object creation on class csharp"
+          "text": "Creates an object of type csharp on the stack"
         },
         {
           "key": "b",
-          "text": "Create an object of type csharp on heap or on stack depending on the size of object"
+          "text": "Declares a reference and creates an object on the heap"
         },
         {
           "key": "c",
-          "text": "create a reference c on csharp and an object of type csharp on heap"
-        },
-        {
-          "key": "d",
-          "text": "create an object of type csharp on stack"
-        }
-      ],
-      "answer": "c",
-      "explanation": "None."
-    },
-    {
-      "number": 13,
-      "question": "What will be the output of the following C# code?",
-      "code": "   class test\n   {\n       public void print()\n       {\n           Console.WriteLine(\"Csharp:\");\n       }\n   }\n   class Program\n   {\n       static void Main(string[] args)\n       {\n           test t;\n           t.print();\n           Console.ReadLine();\n       }\n   }",
-      "options": [
-        {
-          "key": "a",
-          "text": "Code runs successfully prints nothing"
-        },
-        {
-          "key": "b",
-          "text": "Code runs and prints \"Csharp\""
-        },
-        {
-          "key": "c",
-          "text": "Syntax error as t is unassigned variable which is never used"
+          "text": "Creates a pointer to the address of the class"
         },
         {
           "key": "d",
           "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "object of class test should be declared as test t = new test();\n\n             test t = new test();\n             t.print();\n             Console.ReadLine();"
+      "answer": "b",
+      "explanation": "In C#, 'csharp abc' declares a reference variable on the stack. 'abc = new csharp()' allocates memory for the actual object on the heap and points the reference to it.",
+      "origin": "local"
+    },
+    {
+      "number": 13,
+      "question": "What will be the output of the following C# code?",
+      "code": "class test\n{\n    public void print()\n    {\n        Console.WriteLine(\"Csharp\");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        test t;\n        t.print();\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Csharp"
+        },
+        {
+          "key": "b",
+          "text": "Compile-time error (Use of unassigned local variable)"
+        },
+        {
+          "key": "c",
+          "text": "Runtime error"
+        },
+        {
+          "key": "d",
+          "text": "Prints nothing"
+        }
+      ],
+      "answer": "b",
+      "explanation": "In C#, local variables (like 't' in the Main method) must be assigned a value before they can be used. Since 't' is only declared but not instantiated with 'new test()', it is an unassigned local variable, causing a compile-time error.",
+      "origin": "local"
     }
   ]
 }

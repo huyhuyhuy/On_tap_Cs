@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Number of constructors a class can define is?",
+      "question": "How many constructors can a class define in C#?",
       "code": null,
       "options": [
         {
@@ -29,37 +29,39 @@
         }
       ],
       "answer": "c",
-      "explanation": "A constructor is a  simple method which has the same name as the class and hence used to create object of a class. C#  class can define any number of constructors. Every class contains a default constructor."
+      "explanation": "A class can define any number of constructors as long as their signatures (parameter lists) are different. This is known as constructor overloading.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "The correct way of defining constructor of the given class as and when objects of classes are created is:",
-      "code": "   maths s1 = new maths();\n   maths s2 = new maths(5, 5.4f);",
+      "question": "Choose the correct way of defining constructors for the 'maths' class to support the following initializations:",
+      "code": "maths s1 = new maths();\nmaths s2 = new maths(5, 5.4f);",
       "options": [
         {
           "key": "a",
-          "text": "public maths(int pp, single tt)\n   {\n       p = pp;\n       t = tt;\n   }"
+          "text": "public maths(int pp, float tt) { p = pp; t = tt; }"
         },
         {
           "key": "b",
-          "text": "sample s;"
+          "text": "maths s;"
         },
         {
           "key": "c",
-          "text": "public sample()\n   {\n      p = 0;\n      t = 0.0f;\n   }\n  public sample(int pp, single tt)\n  {\n       p = pp;\n       t = tt;\n  }"
+          "text": "public maths() { p = 0; t = 0.0f; }\npublic maths(int pp, float tt) { p = pp; t = tt; }"
         },
         {
           "key": "d",
-          "text": "s = new sample();"
+          "text": "s = new maths();"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "c",
+      "explanation": "Since the code initializes one object with no parameters and another with two parameters, the class must define both a default constructor and a parameterized constructor.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Correct way to define object of sample class in which C# code will work correctly is:",
-      "code": " class abc\n {\n     int i;\n     float k;\n     public abc(int ii, float kk)\n     {\n         i = ii;\n         k = kk;\n     }\n }",
+      "question": "Which is the correct way to initialize an object for the class 'abc' defined below?",
+      "code": "class abc\n{\n    int i;\n    float k;\n    public abc(int ii, float kk)\n    {\n        i = ii;\n        k = kk;\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "Return types of parameters of object of class matches with defined constructor arguments types."
+      "explanation": "The object initialization must match the constructor's signature, which requires an 'int' followed by a 'float'.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Correct statement about constructors in C#.NET is?",
+      "question": "Which statement about constructors in C# is correct?",
       "code": null,
       "options": [
         {
@@ -92,11 +95,11 @@
         },
         {
           "key": "b",
-          "text": "Constructors are never called explicitly"
+          "text": "Constructors are called implicitly when an object is created via 'new'"
         },
         {
           "key": "c",
-          "text": "Constructors have same name as name of the class"
+          "text": "Constructors have the same name as the class"
         },
         {
           "key": "d",
@@ -104,37 +107,39 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Constructors share the class name, can be overloaded with different parameters, and are automatically executed when an instance of the class is created.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which among the following is the correct statement: Constructors are used to?",
+      "question": "What is the primary purpose of a constructor?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "initialize the objects"
+          "text": "To initialize the object's members"
         },
         {
           "key": "b",
-          "text": "construct the data members"
+          "text": "To construct data members"
         },
         {
           "key": "c",
-          "text": "initialize the objects & construct the data members"
+          "text": "To destroy objects"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "To call static methods"
         }
       ],
       "answer": "a",
-      "explanation": "Once the object is declared means, the constructor is also declared by default."
+      "explanation": "The main role of a constructor is to initialize the fields/properties of an object when it is first created.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Can the method add() be overloaded in the following ways in C#?",
-      "code": "public int add()  {    }\npublic float add(){    }",
+      "question": "Can the method add() be overloaded in C# as shown below?",
+      "code": "public int add() { /*...*/ }\npublic float add() { /*...*/ }",
       "options": [
         {
           "key": "a",
@@ -146,11 +151,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "C# provides the feature of method overloading which means methods with same name but different types and arguments."
+      "explanation": "In C#, methods cannot be overloaded based solely on their return types. The parameter list must be different.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of the following statements is correct about constructors in C#.NET?",
+      "question": "Which of the following statements is correct about constructors in C#?",
       "code": null,
       "options": [
         {
@@ -163,7 +169,7 @@
         },
         {
           "key": "c",
-          "text": "A constructor can be a static constructor"
+          "text": "A class can have a static constructor"
         },
         {
           "key": "d",
@@ -171,36 +177,38 @@
         }
       ],
       "answer": "c",
-      "explanation": "Static constructor is a constructor which can be called before any object of class is created or any static method is invoked. A static constructor is implicitly called by .net CLR."
+      "explanation": "C# supports static constructors which are used to initialize static data or perform a particular action that needs to be performed only once.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " class abc\n {\n     public static void a()\n     {\n         console.writeline(\"first method\");\n     }\n     public void b()\n     {\n         a();\n         console.writeline(\"second method\");\n     }\n     public void b(int i)\n     {\n         console.writeline(i);\n         b();\n     }\n }\n class program\n {\n     static void main()\n     {\n         abc k = new abc();\n         abc.a();\n         k.b(20);\n     }\n }",
+      "code": "class abc\n{\n    public static void a()\n    {\n        Console.WriteLine(\"first method\");\n    }\n    public void b()\n    {\n        a();\n        Console.WriteLine(\"second method\");\n    }\n    public void b(int i)\n    {\n        Console.WriteLine(i);\n        b();\n    }\n}\nclass Program\n{\n    static void Main()\n    {\n        abc k = new abc();\n        abc.a();\n        k.b(20);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "second method\n   20\n   second method\n   first method"
+          "text": "second method, 20, second method, first method"
         },
         {
           "key": "b",
-          "text": "first method\n   20\n   first method\n   second method"
+          "text": "first method, 20, first method, second method"
         },
         {
           "key": "c",
-          "text": "first method\n   20"
+          "text": "first method, 20"
         },
         {
           "key": "d",
-          "text": "second method\n   20\n   first method"
+          "text": "second method, 20, first method"
         }
       ],
       "answer": "b",
-      "explanation": "The class 'abc' first calls method()'a' then object of class 'k' when calls method 'b'. First of all, the method 'a' will be executed and then executes the second statement.\n\nOutput :\n\n        first method\n        20\n        first method\n        second method"
+      "explanation": "1. abc.a() prints 'first method'. 2. k.b(20) prints '20', then calls b(). 3. b() calls a() which prints 'first method', then prints 'second method'.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "What is the return type of constructors?",
+      "question": "What is the return type of a constructor in C#?",
       "code": null,
       "options": [
         {
@@ -217,36 +225,38 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "d",
-      "explanation": "Constructors do not have any return type not even void included in it."
+      "explanation": "Constructors do not have a return type, not even 'void'.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which method has the same name as that of its class?",
+      "question": "Which special method is used to initialize an object and has the same name as its class?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "delete"
+          "text": "Destructor"
         },
         {
           "key": "b",
-          "text": "class"
+          "text": "Static Method"
         },
         {
           "key": "c",
-          "text": "constructor"
+          "text": "Constructor"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "By definition, a constructor is a special member function of a class that is executed whenever we create new objects of that class.",
+      "origin": "local"
     }
   ]
 }

@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which reference modifier is used to define reference variable?",
+      "question": "Which keyword is used to define a reference parameter in a method signature?",
       "code": null,
       "options": [
         {
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The 'ref' keyword is used in C# to pass an argument by reference, meaning any change to the parameter in the method will be reflected in the original variable.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": "   static void Main(string[] args)\n   {\n       int a = 5;\n       fun1 (ref a);\n       Console.WriteLine(a);\n       Console.ReadLine();\n    }\n    static void fun1(ref int a)\n    {\n        a = a * a;\n    }",
+      "code": "static void Main(string[] args)\n{\n    int a = 5;\n    fun1(ref a);\n    Console.WriteLine(a);\n}\nstatic void fun1(ref int a)\n{\n    a = a * a;\n}",
       "options": [
         {
           "key": "a",
@@ -54,16 +55,17 @@
         }
       ],
       "answer": "d",
-      "explanation": "Here 'a' = 5. Copy of  variable is passed as reference to parameter 'a'.\n\nOutput:\n\n25"
+      "explanation": "Since 'a' is passed by reference using 'ref', the operation 'a = 5 * 5' modifies the original variable 'a' in the Main method. Output: 25.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int[] arr = new int[] {1, 2, 3, 4, 5};\n     fun1(ref arr);\n     Console.ReadLine();\n  }\n static void fun1(ref int[] array)\n {\n     for (int i = 0; i < array.Length; i++)\n     {\n         array[i] = array[i] + 5;\n         Console.WriteLine(array[i] + \" \");\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] arr = new int[] { 1, 2, 3, 4, 5 };\n    fun1(ref arr);\n}\nstatic void fun1(ref int[] array)\n{\n    for (int i = 0; i < array.Length; i++)\n    {\n        array[i] = array[i] + 5;\n        Console.Write(array[i] + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "6 7 8 9 10"
+          "text": "6 7 8 9 10 "
         },
         {
           "key": "b",
@@ -79,66 +81,69 @@
         }
       ],
       "answer": "a",
-      "explanation": "array 'arr' after declaration is passed as reference parameter.\n\n              a[0] = 1 + 5 = 6.\n\n              a[1] = 2 + 5 = 7.\n\n              .\n\n              .\n\n              a[4] = 5 + 5 = 10.\n\n Output :\n\n 15 17 8 29 20"
+      "explanation": "The method adds 5 to each element of the array. arr[0]=1+5=6, arr[1]=2+5=7, etc. The output is '6 7 8 9 10 '.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      int a = 10 , b = 20;\n      Console.WriteLine(\"Result before swap is: \"+ a +\" \"+b);\n      swap(ref a, ref b);\n      Console.ReadLine();\n  }\n  static void swap(ref int i, ref int j)\n  {\n      int t;\n      t = i;\n      i = j;\n      j = t;\n      Console.WriteLine(\"Result after swap is:\"+ i +\" \"+j);\n  }",
+      "code": "static void Main(string[] args)\n{\n    int a = 10, b = 20;\n    Console.Write(\"Result before swap: \" + a + \" \" + b + \", \");\n    swap(ref a, ref b);\n}\nstatic void swap(ref int i, ref int j)\n{\n    int t = i;\n    i = j;\n    j = t;\n    Console.Write(\"Result after swap: \" + i + \" \" + j);\n}",
       "options": [
         {
           "key": "a",
-          "text": "Result before swap is: 20 10\nResult after swap is: 20 10"
+          "text": "Result before swap: 20 10, Result after swap: 20 10"
         },
         {
           "key": "b",
-          "text": "Result before swap is: 10 20\nResult after swap is:20 10"
+          "text": "Result before swap: 10 20, Result after swap: 20 10"
         },
         {
           "key": "c",
-          "text": "Result before swap is: 10 20\nResult after swap is:10 20"
+          "text": "Result before swap: 10 20, Result after swap: 10 20"
         },
         {
           "key": "d",
-          "text": "Result before swap is: 20 10\nResult after swap is:10 20"
+          "text": "Result before swap: 20 10, Result after swap: 10 20"
         }
       ],
       "answer": "b",
-      "explanation": "Makes use of call by reference parameter.\n\nOutput:\n\n       Result before swap is: 10 20.\n       Result after swap is:20 10."
+      "explanation": "The 'swap' method correctly exchanges the values of 'a' and 'b' because they are passed by reference.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int []a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n     func(ref a);\n     Console.ReadLine();\n }\n static void func(ref int[] x)\n {\n     Console.WriteLine(\" numbers are:\");\n     for (int i = 0; i < x.Length; i++)\n     {\n         if (x[i] % 2 == 0)\n         {\n             x[i] = x[i] + 1;\n             Console.WriteLine(x[i]);\n         }\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };\n    func(ref a);\n}\nstatic void func(ref int[] x)\n{\n    for (int i = 0; i < x.Length; i++)\n    {\n        if (x[i] % 2 == 0)\n        {\n            x[i] = x[i] + 1;\n            Console.Write(x[i] + \" \");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "numbers are : 2 4 6 8 10"
+          "text": "2 4 6 8 10"
         },
         {
           "key": "b",
-          "text": "numbers are : 3 5 7 9 11"
+          "text": "3 5 7 9 11"
         },
         {
           "key": "c",
-          "text": "numbers are : 2 3 4 5 6"
+          "text": "2 3 4 5 6"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "Those numbers divisible by 2 are 2, 4, 6, 8, 10 and when condition of loop is executed it increments by 1.\n\n              i.e for x[1] = 2%2 == 0.So, x[1] = 2 + 1 = 3.\n\n                      x[3] = 4%2 == 0.So, x[3] = 4 + 1 = 5 and so on.\n\nOutput :\n\n 3 5 7 9 11"
+      "explanation": "The code identifies even numbers (2, 4, 6, 8, 10), increments each by 1, and prints them, resulting in 3, 5, 7, 9, 11.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Select the wrong statement about 'ref' keyword in C#?",
+      "question": "Select the WRONG statement about the 'ref' keyword in C#:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "References can be called recursively"
+          "text": "References are inherently recursive"
         },
         {
           "key": "b",
@@ -146,28 +151,29 @@
         },
         {
           "key": "c",
-          "text": "When 'ref' are used, any changes made to parameters in method will be reflected in variable when control is passed back to calling method"
+          "text": "Changes made using 'ref' parameters are reflected in the original variable"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "Variables passed as 'ref' must be initialized before they are passed"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Statement 'a' is incorrect because 'ref' is simply a parameter modifier; it has nothing to do with recursion unless a method calls itself using those parameters.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Select correct differences between '=' and '==' in C#.",
+      "question": "Select the correct difference between '=' and '==' in C#.",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "'==' operator is used to assign values from one variable to another variable\n'='  operator is used to compare value between two variables"
+          "text": "'==' is for assignment, '=' is for comparison"
         },
         {
           "key": "b",
-          "text": "'=' operator is used to assign values from one variable to another variable\n'==' operator is used to compare value between two variables"
+          "text": "'=' is for assignment, '==' is for comparison"
         },
         {
           "key": "c",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The '=' operator assigns the value on the right to the variable on the left. The '==' operator compares the equality of two values.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      int X = 0;\n      if (Convert.ToBoolean(X = 0))\n      Console.WriteLine(\"It is zero\");\n      else\n      Console.WriteLine(\"It is not zero\");\n      Console.ReadLine();\n  }",
+      "code": "static void Main(string[] args)\n{\n    int X = 0;\n    if (Convert.ToBoolean(X = 0))\n        Console.WriteLine(\"It is zero\");\n    else\n        Console.WriteLine(\"It is not zero\");\n}",
       "options": [
         {
           "key": "a",
@@ -200,16 +207,17 @@
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Compile-time error"
         }
       ],
       "answer": "b",
-      "explanation": "The operator '=' used is not comparison operator it is assignment operator. Since value assigned to 'X' = 0. So,'0′ value is stored in  'X' and with the help of if condition implementation it is converted to 'false' which directly means It is not zero but '1' which means 'true'."
+      "explanation": "The expression 'X = 0' assigns 0 to X and returns 0. 'Convert.ToBoolean(0)' results in 'false'. Therefore, the 'else' block executes.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "    static void Main(string[] args)\n    {\n       int X = 6,Y = 2;\n       X  *= X / Y;\n       Console.WriteLine(X);\n       Console.ReadLine();\n    }",
+      "code": "static void Main(string[] args)\n{\n    int X = 6, Y = 2;\n    X *= X / Y;\n    Console.WriteLine(X);\n}",
       "options": [
         {
           "key": "a",
@@ -225,16 +233,17 @@
         },
         {
           "key": "d",
-          "text": "Compile time error"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "X*=X/Y.\n\n                  X=x*(X/Y).\n\nOutput:\n\n18"
+      "explanation": "X *= X / Y is evaluated as X = X * (X / Y), which is 6 * (6 / 2) = 6 * 3 = 18.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": "    static void Main(string[] args)\n    {\n        int x = 4 ,b = 2;\n        x -= b/= x * b;\n        Console.WriteLine(x + \" \" + b);\n        Console.ReadLine();\n    }",
+      "code": "static void Main(string[] args)\n{\n    int x = 4, b = 2;\n    x -= b /= x * b;\n    Console.WriteLine(x + \" \" + b);\n}",
       "options": [
         {
           "key": "a",
@@ -254,12 +263,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "x = x - b  and b = b/(x*b).\n\nOutput:\n\n 4 0"
+      "explanation": "Assignment operators are evaluated right-to-left. 1) b /= (4 * 2) -> b = 2 / 8 = 0. 2) x -= 0 -> x = 4 - 0 = 4. Result: 4 0.",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "What will be the output of the following C# expression?",
-      "code": " int  a+= (float) b/= (long)c.",
+      "question": "What is the resulting type of the following C# expression assuming 'a' is int, 'b' is float, and 'c' is long?\n\na += (float) b /= (long) c;",
+      "code": null,
       "options": [
         {
           "key": "a",
@@ -275,16 +285,17 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "In compound assignment (a += ...), the result of the expression is always the type of the variable on the left, which is 'int' in this case.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "What will be the output of the following C# code?",
-      "code": "   static void Main(string[] args)\n   {\n       int x = 8;\n       int b = 16;\n       int C = 64;\n       x /= b /= C;\n       Console.WriteLine(x + \" \" + b+ \" \" +C);\n       Console.ReadLine();\n   }",
+      "code": "static void Main(string[] args)\n{\n    int x = 8, b = 16, C = 64;\n    x /= b /= C;\n    Console.WriteLine(x + \" \" + b + \" \" + C);\n}",
       "options": [
         {
           "key": "a",
@@ -300,16 +311,17 @@
         },
         {
           "key": "d",
-          "text": "Runtime error"
+          "text": "Runtime error (DivideByZeroException)"
         }
       ],
       "answer": "d",
-      "explanation": "The expression x /= b /= C is evaluated right to left. First, b = 16 / 64 = 0. Then, x = 8 / 0, which causes a DivideByZeroException - a runtime error. So, the program compiles but crashes, and no output is printed."
+      "explanation": "Evaluating right-to-left: 1) b /= 64 -> 16 / 64 = 0. 2) x /= 0 -> 8 / 0 results in a DivideByZeroException.",
+      "origin": "local"
     },
     {
       "number": 13,
       "question": "What will be the output of the following C# code?",
-      "code": "   static void Main(string[] args)\n   {\n       int x = 8;\n       int b = 16;\n       int C = 64;\n       x /= b /= C /= x;\n       Console.WriteLine(x + \" \" + b+ \" \" +C);\n       Console.ReadLine();\n   }",
+      "code": "static void Main(string[] args)\n{\n    int x = 8, b = 16, C = 64;\n    x /= b /= C /= x;\n    Console.WriteLine(x + \" \" + b + \" \" + C);\n}",
       "options": [
         {
           "key": "a",
@@ -325,11 +337,12 @@
         },
         {
           "key": "d",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         }
       ],
       "answer": "c",
-      "explanation": "x / = b / = C /= x is evaluated as follows:\n\nC = C/x = 64/8 = 8\n\nb = b/8 = 16/8 = 2\n\nx = x/2 = 8/2 = 4\n\nOutput:\n\n4 2 8"
+      "explanation": "Right-to-left: 1) C = 64 / 8 = 8. 2) b = 16 / 8 = 2. 3) x = 8 / 2 = 4. Result: 4 2 8.",
+      "origin": "local"
     }
   ]
 }
