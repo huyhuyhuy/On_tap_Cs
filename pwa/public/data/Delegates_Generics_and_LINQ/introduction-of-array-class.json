@@ -8,32 +8,33 @@
   "questions": [
     {
       "number": 1,
-      "question": "Select the class which is the base class for all arrays in C#?",
+      "question": "Which class serves as the base class for all arrays in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Array"
+          "text": "System.Array"
         },
         {
           "key": "b",
-          "text": "Text"
+          "text": "System.Text"
         },
         {
           "key": "c",
-          "text": "arrays"
+          "text": "System.Collections.ArrayList"
         },
         {
           "key": "d",
-          "text": "Both Array & Text"
+          "text": "Both Array and Text"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "In C#, every array type is implicitly derived from the 'System.Array' abstract class, which provides methods for creating, manipulating, searching, and sorting arrays.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Select the interfaces implemented by array class.",
+      "question": "Which interfaces are implemented by the System.Array class?",
       "code": null,
       "options": [
         {
@@ -50,28 +51,29 @@
         },
         {
           "key": "d",
-          "text": "Only IEnumerable, IStructuralComparable, IStructuralEquatable & ICloneable, ICollection, IList"
+          "text": "All of the mentioned (ICloneable, ICollection, IList, IEnumerable, etc.)"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The Array class implements several key interfaces to support cloning, collections, indexing, and structural comparison/equality.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the correct statement about the IComparer interface in C#?",
+      "question": "Which statement about the IComparer interface in C# is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "The IComparer interface is in System.Collections"
+          "text": "The IComparer interface is located in System.Collections"
         },
         {
           "key": "b",
-          "text": "It defines a method called Compare(), which compares the values of two objects"
+          "text": "It defines a Compare(object x, object y) method that returns an integer"
         },
         {
           "key": "c",
-          "text": "Both The IComparer interface is in System.Collections & It defines a method called Compare(), which compares the values of two objects"
+          "text": "Both A and B are correct"
         },
         {
           "key": "d",
@@ -79,91 +81,95 @@
         }
       ],
       "answer": "c",
-      "explanation": "The IComparer interface is in System.Collections. It defines a method called Compare(), which compares the values of two objects. It is shown here: int Compare(object x, object y). It returns greater than zero if x is greater than y, less than zero if x is less than y, and zero if the two values are equal."
+      "explanation": "IComparer (non-generic) is in System.Collections. It requires implementing 'Compare(object x, object y)', returning 0 if equal, >0 if x > y, and <0 if x < y.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Choose the correct statement about the IComparer<T> interface in C#?",
+      "question": "Which statement about the generic IComparer<T> interface is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "The IComparer<T> is in System.Collections.Generic"
+          "text": "It is located in the System.Collections.Generic namespace"
         },
         {
           "key": "b",
-          "text": "It defines a generic form of Compare()"
+          "text": "It defines the method 'int Compare(T x, T y)'"
         },
         {
           "key": "c",
-          "text": "Only The IComparer<T> is in System.Collections.Generic"
-        },
-        {
-          "key": "d",
-          "text": "Both The IComparer is in System.Collections.Generic & It defines a generic form of Compare()"
-        }
-      ],
-      "answer": "d",
-      "explanation": "IComparer<T> is in System.Collections.Generic. It defines a generic form of Compare(), which is shown here:\n\n int Compare(T x, T y). It works the same as its non-generic relative: returning greater than zero if x is greater than\n\ny, less than zero if x is less than y, and zero if the two values are equal."
-    },
-    {
-      "number": 5,
-      "question": "What does the following property defined in the array class defines in C#?",
-      "code": " public bool IsReadOnly { get; }",
-      "options": [
-        {
-          "key": "a",
-          "text": "a property is read only by nature"
-        },
-        {
-          "key": "b",
-          "text": "property is true if the array object is read only and false otherwise"
-        },
-        {
-          "key": "c",
-          "text": "value is false for arrays"
-        },
-        {
-          "key": "d",
-          "text": "all of the mentioned"
-        }
-      ],
-      "answer": "d",
-      "explanation": "A read-only property that is true if the Array object is read-only and false if it is not. This value is false for arrays."
-    },
-    {
-      "number": 6,
-      "question": "What does the following property define in C#?",
-      "code": "public static int BinarySearch<T>(T[] array, int index, int length, T value)",
-      "options": [
-        {
-          "key": "a",
-          "text": "Searches a portion of the array specified by array for the value specified by value"
-        },
-        {
-          "key": "b",
-          "text": "The search begins at the index specified by index and is restricted to length elements. Returns the index of the first match"
-        },
-        {
-          "key": "c",
-          "text": "If value is not found, returns a zero value"
+          "text": "It provides type safety compared to the non-generic IComparer"
         },
         {
           "key": "d",
           "text": "All of the mentioned"
         }
       ],
+      "answer": "d",
+      "explanation": "IComparer<T> is the generic version of the comparer interface, allowing for type-safe comparisons of specific types.",
+      "origin": "local"
+    },
+    {
+      "number": 5,
+      "question": "What is the default behavior of the 'IsReadOnly' property for standard arrays in C#?",
+      "code": "public bool IsReadOnly { get; }",
+      "options": [
+        {
+          "key": "a",
+          "text": "It always returns true because arrays have fixed sizes"
+        },
+        {
+          "key": "b",
+          "text": "It returns true if the array is read-only and false otherwise"
+        },
+        {
+          "key": "c",
+          "text": "It always returns false for standard C# arrays"
+        },
+        {
+          "key": "d",
+          "text": "Both B and C are correct"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The 'IsReadOnly' property is required by the IList interface. For standard C# arrays, it always returns 'false' because the elements can be modified, even though the array size is fixed.",
+      "origin": "local"
+    },
+    {
+      "number": 6,
+      "question": "What happens if the 'BinarySearch' method does not find the specified value in a sorted array?",
+      "code": "public static int BinarySearch<T>(T[] array, T value)",
+      "options": [
+        {
+          "key": "a",
+          "text": "It throws an exception"
+        },
+        {
+          "key": "b",
+          "text": "It returns a negative number (the bitwise complement of the next larger element's index)"
+        },
+        {
+          "key": "c",
+          "text": "It returns 0"
+        },
+        {
+          "key": "d",
+          "text": "It returns the length of the array"
+        }
+      ],
       "answer": "b",
-      "explanation": "Searches a portion of the array specified by array for the value specified by value. The search begins at the index specified by index and is restricted to length elements. Returns the index of the first match. If the value is not found, returns a negative value. The array should be sorted and one-dimensional."
+      "explanation": "If 'BinarySearch' fails to find the element, it returns a negative integer. You can apply the bitwise complement operator (~) to this result to find the index where the element should be inserted to maintain sort order.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     int[] nums = { 5, 4, 6, 3, 14, 9, 8, 17, 1, 24, -1, 0 };\n     Array.Sort(nums);\n     int idx = Array.BinarySearch(nums, 14);\n     if (idx == 9)\n     {\n         Console.WriteLine(Convert.ToBoolean(1));\n     }\n     else\n    {\n        Console.WriteLine(Convert.ToBoolean(0));\n    }\n    Console.WriteLine(\"Index of 14 is \" + idx);\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    int[] nums = { 5, 4, 6, 3, 14, 9, 8, 17, 1, 24, -1, 0 };\n    Array.Sort(nums);\n    int idx = Array.BinarySearch(nums, 14);\n    if (idx >= 0)\n    {\n        Console.WriteLine(\"Found\");\n        Console.WriteLine(idx);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "True\n0"
+          "text": "Found\n0"
         },
         {
           "key": "b",
@@ -171,115 +177,120 @@
         },
         {
           "key": "c",
-          "text": "True\n9"
+          "text": "Found\n9"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Found\n10"
         }
       ],
       "answer": "c",
-      "explanation": "Using Built in method Sort(), first array is sorted then index of number '14' is searched using array class built in method Array.BinarySearch(nums, 14) and hence at last if loop is used to make comparison of index position with random position '9' chosen here.\n\nOutput:\n\n        True\n        9"
+      "explanation": "Sorted array: -1, 0, 1, 3, 4, 5, 6, 8, 9, 14, 17, 24. Counting from index 0, the number 14 is located at index 9.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code snippet?",
-      "code": "  static void Main(string[] args)\n  {\n      string[] strings = {\"beta\", \"alpha\", \"gamma\"};\n      Console.WriteLine(\"Array elements: \");\n      DisplayArray(strings);\n      Array.Reverse(strings);\n      Console.WriteLine(\"Array elements now: \");\n      DisplayArray(strings);\n      Console.ReadLine();\n   }\n   public static void DisplayArray(Array array)\n   {\n       foreach (object o in array)\n       {\n           Console.Write(\"{0} \", o);\n       }\n           Console.WriteLine();\n   }",
+      "code": "static void Main(string[] args)\n{\n    string[] strings = {\"beta\", \"alpha\", \"gamma\"};\n    Array.Reverse(strings);\n    foreach (string s in strings)\n    {\n        Console.Write(s + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "Array elements:\n   beta alpha gamma\n   Array elements now:\n   ammag ahpla ateb"
+          "text": "beta alpha gamma"
         },
         {
           "key": "b",
-          "text": "Array elements:\n   beta alpha gamma\n   Array elements now:\n   gamma beta alpha"
+          "text": "gamma beta alpha"
         },
         {
           "key": "c",
-          "text": "Array elements:\n   beta alpha gamma\n   Array elements now:\n   gamma alpha beta"
+          "text": "gamma alpha beta"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "ammag ahpla ateb"
         }
       ],
       "answer": "c",
-      "explanation": "'Reverse()' a built in method to reverse an array of string defined in array class is used.\n\nOutput:\n\n        Array elements:\n        beta alpha gamma\n        Array elements now:\n        gamma alpha beta"
+      "explanation": "Array.Reverse() reverses the order of the elements in the array. The array {\"beta\", \"alpha\", \"gamma\"} becomes {\"gamma\", \"alpha\", \"beta\"}.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Which among the following is the wrong way to define and initialize an array of 4 integers?",
+      "question": "Which of the following is an INCORRECT way to define and initialize an array of 4 integers?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "int[] a = {25, 30, 40, 5}"
+          "text": "int[] a = {25, 30, 40, 5};"
         },
         {
           "key": "b",
-          "text": "int[] a;\n   a = new int[3]\n   a[0] = 25\n   a[1] = 30\n   a[2] = 40\n   a[3] = 5"
+          "text": "int[] a = new int[3]; a[0]=25; a[1]=30; a[2]=40; a[3]=5;"
         },
         {
           "key": "c",
-          "text": "int[] a\n   a = new int[4]{25, 30, 40, 5}"
+          "text": "int[] a = new int[4] {25, 30, 40, 5};"
         },
         {
           "key": "d",
-          "text": "int[] a\n   a = new int[4]\n   a[0] = 25\n   a[1] = 30\n   a[2] = 40\n   a[3] = 5"
+          "text": "int[] a = new int[4]; a[0]=25; a[1]=30; a[2]=40; a[3]=5;"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Option B is incorrect because it allocates an array of size 3 ('new int[3]') but attempts to assign a value to the 4th element ('a[3]'), which will throw an 'IndexOutOfRangeException'.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which method will be used to copy content from one array to another array?",
+      "question": "Which static method of the Array class is used to copy a range of elements from one array to another?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Copy()"
+          "text": "Array.Copy()"
         },
         {
           "key": "b",
-          "text": "copy()"
+          "text": "Array.Clone()"
         },
         {
           "key": "c",
-          "text": "Both Copy() & copy()"
+          "text": "Array.Duplicate()"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Array.Move()"
         }
       ],
       "answer": "a",
-      "explanation": "Copy() is a built-in method of array class used to copy the elements from one array to another array"
+      "explanation": "Array.Copy() is used to copy a range of elements from one array to another, starting at a specified source index and copying to a specified destination index.",
+      "origin": "local"
     },
     {
       "number": 11,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main()\n {\n     int[] nums = { 1, 2, 3, 4, 5 };\n     Console.Write(\"Original order: \");\n     foreach(int i in nums)\n     Console.Write(i + \" \");\n     Array.Reverse(nums);\n     Console.Write(\"Reversed order: \");\n     foreach(int i in nums)\n     Console.Write(i + \" \");\n     Console.WriteLine();\n }",
+      "code": "static void Main()\n{\n    int[] nums = { 1, 2, 3, 4, 5 };\n    Array.Reverse(nums);\n    foreach(int i in nums) Console.Write(i + \" \");\n}",
       "options": [
         {
           "key": "a",
-          "text": "Run time error"
+          "text": "1 2 3 4 5"
         },
         {
           "key": "b",
-          "text": "5, 4, 3, 2, 1"
+          "text": "5 4 3 2 1"
         },
         {
           "key": "c",
-          "text": "Compile time error"
+          "text": "5 4 3 2"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Compile time error"
         }
       ],
       "answer": "b",
-      "explanation": "Reverse built in method() of array class is used to reverse the given array.\n\nOutput:\n\n5, 4, 3, 2, 1"
+      "explanation": "The Array.Reverse() method reverses the sequence of the five elements in the 'nums' array.",
+      "origin": "local"
     }
   ]
 }

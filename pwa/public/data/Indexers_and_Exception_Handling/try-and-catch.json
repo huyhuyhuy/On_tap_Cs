@@ -1,27 +1,27 @@
 {
-  "title": "C#Questions & Answers - Try & Catch in Detail",
+  "title": "C# Questions & Answers - Try & Catch in Detail",
   "topic": "Indexers_and_Exception_Handling",
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-try-catch/",
   "sourceFile": "Try & Catch - C# Questions & Answers - Sanfoundry.html",
-  "description": "This section of our 1000+ C# MCQs focuses in detail on try & catch in C# Programming Language.",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on detail of try & catch in C# Programming Language.",
   "questionCount": 7,
   "questions": [
     {
       "number": 1,
-      "question": "What is the use of try & catch?",
+      "question": "What is the primary use of 'try' and 'catch' blocks in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "It is used to manually handle the exception"
+          "text": "It is used to manually handle runtime exceptions"
         },
         {
           "key": "b",
-          "text": "It helps to fix the errors"
+          "text": "It helps in identifying and handling runtime errors"
         },
         {
           "key": "c",
-          "text": "It prevents automatic terminating of the program in cases when an exception occurs"
+          "text": "It prevents the program from terminating abruptly when an error occurs"
         },
         {
           "key": "d",
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The try-catch mechanism allows programmers to catch runtime errors (exceptions) and provide alternative logic, ensuring the application can recover or exit gracefully instead of crashing.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " class Output\n {\n     public static void Main(string[] args)\n     {\n\n         try\n         {\n             int a = 9;\n             int b = 5;\n             int c = a / b - 5;\n             Console.WriteLine(\"Hello\");\n         }\n         catch(Exception e)\n         {\n             Console.WriteLine(\"C\");\n         }\n         finally\n         {\n             Console.WriteLine(\"sharp\");\n         }\n     }\n }",
+      "code": "class Output\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            int a = 9;\n            int b = 5;\n            int c = a / b - 5; // Integer division: 9/5 = 1. 1 - 5 = -4.\n            Console.WriteLine(\"Hello\");\n        }\n        catch (Exception)\n        {\n            Console.WriteLine(\"C\");\n        }\n        finally\n        {\n            Console.WriteLine(\"sharp\");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -46,7 +47,7 @@
         },
         {
           "key": "c",
-          "text": "Hellosharp"
+          "text": "Hello\nsharp"
         },
         {
           "key": "d",
@@ -54,38 +55,39 @@
         }
       ],
       "answer": "c",
-      "explanation": "Integer division: 9/5 is 1, then 1-5 is -4. No exception. try prints Hello, then finally always prints sharp.",
+      "explanation": "Since 9/5 equals 1 in integer arithmetic, no DivideByZeroException occurs. The try block prints 'Hello', the catch block is skipped, and the finally block always executes, printing 'sharp'.",
       "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the statement which is incorrect?",
+      "question": "Which of the following statements about the 'try' block is INCORRECT?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "try block does not need to be followed by catch block"
+          "text": "A try block does not necessarily need to be followed by a catch block"
         },
         {
           "key": "b",
-          "text": "try block can be followed by finally block instead of catch block"
+          "text": "A try block can be followed by a finally block instead of a catch block"
         },
         {
           "key": "c",
-          "text": "try can be followed by both catch and finally block"
+          "text": "A try block can be followed by both catch and finally blocks"
         },
         {
           "key": "d",
-          "text": "try need not to be followed by anything"
+          "text": "A try block can exist without any following catch or finally block"
         }
       ],
       "answer": "d",
-      "explanation": "try followed by either catch or finally block.\n\n⚡ Claim Your\nFree Java Certification\n - August 2026"
+      "explanation": "In C#, a 'try' block must be followed by at least one 'catch' block or one 'finally' block. It cannot stand alone; otherwise, a compile-time error occurs.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": "  class Output\n  {\n      public static void Main(string[] args)\n      {\n          try\n          {\n              int a = 10;\n              int b = 5;\n              int c = a / b - 5;\n              Console.WriteLine(\"Hi\");\n          }\n          catch(Exception e)\n          {\n              Console.WriteLine(\"hello\");\n          }\n      }\n  }",
+      "code": "class Output\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            int a = 10;\n            int b = 5;\n            int c = a / b - 5; // 10/5 = 2. 2 - 5 = -3.\n            Console.WriteLine(\"Hi\");\n        }\n        catch (Exception)\n        {\n            Console.WriteLine(\"hello\");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -105,12 +107,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "10/5 is 2, then 2-5 is -3. No exception, so only Hi is printed.",
+      "explanation": "No exception is thrown during the calculation. The program executes the code in the try block sequentially, printing 'Hi', and skips the catch block.",
       "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which of the keywords are used for the block to be examined for exceptions?",
+      "question": "Which keyword is used to define a block of code to be monitored for exceptions?",
       "code": null,
       "options": [
         {
@@ -131,11 +133,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "try is used for the block that needs to be checked for the exception."
+      "explanation": "The 'try' keyword signals the start of a guarded section of code where exceptions might occur and need to be handled.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which of these keywords are used for the block to handle the exceptions generated by try block?",
+      "question": "Which keyword is used to define a block that handles a specific exception generated by the try block?",
       "code": null,
       "options": [
         {
@@ -152,15 +155,16 @@
         },
         {
           "key": "d",
-          "text": "check"
+          "text": "finally"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The 'catch' block contains the error-handling code. It only executes if an exception matching the specified type occurs in the preceding try block.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of these keywords are used for generating an exception manually?",
+      "question": "Which keyword is used to manually signal the occurrence of an exception during program execution?",
       "code": null,
       "options": [
         {
@@ -177,11 +181,12 @@
         },
         {
           "key": "d",
-          "text": "check"
+          "text": "signal"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "In C#, the 'throw' keyword is used to explicitly raise an exception, either to re-throw a caught error or to trigger a new custom exception.",
+      "origin": "local"
     }
   ]
 }

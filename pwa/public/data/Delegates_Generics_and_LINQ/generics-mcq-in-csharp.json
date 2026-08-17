@@ -8,45 +8,46 @@
   "questions": [
     {
       "number": 1,
-      "question": "What is meant by the term generics?",
+      "question": "What is meant by the term 'generics' in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "parameterized types"
+          "text": "Parameterized types"
         },
         {
           "key": "b",
-          "text": "class"
+          "text": "Concrete classes"
         },
         {
           "key": "c",
-          "text": "structure"
+          "text": "Type-less structures"
         },
         {
           "key": "d",
-          "text": "interface"
+          "text": "Dynamic interfaces"
         }
       ],
       "answer": "a",
-      "explanation": "The term generics means parameterized types. Parameterized types are important because they enable us to create classes, structures, interfaces, methods, and delegates in which, the type of data upon which they operate is specified as a parameter."
+      "explanation": "Generics allow you to define classes, structures, interfaces, and methods with placeholders (parameters) for the data types they store or manipulate.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Are generics in C# are same as the generics in java and templates in C++?",
+      "question": "Are generics in C# implemented in the same way as generics in Java or templates in C++?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Yes"
+          "text": "Yes, they are identical"
         },
         {
           "key": "b",
-          "text": "No"
+          "text": "No, there are fundamental differences in implementation"
         },
         {
           "key": "c",
-          "text": "May be"
+          "text": "Yes, but only for value types"
         },
         {
           "key": "d",
@@ -54,24 +55,25 @@
         }
       ],
       "answer": "b",
-      "explanation": "Although C# generics are similar to templates in C++ and generics in Java, they are not the same as either. In fact, there are some fundamental differences among these three approaches to generics."
+      "explanation": "C# generics are unique. Unlike Java (which uses erasure) or C++ (which uses template expansion), C# generics are integrated into the CLI runtime and preserve type information at execution (reification).",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the advantages of using generics?",
+      "question": "What are the primary advantages of using generics?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Generics facilitate type safety"
+          "text": "Type safety at compile time"
         },
         {
           "key": "b",
-          "text": "Generics facilitate improved performance and reduced code"
+          "text": "Improved performance by reducing boxing/unboxing"
         },
         {
           "key": "c",
-          "text": "Generics promote the usage of parameterized types"
+          "text": "Code reusability with different data types"
         },
         {
           "key": "d",
@@ -79,99 +81,103 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition of generics."
+      "explanation": "Generics provide a way to reuse code efficiently while maintaining strict type checking and avoiding the performance overhead of moving between value and reference types.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "What does the following C# code block defines?",
-      "code": " class Gen<T>\n {\n      T ob;\n }",
+      "question": "What does the following C# code block define?",
+      "code": "class Gen<T>\n{\n    T ob;\n}",
       "options": [
         {
           "key": "a",
-          "text": "Generics class declaration"
+          "text": "A generic class declaration"
         },
         {
           "key": "b",
-          "text": "Generic constructor declaration"
+          "text": "A generic constructor"
         },
         {
           "key": "c",
-          "text": "A simple class declaration"
-        },
-        {
-          "key": "d",
-          "text": "All of the mentioned"
-        }
-      ],
-      "answer": "a",
-      "explanation": "class Gen<T> This defines the generics declaration where 'T' is the name of the type parameter. This parameter is used as a placeholder for the actual type that will be specified when a Gen object is created. Gen is a generic class. T is used to declare a variable called 'ob'.\n\n🔥 Enroll for\nFree Data Structure Certification\n - August 2026"
-    },
-    {
-      "number": 5,
-      "question": "What does the following C# code set defines?",
-      "code": " public Gen(T o)\n {\n      ob = o;\n }",
-      "options": [
-        {
-          "key": "a",
-          "text": "Generics class Declaration"
-        },
-        {
-          "key": "b",
-          "text": "Declaration of variable"
-        },
-        {
-          "key": "c",
-          "text": "Generic constructor declaration"
-        },
-        {
-          "key": "d",
-          "text": "All of the mentioned"
-        }
-      ],
-      "answer": "c",
-      "explanation": "None."
-    },
-    {
-      "number": 6,
-      "question": "Select the type argument of an open constructed type?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "Gen<int>"
-        },
-        {
-          "key": "b",
-          "text": "Gen<T>"
-        },
-        {
-          "key": "c",
-          "text": "Gen<>"
+          "text": "A specialized instance variable"
         },
         {
           "key": "d",
           "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "A generic type, such as Gen<T>, is an abstraction. In C# terminology, a construct such as Gen<T> is called an open constructed type, because the type parameter T (rather than an actual type, such as int) is specified."
+      "answer": "a",
+      "explanation": "'T' is a type parameter acting as a placeholder. 'Gen<T>' defines a generic class that can operate on any type provided at instantiation.",
+      "origin": "local"
     },
     {
-      "number": 7,
-      "question": "Which among the given classes is present in System.Collection.Generic.namespace?",
+      "number": 5,
+      "question": "What does the following C# code set define?",
+      "code": "public Gen(T o)\n{\n    ob = o;\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Generic class declaration"
+        },
+        {
+          "key": "b",
+          "text": "Declaration of a field"
+        },
+        {
+          "key": "c",
+          "text": "Generic constructor declaration"
+        },
+        {
+          "key": "d",
+          "text": "All of the mentioned"
+        }
+      ],
+      "answer": "c",
+      "explanation": "This is a constructor for a generic class that accepts an argument of the parameterized type 'T'.",
+      "origin": "local"
+    },
+    {
+      "number": 6,
+      "question": "In C#, what is a construct like 'Gen<T>' (with an unspecified type parameter) called?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Stack"
+          "text": "Closed constructed type"
         },
         {
           "key": "b",
-          "text": "Tree"
+          "text": "Instantiated type"
         },
         {
           "key": "c",
-          "text": "Sorted Array"
+          "text": "Open constructed type"
+        },
+        {
+          "key": "d",
+          "text": "Unbound type"
+        }
+      ],
+      "answer": "c",
+      "explanation": "A generic type where at least one type argument is a type parameter (like T) is called an open constructed type.",
+      "origin": "local"
+    },
+    {
+      "number": 7,
+      "question": "Which of these classes is a member of the System.Collections.Generic namespace?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Stack<T>"
+        },
+        {
+          "key": "b",
+          "text": "ArrayList"
+        },
+        {
+          "key": "c",
+          "text": "Hashtable"
         },
         {
           "key": "d",
@@ -179,36 +185,38 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Stack<T> is a generic collection. ArrayList and Hashtable are non-generic collections found in the System.Collections namespace.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of these is a correct way of defining generic method?",
+      "question": "What is the correct syntax for a generic method that takes a type parameter T?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "name(T1, T2, …, Tn) { /* … */ }"
+          "text": "void MyMethod(T arg) { }"
         },
         {
           "key": "b",
-          "text": "public name { /* … */ }"
+          "text": "void MyMethod<T>(T arg) { }"
         },
         {
           "key": "c",
-          "text": "class name[T1, T2, …, Tn] { /* … */ }"
+          "text": "void MyMethod[T](T arg) { }"
         },
         {
           "key": "d",
-          "text": "name{T1, T2, …, Tn} { /* … */ }"
+          "text": "T MyMethod() { }"
         }
       ],
       "answer": "b",
-      "explanation": "The syntax for a generic method includes a type parameter, inside angle brackets, and appears before the method's return type. For static generic methods, the type parameter section must appear before the method's return type."
+      "explanation": "A generic method must specify the type parameter in angle brackets '<T>' immediately after the method name.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Which of these type parameters is used for generic methods to return and accept any type of object?",
+      "question": "Which conventional letter is most commonly used as a placeholder for a generic type argument?",
       "code": null,
       "options": [
         {
@@ -217,7 +225,7 @@
         },
         {
           "key": "b",
-          "text": "N"
+          "text": "G"
         },
         {
           "key": "c",
@@ -225,70 +233,73 @@
         },
         {
           "key": "d",
-          "text": "V"
+          "text": "X"
         }
       ],
       "answer": "c",
-      "explanation": "T is used for type, A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable."
+      "explanation": "By convention, 'T' (representing Type) is used. For dictionaries, 'K' (Key) and 'V' (Value) are also common.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Choose the correct way to call subroutine fun() of the sample class?",
-      "code": "class a\n{\n    public void x(int p, double k)\n    {\n        Console.WriteLine(\"k : csharp!\");\n    }\n}",
+      "question": "What is the correct way to call the method 'x' of class 'a' using a delegate?",
+      "code": "class a\n{\n    public void x(int p, double k)\n    {\n        Console.WriteLine(\"Delegate executed\");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "delegate void del(int i);\n   x s = new x();\n   del d = new del(ref s.x);\n   d(8, 2.2f);"
+          "text": "delegate void Del(int i); Del d = new Del(s.x);"
         },
         {
           "key": "b",
-          "text": "delegate void del(int p,  double k);\n   del d;\n   x s = new x();\n   d = new del(ref s.x);\n   d(8, 2.2f);"
+          "text": "delegate void Del(int p, double k); a s = new a(); Del d = new Del(s.x); d(8, 2.2);"
         },
         {
           "key": "c",
-          "text": "x s = new x();\n   delegate void d = new del(ref x);\n   d(8, 2.2f);"
+          "text": "Del d = new Del(ref s.x);"
         },
         {
           "key": "d",
-          "text": "all of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "To invoke a method via a delegate, the delegate's signature must match the method's signature exactly.",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void push(T obj)\n    {\n        stk.Push(obj);\n    }\n    public T pop()\n    {\n        T obj = stk.Pop();\n        return obj;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<string> g = new Generic<string>();\n        g.push(40);\n        Console.WriteLine(g.pop());\n        Console.ReadLine();\n    }\n}",
+      "question": "What will be the result of the following C# code?",
+      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void Push(T obj) { stk.Push(obj); }\n}\n// In Main:\nGeneric<string> g = new Generic<string>();\ng.Push(40);",
       "options": [
         {
           "key": "a",
-          "text": "0"
-        },
-        {
-          "key": "b",
           "text": "Runtime Error"
         },
         {
+          "key": "b",
+          "text": "The value 40 is printed"
+        },
+        {
           "key": "c",
-          "text": "40"
+          "text": "Compile-time Error"
         },
         {
           "key": "d",
-          "text": "Compile time Error"
+          "text": "0"
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n40"
+      "explanation": "Since the Generic class is instantiated with 'string', the Push method only accepts strings. Passing an 'int' (40) will cause a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 12,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void push(T obj)\n    {\n        stk.Push(obj);\n    }\n    public T pop()\n    {\n        T obj = stk.Pop();\n        return obj;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<int> g = new Generic<int>();\n        g.push(\"Csharp\");\n        Console.WriteLine(g.pop());\n        Console.ReadLine();\n    }\n}",
+      "question": "What will be the result of the following C# code?",
+      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void Push(T obj) { stk.Push(obj); }\n}\n// In Main:\nGeneric<int> g = new Generic<int>();\ng.Push(\"Csharp\");",
       "options": [
         {
           "key": "a",
-          "text": "Compile time error"
+          "text": "Compile-time Error"
         },
         {
           "key": "b",
@@ -300,11 +311,12 @@
         },
         {
           "key": "d",
-          "text": "Run time error"
+          "text": "Runtime Error"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n Csharp\n\nMore MCQs on C# Generics:"
+      "answer": "a",
+      "explanation": "Type safety is a key benefit of Generics. A 'Generic<int>' instance cannot accept a string argument, leading to a compilation error.",
+      "origin": "local"
     }
   ]
 }

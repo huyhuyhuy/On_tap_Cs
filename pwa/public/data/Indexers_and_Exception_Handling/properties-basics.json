@@ -8,45 +8,46 @@
   "questions": [
     {
       "number": 1,
-      "question": "Choose the wrong statement about the properties used in C#.NET?",
+      "question": "Which of the following is an INCORRECT statement about properties in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Each property consists of accessor as get and set"
+          "text": "Every property must always consist of both 'get' and 'set' accessors"
         },
         {
           "key": "b",
-          "text": "A property cannot be either read or write only"
+          "text": "A property cannot be defined as read-only or write-only"
         },
         {
           "key": "c",
-          "text": "Properties can be used to store and retrieve values to and from the data members of a class"
+          "text": "Properties can be used to encapsulate data members of a class"
         },
         {
           "key": "d",
-          "text": "Properties are like actual methods which work like data members"
+          "text": "Properties are called like fields but execute code like methods"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "In C#, properties are very flexible. You can define a property with only a 'get' accessor (read-only) or only a 'set' accessor (write-only). Therefore, saying it *cannot* be read or write only is false.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Choose the statements which makes use of essential properties rather than making data member public in C#.NET?",
+      "question": "What is the advantage of using properties instead of making data members public?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Properties have their own access levels like private, public, protected etc. which allows it to have better control about managing read and write properties"
+          "text": "Properties can have different access levels for get and set"
         },
         {
           "key": "b",
-          "text": "Properties give us control about what values may be assigned to a member variable of a class they represent"
+          "text": "Properties allow validation of values before they are assigned to a variable"
         },
         {
           "key": "c",
-          "text": "Properties consist of set accessor inside which we can validate the value before assigning it to the data variable"
+          "text": "Properties promote encapsulation by hiding the internal representation of data"
         },
         {
           "key": "d",
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Properties provide a powerful layer of abstraction. They allow you to add logic (like validation or logging) during data access without changing the class's public interface.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Where the properties can be declared?",
+      "question": "In which of the following types can properties be declared in C#?",
       "code": null,
       "options": [
         {
@@ -79,24 +81,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "C# supports properties in classes, structures (structs), and interfaces. Interfaces define the property signature that implementing classes must provide.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Select the modifiers which can be used with the properties?",
+      "question": "Which access modifiers can be used with C# properties?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Private"
+          "text": "private"
         },
         {
           "key": "b",
-          "text": "Public"
+          "text": "public"
         },
         {
           "key": "c",
-          "text": "Protected Internal"
+          "text": "protected internal"
         },
         {
           "key": "d",
@@ -104,24 +107,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Properties follow the same access modifier rules as other class members (public, private, protected, internal, protected internal, and private protected).",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Choose the correct statements about write-only properties in C#.NET?",
+      "question": "Which of the following is true about write-only properties?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Properties which can only be set"
+          "text": "They only contain a 'set' accessor"
         },
         {
           "key": "b",
-          "text": "Properties once set and hence values cannot be read back in nature"
+          "text": "The values assigned to them cannot be read back through the same property"
         },
         {
           "key": "c",
-          "text": "Useful for usage in classes which store sensitive information like password of a user"
+          "text": "They are useful for sensitive information like passwords"
         },
         {
           "key": "d",
@@ -129,99 +133,103 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+      "explanation": "A write-only property provides a way to send data to an object without allowing external code to retrieve that specific data back through the property getter.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Consider a class maths and we had a property called a sum.b is a reference to a maths object and we want the statement b.sum = 10 to fail. Which of the following is the correct solution to ensure this functionality?",
+      "question": "In class 'Maths', if you want the statement 'obj.Sum = 10' to cause a compile-time error, how should you declare the 'Sum' property?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Declare sum property with both get and set accessors"
+          "text": "Declare it with both get and set accessors"
         },
         {
           "key": "b",
-          "text": "Declare sum property with only get accessor"
+          "text": "Declare it with only a 'get' accessor"
         },
         {
           "key": "c",
-          "text": "Declare sum property with get, set and normal accessors"
+          "text": "Declare it as a static property"
         },
         {
           "key": "d",
           "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "A property without a 'set' accessor is read-only. Any attempt to assign a value to it will result in a compiler error.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Consider a class maths and we had a property called as sum.b which is the reference to a maths object and we want the statement Console.WriteLine(b.sum)to fail. Which among the following is the correct solution to ensure this functionality?",
+      "question": "In class 'Maths', if you want the statement 'Console.WriteLine(obj.Sum)' to cause a compile-time error, how should you declare the 'Sum' property?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Declares sum property with only get accessor"
+          "text": "Declare it with only a 'get' accessor"
         },
         {
           "key": "b",
-          "text": "Declares sum property with only set accessor"
+          "text": "Declare it with only a 'set' accessor"
         },
         {
           "key": "c",
-          "text": "Declares sum property with both set and get accessor"
+          "text": "Declare it with a private 'set' accessor"
         },
         {
           "key": "d",
-          "text": "Declares sum property with both set, get and normal accessor"
+          "text": "All of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "A property without a 'get' accessor is write-only. Attempting to read its value will result in a compiler error.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Consider a class maths and we had a property called as sum.b is a reference to a maths object and we want the code below to work. Which is the correct solution to ensure this functionality?",
-      "code": "b.maths = 10;\nConsole.WriteLine(b.maths);",
+      "question": "To make the following code snippet work, how must the property be defined?",
+      "code": "b.Sum = 10;\nConsole.WriteLine(b.Sum);",
       "options": [
         {
           "key": "a",
-          "text": "Declare maths property with get and set accessors"
+          "text": "Declare the property with both 'get' and 'set' accessors"
         },
         {
           "key": "b",
-          "text": "Declare maths property with only get accessors"
+          "text": "Declare it as an auto-implemented property"
         },
         {
           "key": "c",
-          "text": "Declare maths property with only set accessors"
+          "text": "Declare it as a public field"
         },
         {
           "key": "d",
-          "text": "Declare maths property with only get, set and normal accessors"
+          "text": "Both A and B are valid solutions"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "d",
+      "explanation": "To both assign a value and read it back, the property needs both accessors. This can be done with a backing field (Option A) or using shorthand auto-property syntax (Option B).",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "If math class had add property with get and set accessors, then which of the following statements will work correctly?",
+      "question": "If the class 'Math' has an instance property 'Add' with both get and set accessors, which code is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "math.add = 20;"
+          "text": "Math.Add = 20;"
         },
         {
           "key": "b",
-          "text": "math m =  new math();\n    m.add = 10;"
+          "text": "Math m = new Math(); m.Add = 10;"
         },
         {
           "key": "c",
-          "text": "Console.WriteLine(math.add);"
+          "text": "Console.WriteLine(Math.Add);"
         },
         {
           "key": "d",
@@ -229,32 +237,34 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Instance properties require an object instance created with 'new' to be accessed. You cannot call them via the class name like static properties.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "If the math class had add property with get accessors then which of the following statements will work correctly?",
+      "question": "If the class 'Math' has an 'Add' property with only a 'get' accessor, which of the following statements is valid?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "math m = new math();\n   m.add = 10;"
+          "text": "Math m = new Math(); m.Add = 10;"
         },
         {
           "key": "b",
-          "text": "math m = new math();\n   m.add = m.add + 20;"
+          "text": "Math m = new Math(); m.Add += 20;"
         },
         {
           "key": "c",
-          "text": "math m = new math();\n   int i;\n   i = m.add;"
+          "text": "Math m = new Math(); int i = m.Add;"
         },
         {
           "key": "d",
-          "text": "math.add = 20;"
+          "text": "Math.Add = 20;"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Since the property is read-only (only 'get'), you can retrieve its value and assign it to a variable, but you cannot assign a new value to the property itself.",
+      "origin": "local"
     }
   ]
 }

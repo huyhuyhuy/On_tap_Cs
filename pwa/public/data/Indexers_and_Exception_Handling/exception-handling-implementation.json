@@ -9,7 +9,7 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": "  {\n      int sum = 10;\n      try\n      {\n          int i;\n          for (i = -1; i < 3; ++i)\n          sum = (sum / i);\n      }\n      catch (ArithmeticException e)\n      {\n          Console.WriteLine(\"0\");\n      }\n      Console.WriteLine(sum);\n      Console.ReadLine();\n  }",
+      "code": "static void Main(string[] args)\n{\n    int sum = 10;\n    try\n    {\n        for (int i = -1; i < 3; ++i)\n            sum = (sum / i);\n    }\n    catch (ArithmeticException)\n    {\n        Console.Write(\"0 \");\n    }\n    Console.WriteLine(sum);\n}",
       "options": [
         {
           "key": "a",
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Value of variable sum is printed as sum and is defined outside try & catch block. If defined inside the try block then sum would be undefined for execution.\n\nOutput : 0 -10"
+      "explanation": "1) i = -1: sum = 10 / -1 = -10. 2) i = 0: sum = -10 / 0 triggers a DivideByZeroException (ArithmeticException). 3) The catch block prints '0 '. 4) Finally, the current value of sum (-10) is printed. Output: '0 -10'.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": "{\n    try\n    {\n        int []a = {1, 2, 3, 4, 5};\n        for (int i = 0; i < 5; ++i)\n        Console.WriteLine(a[i]);\n        int x = (1 / Convert.ToInt32(0));\n    }\n    catch(IndexOutOfRangeException e)\n    {\n        Console.WriteLine(\"A\");\n    }\n    catch(ArithmeticException e)\n    {\n        Console.WriteLine(\"B\");\n    }\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    try\n    {\n        int[] a = { 1, 2, 3, 4, 5 };\n        for (int i = 0; i < 5; ++i)\n            Console.Write(a[i]);\n        int zero = 0;\n        int x = 1 / zero;\n    }\n    catch (IndexOutOfRangeException) { Console.Write(\"A\"); }\n    catch (ArithmeticException) { Console.Write(\"B\"); }\n}",
       "options": [
         {
           "key": "a",
@@ -54,12 +55,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "Due to occurrence of arithmetic exception here 'B' is printed after 12345.\n\nOutput : 12345B\n\n🔥 Enroll for\nFree Data Structure Certification\n - August 2026"
+      "explanation": "The loop first prints all elements '12345'. Then, division by zero occurs, which is caught by ArithmeticException, printing 'B'. Result: '12345B'.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": "{\n    try\n    {\n        int []a = {1, 2, 3, 4, 5};\n        for (int i = 0; i < 7; ++i)\n        Console.WriteLine(a[i]);\n    }\n    catch(IndexOutOfRangeException e)\n    {\n        Console.WriteLine(\"0\");\n    }\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    try\n    {\n        int[] a = { 1, 2, 3, 4, 5 };\n        for (int i = 0; i < 7; ++i)\n            Console.Write(a[i]);\n    }\n    catch (IndexOutOfRangeException)\n    {\n        Console.Write(\"0\");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -79,12 +81,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "When array index goes out of bound then IndexOutOfBoundsException exception is thrown by the system.\n\nOutput : 123450"
+      "explanation": "The loop prints '12345'. When i = 5, a[5] is accessed which is out of bounds, throwing IndexOutOfRangeException. The catch block prints '0'. Result: '123450'.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " {\n     try\n     {\n         int a, b;\n         b = 0;\n         a = 10 / b;\n         Console.WriteLine(\"A\");\n     }\n     catch(ArithmeticException e)\n     {\n         Console.WriteLine(\"B\");\n     }\n     Console.ReadLine();\n }",
+      "code": "try\n{\n    int b = 0;\n    int a = 10 / b;\n    Console.WriteLine(\"A\");\n}\ncatch (ArithmeticException)\n{\n    Console.WriteLine(\"B\");\n}",
       "options": [
         {
           "key": "a",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "Since  b = 0 since a = 10 / 0 so, arithmetic exception is caught and hence statement in catch block is executed.\n\nOutput : B"
+      "explanation": "Division by zero occurs, throwing a DivideByZeroException. Since this inherits from ArithmeticException, it is caught and 'B' is printed.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " {\n     try\n     {\n         int i, sum;\n         sum = 10;\n         for (i = -1 ;i < 3 ;++i)\n         {\n             sum = (sum / i);\n             Console.WriteLine(i);\n         }\n     }\n     catch(ArithmeticException e)\n     {\n         Console.WriteLine(\"0\");\n     }\n     Console.ReadLine();\n }",
+      "code": "try\n{\n    int sum = 10;\n    for (int i = -1; i < 3; ++i)\n    {\n        sum = (sum / i);\n        Console.Write(i + \" \");\n    }\n}\ncatch (ArithmeticException)\n{\n    Console.Write(\"0\");\n}",
       "options": [
         {
           "key": "a",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput : -1 0"
+      "explanation": "1) i = -1: sum = -10, prints '-1 '. 2) i = 0: Division by zero occurs, jumping to catch block. 3) Catch prints '0'. Final output: '-1 0'.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " {\n     try\n     {\n         int a, b;\n         b = 0;\n         a = 5 / b;\n         Console.WriteLine(\"A\");\n     }\n     catch(ArithmeticException e)\n     {\n         Console.WriteLine(\"B\");\n     }\n     finally\n     {\n         Console.WriteLine(\"C\");\n     }\n     Console.ReadLine();\n }",
+      "code": "try\n{\n    int b = 0;\n    int a = 5 / b;\n    Console.WriteLine(\"A\");\n}\ncatch (ArithmeticException)\n{\n    Console.Write(\"B \");\n}\nfinally\n{\n    Console.Write(\"C\");\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "finally keyword is used to execute before catch and try block is executed.\n\nOutput : B C"
+      "explanation": "The exception is caught by the catch block (printing 'B '), and the finally block is guaranteed to run afterward (printing 'C'). Result: 'B C'.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         int i;\n         int v = 40;\n         int[] x = new int[5];\n         int index;\n         try\n         {\n             Console.WriteLine(\" Enter the number: \");\n             index = Convert.ToInt32(Console.ReadLine());\n             x[index] = v;\n         }\n         catch(Exception e)\n         {\n             Console.WriteLine(\"Exception occurred\");\n         }\n         Console.WriteLine(\"Program executed\");\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] x = new int[5];\n    try\n    {\n        int index = 10; // Assume an invalid index\n        x[index] = 40;\n    }\n    catch (Exception)\n    {\n        Console.WriteLine(\"Exception occurred\");\n    }\n    Console.WriteLine(\"Program executed\");\n}",
       "options": [
         {
           "key": "a",
@@ -179,37 +185,39 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput: Exception occurred\n\n          Program executed"
+      "explanation": "The index 10 is outside the range of the array (size 5). This throws an exception, which is caught, printing the first message. Then the code continues to the final line.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "When is no exception thrown at runtime then who will catch it?",
+      "question": "If an exception is thrown at runtime and there is no matching 'catch' block in the code, who handles the exception?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "CLR"
+          "text": "The Common Language Runtime (CLR)"
         },
         {
           "key": "b",
-          "text": "Operating System"
+          "text": "The Operating System"
         },
         {
           "key": "c",
-          "text": "Loader"
+          "text": "The Compiler"
         },
         {
           "key": "d",
-          "text": "Compiler"
+          "text": "The Application Loader"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "If no suitable catch block is found in the call stack, the CLR's default exception handler catches it, which usually results in displaying an error message and terminating the application.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " public  static void Main(string[] args)\n {\n     try\n     {\n         int a, b, c = 5;\n         b = 0;\n         a = c / b;\n         Console.WriteLine(\"A\");\n     }\n     catch (ArithmeticException e)\n     {\n         int c = 5;\n         int i = 10;\n         int z = 2 * c - i;\n         Console.WriteLine(\"B\");\n         Console.WriteLine(z);\n     }\n     Console.ReadLine();\n }",
+      "code": "public static void Main(string[] args)\n{\n    try\n    {\n        int zero = 0;\n        int a = 5 / zero;\n    }\n    catch (ArithmeticException)\n    {\n        int c = 5, i = 10;\n        int z = 2 * c - i;\n        Console.Write(\"B \" + z);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -229,24 +237,25 @@
         }
       ],
       "answer": "c",
-      "explanation": "The catch block is called, as the exception is caught by the same block and hence statements are executed consecutively.\n\nOutput : B 0"
+      "explanation": "The exception is caught. Inside catch, z = (2 * 5) - 10 = 0. The output is 'B 0'.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Choose the correct statement which makes exception handling work in C#.NET?",
+      "question": "Choose the correct statement about how exception handling works in C#.NET:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": ".Net runtime makes search for the exception handler where exception occurs"
+          "text": "The runtime searches for a local catch handler where the exception occurred"
         },
         {
           "key": "b",
-          "text": "If no exception is matched, exception handler goes up the stack and hence finds the match there"
+          "text": "If no local match is found, it walks up the call stack to find a handler"
         },
         {
           "key": "c",
-          "text": "If no match is found at the highest level of stack call, then unhandledException is generated and hence termination of program occurs"
+          "text": "If no handler is found at any level, the program terminates with an unhandled exception"
         },
         {
           "key": "d",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition of exceptionhandling mechanism in C#.NET."
+      "explanation": "This process is known as 'stack walking'. The .NET runtime systematically searches for a compatible catch block from the point of failure up through the sequence of method calls.",
+      "origin": "local"
     }
   ]
 }

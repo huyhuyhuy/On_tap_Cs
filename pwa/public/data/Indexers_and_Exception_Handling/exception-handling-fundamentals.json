@@ -8,57 +8,59 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which among the following is NOT an exception?",
+      "question": "Which among the following is NOT an exception in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Stack Overflow"
+          "text": "StackOverflowException"
         },
         {
           "key": "b",
-          "text": "Arithmetic Overflow or underflow"
+          "text": "ArithmeticException"
         },
         {
           "key": "c",
-          "text": "Incorrect Arithmetic Expression"
+          "text": "Incorrect Arithmetic Expression (Syntax Error)"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "IndexOutOfRangeException"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Exceptions are runtime errors. An incorrect arithmetic expression is a syntax error that is caught by the compiler at compile-time, not an exception thrown during execution.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which among the following is considered as .NET Exception class?",
+      "question": "Which of the following is the base class for all exceptions in the .NET Framework?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Exception"
+          "text": "System.Exception"
         },
         {
           "key": "b",
-          "text": "StackUnderflow Exception"
+          "text": "System.StackUnderflowException"
         },
         {
           "key": "c",
-          "text": "File bound Exception"
+          "text": "System.FileBoundException"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "System.RuntimeError"
         }
       ],
-      "answer": "b",
-      "explanation": "None."
+      "answer": "a",
+      "explanation": "In C#, all exception types must derive from the 'System.Exception' base class. 'StackUnderflowException' does not exist in the standard .NET library.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of the following is the object oriented way to handle run time errors?",
+      "question": "What is the object-oriented way to handle runtime errors in C#?",
       "code": null,
       "options": [
         {
@@ -67,11 +69,11 @@
         },
         {
           "key": "b",
-          "text": "HERRESULT"
+          "text": "HRESULT"
         },
         {
           "key": "c",
-          "text": "OnError"
+          "text": "On Error Goto"
         },
         {
           "key": "d",
@@ -79,24 +81,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Exceptions provide a structured, object-oriented approach to error handling, separating error-detection code from error-handling code.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Select the statements which describe the correct usage of exception handling over conventional error handling approaches?",
+      "question": "Which statement describes an advantage of exception handling over traditional error-handling methods?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "As errors can be ignored but exceptions cannot be ignored"
+          "text": "Exceptions cannot be accidentally ignored like error codes can"
         },
         {
           "key": "b",
-          "text": "Exception handling allows separation of program's logic from error handling logic making software more reliable and maintainable"
+          "text": "It separates the main logic from error-handling logic"
         },
         {
           "key": "c",
-          "text": "try - catch - finally structure allows guaranteed cleanup in event of errors under all circumstances"
+          "text": "The try-catch-finally structure ensures cleanup code always runs"
         },
         {
           "key": "d",
@@ -104,36 +107,38 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Exception handling makes code cleaner, more robust, and more maintainable by providing a dedicated mechanism for dealing with unexpected runtime situations.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Select the correct statement about an Exception?",
+      "question": "When does an Exception occur in a C# application?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "It occurs during loading of program"
+          "text": "During loading of the program"
         },
         {
           "key": "b",
-          "text": "It occurs during Just-In-Time compilation"
+          "text": "During compilation"
         },
         {
           "key": "c",
-          "text": "It occurs at run time"
+          "text": "At run time"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "At design time"
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\n⚡ Claim Your\nFree Java Certification\n - August 2026"
+      "explanation": "An exception is an error that happens during the execution of a program (runtime). Errors during compilation are called syntax errors.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which of these keywords is not a part of exception handling?",
+      "question": "Which of these keywords is NOT a part of the C# exception handling mechanism?",
       "code": null,
       "options": [
         {
@@ -154,11 +159,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Exception handling is managed via 5 keywords - try, catch, throws, throw and finally."
+      "explanation": "C# uses four keywords for exception handling: try, catch, finally, and throw. 'thrown' and 'throws' (Java) are not used in C#.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of these keywords must be used to monitor exceptions?",
+      "question": "Which keyword is used to wrap a block of code that might throw an exception so it can be monitored?",
       "code": null,
       "options": [
         {
@@ -179,11 +185,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "The 'try' block encloses the guarded code. If an exception occurs within this block, the runtime looks for a matching catch handler.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of these keywords is used to manually throw an exception?",
+      "question": "Which keyword is used to manually signal the occurrence of an exception?",
       "code": null,
       "options": [
         {
@@ -204,37 +211,39 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "The 'throw' keyword is used to raise an exception manually, either by re-throwing a caught exception or creating a new exception object.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " class program\n {\n     static void main(string[] args)\n     {\n         int i = 5;\n         int v = 40;\n         int[] p = new int[4];\n         try\n         {\n             p[i] = v;\n         }\n         catch(IndexOutOfRangeException e)\n         {\n             Console.WriteLine(\"Index out of bounds\");\n         }\n         Console.WriteLine(\"Remaining program\");\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int i = 5;\n    int[] p = new int[4];\n    try\n    {\n        p[i] = 40;\n    }\n    catch (IndexOutOfRangeException)\n    {\n        Console.WriteLine(\"Index Error\");\n    }\n    Console.WriteLine(\"Finished\");\n}",
       "options": [
         {
           "key": "a",
-          "text": "value 40 will be assigned to a[5];"
+          "text": "Program crashes"
         },
         {
           "key": "b",
-          "text": "The output will be :\nIndex out of bounds\nRemaining program"
+          "text": "Index Error\nFinished"
         },
         {
           "key": "c",
-          "text": "The output will be :\nRemaining program"
+          "text": "Finished"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Compile-time error"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The array has a size of 4 (indices 0-3). Accessing index 5 triggers an IndexOutOfRangeException, which is caught. The program then continues to the next line.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     try\n     {\n         Console.WriteLine(\"csharp\" + \" \" + 1/Convert.ToInt32(0));\n     }\n     catch(ArithmeticException e)\n     {\n         Console.WriteLine(\"Java\");\n     }\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    try\n    {\n        int zero = 0;\n        Console.WriteLine(\"csharp \" + (1 / zero));\n    }\n    catch (ArithmeticException)\n    {\n        Console.WriteLine(\"Java\");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -242,11 +251,11 @@
         },
         {
           "key": "b",
-          "text": "java"
+          "text": "Java"
         },
         {
           "key": "c",
-          "text": "run time error"
+          "text": "Runtime Error (Unhandled)"
         },
         {
           "key": "d",
@@ -254,37 +263,39 @@
         }
       ],
       "answer": "b",
-      "explanation": "1 / 0,  hence system out of flow exception error."
+      "explanation": "Division by zero throws a DivideByZeroException. Since DivideByZeroException inherits from ArithmeticException, the catch block is executed and prints 'Java'.",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "Which of the following is the wrong statement about exception handling in C#.NET?",
+      "question": "Which of the following statements about 'finally' is WRONG?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "finally clause is used to perform cleanup operations of closing network and database connections"
+          "text": "The finally clause is used for cleanup operations"
         },
         {
           "key": "b",
-          "text": "a program can contain multiple finally clauses"
+          "text": "A single try block can have multiple finally clauses"
         },
         {
           "key": "c",
-          "text": "the statement in final clause will get executed no matter whether an exception occurs or not"
+          "text": "Finally executes whether or not an exception was thrown"
         },
         {
           "key": "d",
-          "text": "all of the mentioned"
+          "text": "Finally is optional in a try-catch structure"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "In C#, a 'try' block can be followed by multiple 'catch' blocks, but only ONE 'finally' block is allowed.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "What will be the output of the following C# code?",
-      "code": "  class Program\n  {\n      static void Main(string[] args)\n      {\n          try\n          {\n              Console.WriteLine(\"csharp\" + \" \" + 1/0);\n          }\n          finally\n          {\n              Console.WriteLine(\"Java\");\n          }\n          Console.ReadLine();\n      }\n  }",
+      "code": "static void Main(string[] args)\n{\n    try\n    {\n        int zero = 0;\n        int res = 1 / zero;\n    }\n    finally\n    {\n        Console.WriteLine(\"Java\");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -292,19 +303,20 @@
         },
         {
           "key": "b",
-          "text": "Run time Exception generation"
+          "text": "Program prints 'Java' and then crashes with a DivideByZeroException"
         },
         {
           "key": "c",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "d",
-          "text": "Java"
+          "text": "Java (only)"
         }
       ],
       "answer": "b",
-      "explanation": "Run time Error of division by zero."
+      "explanation": "The division by zero throws an exception. Before the program crashes or propagates the error, the 'finally' block is guaranteed to execute, printing 'Java'.",
+      "origin": "local"
     }
   ]
 }

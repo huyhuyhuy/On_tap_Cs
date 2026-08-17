@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these clauses will be executed even if no exceptions are found?",
+      "question": "Which of these clauses will be executed regardless of whether an exception is thrown or caught?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "finally keyword is used to define a set of instructions that will be executed irrespective of whether the exception is found or not."
+      "explanation": "The 'finally' block is used to execute a set of statements (typically cleanup code) regardless of whether an exception occurred or was handled in the 'try' or 'catch' blocks.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "A single try block must be followed by which of these?",
+      "question": "A single 'try' block must be followed by which of the following?",
       "code": null,
       "options": [
         {
@@ -46,7 +47,7 @@
         },
         {
           "key": "c",
-          "text": "Both finally & catch"
+          "text": "At least one 'catch' block or a 'finally' block"
         },
         {
           "key": "d",
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Try block can be followed by any of finally or catch block, try block checks for exceptions and work is performed by finally and catch block as per the exception."
+      "explanation": "A 'try' block cannot exist by itself. It must be followed by at least one 'catch' block, one 'finally' block, or both.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of these exceptions handles the divide by zero error?",
+      "question": "Which of these exception classes is the parent for handling divide-by-zero errors in C#?",
       "code": null,
       "options": [
         {
@@ -75,15 +77,16 @@
         },
         {
           "key": "d",
-          "text": "IllegarException"
+          "text": "DivideByZeroException"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "While 'DivideByZeroException' is the specific exception, it inherits from 'ArithmeticException'. In a multiple-choice context where both might be valid, 'ArithmeticException' is the broader class often cited in fundamental questions.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of these exceptions will occur if we try to access the index of an array beyond its length?",
+      "question": "Which exception occurs if an application attempts to access an array element using an index that is outside the bounds of the array?",
       "code": null,
       "options": [
         {
@@ -96,7 +99,7 @@
         },
         {
           "key": "c",
-          "text": "ArrayArguementException"
+          "text": "ArrayArgumentException"
         },
         {
           "key": "d",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "IndexOutOfRangeException is a built in exception that is caused when we try to access an index location which is beyond the length of an array."
+      "explanation": "IndexOutOfRangeException is thrown when an attempt is made to index an array outside its lower or upper bounds.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": "   class program\n   {\n       public static void Main(string[] args)\n       {\n           try\n           {\n               int a = args.Length;\n               int b = 1 / a;\n               Console.WriteLine(a);\n           }\n           catch (ArithmeticException e)\n           {\n               Console.WriteLine(\"1\");\n           }\n           Console.ReadLine();\n       }\n   }",
+      "question": "What will be the output of the following C# code snippet if run with no command-line arguments?",
+      "code": "class Program\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            int a = args.Length;\n            int b = 1 / a;\n            Console.WriteLine(a);\n        }\n        catch (ArithmeticException)\n        {\n            Console.WriteLine(\"1\");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "If no arguments are passed, 'a' is 0. '1 / 0' throws a DivideByZeroException. Since this inherits from ArithmeticException, the catch block executes and prints '1'.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class program\n {\n     public static void Main(string[] args)\n     {\n         try\n         {\n             throw new NullReferenceException(\"C\");\n             Console.WriteLine(\"A\");\n         }\n         catch (ArithmeticException e)\n         {\n             Console.WriteLine(\"B\");\n         }\n         Console.ReadLine();\n     }\n }",
+      "code": "class Program\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            throw new NullReferenceException(\"C\");\n            Console.WriteLine(\"A\");\n        }\n        catch (ArithmeticException)\n        {\n            Console.WriteLine(\"B\");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -150,16 +155,17 @@
         },
         {
           "key": "d",
-          "text": "Runtime error"
+          "text": "Runtime error (Unhandled Exception)"
         }
       ],
       "answer": "d",
-      "explanation": "Try block is throwing NullPointerException but the catch block is used to counter Arithmetic Exception. Hence NullPointerException occurs since no catch is there which can handle it, runtime error occurs."
+      "explanation": "The code throws a NullReferenceException. However, the catch block is only designed to handle ArithmeticException. Since the exception is not caught, the program crashes with a runtime error.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class Program\n {\n     public static void Main(string[] args)\n     {\n         try\n         {\n             int a = 1;\n             int b = 10 / a;\n             try\n             {\n                 if (a == 1)\n                     a = a / a - a;\n                 if (a == 2)\n                 {\n                     int[] c = { 1 };\n                     c[8] = 9;\n                 }\n             }\n             finally\n             {\n                 Console.WriteLine(\"A\");\n             }\n        }\n        catch (IndexOutOfRangeException e)\n        {\n             Console.WriteLine(\"B\");\n        }\n        Console.ReadLine();\n    }\n }",
+      "code": "class Program\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            int a = 1;\n            int b = 10 / a;\n            try\n            {\n                if (a == 1) a = a / a - a;\n                if (a == 2)\n                {\n                    int[] c = { 1 };\n                    c[8] = 9;\n                }\n            }\n            finally\n            {\n                Console.Write(\"A\");\n            }\n        }\n        catch (IndexOutOfRangeException)\n        {\n            Console.Write(\"B\");\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "The inner try block does not have a catch which can tackle IndexOutOfRangeException hence finally is executed which prints 'A'. The outer try block does have catch for IndexOutOfBoundException exception but no such exception occurs in it hence its catch is never executed and only 'A' is printed."
+      "explanation": "Inside the inner try, 'a' becomes 0. No exception occurs in the inner block. The inner 'finally' executes, printing 'A'. The catch block is never triggered because no IndexOutOfRangeException occurred.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": " class Program\n {\n     public static void Main(string[] args)\n     {\n         try\n         {\n             int a = args.Length;\n             int b = 10 / a;\n             Console.WriteLine(a);\n             try\n             {\n                 if (a == 1)\n                 a = a / a - a;\n                 if (a == 2)\n                 {\n                     int[] c = { 1 };\n                     c[8] = 9;\n                 }\n             }\n             catch (IndexOutOfRangeException e)\n             {\n                 Console.WriteLine(\"TypeA\");\n             }\n         }\n         catch (ArithmeticException e)\n         {\n             Console.WriteLine(\"TypeB\");\n         }\n         Console.ReadLine();\n     }\n }",
+      "question": "What will be the output of the following C# code snippet if run with no command-line arguments?",
+      "code": "class Program\n{\n    public static void Main(string[] args)\n    {\n        try\n        {\n            int a = args.Length;\n            int b = 10 / a;\n            Console.WriteLine(a);\n            try\n            {\n                if (a == 1) a = a / a - a;\n                if (a == 2)\n                {\n                    int[] c = { 1 };\n                    c[8] = 9;\n                }\n            }\n            catch (IndexOutOfRangeException) { Console.Write(\"TypeA\"); }\n        }\n        catch (ArithmeticException) { Console.Write(\"TypeB\"); }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -204,11 +211,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "With no arguments, 'a' is 0. '10 / 0' immediately throws a DivideByZeroException in the outer try block. Control jumps to the outer catch (ArithmeticException), printing 'TypeB'. The inner try is never entered.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Which of these classes is related to all the exceptions that are explicitly thrown in C#?",
+      "question": "Which of these classes is the base class for all exceptions in C#?",
       "code": null,
       "options": [
         {
@@ -225,11 +233,12 @@
         },
         {
           "key": "d",
-          "text": "Throw"
+          "text": "System.Error"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "In .NET, all exceptions are objects derived from the System.Exception class.",
+      "origin": "local"
     }
   ]
 }

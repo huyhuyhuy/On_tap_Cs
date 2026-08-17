@@ -8,45 +8,46 @@
   "questions": [
     {
       "number": 1,
-      "question": "In the following C# code, which of the following statement is not correct?",
-      "code": "public class MyContainer<T> where T: class, IComparable\n{\n  /* insert code here */\n}",
+      "question": "In the following C# code, which statement is NOT correct?",
+      "code": "public class MyContainer<T> where T : class, IComparable\n{\n    /* class implementation */\n}",
       "options": [
         {
           "key": "a",
-          "text": "Class MyContainer requires that its type argument must implement Icomparable interface"
+          "text": "Class MyContainer requires that its type argument must implement IComparable interface"
         },
         {
           "key": "b",
-          "text": "There are multiple constraints on type argument to MyContainer class"
+          "text": "There are multiple constraints on the type argument of MyContainer class"
         },
         {
           "key": "c",
-          "text": "Class MyContainer requires that its type argument must be a reference type (class)"
+          "text": "Class MyContainer requires that its type argument must be a reference type"
         },
         {
           "key": "d",
-          "text": "Compiler will report an error"
+          "text": "The compiler will report an error because the syntax is invalid"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The syntax is perfectly valid. The 'where' clause correctly specifies that T must be a class (reference type) and must implement the IComparable interface.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "In the following C# code, which statements are perfectly valid?",
-      "code": "public class Csharp\n{\n    public void subject<S>(S arg)\n    {\n        Console.WriteLine(arg);\n    }\n}\nclass Program\n{\n    static Void Main(string[] args)\n    {\n        Csharp c = new Csharp();\n        c.subject(\"hi\");\n        c.subject(20);\n    }\n}",
+      "question": "What is the result of the following C# code?",
+      "code": "public class Csharp\n{\n    public void Subject<S>(S arg)\n    {\n        Console.Write(arg + \" \");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Csharp c = new Csharp();\n        c.Subject(\"hi\");\n        c.Subject(20);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "Run time exception error"
+          "text": "Runtime exception"
         },
         {
           "key": "b",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "c",
-          "text": "Code runs successfully and prints required output"
+          "text": "Code runs successfully and prints: hi 20"
         },
         {
           "key": "d",
@@ -54,174 +55,25 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n         hi\n         20"
+      "explanation": "The method 'Subject<S>' is a generic method. It can accept arguments of any type (string and int in this case) and print them correctly.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of the given statements are valid about generics in .NET Framework?",
+      "question": "Which of the following statements is valid about generics in .NET?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "generics are useful in collection classes in .NET framework"
+          "text": "Generics are highly useful for creating type-safe collection classes"
         },
         {
           "key": "b",
-          "text": "generics delegates are not allowed in C#.NET"
+          "text": "Generic delegates are not allowed in C#"
         },
         {
           "key": "c",
-          "text": "generics is a not language feature"
-        },
-        {
-          "key": "d",
-          "text": "all of the mentioned"
-        }
-      ],
-      "answer": "a",
-      "explanation": "None."
-    },
-    {
-      "number": 4,
-      "question": "Which statement is valid for the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    public T Field;\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<String> g = new Generic<String>();\n        g.Field = \"Hi\";\n        Console.WriteLine(g.Field);\n    }\n}",
-      "options": [
-        {
-          "key": "a",
-          "text": "Compile time error"
-        },
-        {
-          "key": "b",
-          "text": "Generic being a keyword cannot be used as a class name"
-        },
-        {
-          "key": "c",
-          "text": "Runtime error"
-        },
-        {
-          "key": "d",
-          "text": "Code runs successfully"
-        }
-      ],
-      "answer": "d",
-      "explanation": "None.\n\nOutput :\n\nHello"
-    },
-    {
-      "number": 5,
-      "question": "What will be the output of the following C# code?",
-      "code": " public class Generic<T>\n {\n     public T Field;\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         Generic<int> g2 = new Generic<int>();\n         Generic<int> g3 = new Generic<int>();\n         g2.Field = 8;\n         g3.Field = 4;\n         if (g2.Field % g3.Field == 0)\n         {\n             Console.WriteLine(\"A\");\n         }\n         else\n         Console.WriteLine(\"Prints nothing:\");\n         Console.ReadLine();\n     }\n }",
-      "options": [
-        {
-          "key": "a",
-          "text": "Compile time error"
-        },
-        {
-          "key": "b",
-          "text": "A"
-        },
-        {
-          "key": "c",
-          "text": "Run time error"
-        },
-        {
-          "key": "d",
-          "text": "Code runs successfully but prints nothing"
-        }
-      ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n A"
-    },
-    {
-      "number": 6,
-      "question": "Which of the following is a valid statement about generic procedures in C#.NET are?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "All procedures in a Generic class are generic"
-        },
-        {
-          "key": "b",
-          "text": "Generic procedures should take at least one type parameter"
-        },
-        {
-          "key": "c",
-          "text": "Only those procedures labeled as Generic are Generic"
-        },
-        {
-          "key": "d",
-          "text": "None of the mentioned"
-        }
-      ],
-      "answer": "b",
-      "explanation": "None."
-    },
-    {
-      "number": 7,
-      "question": "In the following C# code, which of the following statements are perfectly valid?",
-      "code": "public class MyContainer<T> where T: IComparable\n{\n  /* insert code here */\n}",
-      "options": [
-        {
-          "key": "a",
-          "text": "Class MyConatiner requires that its type argument must implement Icomparable interface"
-        },
-        {
-          "key": "b",
-          "text": "There are multiple constraints on type argument to MyContainer class"
-        },
-        {
-          "key": "c",
-          "text": "Type argument of class MyContainer should be Icomparable"
-        },
-        {
-          "key": "d",
-          "text": "None of the mentioned"
-        }
-      ],
-      "answer": "a",
-      "explanation": "None."
-    },
-    {
-      "number": 8,
-      "question": "Which of the following statements are valid in the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    public T Field;\n    public void testSub()\n    {\n        T i = Field + 1;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<int>g = new Generic<int>();\n        g.testSub();\n    }\n}",
-      "options": [
-        {
-          "key": "a",
-          "text": "code runs successfully but prints nothing"
-        },
-        {
-          "key": "b",
-          "text": "code runs successfully and prints 1"
-        },
-        {
-          "key": "c",
-          "text": "program will give run time error"
-        },
-        {
-          "key": "d",
-          "text": "compile time error"
-        }
-      ],
-      "answer": "d",
-      "explanation": "Compiler will give error as operator '+' is not defined for types 'T' and 'int'."
-    },
-    {
-      "number": 9,
-      "question": "Which among the given classes represents System.Collections.Generic namespace?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "SortedDictionary"
-        },
-        {
-          "key": "b",
-          "text": "Sorted Array"
-        },
-        {
-          "key": "c",
-          "text": "Stack"
+          "text": "Generics is a runtime-only feature and not a language feature"
         },
         {
           "key": "d",
@@ -229,16 +81,173 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Generics allow you to write a class or method that can work with any data type while providing full type safety and performance benefits, especially in collections like List<T>.",
+      "origin": "local"
     },
     {
-      "number": 10,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void push(T obj)\n    {\n        stk.Push(obj);\n    }\n    public T pop()\n    {\n        T obj = stk.Pop();\n        return obj;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<int> g = new Generic<int>();\n        g.push(\"Csharp\");\n        Console.WriteLine(g.pop());\n        Console.ReadLine();\n    }\n}",
+      "number": 4,
+      "question": "What is the output of the following C# code?",
+      "code": "public class Generic<T>\n{\n    public T Field;\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<string> g = new Generic<string>();\n        g.Field = \"Hi\";\n        Console.WriteLine(g.Field);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "Compile time error"
+          "text": "Compile-time error"
+        },
+        {
+          "key": "b",
+          "text": "Generic is a keyword and cannot be used as a class name"
+        },
+        {
+          "key": "c",
+          "text": "Runtime error"
+        },
+        {
+          "key": "d",
+          "text": "Code runs successfully and prints 'Hi'"
+        }
+      ],
+      "answer": "d",
+      "explanation": "'Generic' is not a reserved keyword in C#, so it can be used as a class name. The code correctly instantiates a generic class with string and prints the field.",
+      "origin": "local"
+    },
+    {
+      "number": 5,
+      "question": "What will be the output of the following C# code?",
+      "code": "public class Generic<T>\n{\n    public T Field;\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<int> g2 = new Generic<int>();\n        Generic<int> g3 = new Generic<int>();\n        g2.Field = 8;\n        g3.Field = 4;\n        if (g2.Field % g3.Field == 0)\n            Console.WriteLine(\"A\");\n        else\n            Console.WriteLine(\"B\");\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile-time error"
+        },
+        {
+          "key": "b",
+          "text": "A"
+        },
+        {
+          "key": "c",
+          "text": "Run-time error"
+        },
+        {
+          "key": "d",
+          "text": "B"
+        }
+      ],
+      "answer": "b",
+      "explanation": "Since T is specified as 'int', Field is an integer. 8 % 4 equals 0, so the condition is true and 'A' is printed.",
+      "origin": "local"
+    },
+    {
+      "number": 6,
+      "question": "Which of the following is a valid statement regarding generic methods in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "All methods inside a generic class must be generic"
+        },
+        {
+          "key": "b",
+          "text": "Generic methods must define at least one type parameter in angle brackets"
+        },
+        {
+          "key": "c",
+          "text": "Only static methods can be generic"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "b",
+      "explanation": "A generic method is defined by specifying a type parameter list in angle brackets after the method name, such as 'void MyMethod<T>(T arg)'.",
+      "origin": "local"
+    },
+    {
+      "number": 7,
+      "question": "In the following C# code, what does the constraint 'where T : IComparable' enforce?",
+      "code": "public class MyContainer<T> where T : IComparable { }",
+      "options": [
+        {
+          "key": "a",
+          "text": "T must implement the IComparable interface"
+        },
+        {
+          "key": "b",
+          "text": "There are multiple constraints on T"
+        },
+        {
+          "key": "c",
+          "text": "T must be a class"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The 'where T : IComparable' constraint ensures that only types that implement the IComparable interface can be used as type arguments for T.",
+      "origin": "local"
+    },
+    {
+      "number": 8,
+      "question": "What is the result of the following C# code snippet?",
+      "code": "public class Generic<T>\n{\n    public T Field;\n    public void TestSub()\n    {\n        T i = Field + 1;\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Code runs successfully"
+        },
+        {
+          "key": "b",
+          "text": "Code prints 1"
+        },
+        {
+          "key": "c",
+          "text": "Runtime error"
+        },
+        {
+          "key": "d",
+          "text": "Compile-time error"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The compiler will report an error because the '+' operator cannot be applied to operands of type 'T' and 'int'. Generics do not support arithmetic operators by default.",
+      "origin": "local"
+    },
+    {
+      "number": 9,
+      "question": "Which of these is a valid generic collection class in the System.Collections.Generic namespace?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "SortedDictionary<TKey, TValue>"
+        },
+        {
+          "key": "b",
+          "text": "ArrayList"
+        },
+        {
+          "key": "c",
+          "text": "Hashtable"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "a",
+      "explanation": "SortedDictionary<TKey, TValue> is a generic collection. ArrayList and Hashtable are non-generic collections located in System.Collections.",
+      "origin": "local"
+    },
+    {
+      "number": 10,
+      "question": "What will be the output of the following C# code?",
+      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void Push(T obj) { stk.Push(obj); }\n    public T Pop() { return stk.Pop(); }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<int> g = new Generic<int>();\n        g.Push(\"Csharp\");\n        Console.WriteLine(g.Pop());\n    }\n}",
+      "options": [
+        {
+          "key": "a",
+          "text": "Compile-time error"
         },
         {
           "key": "b",
@@ -250,16 +259,17 @@
         },
         {
           "key": "d",
-          "text": "Run time error"
+          "text": "Runtime error"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\nCsharp"
+      "answer": "a",
+      "explanation": "Because 'g' is an instance of 'Generic<int>', the Push method expects an 'int'. Passing the string \"Csharp\" causes a compile-time error due to type mismatch.",
+      "origin": "local"
     },
     {
       "number": 11,
       "question": "What will be the output of the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void push(T obj)\n    {\n        stk.Push(obj);\n    }\n    public T pop()\n    {\n        T obj = stk.Pop();\n        return obj;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<string> g = new Generic<string>();\n        g.push(30);\n        Console.WriteLine(g.pop());\n        Console.ReadLine();\n    }\n}",
+      "code": "public class Generic<T>\n{\n    public void Push(T obj) { }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<string> g = new Generic<string>();\n        g.Push(30);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -271,20 +281,21 @@
         },
         {
           "key": "c",
-          "text": "Runtime Error"
+          "text": "Runtime error"
         },
         {
           "key": "d",
-          "text": "Compile time Error"
+          "text": "Compile-time error"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n30."
+      "answer": "d",
+      "explanation": "The generic class is instantiated with 'string'. Therefore, the Push method only accepts string arguments. Passing an integer (30) results in a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 12,
-      "question": "What will be the output of the following C# code snippet?",
-      "code": "public class Generic<T>\n{\n    Stack<T> stk = new Stack<T>();\n    public void push(T obj)\n    {\n        stk.Push(obj);\n    }\n    public T pop()\n    {\n        T obj = stk.Pop();\n        return obj;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Generic<string> g = new Generic<string>();\n        g.push(\"C++\");\n        Console.WriteLine(g.pop() + \" \");\n        Generic<int> g1 = new Generic<int>();\n        g1.push(20);\n        Console.WriteLine(g1.pop());\n        Console.ReadLine();\n    }\n}",
+      "question": "What is the output of the following code using a generic class with different types?",
+      "code": "static void Main(string[] args)\n{\n    Generic<string> g = new Generic<string>();\n    g.Push(\"C++\");\n    Console.Write(g.Pop() + \" \");\n\n    Generic<int> g1 = new Generic<int>();\n    g1.Push(20);\n    Console.Write(g1.Pop());\n}",
       "options": [
         {
           "key": "a",
@@ -296,7 +307,7 @@
         },
         {
           "key": "c",
-          "text": "C++\n20"
+          "text": "C++ 20"
         },
         {
           "key": "d",
@@ -304,7 +315,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n         C++\n         20"
+      "explanation": "Generic classes create a specialized version of the class for each type used. Both instances work independently and print their respective values: 'C++' and '20'.",
+      "origin": "local"
     }
   ]
 }

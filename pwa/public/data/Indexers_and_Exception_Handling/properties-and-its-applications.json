@@ -8,20 +8,20 @@
   "questions": [
     {
       "number": 1,
-      "question": "The correct way to implement a read only property add, in a math class is?",
+      "question": "What is the correct way to implement a read-only property 'Add' in a class?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           get\n           {\n               return ad;\n           }\n       }\n\n   }"
+          "text": "class Math {\n    int _ad;\n    public int Add {\n        get { return _ad; }\n    }\n}"
         },
         {
           "key": "b",
-          "text": "class math\n   {\n      public int add\n      {\n          get\n          {\n              return ad;\n          }\n      }\n  }"
+          "text": "class Math {\n    public int Add {\n        get { return ad; }\n    }\n}"
         },
         {
           "key": "c",
-          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           get\n           {\n               return ad;\n           }\n           set\n           {\n               ad = value;\n           }\n       }\n   }"
+          "text": "class Math {\n    int _ad;\n    public int Add {\n        get { return _ad; }\n        set { _ad = value; }\n    }\n}"
         },
         {
           "key": "d",
@@ -29,24 +29,25 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "A read-only property is defined by providing only a 'get' accessor. Option C is a read-write property, and Option B fails because 'ad' is not declared.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "The correct way to implement a write only property add in a math class?",
+      "question": "What is the correct way to implement a write-only property 'Add' in a class?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "class math\n   {\n       public int add\n       {\n           set\n           {\n                add = value;\n            }\n        }\n    }"
+          "text": "class Math {\n    public int Add {\n        set { Add = value; }\n    }\n}"
         },
         {
           "key": "b",
-          "text": "class math\n   {\n       int ad;\n       public int add\n       {\n           set\n           {\n               ad = value;\n           }\n       }\n   }"
+          "text": "class Math {\n    int _ad;\n    public int Add {\n        set { _ad = value; }\n    }\n}"
         },
         {
           "key": "c",
-          "text": "class math\n  {\n      int ad;\n      public int add\n      {\n          get\n          {\n              return ad;\n          }\n          set\n          {\n              ad = value;\n          }\n      }\n  }"
+          "text": "class Math {\n    int _ad;\n    public int Add {\n        get { return _ad; }\n        set { _ad = value; }\n    }\n}"
         },
         {
           "key": "d",
@@ -54,45 +55,47 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "A write-only property is created by providing only the 'set' accessor. Option A causes infinite recursion by assigning a value to the property itself instead of a backing field.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Select the correct statement about properties of read and write in C#.NET?",
+      "question": "Which statement about C# properties is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "A property can simultaneously be read or write only"
+          "text": "A property can simultaneously be read-only and write-only"
         },
         {
           "key": "b",
-          "text": "A property cannot be either read only or write only"
+          "text": "A property must always have both get and set accessors"
         },
         {
           "key": "c",
-          "text": "A write only property will only have get accessor"
+          "text": "A write-only property only uses the get accessor"
         },
         {
           "key": "d",
-          "text": "A read only property will only have get accessor"
+          "text": "A read-only property only uses the get accessor"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Properties provide a flexible mechanism to read, write, or compute the values of private fields. Read-only properties lack a 'set' block.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": " class number\n {\n     private int num1;\n     private int num2;\n     public int anumber\n     {\n         get\n         {\n             return num1;\n         }\n         set\n         {\n             num1 = value;\n         }\n     }\n     public int anumber1\n     {\n         get\n         {\n             return num2;\n         }\n         set\n         {\n             num2 = value;\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         number p = new number();\n         p.anumber = 20;\n         number k = new number();\n         k.anumber1 = 40;\n         int m = p.anumber;\n         int t = k.anumber1;\n         int r = p.anumber + k.anumber1;\n         System.Console.WriteLine(\"number1 = \" +m);\n         System.Console.WriteLine(\"number2 = \" +t);\n         System.Console.WriteLine(\"sum = \" +r);\n         System.Console.ReadLine();\n     }\n }",
+      "code": "class Number\n{\n    private int _num1, _num2;\n    public int Anumber {\n        get { return _num1; }\n        set { _num1 = value; }\n    }\n    public int Anumber1 {\n        get { return _num2; }\n        set { _num2 = value; }\n    }\n}\n// In Main:\nNumber p = new Number();\np.Anumber = 20;\nNumber k = new Number();\nk.Anumber1 = 40;\nConsole.WriteLine(\"number1 = \" + p.Anumber);\nConsole.WriteLine(\"number2 = \" + k.Anumber1);\nConsole.WriteLine(\"sum = \" + (p.Anumber + k.Anumber1));",
       "options": [
         {
           "key": "a",
-          "text": "20"
+          "text": "number1 = 20, number2 = 40, sum = 60"
         },
         {
           "key": "b",
-          "text": "number1 = 30\nnumber2 = 40\nsum = 70"
+          "text": "number1 = 30, number2 = 40, sum = 70"
         },
         {
           "key": "c",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\nnumber1 = 20\nnumber2 = 40\nsum = 60"
+      "explanation": "The code creates two separate objects. p.Anumber is set to 20 and k.Anumber1 is set to 40. The sum of these values is 60.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": "  class number\n  {\n      private int num1 = 60;\n      private int num2 = 20;\n      public int anumber\n      {\n          get\n          {\n              return num1;\n          }\n          set\n          {\n              num1 = value;\n          }\n      }\n      public int anumber1\n      {\n          get\n          {\n              return num2;\n          }\n          set\n          {\n              num2 = value;\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          number p = new number();\n          number k = new number();\n          int m = p.anumber;\n          int t = k.anumber1;\n          int r = p.anumber * k.anumber1;\n          Console.WriteLine(\"sum = \" + r);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class Number\n{\n    private int _num1 = 60;\n    private int _num2 = 20;\n    public int Anumber => _num1;\n    public int Anumber1 => _num2;\n}\n// In Main:\nNumber p = new Number();\nNumber k = new Number();\nint r = p.Anumber * k.Anumber1;\nConsole.WriteLine(\"result = \" + r);",
       "options": [
         {
           "key": "a",
@@ -121,7 +125,7 @@
         },
         {
           "key": "c",
-          "text": "1200"
+          "text": "result = 1200"
         },
         {
           "key": "d",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n 1200"
+      "explanation": "The properties return the default initialized values 60 and 20. Multiplying them (60 * 20) results in 1200.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": " class number\n {\n     int length = 50;\n     public int number1\n     {\n         get\n         {\n             return length;\n         }\n         set\n         {\n             length = value;\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         number p = new number();\n         p.number1 = p.number1 + 40;\n         int k = p.number1 * 3 / 9;\n         Console.WriteLine(k);\n         Console.ReadLine();\n     }\n }",
+      "code": "class Number\n{\n    int length = 50;\n    public int Number1 {\n        get { return length; }\n        set { length = value; }\n    }\n}\n// In Main:\nNumber p = new Number();\np.Number1 = p.Number1 + 40; // 50 + 40 = 90\nint k = p.Number1 * 3 / 9; // 90 * 3 / 9\nConsole.WriteLine(k);",
       "options": [
         {
           "key": "a",
@@ -150,16 +155,17 @@
         },
         {
           "key": "d",
-          "text": "Compile time error"
+          "text": "90"
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n30"
+      "explanation": "1) p.Number1 becomes 90. 2) Calculation: 90 * 3 = 270. 3) 270 / 9 = 30.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "  class number\n  {\n      int length = 60;\n      public int number1\n      {\n          get\n          {\n              return length;\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          number p = new number();\n          int l;\n          l = p.number1 + 40;\n          int k = l * 3 / 4;\n          Console.WriteLine(k);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class Number\n{\n    int length = 60;\n    public int Number1 => length;\n}\n// In Main:\nNumber p = new Number();\nint l = p.Number1 + 40; // 60 + 40 = 100\nint k = l * 3 / 4; // 100 * 3 / 4\nConsole.WriteLine(k);",
       "options": [
         {
           "key": "a",
@@ -175,16 +181,17 @@
         },
         {
           "key": "d",
-          "text": "0"
+          "text": "100"
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n75"
+      "explanation": "1) l = 100. 2) 100 * 3 = 300. 3) 300 / 4 = 75.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": "  class student\n  {\n      int []scores = new int[5] {23, 42, 54, 11, 65};\n      public int this[int index]\n      {\n          get\n          {\n              if (index < 5)\n              return scores[index];\n              else\n              {\n                  Console.WriteLine(\"invalid index\");\n                  return 0;\n              }\n          }\n          set\n          {\n              if (index < 5)\n              scores[index] = value;\n              else\n              Console.WriteLine(\"invalid index\");\n          }\n      }\n  }\n  class Program\n  {\n      public static void Main(string[] args)\n      {\n          student s = new student();\n          Console.WriteLine(s[4] + 8);\n          Console.ReadLine();\n      }\n  }",
+      "code": "class Student\n{\n    int[] scores = { 23, 42, 54, 11, 65 };\n    public int this[int index] {\n        get { return (index < 5) ? scores[index] : 0; }\n    }\n}\n// In Main:\nStudent s = new Student();\nConsole.WriteLine(s[4] + 8);",
       "options": [
         {
           "key": "a",
@@ -204,24 +211,25 @@
         }
       ],
       "answer": "a",
-      "explanation": "None.\n\nOutput :\n\n73"
+      "explanation": "s[4] retrieves the 5th element of the scores array, which is 65. Adding 8 results in 73.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "The correct way to implement the property for which property reports the error \"invalid index\" if user attempts to cross bounds of the array for a student class with 5 integer arrays.",
+      "question": "Which is the correct way to implement an indexer that validates the index range for a collection of 5 integers?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "class student\n {\n     int []scores = new int[5] {23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 5)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n         set\n         {\n             if (index < 5)\n             scores[index] = value;\n             else\n             Console.WriteLine(\"invalid index\");\n         }\n     }\n }"
+          "text": "public int this[int index] {\n    get { return (index >= 0 && index < 5) ? scores[index] : -1; }\n    set { if (index >= 0 && index < 5) scores[index] = value; }\n}"
         },
         {
           "key": "b",
-          "text": "class student\n {\n     int []scores = new int[5] {23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 5)\n             return scores[index];\n         }\n     }\n }"
+          "text": "public int this[int index] {\n    get { return scores[index]; }\n}"
         },
         {
           "key": "c",
-          "text": "class student\n {\n     int []scores = new int[5]{23, 42, 54, 11, 65};\n     public int this[int index]\n     {\n         set\n         {\n             if (index < 5)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n     }\n }"
+          "text": "public int this[int index] {\n    set { if (index < 5) return scores[index]; }\n}"
         },
         {
           "key": "d",
@@ -229,32 +237,34 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Option A provides proper range checking for both reading and writing. Option C is invalid because 'set' accessors cannot return values and cannot use the 'return' statement with a value.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": " class student\n {\n     int []scores = new int[3] {13, 32, 24};\n     public int this[int index]\n     {\n         get\n         {\n             if (index < 3)\n             return scores[index];\n             else\n             {\n                 Console.WriteLine(\"invalid index\");\n                 return 0;\n             }\n         }\n         private  set\n         {\n             if (index < 3)\n             scores[index] = value;\n             else\n             Console.WriteLine(\"invalid index\");\n         }\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         student s = new student();\n         int[] scores1 = new int[3] {8, 19, 40};\n         for (int i = 0; i < 3; i++)\n         {\n             if (scores1[i] > s[i])\n             {\n                 Console.WriteLine(\" scores1 had greater value :\" + scores1[i]);\n             }\n             else\n             {\n                 Console.WriteLine(\"scores had greater value :\" + s[i]);\n             }\n         }\n         Console.ReadLine();\n     }\n }",
+      "code": "class Student\n{\n    int[] scores = { 13, 32, 24 };\n    public int this[int i] => scores[i];\n}\n// In Main:\nStudent s = new Student();\nint[] scores1 = { 8, 19, 40 };\nfor (int i = 0; i < 3; i++) {\n    if (scores1[i] > s[i])\n        Console.Write(\"A \");\n    else\n        Console.Write(\"B \");\n}",
       "options": [
         {
           "key": "a",
-          "text": "0"
+          "text": "A A A"
         },
         {
           "key": "b",
-          "text": "Compile time error"
+          "text": "B B B"
         },
         {
           "key": "c",
-          "text": "Run time error"
+          "text": "A B A"
         },
         {
           "key": "d",
-          "text": "scores had greater value : 13\nscores had greater value : 32\nscores1 had greater value : 40"
+          "text": "B B A"
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput :\n\n        scores had greater value : 13\n         scores had greater value : 32\n        scores1 had greater value : 40"
+      "explanation": "Comparison 1: 8 > 13 (False -> B). Comparison 2: 19 > 32 (False -> B). Comparison 3: 40 > 24 (True -> A). Output is 'B B A '.",
+      "origin": "local"
     }
   ]
 }

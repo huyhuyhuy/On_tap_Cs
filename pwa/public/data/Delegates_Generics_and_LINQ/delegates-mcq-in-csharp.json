@@ -8,228 +8,237 @@
   "questions": [
     {
       "number": 1,
-      "question": "The 'ref' keyword can be used with which among the following?",
+      "question": "The 'ref' parameter modifier can be used with which of the following in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Static function/subroutine"
+          "text": "Static methods"
         },
         {
           "key": "b",
-          "text": "Static data"
+          "text": "Static fields (data)"
         },
         {
           "key": "c",
-          "text": "Instance function/subroutine"
+          "text": "Instance methods"
+        },
+        {
+          "key": "d",
+          "text": "Both static and instance methods"
+        }
+      ],
+      "answer": "d",
+      "explanation": "The 'ref' keyword is a parameter modifier. It can be used in the signature of any method, whether it is declared as static or instance.",
+      "origin": "local"
+    },
+    {
+      "number": 2,
+      "question": "Which of the following is a necessary condition to use a delegate in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "A delegate type declaration"
+        },
+        {
+          "key": "b",
+          "text": "The use of inheritance"
+        },
+        {
+          "key": "c",
+          "text": "Runtime polymorphism"
+        },
+        {
+          "key": "d",
+          "text": "The use of unsafe code"
+        }
+      ],
+      "answer": "a",
+      "explanation": "To implement a delegate, you must first define the delegate type, which specifies the signature of the methods it can encapsulate.",
+      "origin": "local"
+    },
+    {
+      "number": 3,
+      "question": "Suppose a Generic class 'SortObjects' needs to sort objects of any type. Which programming construct is best suited to implement a custom comparison function passed to it?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Interface"
+        },
+        {
+          "key": "b",
+          "text": "Encapsulation"
+        },
+        {
+          "key": "c",
+          "text": "Delegate"
+        },
+        {
+          "key": "d",
+          "text": "Attribute"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Delegates are ideal for passing methods as arguments. A comparison delegate (like Comparison<T>) allows a sorting algorithm to be decoupled from the logic of how objects are compared.",
+      "origin": "local"
+    },
+    {
+      "number": 4,
+      "question": "Which programming construct should be used to implement a notification mechanism for an object at runtime in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Namespace"
+        },
+        {
+          "key": "b",
+          "text": "Interface"
+        },
+        {
+          "key": "c",
+          "text": "Delegate"
+        },
+        {
+          "key": "d",
+          "text": "Attribute"
+        }
+      ],
+      "answer": "c",
+      "explanation": "Delegates (and Events, which are built on delegates) provide a way for an object to notify other objects when something happens, acting as a callback mechanism.",
+      "origin": "local"
+    },
+    {
+      "number": 5,
+      "question": "Which of the following is an INCORRECT statement about delegates in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Delegates are reference types"
+        },
+        {
+          "key": "b",
+          "text": "Delegates are object-oriented"
+        },
+        {
+          "key": "c",
+          "text": "Delegates are type-safe"
+        },
+        {
+          "key": "d",
+          "text": "None of the mentioned"
+        }
+      ],
+      "answer": "d",
+      "explanation": "In C#, delegates are reference types (derived from System.Delegate), they are object-oriented (storing both the method and the object target), and they are type-safe (signature must match).",
+      "origin": "local"
+    },
+    {
+      "number": 6,
+      "question": "What happens internally when you declare a delegate like 'delegate void Del(int i);'?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "The compiler creates a class named 'Del'"
+        },
+        {
+          "key": "b",
+          "text": "The 'Del' class is implicitly derived from MulticastDelegate"
+        },
+        {
+          "key": "c",
+          "text": "The generated class contains an Invoke() method and a constructor"
         },
         {
           "key": "d",
           "text": "All of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
-    },
-    {
-      "number": 2,
-      "question": "To implement delegates, the necessary condition is?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "class declaration"
-        },
-        {
-          "key": "b",
-          "text": "inheritance"
-        },
-        {
-          "key": "c",
-          "text": "runtime polymorphism"
-        },
-        {
-          "key": "d",
-          "text": "exceptions"
-        }
-      ],
-      "answer": "a",
-      "explanation": "None."
-    },
-    {
-      "number": 3,
-      "question": "Suppose a Generic class called as SortObjects is to be made capable of sorting objects of any type(integer, single, byte etc). Then, which of the following programming constructs is able to implement the comparison function?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "interface"
-        },
-        {
-          "key": "b",
-          "text": "encapsulation"
-        },
-        {
-          "key": "c",
-          "text": "delegate"
-        },
-        {
-          "key": "d",
-          "text": "attribute"
-        }
-      ],
-      "answer": "c",
-      "explanation": "None."
-    },
-    {
-      "number": 4,
-      "question": "To generate a simple notification for an object in runtime, the programming construct to be used for implementing this idea?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "namespace"
-        },
-        {
-          "key": "b",
-          "text": "interface"
-        },
-        {
-          "key": "c",
-          "text": "delegate"
-        },
-        {
-          "key": "d",
-          "text": "attribute"
-        }
-      ],
-      "answer": "c",
-      "explanation": "None."
-    },
-    {
-      "number": 5,
-      "question": "Choose the incorrect statement among the following about the delegate?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "delegates are of reference types"
-        },
-        {
-          "key": "b",
-          "text": "delegates are object oriented"
-        },
-        {
-          "key": "c",
-          "text": "delegates are type safe"
-        },
-        {
-          "key": "d",
-          "text": "none of the mentioned"
-        }
-      ],
       "answer": "d",
-      "explanation": "None.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
-    },
-    {
-      "number": 6,
-      "question": "Which among the following is the correct statement about delegate declaration?",
-      "code": "delegate void del(int i);",
-      "options": [
-        {
-          "key": "a",
-          "text": "on declaring the delegate, a class called del is created"
-        },
-        {
-          "key": "b",
-          "text": "the del class is derived from the MulticastDelegate class"
-        },
-        {
-          "key": "c",
-          "text": "the del class will contain a one argument constructor and an invoke() method"
-        },
-        {
-          "key": "d",
-          "text": "all of the mentioned"
-        }
-      ],
-      "answer": "d",
-      "explanation": "None."
+      "explanation": "The 'delegate' keyword is shorthand for defining a class that inherits from System.MulticastDelegate. The compiler generates the necessary members, including the Invoke method.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of the following is an incorrect statement about delegate?",
+      "question": "Which of the following is an incorrect statement about delegates?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "a single delegate can invoke more than one method"
+          "text": "A single delegate can invoke more than one method (multicast)"
         },
         {
           "key": "b",
-          "text": "delegates could be shared"
+          "text": "Delegates can be shared between objects"
         },
         {
           "key": "c",
-          "text": "delegates are type safe wrappers for function pointers"
+          "text": "Delegates are type-safe wrappers for function pointers"
         },
         {
           "key": "d",
-          "text": "delegate is a value type"
+          "text": "A delegate is a value type"
         }
       ],
       "answer": "d",
-      "explanation": "In C#, a delegate is a reference type instead of a value type as it stores a reference to a data/method."
+      "explanation": "Delegates are reference types in C#. They store a reference to a method and, optionally, a reference to a class instance.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which among the following differentiates a delegate in C#.NET from a conventional function pointer in other languages?",
+      "question": "How does a delegate in C# differ from a conventional function pointer in C++?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "delegates in C#.NET represent a new type in the Common Type System"
+          "text": "C# delegates are true objects in the Common Type System"
         },
         {
           "key": "b",
-          "text": "delegates allows static as well as instance methods to be invoked"
+          "text": "Delegates can encapsulate both static and instance methods"
         },
         {
           "key": "c",
-          "text": "delegates are type safe and secure"
+          "text": "Delegates are type-safe and secure"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "All of the mentioned"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Unlike C++ function pointers, C# delegates are type-safe, object-oriented, and can seamlessly handle instance methods by storing the 'this' reference.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Choose the incorrect statement about delegates?",
+      "question": "Choose the INCORRECT statement about delegates:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "delegates are not type safe"
+          "text": "Delegates are not type-safe"
         },
         {
           "key": "b",
-          "text": "delegates can be used to implement callback notification"
+          "text": "Delegates can be used for callback notifications"
         },
         {
           "key": "c",
-          "text": "delegate is a user defined type"
+          "text": "Delegate is a user-defined type"
         },
         {
           "key": "d",
-          "text": "delegates permits execution of a method in an asynchronous manner"
+          "text": "Delegates permit asynchronous method execution"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "One of the key features of C# delegates is their type safety; the compiler ensures that the method assigned to a delegate exactly matches the delegate's signature.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -238,23 +247,24 @@
       "options": [
         {
           "key": "a",
-          "text": "inheritance is a prerequisite for using delegates"
+          "text": "Inheritance is a prerequisite for using delegates"
         },
         {
           "key": "b",
-          "text": "delegates are not type safe"
+          "text": "Delegates are not type-safe"
         },
         {
           "key": "c",
-          "text": "delegates provides wrappers for function pointers"
+          "text": "Delegates provide object-oriented wrappers for function pointers"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nMore MCQs on Delegates in C#:"
+      "explanation": "A delegate is an object-oriented, type-safe, and secure wrapper for a method pointer.",
+      "origin": "local"
     }
   ]
 }
