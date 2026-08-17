@@ -9,15 +9,15 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 4;\n     int b = 5;\n     int c = 6;\n     int d = 8;\n     if (((a * b / c) + d) >= ((b * c + d ) / a))\n     {\n         Console.WriteLine(\"Line 1 - a is greater to b\");\n         Console.WriteLine((a * b / c) + d);\n     }\n     else\n     {\n         Console.WriteLine(\"Line 1 - a is not greater to b\");\n         Console.WriteLine((b * c + d )/ a);\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 4, b = 5, c = 6, d = 8;\n    if (((a * b / c) + d) >= ((b * c + d) / a))\n    {\n        Console.WriteLine(\"Line 1 - a is greater to b\");\n        Console.WriteLine((a * b / c) + d);\n    }\n    else\n    {\n        Console.WriteLine(\"Line 1 - a is not greater to b\");\n        Console.WriteLine((b * c + d) / a);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "\"Line 1 - a is  greater to b\"\n11"
+          "text": "Line 1 - a is greater to b\n11"
         },
         {
           "key": "b",
-          "text": "\"Line 1 - a is not greater to b\"\n9"
+          "text": "Line 1 - a is not greater to b\n9"
         },
         {
           "key": "c",
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "Now, here in 'if' condition both conditions of parenthesis and hence evaluating operators based on parenthesis are tested.\n\nfor expression :\n\n ((a * b / c) + d)\nStep 1: (a*b/c) (Evaluating as 4*5/6 = 3)\nStep 2: ( (a*b/c) + d ) (Evaluating (3 + 8 = 11))\nResult: 11\nfor expression : (b * c + d )/ a\nStep 1: (b*c + d) (Evaluating as 5*6 +8 = 38)\nStep 2:   (b*c + d) / a (Evaluating as 38 / 4 = 9)\nResult: 9\n\nThe relational operator \">=\" between both expressions check for largest figure and hence consecutively executes the if condition.\n\nOutput:\n\n - August 2026\n\n         Line 1 - a is greater to b.\n         11"
+      "explanation": "Left side: (4 * 5 / 6) + 8 = (20 / 6) + 8 = 3 + 8 = 11. Right side: (5 * 6 + 8) / 4 = 38 / 4 = 9. Since 11 >= 9 is true, the 'if' block executes.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Check the following C# code whether the given relation operator works according to the if condition or not.",
-      "code": " static void Main(string[] args)\n {\n     int a = 10;\n     int b = 5;\n     int c = 12;\n     int e = 8;\n     int d;\n     d = Convert.ToInt32((a * (c - b) / e + (b + c)) <= (e * (c + a) / (b + c) + a));\n     Console.WriteLine(d);\n     if (d == 1)\n     {\n         Console.WriteLine(\"C# is great language!\");\n         Console.WriteLine((a * (c - b) / e + (b + c)));\n     }\n     else\n     {\n         Console.WriteLine(\"harsh is not great language!\");\n         Console.WriteLine((e * (c + a) / (b + c) + a));\n     }\n }",
+      "question": "What will be the output of the following C# code?",
+      "code": "static void Main(string[] args)\n{\n    int a = 10, b = 5, c = 12, e = 8, d;\n    d = Convert.ToInt32((a * (c - b) / e + (b + c)) <= (e * (c + a) / (b + c) + a));\n    Console.WriteLine(d);\n    if (d == 1)\n    {\n        Console.WriteLine(\"C# is great!\");\n        Console.WriteLine((a * (c - b) / e + (b + c)));\n    }\n    else\n    {\n        Console.WriteLine(\"C# is not great!\");\n        Console.WriteLine((e * (c + a) / (b + c) + a));\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "The expression (a * (c - b) / e + (b + c)) on evaluation parenthesis by parenthesis gives result mathematically  as 25. Similarly, (e * (c + a) / (b + c) + a) on evaluation parenthesis by parenthesis gives mathematically result as 20. Relational operator now checks for condition as in if condition as (25 < 20) which is false. So, a false bit in form of '0' is assigned to d. Now, in if condition (d != 1) as d = 0. So, condition after else is evaluated.\n\nOutput :\n\n        0.\n        C# is not great!.\n        20."
+      "explanation": "Left: (10 * 7 / 8 + 17) = (70/8 + 17) = 8 + 17 = 25. Right: (8 * 22 / 17 + 10) = (176/17 + 10) = 10 + 10 = 20. 25 <= 20 is false (0). The 'else' block prints 'C# is not great!' and the right-side value 20.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of the following is/are not Relational operators in C#.NET?",
+      "question": "Which of the following is NOT a valid relational operator in C#?",
       "code": null,
       "options": [
         {
@@ -71,7 +73,7 @@
         },
         {
           "key": "c",
-          "text": "Not"
+          "text": "=="
         },
         {
           "key": "d",
@@ -79,12 +81,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "By definition."
+      "explanation": "Standard relational operators in C# include ==, !=, <, >, <=, and >=. '<>=' is invalid syntax.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": "    int n = 2;\n    int p = 4;\n    int q = 5;\n    int w = 3;\n    if ( !((p * q) /n <= (q * w) + n/p ))\n    {\n        Console.WriteLine( ++p + w++ + \" \" + ++n);\n        Console.WriteLine(\"b\");\n    }\n    else\n    {\n        Console.WriteLine(--p + q-- + \" \" + --n);\n        Console.WriteLine(\"a\");\n    }",
+      "code": "int n = 2, p = 4, q = 5, w = 3;\nif (!((p * q) / n <= (q * w) + n / p))\n{\n    Console.WriteLine(++p + w++ + \" \" + ++n);\n    Console.WriteLine(\"b\");\n}\nelse\n{\n    Console.WriteLine(--p + q-- + \" \" + --n);\n    Console.WriteLine(\"a\");\n}",
       "options": [
         {
           "key": "a",
@@ -104,16 +107,17 @@
         }
       ],
       "answer": "b",
-      "explanation": "After evaluation of the test expression (!((p*q)/n <= (q*w)+n/p)). The use of logical operator(!) turns false(0) result to bit '1' and hence the condition evaluated by 'if' loop is after else as :\n\n  -p = 3\n\n    q-= 5\n\n  -p + q- = 8 where now value of 'q'is 4.\n\n  -n = 2 - 1 =1.\n\n So, values after evaluations are 8 1.\n\n                                  a.\n\nOutput :\n\n         8 1\n         a"
+      "explanation": "Condition: !((20/2) <= (15 + 0)) -> !(10 <= 15) -> !(true) -> false. 'else' block: --p (3) + q-- (5) = 8. --n (1). Output: '8 1' and 'a'.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code?",
-      "code": "    m = 5;\n    int y;\n    1. y = m++;\n    2. y = ++m;",
+      "question": "What will be the values of 'y' and 'm' after these two steps in C#?\n\nint m = 5, y;\n1. y = m++;\n2. y = ++m;",
+      "code": null,
       "options": [
         {
           "key": "a",
-          "text": "y = 5, m = 6 ; y = 5, m = 5"
+          "text": "y = 5, m = 6; y = 5, m = 5"
         },
         {
           "key": "b",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "step 1 :  m = 5, y = m++ i.e y =5, m =6.\n              step 2 :  y = ++m, Since m = 6. So, m = 7 on ++m and hence y = 7.\nOutput : y = 5, m = 6; y =7, m = 7."
+      "explanation": "Step 1 (post-increment): y gets 5, then m becomes 6. Step 2 (pre-increment): m becomes 7, then y gets 7.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      int a = 3, b = 5, c = 1;\n      int z = ++b;\n      int y = ++c;\n      b = Convert.ToInt32((Convert.ToBoolean(z)) && (Convert.ToBoolean(y))\n       || Convert.ToBoolean(Convert.ToInt32(!(++a == b))));\n      a = Convert.ToInt32(Convert.ToBoolean(c) || Convert.ToBoolean(a--));\n      Console.WriteLine(++a);\n      Console.WriteLine(++b);\n      Console.WriteLine(c);\n  }",
+      "code": "static void Main(string[] args)\n{\n    int a = 3, b = 5, c = 1;\n    int z = ++b; // z=6, b=6\n    int y = ++c; // y=2, c=2\n    b = Convert.ToInt32(z > 0 && y > 0 || !(++a == b)); \n    a = Convert.ToInt32(Convert.ToBoolean(c) || Convert.ToBoolean(a--));\n    Console.WriteLine(++a);\n    Console.WriteLine(++b);\n    Console.WriteLine(c);\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "z = 6 as ++b.\n\n              y = 2 as ++c.\n\n              6 &&  2 = 1\n\n              (++a == b) which is false as 4!=6. Now, !(false) = true  i.e 1.\n\n              So, 1 || 1 = 1. So, b = 1.\n\n              Similarly, c = 2  and a = 4. Now, 2 || 4 = 1.\n\n              So, a = 1.\n\n              Hence ++a = 2, ++b = 2, c = 2.\n\nOutput :\n\n2, 2, 2"
+      "explanation": "1) b calculation: (6>0 && 2>0) is true. true || anything is true. b = 1. 2) a calculation: true || anything is true (short-circuit). a = 1. 3) Output: ++a is 2, ++b is 2, c is 2.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 4, b = 5, c = 7, u = 9;\n     int h;\n     h = (Convert.ToInt32(u < b)) + (a + b--) + 2;\n     Console.WriteLine(h);\n     Console.WriteLine(b);\n     Console.WriteLine(u < b);\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 4, b = 5, u = 9;\n    int h = (Convert.ToInt32(u < b)) + (a + b--) + 2;\n    Console.WriteLine(h);\n    Console.WriteLine(b);\n    Console.WriteLine(u < b);\n}",
       "options": [
         {
           "key": "a",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "Step 1: Convert.ToInt32(u < b)(Evaluate result as 9 < 5 which is false in nature. So, solution is converted from 'false' to '0').\n\n             Step 2: (a + b--) evaluated as 4 + 5 = 9 + 2 = 11.\n             Step 3: u < b evaluated as 'False' without being converted to '0'.\nOutput: 11\n         4\n         False."
+      "explanation": "1) u < b (9 < 5) is false, Convert.ToInt32(false) = 0. 2) (a + b--) = 4 + 5 = 9. 3) h = 0 + 9 + 2 = 11. 4) b is now 4. 5) u < b is False.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int m = 10, n = 5, p = 20;\n     bool b1 =  m * p / n <= p * n / m ;\n     int l = p - 2 * m;\n     bool b2 = l == 0;\n     int z = Convert.ToInt32(b2);\n     int k = Convert.ToInt32(b1);\n     Console.WriteLine(k);\n     Console.WriteLine(z);\n }",
+      "code": "static void Main(string[] args)\n{\n    int m = 10, n = 5, p = 20;\n    bool b1 = m * p / n <= p * n / m;\n    int l = p - 2 * m;\n    bool b2 = l == 0;\n    Console.WriteLine(Convert.ToInt32(b1));\n    Console.WriteLine(Convert.ToInt32(b2));\n}",
       "options": [
         {
           "key": "a",
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Solving the expression for b1 tests the condition for either true or false result in '0'. Similarly, for 'b2' 'l' on solving gives '0'. So, condition is true for bool b2 as 0 == 0. Hence, k = 0 and z = 1.\n\nOutput :\n\n0 1."
+      "explanation": "b1: (10*20/5 <= 20*5/10) -> (40 <= 10) is false (0). b2: (20 - 20 == 0) is true (1).",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " class method1\n {\n     public int fun(int m)\n     {\n         return( m++ % 10);\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         int a = 23, b = 0, c;\n         method1 z = new method1();\n         c = z.fun (++b * --a % 2);\n         int d = (z.fun (c-- + --a));\n         Console.WriteLine(c);\n         Console.WriteLine(a++);\n         Console.WriteLine(d);\n         Console.ReadLine();\n     }\n }",
+      "code": "class method1\n{\n    public int fun(int m) { return (m++ % 10); }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        int a = 23, b = 0, c;\n        method1 z = new method1();\n        c = z.fun(++b * --a % 2); // b=1, a=22, (1*0%2)=0. Returns 0.\n        int d = z.fun(c-- + --a); // c=0, a=21. fun(21) returns 1. \n        Console.WriteLine(c);\n        Console.WriteLine(a++);\n        Console.WriteLine(d);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -229,20 +237,21 @@
         }
       ],
       "answer": "b",
-      "explanation": "Here, for first value of c,  ++b = 1 and 1 * (22%2) = 0. c = 0. Now c - = 0 and - a = 22 - 1 =21. Now, c - is the first condition executed  and then decremented So, c = -1. Similarly, a++ = 21. Now, as we can see from options we are confirmed over value of c = -1,  a = 21. So, we can easily know that d = 1.\n\nOutput:\n\n-1 21 1"
+      "explanation": "After d calculation, c becomes -1. a was 21, prints as 21 then becomes 22. d is 1. Result: -1, 21, 1.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      int a = 8, b = 6, c = 10;\n      int d = a * c * 2 / Convert.ToInt32(Math.Pow ((c - b), 2));\n      if (d == (c = Convert.ToInt32(Math.Sqrt (a * a + b * b))) && c == 10)\n      {\n          Console.WriteLine(\"figure is hypotenuse\");\n      }\n      else\n      {\n         Console.WriteLine(\"figure is square\");\n      }\n  }",
+      "code": "static void Main(string[] args)\n{\n    int a = 8, b = 6, c = 10;\n    int d = a * c * 2 / Convert.ToInt32(Math.Pow((c - b), 2));\n    if (d == (c = Convert.ToInt32(Math.Sqrt(a * a + b * b))) && c == 10)\n        Console.WriteLine(\"figure is hypotenuse\");\n    else\n        Console.WriteLine(\"figure is square\");\n}",
       "options": [
         {
           "key": "a",
-          "text": "Figure is square"
+          "text": "figure is square"
         },
         {
           "key": "b",
-          "text": "Figure is hypotenuse"
+          "text": "figure is hypotenuse"
         },
         {
           "key": "c",
@@ -254,7 +263,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "d equals 10 and the assignment c = sqrt(8*8+6*6) also yields 10, so both sides of && are true and the if branch prints \"figure is hypotenuse\".",
+      "explanation": "d = (8*10*2) / (4^2) = 160 / 16 = 10. The condition d == (c = 10) is 10 == 10 (true). Both parts of && are true.",
       "origin": "local"
     }
   ]

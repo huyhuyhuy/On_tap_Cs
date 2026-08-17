@@ -1,5 +1,5 @@
 {
-  "title": "C# Questions & Answers -Type Conversion in Expressions",
+  "title": "C# Questions & Answers - Type Conversion in Expressions",
   "topic": "Data_Types_Variables_and_Operators",
   "sourceUrl": "https://www.sanfoundry.com/csharp-questions-answers-mcqs/",
   "sourceFile": "Expressions Type Conversion - C# Multiple Choice Questions - Sanfoundry.html",
@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "What is the need for 'Conversion of data type' in C#?",
+      "question": "What is the primary need for 'Type Conversion' in C#?",
       "code": null,
       "options": [
         {
@@ -17,23 +17,24 @@
         },
         {
           "key": "b",
-          "text": "To get desired data"
+          "text": "To increase the execution speed of the program"
         },
         {
           "key": "c",
-          "text": "To prevent situations of runtime error during change or conversion of data type"
+          "text": "To prevent compile-time errors when assigning incompatible types"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Both A and C are correct"
         }
       ],
-      "answer": "c",
-      "explanation": "By Definition."
+      "answer": "d",
+      "explanation": "Type conversion is necessary when you need to assign a value of one type to another, ensuring type safety and satisfying the compiler's requirements for compatible assignments.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Types of 'Data Conversion' in C#?",
+      "question": "What are the two types of 'Data Conversion' available in C#?",
       "code": null,
       "options": [
         {
@@ -54,12 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "C# has both implicit conversion (widening, no cast) and explicit conversion (narrowing, requires a cast).",
+      "explanation": "C# supports implicit conversion (automatic for widening types) and explicit conversion (requires a cast for narrowing types).",
       "origin": "local"
     },
     {
       "number": 3,
-      "question": "'Implicit Conversion' follows the order of conversion as per compatibility of data type as:",
+      "question": "Which of the following follows the correct order of 'Implicit Conversion' based on data type compatibility?",
       "code": null,
       "options": [
         {
@@ -80,24 +81,25 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "In C#, a 'char' can be implicitly converted to an 'int', and an 'int' can be implicitly converted to a 'float' without loss of magnitude.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "For the following C# code select the relevant solution for conversion of data type.",
-      "code": " static void Main(string[] args)\n {\n     int num1 = 20000;\n     int num2 = 50000;\n     long total;\n     total = num1 + num2;\n     Console.WriteLine(\"Total is : \" +total);\n     Console.ReadLine();\n }",
+      "question": "For the following C# code, which statement is true about the data type conversion?",
+      "code": "static void Main(string[] args)\n{\n    int num1 = 20000;\n    int num2 = 50000;\n    long total;\n    total = num1 + num2;\n    Console.WriteLine(\"Total is: \" + total);\n}",
       "options": [
         {
           "key": "a",
-          "text": "Compiler will generate runtime error"
+          "text": "The compiler will generate a runtime error"
         },
         {
           "key": "b",
-          "text": "Conversion is implicit type, no error generation"
+          "text": "The conversion from int to long is implicit; no error occurs"
         },
         {
           "key": "c",
-          "text": "Specifying data type for conversion externally will solve the problem"
+          "text": "Specifying an explicit cast to long is mandatory here"
         },
         {
           "key": "d",
@@ -105,20 +107,21 @@
         }
       ],
       "answer": "b",
-      "explanation": "Since,conversion of data type is implicit type as 'int' is a subset of 'longtype' hence no need to explicitly convert data from one type to another.Compiler will automatically do conversion.\n\nOutput: Total is:\n\n - August 2026\n\n70000."
+      "explanation": "The result of (num1 + num2) is an 'int'. Since 'int' is smaller than 'long', the compiler performs an implicit conversion to assign the value to the 'total' variable.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "The subset of 'int' data type is __________",
+      "question": "Which of the following data types can an 'int' be implicitly converted to in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "long, ulong, ushort"
+          "text": "short, byte"
         },
         {
           "key": "b",
-          "text": "long, ulong, uint"
+          "text": "uint, ushort"
         },
         {
           "key": "c",
@@ -126,15 +129,16 @@
         },
         {
           "key": "d",
-          "text": "long, float, ushort"
+          "text": "long, sbyte"
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "C# allows implicit widening conversions. An 'int' (32-bit) can be implicitly converted to 'long' (64-bit), 'float', or 'double' because these types have a larger range.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Type of Conversion in which compiler is unable to convert the data type implicitly is?",
+      "question": "In which case is the compiler UNABLE to convert data types implicitly?",
       "code": null,
       "options": [
         {
@@ -147,32 +151,33 @@
         },
         {
           "key": "c",
-          "text": "ushort to long"
+          "text": "byte to int"
         },
         {
           "key": "d",
-          "text": "byte to decimal"
+          "text": "int to double"
         }
       ],
       "answer": "b",
-      "explanation": "'int' is 32 bit signed integer whereas 'uint' is 32 bit unsigned integer. Range of int is larger than uint. So, the compiler cannot implicitly convert from larger data type to smaller data type."
+      "explanation": "Conversion from 'int' to 'uint' requires an explicit cast. Even though they are both 32-bit, 'int' can contain negative values which cannot be represented in 'uint'.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Disadvantages of Explicit Conversion are?",
+      "question": "What is a common disadvantage of using Explicit Conversion (casting)?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Makes program memory heavier"
+          "text": "It makes the program memory heavier"
         },
         {
           "key": "b",
-          "text": "Results in loss of data"
+          "text": "It can result in loss of data or precision"
         },
         {
           "key": "c",
-          "text": "Potentially Unsafe"
+          "text": "It makes the code execute slower"
         },
         {
           "key": "d",
@@ -180,24 +185,25 @@
         }
       ],
       "answer": "b",
-      "explanation": "By definition."
+      "explanation": "Explicit conversion is used when narrowing types (e.g., double to int). This can result in loss of fractional parts or overflow if the source value exceeds the target type's range.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "For the given set of C# code, is conversion possible?",
-      "code": " static void Main(string[] args)\n {\n     int a = 76;\n     char b;\n     b = (char)a;\n     Console.WriteLine(b);\n     Console.ReadLine();\n }",
+      "question": "Is the conversion in the following C# code snippet possible?",
+      "code": "static void Main(string[] args)\n{\n    int a = 76;\n    char b;\n    b = (char)a;\n    Console.WriteLine(b);\n}",
       "options": [
         {
           "key": "a",
-          "text": "Compiler will generate runtime error"
+          "text": "No, it will generate a compile-time error"
         },
         {
           "key": "b",
-          "text": "Conversion is explicit type"
+          "text": "Yes, using an explicit cast as shown"
         },
         {
           "key": "c",
-          "text": "Compiler will urge for conversion from 'integer' to 'character' data type"
+          "text": "Yes, it works implicitly without the (char) cast"
         },
         {
           "key": "d",
@@ -205,12 +211,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "Since, given conversion is of explicit type as one data type is in integer and other is in 'char'. Compiler is needed to make a clear distinction between both type of data types and hence, explicitly one need to specify data type as compiler is unable to make automatic conversion.\n\n Output :\n\n L."
+      "explanation": "Converting an 'int' to a 'char' requires an explicit cast because not all integer values correspond to valid characters. In this case, 76 is the ASCII code for 'L'.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    float sum;\n    int i;\n    sum = 0.0F;\n    for (i = 1; i <= 10; i++)\n    {\n        sum = sum + 1 /(float)i;\n    }\n    Console.WriteLine(\"sum =\" +sum);\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    float sum = 0.0F;\n    for (int i = 1; i <= 10; i++)\n    {\n        sum = sum + 1 / (float)i;\n    }\n    Console.WriteLine(\"sum = \" + Math.Round(sum, 3));\n}",
       "options": [
         {
           "key": "a",
@@ -222,7 +229,7 @@
         },
         {
           "key": "c",
-          "text": "2.928"
+          "text": "2.929"
         },
         {
           "key": "d",
@@ -230,32 +237,34 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n sum = 2.928698."
+      "explanation": "The loop calculates the sum of 1/1 + 1/2 + ... + 1/10. This is a harmonic series. The actual sum is approximately 2.928968, which rounds to 2.929.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which of the conversions are valid for the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 22;\n     long b = 44;\n     double c = 1.406;\n     b = a;\n     c = a;\n     a = b;\n     b = c;\n }",
+      "question": "Which of the assignments in the following code will cause a compile-time error?",
+      "code": "static void Main(string[] args)\n{\n    int a = 22;\n    long b = 44;\n    double c = 1.406;\n    b = a; // Assignment 1\n    c = a; // Assignment 2\n    a = b; // Assignment 3\n    b = c; // Assignment 4\n}",
       "options": [
         {
           "key": "a",
-          "text": "c = a, b = c"
+          "text": "Assignment 1 and 2"
         },
         {
           "key": "b",
-          "text": "a = c, b = a"
+          "text": "Assignment 2 and 4"
         },
         {
           "key": "c",
-          "text": "b = a, c = a"
+          "text": "Assignment 3 and 4"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "All assignments are valid"
         }
       ],
       "answer": "c",
-      "explanation": "Conversion of data type from 'int' to 'double' is implicit in nature for 'c = a' as int is subset of double but same is not applicable for 'b = c' as 'c' had wider scope of data range then 'b' so explicit conversion is needed.\n\n Output :\n\n Error 1: Can not implicitly convert type 'long' to 'int'. An explicit conversion exists (are you missing a cast?).\n Error 2: Cannot implicitly convert type 'double' to 'long'. An explicit conversion exists (are you missing a cast?).\n\n Correct solution :\n\n static void Main(string[] args)\n {\n     int a = 22;\n     long b = 44;\n     double c = 1.406;\n     b = a;\n     c = a;\n     a = (int)b;\n     b = (long)c;\n }"
+      "explanation": "Assignment 3 (int = long) and Assignment 4 (long = double) are narrowing conversions and require an explicit cast. They will cause a compile-time error if the cast is missing.",
+      "origin": "local"
     }
   ]
 }

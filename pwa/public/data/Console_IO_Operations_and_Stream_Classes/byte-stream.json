@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these data types is returned by every method of OutputStream?",
+      "question": "Which of these data types is typically returned by the Write methods of the Stream class in C#?",
       "code": null,
       "options": [
         {
@@ -25,15 +25,16 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "void"
         }
       ],
       "answer": "d",
-      "explanation": "Every method of OutputStream returns void and throws an IOExeption in case of errors."
+      "explanation": "In C#, the synchronous Write methods of the 'System.IO.Stream' class return 'void'. If an error occurs, they throw an IOException.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which among the following is used for storage of memory aspects?",
+      "question": "Which among the following is a byte stream that uses memory for storage instead of a physical file?",
       "code": null,
       "options": [
         {
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "A byte stream that uses memory for storage."
+      "explanation": "MemoryStream creates a stream whose backing store is memory rather than a disk or a network connection.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which among the following is used for storage of unmanaged memory aspects?",
+      "question": "Which among the following is used for a byte stream that accesses unmanaged memory?",
       "code": null,
       "options": [
         {
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "A byte stream that uses unmanaged memory for storage.\n\n⚡ Claim Your\nFree Java Certification\n - August 2026"
+      "explanation": "UnmanagedMemoryStream provides access to unmanaged blocks of memory from managed code.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which property among the following represents the current position of the stream?",
+      "question": "Which property among the following represents the current read/write position within a stream?",
       "code": null,
       "options": [
         {
@@ -104,12 +107,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "Stream.Position is the current read/write offset. Length is the total size of the stream, not the current position.",
+      "explanation": "The 'Position' property gets or sets the current byte offset within the stream. 'Length' represents the total number of bytes in the stream.",
       "origin": "local"
     },
     {
       "number": 5,
-      "question": "Choose the filemode method which is used to create a new output file with the condition that the file with same name must not exist.",
+      "question": "Choose the FileMode which is used to create a new output file with the condition that the file must not already exist.",
       "code": null,
       "options": [
         {
@@ -130,11 +133,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "Creates a new output file. The file must not already be existing."
+      "explanation": "FileMode.CreateNew specifies that the operating system should create a new file. If the file already exists, an IOException is thrown.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Choose the filemode method which is used to create a new output file with the condition that the file with same name if exists will destroy the old file:",
+      "question": "Choose the FileMode which is used to create a new output file, and if the file already exists, it will be overwritten (destroyed):",
       "code": null,
       "options": [
         {
@@ -155,41 +159,43 @@
         }
       ],
       "answer": "b",
-      "explanation": "Creates a new output file. Any pre-existing file with the same name will be destroyed."
+      "explanation": "FileMode.Create specifies that the operating system should create a new file. If the file already exists, it is overwritten.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of these is a method used to clear all the data present in output buffers?",
+      "question": "Which method is used to clear all buffers for this stream and causes any buffered data to be written to the underlying device?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "clear()"
+          "text": "Clear()"
         },
         {
           "key": "b",
-          "text": "flush()"
+          "text": "Flush()"
         },
         {
           "key": "c",
-          "text": "fflush()"
+          "text": "Reset()"
         },
         {
           "key": "d",
-          "text": "close()"
+          "text": "Close()"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The Flush() method moves data from an intermediate buffer to the destination, ensuring that the buffer is empty.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of these is a method used for reading bytes from the file?",
+      "question": "Which method is used for reading a single byte from a file stream in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "clear()"
+          "text": "Clear()"
         },
         {
           "key": "b",
@@ -197,15 +203,16 @@
         },
         {
           "key": "c",
-          "text": "put()"
+          "text": "Put()"
         },
         {
           "key": "d",
-          "text": "write()"
+          "text": "Write()"
         }
       ],
       "answer": "b",
-      "explanation": "FileStream defines two methods that reads bytes from a file: ReadByte() and Read()."
+      "explanation": "ReadByte() reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.",
+      "origin": "local"
     }
   ]
 }

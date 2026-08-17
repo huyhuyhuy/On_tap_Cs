@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Select a convenient declaration and initialization of a floating point number:",
+      "question": "Select a correct declaration and initialization of a floating point number in C#:",
       "code": null,
       "options": [
         {
@@ -25,40 +25,42 @@
         },
         {
           "key": "d",
-          "text": "float somevariable = (Decimal)12.502D"
+          "text": "float somevariable = (decimal)12.502D"
         }
       ],
       "answer": "c",
-      "explanation": "We cannot implicitly convert a \"double\" number directly to any other data type. Here, its float we have to add the required data type to number as :\n\nfloat somevariable = (float)12.502D;\n or\nDouble somevariable = (Double)12.502D;"
+      "explanation": "The suffix 'D' denotes a double. Since double (64-bit) is larger than float (32-bit), you must use an explicit cast '(float)' to assign it to a float variable.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Number of digits upto which precision value of float data type is valid?",
+      "question": "Up to how many digits is the precision of the 'float' data type valid in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Upto 6 digit"
+          "text": "Up to 6 digits"
         },
         {
           "key": "b",
-          "text": "Upto 8 digit"
+          "text": "Up to 8 digits"
         },
         {
           "key": "c",
-          "text": "Upto 9 digit"
+          "text": "Up to 9 digits"
         },
         {
           "key": "d",
-          "text": "Upto 7 digit"
+          "text": "Up to 7 digits"
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "The 'float' type (System.Single) has a precision of approximately 6 to 9 digits, with 7 digits being the commonly accepted standard for guaranteed precision.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Valid Size of float data type is?",
+      "question": "What is the storage size of the 'float' data type in C#?",
       "code": null,
       "options": [
         {
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The 'float' data type is a 32-bit single-precision floating point, which occupies 4 bytes in memory.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Correct way to define a value 6.28 in a variable 'pi' where value cannot be modified?",
+      "question": "What is the correct way to define a constant named 'pi' with a value of 6.28 in C#?",
       "code": null,
       "options": [
         {
@@ -96,107 +99,111 @@
         },
         {
           "key": "c",
-          "text": "const float pi = 6.28F"
+          "text": "const float pi = 6.28F;"
         },
         {
           "key": "d",
-          "text": "const float pi\npi = 6.28F"
+          "text": "const float pi; pi = 6.28F;"
         }
       ],
       "answer": "c",
-      "explanation": "Const is a reserve keyword whenever they are declared with any variables. The value stored in that variable always remain fixed. Any modification done to change value of that variable results in error. Hence, options #define pi 6.28F, pi = 6.28F and const float pi, pi = 6.28F are rejected because the value is not declared fixed. Now,  for value only option 'const float pi = 6.28F' is correct because for value while declaring a constant variable we need to provide a constant value too as provided in const float pi = 6.28F. So, option const float pi = 6.28F is correct way of declaration of constant variable."
+      "explanation": "In C#, constants must be initialized at the time of declaration using the 'const' keyword. Options A and B are syntactically incorrect for defining a value constant.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What will be the correct set of C# code to display the value of given variable 'c' as '25.302'.",
+      "question": "Which C# code snippet correctly displays the sum as '25.304'?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "float a = (double) 12.502f;\n   float b = 12.80f;\n   float c;\n   c = (float) a + b;\n   Console.Writeline(c);\n   Console.ReadLine();"
+          "text": "float a = (double) 12.502f; float b = 12.802f; float c = (float) a + b; Console.WriteLine(c);"
         },
         {
           "key": "b",
-          "text": "float a = 12.502D;\n   float b = 12.80f;\n   float c;\n   c = a + b;\n   Console.WriteLine(c);\n   Console.ReadLine();"
+          "text": "float a = 12.502D; float b = 12.802f; float c = a + b; Console.WriteLine(c);"
         },
         {
           "key": "c",
-          "text": "double a = 12.502;\n   float b = 12.802f;\n   float c;\n   c = (float)a + b;\n   Console.WriteLine(c);\n   Console.ReadLine();"
+          "text": "double a = 12.502; float b = 12.802f; float c = (float)a + b; Console.WriteLine(c);"
         },
         {
           "key": "d",
-          "text": "double a = (float) 12.502f;\n   float  b = 12.80f;\n   float  c;\n   c = a + b;\n   Console.WriteLine(c);\n   Console.ReadLine();"
+          "text": "double a = (float) 12.502f; float b = 12.802f; float c = a + b; Console.WriteLine(c);"
         }
       ],
       "answer": "c",
-      "explanation": "Expression\n\nc = (float) a + b."
+      "explanation": "Option C correctly uses a double for 'a', a float for 'b', and casts 'a' to float before adding, which is a standard valid operation in C#.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Minimum and Maximum range of values supported by 'float' data type are?",
+      "question": "What is the approximate range of values supported by the 'float' data type in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "1.5 * 10\n-40\n to 3.4 * 10\n38"
+          "text": "1.5 * 10^-40 to 3.4 * 10^38"
         },
         {
           "key": "b",
-          "text": "1.5 * 10\n-45\n to 3.4 * 10\n30"
+          "text": "1.5 * 10^-45 to 3.4 * 10^30"
         },
         {
           "key": "c",
-          "text": "1.5 * 10\n-45\n to 3.4 * 10\n38"
+          "text": "1.5 * 10^-45 to 3.4 * 10^38"
         },
         {
           "key": "d",
-          "text": "1.5 * 10\n-45\n to 3.4 * 10\n37"
+          "text": "1.5 * 10^-45 to 3.4 * 10^37"
         }
       ],
       "answer": "c",
-      "explanation": "By Definition."
+      "explanation": "The 'float' type can represent values ranging from approximately 1.5 x 10^-45 to 3.4 x 10^38.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Select appropriate difference between decimal, float and double data type in C#?",
-      "code": "i) Float and Double are floating binary point types while decimal is a floating decimal point type.\nii) Precision difference for float is '7' digit for double is '15' to '16' digit and for decimal is '28' to '29' digits.\niii) Some values which cannot be exactly represented hence for those values float and double are more appropriate.",
+      "question": "Select the correct statements regarding decimal, float, and double in C#.",
+      "code": "i) Float and Double are binary floating-point types; Decimal is a decimal floating-point type.\nii) Precision: float (~7 digits), double (~15-16 digits), decimal (~28-29 digits).\niii) Decimal is more appropriate for financial and monetary calculations.",
       "options": [
         {
           "key": "a",
-          "text": "i"
+          "text": "Statement i only"
         },
         {
           "key": "b",
-          "text": "i, iii"
+          "text": "Statements i and iii"
         },
         {
           "key": "c",
-          "text": "i, ii, iii"
+          "text": "Statements i, ii, and iii"
         },
         {
           "key": "d",
-          "text": "ii, iii"
+          "text": "Statements ii and iii"
         }
       ],
       "answer": "c",
-      "explanation": "By Definition."
+      "explanation": "All three statements are correct. Binary types (float/double) are faster but have rounding errors with base-10 numbers, while 'decimal' is designed to be exact for financial purposes.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Why does a float variable stop incrementing at number '16777216' in the following C# code?",
-      "code": " float a = 0 ;\n while (true)\n {\n     a++;\n     if (a > 16777216)\n     break;\n }",
+      "question": "Why does a float variable stop incrementing at '16777216' in the following code?",
+      "code": "float a = 0;\nwhile (true)\n{\n    a++;\n    if (a > 16777216) break;\n}",
       "options": [
         {
           "key": "a",
-          "text": "Sign and Exponent for '16777217' is same as for '16777216'"
+          "text": "The sign and exponent for '16777217' are the same as for '16777216'"
         },
         {
           "key": "b",
-          "text": "Mantissa is different for '16777216' and '16777217'"
+          "text": "The mantissa cannot represent the difference between 16777216 and 16777217"
         },
         {
           "key": "c",
-          "text": "Sign and Exponent for '16777217' is different from '16777216'"
+          "text": "The float type reaches its maximum memory allocation"
         },
         {
           "key": "d",
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "16777216 is exactly 224,  and would be represented as 32-bit float like so:\n\nsign = 0 (positive number)\n\nexponent = 24 (stored as 24 + 127 = 151 =  10010111)\n\nmantissa = . 0\n\nAs 32 bits floating-point representation: 0 10010111 00000000000000000000000\n\nTherefore: Value = (+ 1) * 2 ^ 24 * (1. 0  + . 0) = 2 ^ 24 = 16777216\n\nNow let's look at the number 16777217,  or exactly 224 + 1:\n\nsign and exponent are the same.\n\nMantissa should have to be exactly 2-24 so that (+ 1) * 2 ^ 24 * (1. 0 + 2 ^-24) = 2 ^ 24 + 1 = 16777217 and here lies the  actual problem. The mantissa cannot have the value 2-24 because it only has 23 bits,  so the number 16777217 just cannot be represented with the accuracy of 32-bit floating points numbers."
+      "explanation": "A 32-bit float has 23 bits of mantissa. It can represent integers exactly only up to 2^24 (16,777,216). Beyond this, the gap between representable numbers becomes 2 or larger, so adding 1 doesn't change the value.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    int x = 1;\n    float y = 2. 4f;\n    short z = 1;\n    Console. WriteLine((float) x + y * z - (x + = (short) y) );\n    Console. ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    int x = 1;\n    float y = 2.4f;\n    short z = 1;\n    Console.WriteLine((float)x + y * z - (x += (short)y));\n}",
       "options": [
         {
           "key": "a",
@@ -229,20 +237,21 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput :\n\n0.4000001"
+      "explanation": "Calculation: 1 + (2.4 * 1) - (1 + 2) = 1 + 2.4 - 3 = 0.4. Due to floating-point representation, the result is slightly off, showing as 0.4000001.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "A float occupies 4 bytes. If the hexadecimal equivalent of these 4 bytes are A, B, C and D, then when this float is stored in memory in which of the following order do these bytes gets stored?",
+      "question": "When a float (4 bytes) is stored in memory, in which order are the bytes stored?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "ABCD"
+          "text": "Always ABCD"
         },
         {
           "key": "b",
-          "text": "DCBA"
+          "text": "Always DCBA"
         },
         {
           "key": "c",
@@ -250,15 +259,16 @@
         },
         {
           "key": "d",
-          "text": "Depends on big endian or little endian architecture"
+          "text": "Depends on the system's architecture (Big Endian or Little Endian)"
         }
       ],
       "answer": "d",
-      "explanation": "\"Little Endian\" means that the lower-order byte of the number is stored in memory at the lowest address,  and the high order byte at the highest address. For example, a 4 byte Integer\n\nABCD will be arranged in memory as follows:\n\nBase Address + 0 Byte 0.\n\nBase Address + 1 Byte 1.\n\nBase Address + 2 Byte 2.\n\nBase Address + 3 Byte 3.\n\nIntel processors (those used in PC's) use \"Little Endian\" byte order.\n\n\"Big Endian\" means that the high-order byte of the number is stored in memory at the lowest address,  and the low-order byte at the highest address. The same 4 byte integer would be stored as:\n\nBase Address + 0 Byte 3.\n\nBase Address + 1 Byte 2.\n\nBase Address + 2 Byte 1.\n\nBase Address + 3 Byte 0."
+      "explanation": "Byte order in memory depends on the CPU architecture. x86/x64 systems typically use Little Endian (least significant byte first).",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "The Default value of Boolean Data Type is?",
+      "question": "What is the default value of the 'bool' data type in C#?",
       "code": null,
       "options": [
         {
@@ -267,24 +277,25 @@
         },
         {
           "key": "b",
-          "text": "True"
+          "text": "true"
         },
         {
           "key": "c",
-          "text": "False"
+          "text": "false"
         },
         {
           "key": "d",
-          "text": "1"
+          "text": "null"
         }
       ],
       "answer": "c",
-      "explanation": "By Definition."
+      "explanation": "In C#, the default value of a boolean variable is 'false'.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "What will be the output of the following C# code?",
-      "code": " public static void Main(string[] args)\n {\n     double ZERO = 0;\n     Console.WriteLine(\"RESULT OF DIVISION BY ZERO IS :{0}\",  (0 / ZERO));\n     Console.ReadLine();\n }",
+      "code": "public static void Main(string[] args)\n{\n    double ZERO = 0;\n    Console.WriteLine(\"RESULT: {0}\", (0 / ZERO));\n}",
       "options": [
         {
           "key": "a",
@@ -292,7 +303,7 @@
         },
         {
           "key": "b",
-          "text": "exception argument is thrown"
+          "text": "DivideByZeroException is thrown"
         },
         {
           "key": "c",
@@ -304,32 +315,34 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "In floating-point arithmetic, dividing zero by zero results in 'NaN' (Not a Number) rather than throwing an exception as integer division would.",
+      "origin": "local"
     },
     {
       "number": 13,
-      "question": "Which of the following format specifiers is used to print hexadecimal values and return value of output as Octal equivalent in C#?",
+      "question": "Regarding format specifiers in C#, which statement is correct about Octal values?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "%hx for small case letters and %HX for capital letters"
+          "text": "%o is used for octal"
         },
         {
           "key": "b",
-          "text": "%x for small case letters and %X for capital letters"
+          "text": "%hx is used for octal"
         },
         {
           "key": "c",
-          "text": "No ease of doing it. C# don't provides specifier like %x or %O to be used with ReadLine() OR WriteLine(). We have to write our own function"
+          "text": "C# does not provide a built-in standard format specifier for Octal (like 'X' for Hex)"
         },
         {
           "key": "d",
-          "text": "%Ox for small case letters and %OX for capital letters"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "No ease of doing it. C# don't provides specifier like %x or %O to be used with ReadLine() OR WriteLine(). We have to write our own function."
+      "explanation": "C# provides the 'X' format specifier for Hexadecimal, but it does not have a built-in standard format specifier for Octal. You must use Convert.ToString(value, 8) to achieve this.",
+      "origin": "local"
     }
   ]
 }

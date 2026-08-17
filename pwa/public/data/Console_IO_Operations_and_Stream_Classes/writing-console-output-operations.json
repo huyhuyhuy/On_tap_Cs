@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Select the objects of the class TextWriter which is/are not used to perform the write operations to the console?",
+      "question": "Which of the following are NOT methods of the TextWriter class used to perform write operations in C#?",
       "code": null,
       "options": [
         {
@@ -25,20 +25,21 @@
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "All of the mentioned are valid"
         }
       ],
       "answer": "c",
-      "explanation": "TextWriter is a class with objects as write() and writeline()."
+      "explanation": "TextWriter (and its derived class StreamWriter used by Console.Out) provides Write() and WriteLine() methods. WriteError() is not a standard method of this class.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     Console.Write(\"c\");\n     Console.Write(\"sharp\" );\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    Console.Write(\"c\");\n    Console.Write(\"sharp\");\n}",
       "options": [
         {
           "key": "a",
-          "text": "sharp"
+          "text": "csharp"
         },
         {
           "key": "b",
@@ -53,25 +54,26 @@
           "text": "sharp c"
         }
       ],
-      "answer": "b",
-      "explanation": "Write() is used here which outputs one or more values to the screen without a newline character.\n\nOutput :\n\n    🔥 Enroll for\n - August 2026\n\n        c\n        sharp"
+      "answer": "a",
+      "explanation": "The Console.Write() method outputs values to the screen without appending a newline character. Therefore, 'c' and 'sharp' will appear together on the same line as 'csharp'.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the correct statement about the WriteLine()?",
+      "question": "Which of the following statements about the WriteLine() method is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Can display one or more value to the screen"
+          "text": "It can display one or more values to the screen"
         },
         {
           "key": "b",
-          "text": "Adds a newline character at the end of the each new output"
+          "text": "It adds a newline character at the end of the output"
         },
         {
           "key": "c",
-          "text": "Allows to output data in as many different formats"
+          "text": "It allows outputting data in various defined formats"
         },
         {
           "key": "d",
@@ -79,12 +81,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "By the definition of writeline()."
+      "explanation": "WriteLine() is versatile: it handles multiple overloads for different types, supports composite formatting, and always terminates the line with a newline sequence.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     String a =\"i love iostream\";\n     Console.WriteLine(a.IndexOf('i') + \" \" + a.IndexOf('e') + \" \" + a.LastIndexOf('i') + \" \" + a.LastIndexOf('e'));\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    String a = \"i love iostream\";\n    Console.WriteLine(a.IndexOf('i') + \" \" + a.IndexOf('e') + \" \" + a.LastIndexOf('i') + \" \" + a.LastIndexOf('e'));\n}",
       "options": [
         {
           "key": "a",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "indexof('i') and lastIndexof('i') are pre defined functions which are used to get the index of first and last occurrence of the character pointed by i in the given array.\n\nOutput :\n\n0 5 7 12"
+      "explanation": "In 'i love iostream': first 'i' is at index 0. 'e' is at index 5. The last 'i' (in iostream) is at index 7. The last 'e' (in iostream) is at index 12.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     StringBuilder sb = new StringBuilder(\"hello world\");\n     sb.Insert(6, \"good\");\n     Console.WriteLine(sb);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    StringBuilder sb = new StringBuilder(\"hello world\");\n    sb.Insert(6, \"good \");\n    Console.WriteLine(sb);\n}",
       "options": [
         {
           "key": "a",
@@ -121,20 +125,21 @@
         },
         {
           "key": "c",
-          "text": "hello goodworld"
+          "text": "hello good world"
         },
         {
           "key": "d",
-          "text": "hello good world"
+          "text": "hello world good"
         }
       ],
-      "answer": "c",
-      "explanation": "The insert() method inserts one string into another. It is overloaded to accept values of all simple types, plus String and Objects. String is inserted into invoking object at specified position. \"Good \" is inserted in \"Hello World\"  index 6 giving \"Hello Good World\"."
+      "answer": "b",
+      "explanation": "The Insert method inserts a string at the specified 0-based index. Index 6 in 'hello world' is the character 'w'. Inserting 'good ' at that position results in 'hello good world'.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     string h = \"i lovelife\";\n     string h1 = new string(h.Reverse().ToArray());\n     Console.WriteLine(h1);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string h = \"i lovelife\";\n    string h1 = new string(h.Reverse().ToArray());\n    Console.WriteLine(h1);\n}",
       "options": [
         {
           "key": "a",
@@ -154,70 +159,73 @@
         }
       ],
       "answer": "c",
-      "explanation": "Reverse() an inbuilt method reverses all the characters singly and hence embed them into the string completely.\n\nOutput :\n\nefilevol i"
+      "explanation": "The Reverse() method (from System.Linq) reverses the sequence of characters. 'i lovelife' reversed becomes 'efilevol i'.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which of the following statement is correct?",
+      "question": "Which of the following statements about C# string methods is correct?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "reverse() method reverses some characters"
+          "text": "Replace() only replaces the first occurrence of a character"
         },
         {
           "key": "b",
-          "text": "reverseall() method reverses all characters"
+          "text": "Reverse() is a built-in method of the String class"
         },
         {
           "key": "c",
-          "text": "replace() method replaces all instances of a character with new character"
+          "text": "Replace() replaces all instances of a specified character with a new character"
         },
         {
           "key": "d",
-          "text": "replace() method replaces first occurrence of a character in invoking string with another character"
+          "text": "Strings in C# are mutable"
         }
       ],
       "answer": "c",
-      "explanation": "reverse() and replace() are by definition."
+      "explanation": "The String.Replace() method returns a new string where all occurrences of a specified Unicode character or string are replaced with another specified character or string.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of these classes is used to create an object whose character sequence is mutable?",
+      "question": "Which class is used to create an object representing a mutable sequence of characters?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "String()"
+          "text": "String"
         },
         {
           "key": "b",
-          "text": "StringBuilder()"
+          "text": "StringBuilder"
         },
         {
           "key": "c",
-          "text": "String() & StringBuilder()"
+          "text": "Char[]"
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "TextReader"
         }
       ],
       "answer": "b",
-      "explanation": "Mutable strings are dynamic strings. They can grow dynamically as characters are added to them. stringbuilder class supports those methods that are useful for manipulating dynamic strings."
+      "explanation": "Unlike the String class, which is immutable, StringBuilder represents a dynamic, mutable string that can expand in size as needed without creating new objects in memory.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Select the namespace/namespaces which consists of methods like Length(), Indexer(), Append() for manipulating the strings.",
+      "question": "Which namespace contains the StringBuilder class in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "System.Class"
+          "text": "System.Collections"
         },
         {
           "key": "b",
-          "text": "System.Array"
+          "text": "System.IO"
         },
         {
           "key": "c",
@@ -225,15 +233,16 @@
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "System.String"
         }
       ],
       "answer": "c",
-      "explanation": "The system.text namespace contains the Stringbuilder class and hence must include using system.text for manipulating the mutable strings."
+      "explanation": "The StringBuilder class is located in the System.Text namespace. You must include 'using System.Text;' to use it.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Select the method used to write single byte to a file?",
+      "question": "Which method is specifically used to write a single byte to a stream in C#?",
       "code": null,
       "options": [
         {
@@ -242,7 +251,7 @@
         },
         {
           "key": "b",
-          "text": "Wrteline()"
+          "text": "WriteLine()"
         },
         {
           "key": "c",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "To write a byte to a file, the WriteByte( ) method is used. Its simplest form is shown here:\n\n   void WriteByte(byte value)"
+      "explanation": "The WriteByte(byte value) method is a specialized method in stream classes (like FileStream) used to write one byte at a time to the underlying resource.",
+      "origin": "local"
     }
   ]
 }

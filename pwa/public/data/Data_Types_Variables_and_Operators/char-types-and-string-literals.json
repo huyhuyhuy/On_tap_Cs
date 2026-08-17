@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "What is the Size of 'Char' datatype?",
+      "question": "What is the size of the 'char' datatype in C#?",
       "code": null,
       "options": [
         {
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Size of 'Char' datatype is 16 bit."
+      "explanation": "In C#, the 'char' type represents a UTF-16 code unit, which is 16 bits in size.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     char c = 'g';\n     string s = c.ToString();\n     string s1 = \"I am a human being\" + s;\n     Console.WriteLine(s1);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    char c = 'g';\n    string s = c.ToString();\n    string s1 = \"I am a human being\" + s;\n    Console.WriteLine(s1);\n}",
       "options": [
         {
           "key": "a",
@@ -54,37 +55,39 @@
         }
       ],
       "answer": "b",
-      "explanation": "'g' is stored in character variable 'c' which later on is converted to string using method Tostring() and hence appended at last of the string in s1.\n\nOutput:\n\nI am a human beingg"
+      "explanation": "The character 'g' is converted to a string and concatenated directly to the end of s1 without any added spaces. Result: 'I am a human beingg'.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Given is the code of days(example:\"MTWTFSS\") which I need to split and hence create a list of days of week in strings( example:\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"). A set of code is given for this purpose but there is the error occurring in that set of code related to the conversion of char to strings. Hence, Select a C# code to solve the given error. 🔥 Enroll for Free Data Structure Certification - August 2026",
-      "code": "static void Main(string[] args)\n{\n    var days = \"MTWTFSS\";\n    var daysArray = days.ToCharArray().Cast<string>().ToArray();\n    for (var i = 0; i < daysArray.Length; i++)\n    {\n        switch (daysArray[i])\n        {\n        case \"M\":\n            daysArray[i] = \"Monday\";\n            break;\n        case \"T\":\n            daysArray[i] = \"Tuesday\";\n            break;\n        case \"W\":\n            daysArray[i] = \"Wednesday\";\n            break;\n        case \"R\":\n            daysArray[i] = \"Thursday\";\n            break;\n        case \"F\":\n            daysArray[i] = \"Friday\";\n            break;\n        case \"S\":\n            daysArray[i] = \"Saturday\";\n            break;\n        case \"U\":\n            daysArray[i] = \"Sunday\";\n            break;\n        }\n    }\n    daysArray[daysArray.Length - 1] = \"and \" + daysArray[daysArray.Length - 1];\n    Console.WriteLine(string.Join(\", \", daysArray));\n}",
+      "question": "Which LINQ expression correctly converts an array of characters (days) into an array of strings to avoid casting errors?",
+      "code": "var days = \"MTWTFSS\";\n// Goal: Convert each char to string for the switch case\nvar daysArray = /* ? */;",
       "options": [
         {
           "key": "a",
-          "text": "var daysArray = new List<String>();"
+          "text": "days.ToCharArray().Cast<string>().ToArray();"
         },
         {
           "key": "b",
-          "text": "var daysArray = days.Select(c =>dayMapping[c]).ToArray();"
+          "text": "days.Select(c => dayMapping[c]).ToArray();"
         },
         {
           "key": "c",
-          "text": "var daysArray = days.ToCharArray().Select(c =>c.Tostring()).ToArray();"
+          "text": "days.ToCharArray().Select(c => c.ToString()).ToArray();"
         },
         {
           "key": "d",
-          "text": "var daysArray = days.Select<String>();"
+          "text": "days.Select<string>();"
         }
       ],
       "answer": "c",
-      "explanation": "The problem arises due to cast conversion from \"char\" to \"string\" as one is not inherited from others. So, quick way of conversion is just using Char.ToString()."
+      "explanation": "You cannot directly cast a 'char' to a 'string' because they are not inherited from each other. Using .Select(c => c.ToString()) is the standard way to perform this conversion.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    {\n        var dayCode = \"MTWFS\";\n        var daysArray = new List<string>();\n        var list = new Dictionary<string, string>\n        { {\"M\", \"Monday\"}, {\"T\", \"Tuesday\"}, {\"W\", \"Wednesday\"},\n          {\"R\", \"Thursday\"}, {\"F\", \"Friday\"}, {\"S\", \"Saturday\"},\n          {\"U\", \"Sunday\"}\n        };\n       for (int i = 0,max = dayCode.Length; i < max; i++)\n       {\n           var tmp = dayCode[i].ToString();\n           if (list.ContainsKey(tmp))\n           {\n               daysArray.Add(list[tmp]);\n            }\n       }\n       Console.WriteLine(string.Join(\"\\n \", daysArray));\n }",
+      "code": "static void Main(string[] args)\n{\n    var dayCode = \"MTWFS\";\n    var daysArray = new List<string>();\n    var list = new Dictionary<string, string>\n    {\n        {\"M\", \"Monday\"}, {\"T\", \"Tuesday\"}, {\"W\", \"Wednesday\"},\n        {\"R\", \"Thursday\"}, {\"F\", \"Friday\"}, {\"S\", \"Saturday\"}\n    };\n    for (int i = 0; i < dayCode.Length; i++)\n    {\n        var tmp = dayCode[i].ToString();\n        if (list.ContainsKey(tmp)) daysArray.Add(list[tmp]);\n    }\n    Console.WriteLine(string.Join(\"\\n\", daysArray));\n}",
       "options": [
         {
           "key": "a",
@@ -104,41 +107,43 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n        Monday\n        Tuesday\n        Wednesday\n        Friday\n        Saturday"
+      "explanation": "The code iterates through 'MTWFS'. Each letter is mapped via the dictionary: M->Monday, T->Tuesday, W->Wednesday, F->Friday, S->Saturday. 'R' and 'U' are not in the dayCode string.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Select the correct differences between char and varchar data types? i. varchar is non unicode and char is unicode character data type ii. char is 'n' bytes whereas varchar is actual length in bytes of data entered in terms of storage size iii. varchar is variable in length and char is the fixed length string iv. For varchar, if a string is less than the maximum length then it is stored in verbatim without any extra characters while for char if a string is less than the set length it is padded with extra characters to equalize its length to given length",
+      "question": "In the context of database types used in C# applications, which are correct differences between char and varchar?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "i, iii, iv"
+          "text": "varchar is non-unicode and char is unicode"
         },
         {
           "key": "b",
-          "text": "ii, iii, iv"
+          "text": "char is fixed length, varchar is variable length"
         },
         {
           "key": "c",
-          "text": "i, ii, iv"
+          "text": "char pads shorter strings with spaces to reach set length"
         },
         {
           "key": "d",
-          "text": "iii, iv"
+          "text": "Both B and C are correct"
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "'char' is fixed-length (shorter strings are padded with spaces), while 'varchar' is variable-length (stored as-is up to the maximum length).",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which is the String method used to compare two strings with each other?",
+      "question": "Which static method of the String class is used to compare two strings and determine their relationship?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Compare To()"
+          "text": "CompareTo()"
         },
         {
           "key": "b",
@@ -150,16 +155,17 @@
         },
         {
           "key": "d",
-          "text": "ConCat()"
+          "text": "Concat()"
         }
       ],
       "answer": "b",
-      "explanation": "Compare() used to compare two strings by taking the length of strings in considerations."
+      "explanation": "'string.Compare()' is a static method used to compare two strings based on alphabetical order and culture.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    string s1 = \"Delhi\";\n    string s2;\n    s2 = s1.Insert (6, \"Jaipur\");\n    Console.WriteLine(s2);\n}",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Delhi\";\n    string s2 = s1.Insert(6, \"Jaipur\");\n    Console.WriteLine(s2);\n}",
       "options": [
         {
           "key": "a",
@@ -175,25 +181,25 @@
         },
         {
           "key": "d",
-          "text": "Run time error"
+          "text": "Runtime error (ArgumentOutOfRangeException)"
         }
       ],
       "answer": "d",
-      "explanation": "\"Delhi\" has length 5. Insert(6, ...) uses a start index past the end of the string, so it throws ArgumentOutOfRangeException.",
+      "explanation": "The string 'Delhi' has a length of 5. The maximum valid index for the Insert method is its length (5). Attempting to insert at index 6 causes an ArgumentOutOfRangeException.",
       "origin": "local"
     },
     {
       "number": 8,
-      "question": "For two strings s1 and s2 to be equal, which is the correct way to find if the contents of two strings are equal?",
+      "question": "What is the most common way to check if the content of string s1 is equal to string s2 in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "if(s1 = s2)"
+          "text": "if (s1 = s2)"
         },
         {
           "key": "b",
-          "text": "int c;\nc = s1.CompareTo(s2);"
+          "text": "if (s1 == s2)"
         },
         {
           "key": "c",
@@ -201,16 +207,17 @@
         },
         {
           "key": "d",
-          "text": "if(strcmp(s1, s2))"
+          "text": "if (strcmp(s1, s2))"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "In C#, the '==' operator is overloaded for the string class to perform a content-based equality check.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "What will be the output of the following C# string? (Enter a String : BOMBAY).",
-      "code": "static void Main(string[] args)\n{\n    string Str,  Revstr = \" \";\n    int Length;\n    Console.Write(\"Enter A String : \");\n    Str = Console.ReadLine();\n    Length = Str.Length - 1;\n    while (Length >= 0)\n    {\n        Revstr = Revstr + Str[Length];\n        Length --;\n    }\n    Console.WriteLine(\"Reverse  String  Is  {0}\",  Revstr);\n    Console.ReadLine();\n}",
+      "question": "What will be the output if the user enters 'BOMBAY'?",
+      "code": "static void Main(string[] args)\n{\n    string Str, Revstr = \"\";\n    Str = Console.ReadLine();\n    int Length = Str.Length - 1;\n    while (Length >= 0)\n    {\n        Revstr = Revstr + Str[Length];\n        Length--;\n    }\n    Console.WriteLine(Revstr);\n}",
       "options": [
         {
           "key": "a",
@@ -230,24 +237,25 @@
         }
       ],
       "answer": "b",
-      "explanation": "Explain the concept of reversal of string without using any string inbuilt method but using while loop conditions.\n\nOutput:\n\nYABMOB"
+      "explanation": "The code manually reverses the string by iterating backwards through the character indices of 'BOMBAY'.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Select the appropriate set of C# code for conversion of string to hexa form.",
-      "code": " static void Main(string[] args)\n {\n     string teststring = \"MIKA@?&\";\n     string hex = ConvertstringToHex(teststring, system.Text.Encoding.Unicode);\n     Console.WriteLine(hex);\n }",
+      "question": "Select the correct C# code snippet to convert a string to its Hexadecimal representation.",
+      "code": null,
       "options": [
         {
           "key": "a",
-          "text": "static string ConvertstringToHex(string input, system.Text.Encoding encoding)\n{\n    string Bytes = encoding.GetBytes(input);\n    string Builder sbBytes = new Builder sbBytes();\n    for each (byte 'b' in StringBytes)\n    {\n        sBytes.AppendFormat(\"{0:x2}\", b);\n    }\n    return sbBytes.Tostring();\n}"
+          "text": "sb.AppendFormat(\"{0:x2}\", b);"
         },
         {
           "key": "b",
-          "text": "static string ConvertstringToHex(string input, system.Text.Encoding encoding)\n{\n    char[]string Bytes = encoding.GetBytes(input);\n    string Builder sbBytes = new Builder sbBytes(StringBytes.Length*2);\n    for each (byte 'b' in StringBytes)\n    {\n        sBytes.AppendFormat(\"{0:X2}\", b);\n    }\n    return sbBytes.Tostring();\n}"
+          "text": "sb.AppendFormat(\"{0:HEX}\", b);"
         },
         {
           "key": "c",
-          "text": "public static string ConvertStringToHex(String input,\n                                        System.Text.Encoding encoding)\n{\n    {\n       Byte[] stringBytes = encoding.GetBytes(input);\n       StringBuilder sbBytes = new StringBuilder(stringBytes.Length * 2);\n       foreach (byte b in stringBytes)\n       {\n           sbBytes.AppendFormat(\"{0:X2}\",  b);\n       }\n   Console.WriteLine(sbBytes.ToString());//sbBytes.ToString());\n   return sbBytes.ToString();\n    }\n}"
+          "text": "public static string ToHex(string input) {\n    byte[] bytes = Encoding.Default.GetBytes(input);\n    StringBuilder sb = new StringBuilder();\n    foreach (byte b in bytes) sb.AppendFormat(\"{0:X2}\", b);\n    return sb.ToString();\n}"
         },
         {
           "key": "d",
@@ -255,24 +263,25 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\npublic static string ConvertStringToHex(String input,\n                                        System.Text.Encoding encoding)\n{\n {\n   Byte[] stringBytes = encoding.GetBytes(input);\n   StringBuilder sbBytes = new StringBuilder(stringBytes.Length * 2);\n   foreach (byte b in stringBytes)\n  {\n   sbBytes.AppendFormat(\"{0:X2}\",  b);\n }\nConsole.WriteLine(sbBytes.ToString());//sbBytes.ToString());\nreturn sbBytes.ToString();\n}"
+      "explanation": "To convert a string to hex, you first get the byte array from the string, then format each byte as a two-digit hexadecimal number (X2).",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "Which of the following C# code is used for conversion of hex to string form?",
-      "code": "static void Main(string[] args)\n{\n    string testString = \"MIKA@?&^\";\n    string normal = ConvertHexToString (hex,  System.Text.Encoding.Unicode);\n    Console.WriteLine(normal);\n    Console.ReadLine();\n}",
+      "question": "Which logic correctly converts a Hex string back to a normal string?",
+      "code": null,
       "options": [
         {
           "key": "a",
-          "text": "public static string ConvertHexToString(String hexInput,\n                                        System.Text.Encoding encoding)\n{\n    char[] numberChars = hexInput.Length;\n    byte[] bytes = new byte[numberChars / 2];\n    for (int i = 0; i < numberChars; i += 2)\n    {\n        bytes[i / 2] = Convert.ToByte(hexInput.Substring(i,  0),  16);\n    }\n    return encoding.GetString(bytes);\n}"
+          "text": "bytes[i/2] = Convert.ToByte(hex.Substring(i, 0), 16);"
         },
         {
           "key": "b",
-          "text": "public static string ConvertHexToString(String hexInput,\n                                        System.Text.Encoding encoding)\n{\n    int numberChars = hexInput.Length;\n    byte[] bytes = new byte[numberChars / 2];\n    for (int i = 0; i < numberChars; i += 2)\n    {\n        bytes[i / 2] = Convert.ToByte(hexInput.Substring(i,  2),  16);\n    }\n    return encoding.GetString(bytes);\n}"
+          "text": "bytes[i/2] = Convert.ToByte(hex.Substring(i, 2), 16);"
         },
         {
           "key": "c",
-          "text": "public static string ConvertHexToString(String hexInput,\n                                        System.Text.Encoding encoding)\n{\n    string numberChars = hexInput.Length;\n    byte[] bytes = new byte[numberChars];\n    for (int i = 0; i < numberChars; i += 2)\n    {\n        bytes[i / 2] = Convert.ToByte(hexInput.Substring(i,  2),  16);\n    }\n    return encoding.GetString(bytes);\n}"
+          "text": "bytes[i/2] = (byte)hex[i];"
         },
         {
           "key": "d",
@@ -280,12 +289,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\npublic static string ConvertHexToString(String hexInput,\n                                        System.Text.Encoding encoding)\n{\n    int numberChars = hexInput.Length;\n    byte[] bytes = new byte[numberChars / 2];\n    for (int i = 0; i < numberChars; i += 2)\n    {\n        bytes[i / 2] = Convert.ToByte(hexInput.Substring(i,  2),  16);\n    }\n    return encoding.GetString(bytes);\n}"
+      "explanation": "The 'Substring(i, 2)' takes two hex characters, which 'Convert.ToByte' then transforms into a single byte value.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "What will be the output of the following C# code?",
-      "code": "   string s1 = \" I AM BEST \";\n   string s2;\n   s2 = s1.substring (5, 4);\n   Console.WriteLine (s2);",
+      "code": "string s1 = \" I AM BEST \";\nstring s2 = s1.Substring(6, 4);\nConsole.WriteLine(s2);",
       "options": [
         {
           "key": "a",
@@ -293,7 +303,7 @@
         },
         {
           "key": "b",
-          "text": "I AM BES"
+          "text": "I AM"
         },
         {
           "key": "c",
@@ -301,53 +311,55 @@
         },
         {
           "key": "d",
-          "text": "I AM"
+          "text": "AM B"
         }
       ],
       "answer": "c",
-      "explanation": "Substring() of string class used to extract substrings from given string. In the given substring condition, it extracts a substring beginning at 5th position and ending at 4th position.\n\nOutput:\n\n BEST"
+      "explanation": "In ' I AM BEST ', index 6 is the letter 'B'. Taking 4 characters starting from 'B' (6,7,8,9) results in 'BEST'.",
+      "origin": "local"
     },
     {
       "number": 13,
-      "question": "Correct statement about strings are?",
+      "question": "Where are C# string objects stored in memory?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "a string is created on the stack"
+          "text": "On the stack"
         },
         {
           "key": "b",
-          "text": "a string is primitive in nature"
+          "text": "In the CPU registers"
         },
         {
           "key": "c",
-          "text": "a string created on heap"
+          "text": "On the heap"
         },
         {
           "key": "d",
-          "text": "created of string on a stack or on a heap depends on the length of the string"
+          "text": "Depends on the length of the string"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Since strings are reference types in C#, the actual character data is stored on the heap, and a reference to that memory is stored on the stack.",
+      "origin": "local"
     },
     {
       "number": 14,
-      "question": "Verbatim string literal is better used for?",
+      "question": "What is a major advantage of using a verbatim string literal (@\"...\") in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Convenience and better readability of strings when string text consist of backlash characters"
+          "text": "It ignores escape sequences like '\\n' or '\\\\'"
         },
         {
           "key": "b",
-          "text": "Used to initialize multi-line strings"
+          "text": "It allows a string to span multiple lines in code"
         },
         {
           "key": "c",
-          "text": "To embed a quotation mark by using double quotation marks inside a verbatim string"
+          "text": "It can embed quotes using double-quotes (\"\")"
         },
         {
           "key": "d",
@@ -355,24 +367,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "Verbatim literals make code cleaner, especially for file paths and multi-line text, because they treat backslashes as ordinary characters.",
+      "origin": "local"
     },
     {
       "number": 15,
-      "question": "Why strings are of reference type in C#.NET?",
+      "question": "Why are strings designed as reference types in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "To create string on stack"
+          "text": "To create them on the stack"
         },
         {
           "key": "b",
-          "text": "To reduce the overall memory for strings"
+          "text": "To improve memory efficiency (via interning and reuse)"
         },
         {
           "key": "c",
-          "text": "To overcome problem of stackoverflow"
+          "text": "To avoid stack overflow exceptions"
         },
         {
           "key": "d",
@@ -380,7 +393,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "In C#, strings are immutable which means that once a string object is created, its value cannot be changed. By making strings as reference types, C# allows the same string object to be used by multiple variables which reduces the memory footprint for strings. So, strings are created on heap and a reference is passed to the program."
+      "explanation": "By making strings reference types and immutable, the .NET runtime can optimize memory by using 'String Interning', where identical string literals share the same memory instance.",
+      "origin": "local"
     }
   ]
 }

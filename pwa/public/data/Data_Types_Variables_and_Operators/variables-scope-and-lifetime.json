@@ -8,66 +8,68 @@
   "questions": [
     {
       "number": 1,
-      "question": "Choose the correct type of variable scope for the following C# defined variables.",
-      "code": "  class ABC\n  {\n      static int m;\n      int n;\n      void fun (int x , ref int y, out int z, int[] a)\n      {\n         int j = 10;\n      }\n  }",
+      "question": "Identify the correct scope for each variable defined in the following C# code:",
+      "code": "class ABC\n{\n    static int m;\n    int n;\n    void fun(int x, ref int y, out int z, int[] a)\n    {\n        int j = 10;\n        z = 0;\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "m = static variable, n = local variable, x = output parameter, y = reference parameter, j = instance variable, z = output parameter, a[0] = array element"
+          "text": "m = static, n = local, x = output, y = ref, j = instance, z = output, a[0] = element"
         },
         {
           "key": "b",
-          "text": "m = static variable, n = instance variable, x = value parameter, y = reference parameter, j = local variable, z = output parameter , a[0] = array element"
+          "text": "m = static variable, n = instance variable, x = value parameter, y = reference parameter, j = local variable, z = output parameter, a[0] = array element"
         },
         {
           "key": "c",
-          "text": "m = static variable, n = instance variable, x = reference parameter, y = value parameter, j = local variable, z = output parameter, a[0] = array element"
+          "text": "m = static variable, n = instance variable, x = ref parameter, y = value parameter, j = local variable"
         },
         {
           "key": "d",
-          "text": "m = local variable, n = instance variable, x = reference parameter, y = value parameter, j = static variable, z = output parameter, a[0] = array element"
+          "text": "m = local variable, n = instance variable, x = ref parameter, y = value parameter, j = static variable"
         }
       ],
       "answer": "b",
-      "explanation": "By definition of scope of variables."
+      "explanation": "'m' is static (class level), 'n' is an instance field, 'x' is passed by value, 'y' uses 'ref', 'z' uses 'out', and 'j' is local to the method.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        int  i ;\n        for (i = 0; i < 5; i++)\n        {\n            Console.WriteLine(i);\n        }\n        Console.ReadLine();\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    int i;\n    for (i = 0; i < 5; i++)\n    {\n        Console.Write(i + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "0, 1, 2, 3, 4, 5"
+          "text": "0 1 2 3 4 5"
         },
         {
           "key": "b",
-          "text": "0, 1, 2, 3"
+          "text": "0 1 2 3"
         },
         {
           "key": "c",
-          "text": "0, 1, 2, 3, 4"
+          "text": "0 1 2 3 4"
         },
         {
           "key": "d",
-          "text": "0, 0, 0, 0, 0"
+          "text": "0 0 0 0 0"
         }
       ],
       "answer": "c",
-      "explanation": "Scope  of 'i' is alive within block in which it is declared. So, change in value of i within for loop is reserved until condition of for loop is executing.\n\nOutput:\n\n - August 2026\n\n0, 1, 2, 3, 4"
+      "explanation": "The loop runs while 'i' is less than 5 (0, 1, 2, 3, 4). When 'i' becomes 5, the condition '5 < 5' is false and the loop terminates.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         int i;\n         for ( i = 0; i < 5; i++)\n         {\n\n         }\n         Console. WriteLine(i);\n         Console. ReadLine();\n     }\n}",
+      "code": "static void Main(string[] args)\n{\n    int i;\n    for (i = 0; i < 5; i++)\n    {\n        // Empty body\n    }\n    Console.WriteLine(i);\n}",
       "options": [
         {
           "key": "a",
-          "text": "0, 1, 2, 3, 4, 5"
+          "text": "0 1 2 3 4 5"
         },
         {
           "key": "b",
-          "text": "0, 1, 2, 3, 4"
+          "text": "0 1 2 3 4"
         },
         {
           "key": "c",
@@ -79,74 +81,77 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since final console statement is outside forloop. So, result will be printed in final values only.\n\nOutput:\n\n 5"
+      "explanation": "After the loop finishes its final iteration, 'i' is incremented to 5. The condition '5 < 5' fails, and the code prints the current value of 'i', which is 5.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         int i ;\n         for ( i = 0; i < 5; i++)\n         {\n             int j = 0;\n             j += i;\n             Console. WriteLine(j);\n         }\n         Console. WriteLine(i);\n         Console. ReadLine();\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int i;\n    for (i = 0; i < 5; i++)\n    {\n        int j = 0;\n        j += i;\n        Console.Write(j + \" \");\n    }\n    Console.Write(i);\n}",
       "options": [
         {
           "key": "a",
-          "text": "0, 1, 2, 3, 4, 5, 6"
+          "text": "0 1 2 3 4 5 6"
         },
         {
           "key": "b",
-          "text": "0, 1, 2, 3, 4, 5"
+          "text": "0 1 2 3 4 5"
         },
         {
           "key": "c",
-          "text": "0, 1, 2, 3, 4"
+          "text": "0 1 2 3 4"
         },
         {
           "key": "d",
-          "text": "0, 1, 2, 3"
+          "text": "0 1 2 3"
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n0, 1, 2, 3, 4, 5"
+      "explanation": "Inside the loop, 'j' is re-initialized to 0 each time, so it prints 0, 1, 2, 3, 4. After the loop, the final value of 'i' (5) is printed.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      int i ;\n      for (i = 0; i < 5; i++)\n      {\n          int j = 0;\n          j += i;\n          Console. WriteLine(j);\n      }\n      Console. WriteLine( i * j);\n      Console. ReadLine();\n  }",
+      "code": "static void Main(string[] args)\n{\n    int i;\n    for (i = 0; i < 5; i++)\n    {\n        int j = 0;\n        j += i;\n    }\n    Console.WriteLine(i * j);\n}",
       "options": [
         {
           "key": "a",
-          "text": "0, 1, 6, 18, 40"
+          "text": "0 1 6 18 40"
         },
         {
           "key": "b",
-          "text": "0, 1, 5, 20, 30"
+          "text": "0 1 5 20 30"
         },
         {
           "key": "c",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "d",
-          "text": "0, 1, 2, 3, 4, 5"
+          "text": "Runtime error"
         }
       ],
       "answer": "c",
-      "explanation": "The scope of j is local in nature it cannot be extended outside the block in which it is defined."
+      "explanation": "The variable 'j' is declared inside the 'for' loop block. It is not accessible outside that block. Attempting to use 'j' in 'i * j' causes a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Scope of variable is related to definition of variable as: i. Region of code within which variable value is valid and hence can be accessed. ii. No, relation with region where variable is declared its value is valid in entire scope.",
+      "question": "Which statement best describes the 'Scope' of a variable in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "i"
+          "text": "The region of code where the variable is valid and can be accessed"
         },
         {
           "key": "b",
-          "text": "ii"
+          "text": "The memory address where the variable is stored"
         },
         {
           "key": "c",
-          "text": "i, ii"
+          "text": "The total time the variable remains in memory"
         },
         {
           "key": "d",
@@ -154,16 +159,17 @@
         }
       ],
       "answer": "a",
-      "explanation": "Scope of variable is the area or region within which variable is declared and hence initialized values of different kind. Based, on which operations of different kinds are carried out on that variable declared within that scope. Its value is preserved until and unless scope of that block ({ }) is not expired because as soon as scope gets over. Hence, variable value gets expired. Hence, it's inaccessible after it."
+      "explanation": "Scope defines the visibility of a variable. A variable is only accessible within the block ({ }) in which it is declared.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     public static void Main(string[] args)\n     {\n         int i = 100;\n         for (a = 0; a < 5; a++)\n         {\n             int i = 200;\n             Console. WriteLine(a * i);\n         }\n         Console. ReadLine();\n     }\n }",
+      "question": "What will be the result of the following C# code?",
+      "code": "class Program\n{\n    public static void Main(string[] args)\n    {\n        int i = 100;\n        for (int a = 0; a < 5; a++)\n        {\n            int i = 200; \n            Console.WriteLine(a * i);\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "5, 10, 15, 20"
+          "text": "0, 200, 400, 600, 800"
         },
         {
           "key": "b",
@@ -171,32 +177,33 @@
         },
         {
           "key": "c",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "d",
-          "text": "0, 1, 2, 3, 4"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "The compiler cannot interpret between variable 'i' declared as an instance variable  outside for loop block and variable 'i' declared as a local variable inside the for loop context. The instance variable 'id' defined before the for loop  is still in scope inside for loop and hence goes out of scope only when main() is finished executing. The local variable 'i' declared inside for loop had scope limited within blocks({ }) in which it is declared and hence creates name conflict with instance variable 'i' so, compiler is unable to distinguish between both. When instance variable 'i' is removed away. The program runs accurately producing the output as \"0, 200, 400, 600, 800\", this explains the concept of scope deceleration."
+      "explanation": "C# does not allow a local variable to be declared in a nested scope if it would hide another local variable in the same method. Declaring 'int i' inside the loop when it's already declared in Main causes a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Syntax for declaration and initialization of data variable is?",
+      "question": "What is the standard syntax for declaring and initializing a variable in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "<data type><var_name> = <Value>;"
+          "text": "<data type> <var_name> = <value>;"
         },
         {
           "key": "b",
-          "text": "<data type><var_name>;"
+          "text": "<data type> <var_name>;"
         },
         {
           "key": "c",
-          "text": "<var_name><data type>;"
+          "text": "<var_name> <data type>;"
         },
         {
           "key": "d",
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "By definition."
+      "explanation": "In C#, you must specify the data type, then the name, and optionally assign a value using the '=' operator.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     public static void Main(string[] args)\n     {\n         int i, j;\n         i = (j = 5) + 10;\n         Console. WriteLine(i);\n         Console. WriteLine(j);\n         Console. ReadLine();\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int i, j;\n    i = (j = 5) + 10;\n    Console.WriteLine(i + \", \" + j);\n}",
       "options": [
         {
           "key": "a",
@@ -229,62 +237,65 @@
         }
       ],
       "answer": "c",
-      "explanation": "j='5′ will return value of 5 stored it in variable 'j' but value assigned to variable 'i' will be first value of 'j' and hence increment a value of  '10' in that value of 'j' i. e 15.\n\nOutput:\n\n15, 5"
+      "explanation": "The assignment (j = 5) sets j to 5 and returns 5. Then 5 + 10 = 15 is assigned to 'i'.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Choose effective differences between 'Boxing' and 'Unboxing'.",
+      "question": "Which statement correctly defines Boxing and Unboxing in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "'Boxing' is the process of converting a value type to the reference type and 'Unboxing' is the process of converting reference to value type"
+          "text": "Boxing converts a value type to a reference type; Unboxing converts a reference type back to a value type"
         },
         {
           "key": "b",
-          "text": "'Boxing' is the process of converting a reference type to value type and 'Unboxing' is the process of converting value type to reference type"
+          "text": "Boxing converts a reference type to a value type; Unboxing converts a value type to a reference type"
         },
         {
           "key": "c",
-          "text": "In 'Boxing' we need explicit conversion and in 'Unboxing' we need implicit conversion"
+          "text": "Boxing is implicit, while Unboxing is always explicit"
         },
         {
           "key": "d",
-          "text": "Both 'Boxing' and 'Unboxing' we need implicit conversion"
-        }
-      ],
-      "answer": "a",
-      "explanation": "By definition."
-    },
-    {
-      "number": 11,
-      "question": "Select differences between reference type and value type: i. Memory allocated to 'Value type' is from heap and reference type is from 'System.ValueType' ii. Memory allocated to 'Value type' is from 'System.ValueType' and reference type is from 'Heap' iii. Structures, enumerated types derived from 'System.ValueType' are created on stack, hence known as ValueType and all 'classes' are reference type because values are stored on heap",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "i, iii"
-        },
-        {
-          "key": "b",
-          "text": "ii, iii"
-        },
-        {
-          "key": "c",
-          "text": "i, ii, iii"
-        },
-        {
-          "key": "d",
-          "text": "iii"
+          "text": "Both A and C are correct"
         }
       ],
       "answer": "d",
-      "explanation": "By definition."
+      "explanation": "Boxing wraps a value type into an object (implicit). Unboxing extracts the value type from the object and requires an explicit cast.",
+      "origin": "local"
+    },
+    {
+      "number": 11,
+      "question": "Where is memory typically allocated for Value types and Reference types in C#?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "Both are allocated on the Heap"
+        },
+        {
+          "key": "b",
+          "text": "Both are allocated on the Stack"
+        },
+        {
+          "key": "c",
+          "text": "Value types on Heap, Reference types on Stack"
+        },
+        {
+          "key": "d",
+          "text": "Value types (local) on Stack, Reference types on Heap"
+        }
+      ],
+      "answer": "d",
+      "explanation": "Local variables of value types are stored on the Stack. Reference types (objects) are stored on the Heap, with their references stored on the Stack.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "What will be the output of the following C# code?",
-      "code": "    public static void Main(string[] args)\n    {\n        int i = 123;\n        object o = i;\n        i = 456;\n        System. Console. WriteLine(\"The value-type value = {0}\", i);\n        System. Console. WriteLine(\"The object-type value = {0}\", o);\n        Console. ReadLine();\n    }",
+      "code": "static void Main(string[] args)\n{\n    int i = 123;\n    object o = i; // Boxing\n    i = 456;\n    Console.WriteLine(i + \", \" + o);\n}",
       "options": [
         {
           "key": "a",
@@ -304,12 +315,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "The concept of boxing is implemented here. The variable 'i' of 'int' type is boxed using variable 'o' of object type and hence value is stored inside it and is initialized to the object variable 'o'. Next, variable 'i' is again initialized with some value overriding it's previous stored value.\n\n Output:\n\n456, 123"
+      "explanation": "When 'i' is boxed into 'o', a copy of the value 123 is made on the heap. Changing 'i' later does not affect the value stored inside the object 'o'.",
+      "origin": "local"
     },
     {
       "number": 13,
       "question": "What will be the output of the following C# code?",
-      "code": "  public static void Main(string[] args)\n  {\n      int i = 546;\n      object o = i;\n      int n =(int) o;\n      o = 70;\n      System. Console. WriteLine(\"The value-type value = {0}\", n);\n      System. Console. WriteLine(\"The object-type value = {0}\", o);\n      Console. ReadLine();\n  }",
+      "code": "static void Main(string[] args)\n{\n    int i = 546;\n    object o = i;\n    int n = (int)o; // Unboxing\n    o = 70;\n    Console.WriteLine(n + \", \" + o);\n}",
       "options": [
         {
           "key": "a",
@@ -329,7 +341,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "The concept of 'unboxing' is implemented here. To 'unbox' an object back to value type, we have to do it explicitly as \"int n = (int) o\".\n\nOutput:\n\n546, 70"
+      "explanation": "Unboxing copies the value from the object back to a value type variable ('n'). Changing the object 'o' afterward to 70 does not change the value already copied into 'n'.",
+      "origin": "local"
     }
   ]
 }

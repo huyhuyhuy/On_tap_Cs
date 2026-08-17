@@ -9,7 +9,7 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     byte varA = 10;\n     byte varB = 20;\n     long result = varA & varB;\n     Console.WriteLine(\"{0}  AND  {1} Result :{2}\", varA, varB, result);\n     varA = 10;\n     varB = 10;\n     result = varA & varB;\n     Console.WriteLine(\"{0}  AND  {1} Result : {2}\", varA, varB, result);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    byte varA = 10; // 0000 1010\n    byte varB = 20; // 0001 0100\n    long result = varA & varB;\n    Console.Write(result + \", \");\n\n    varA = 10;\n    varB = 10;\n    result = varA & varB;\n    Console.Write(result);\n}",
       "options": [
         {
           "key": "a",
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "When 'OR' operations is done on the binary values following are the results of OR.\n\n              'OR' means addition(+) operation.\n\n                 0 (false) +   0(false)  =   0 (false)\n\t         1 (True)  +   0(false)  =   1 (True)\n\t         0(false)  +   1(True)   =   1 (True)\n\t         1(True)   +   1(True)   =   1 (True)\n\n When using OR operation it gives FALSE only when both the values are FALSE. In all other cases 'OR' operation gives 'true'.\n\n Output :\n\n    🔥 Enroll Now for\n - August 2026\n\n          10  AND  20 Result :0.\n          10  AND  10 Result :10."
+      "explanation": "The bitwise AND (&) operator compares corresponding bits. 10 (1010) AND 20 (10100) results in 0 (00000). 10 (1010) AND 10 (1010) results in 10 (1010).",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " public static void Main()\n {\n     byte varA = 10;\n     byte varB = 20;\n     long result = varA | varB;\n     Console.WriteLine(\"{0}  OR  {1} Result :{2}\", varA, varB, result);\n     varA = 10;\n     varB = 10;\n     result = varA | varB;\n     Console.WriteLine(\"{0}  OR  {1} Result : {2}\", varA, varB, result);\n }",
+      "code": "static void Main()\n{\n    byte varA = 10; // 0000 1010\n    byte varB = 20; // 0001 0100\n    long result = varA | varB;\n    Console.Write(result + \", \");\n\n    varA = 10;\n    varB = 10;\n    result = varA | varB;\n    Console.Write(result);\n}",
       "options": [
         {
           "key": "a",
@@ -54,12 +55,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "There are two kinds of Shift operations \"Right Shift\" and \"Left Shift\". Right Shift operation is used for shifting the bit positions towards right side. Left Shift operation is used for shifting the bit positions towards left side. When Right Shift operations are done on a binary value the bits are shifted one position towards the right.\n\nOutput :\n\n        10  OR  20 Result :30.\n        10  OR  10 Result :10."
+      "explanation": "The bitwise OR (|) operator returns 1 if either of the bits is 1. 10 (01010) OR 20 (10100) = 11110 (30). 10 OR 10 = 10.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     byte b1 = 0xAB;\n     byte b2 = 0x99;\n     byte temp;\n     temp = (byte) ~b2;\n     Console.Write( temp + \" \");\n     temp = (byte) (b1 << b2);\n     Console.Write(temp + \" \");\n     temp = (byte)(b2  >> 2);\n     Console.WriteLine(temp);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    byte b1 = 0xAB; // 171\n    byte b2 = 0x99; // 153\n    byte temp;\n    temp = (byte)~b2;\n    Console.Write(temp + \" \");\n    temp = (byte)(b1 << b2);\n    Console.Write(temp + \" \");\n    temp = (byte)(b2 >> 2);\n    Console.WriteLine(temp);\n}",
       "options": [
         {
           "key": "a",
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n102 0 38."
+      "explanation": "1) ~153 = -154, cast to byte is 102. 2) 171 << 153: shift count is 153 % 32 = 25. 171 << 25 = 5,737,808,896. Lower 8 bits are 0. 3) 153 >> 2 = 38.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of the following options is not a Bitwise Operator in C#?",
+      "question": "Which of the following options is NOT a bitwise operator in C#?",
       "code": null,
       "options": [
         {
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "+=, -= are Assignment Operators in C#."
+      "explanation": "+= and -= are compound assignment operators, not bitwise operators.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": "  bool a = true;\n  bool b = false;\n  a |= b;\n  Console.WriteLine(a);\n  Console.ReadLine();",
+      "code": "bool a = true;\nbool b = false;\na |= b;\nConsole.WriteLine(a);",
       "options": [
         {
           "key": "a",
@@ -129,20 +133,21 @@
         }
       ],
       "answer": "c",
-      "explanation": "'bools' are single bits, and so a bit-wise OR is the same as a logical OR.\n\nOutput :\n\nTrue."
+      "explanation": "In C#, the bitwise OR assignment operator (|=) can be used with boolean types. 'true | false' results in 'true'.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Select the relevant C# code set to fill up the blank for the following C# program?",
-      "code": "  static void Main(string[] args)\n  {\n      int x = 10, y = 20;\n      int res;\n      /*_______________*/\n      Console.WriteLine(res);\n  }",
+      "question": "Choose the correct code snippet to complete the Main method to calculate 'res' using a conditional operator.",
+      "code": "static void Main(string[] args)\n{\n    int x = 10, y = 20;\n    int res;\n    /* Insert code here */\n    Console.WriteLine(res);\n}",
       "options": [
         {
           "key": "a",
-          "text": "x % y == 0 ? (x == y ? (x += 2):(y = x + y)):y = y*10;"
+          "text": "res = (x % y == 0) ? (x == y ? 2 : x + y) : y * 10;"
         },
         {
           "key": "b",
-          "text": "x % y == 0 ? y += 10:(x += 10);"
+          "text": "res = (x % y == 0) ? (y += 10) : (x += 10);"
         },
         {
           "key": "c",
@@ -150,16 +155,17 @@
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "Both A and B are valid"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n         {\n              int x = 10, y = 20;\n              int res;\n              x % y == 0 ? y += 10:(x += 10);\n              Console.WriteLine(res);\n          }"
+      "answer": "d",
+      "explanation": "In C#, the conditional operator (?:) must be part of an expression. Both A and B assign the result of the ternary expression to 'res'. Option C is invalid because 'return' is a statement, not an expression.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int y = 5;\n     int x;\n     int k = (!(Convert.ToInt32(y) > 10))?  x = y + 3 : x = y + 10;\n     Console.WriteLine(x);\n     Console.WriteLine(y);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    int y = 5;\n    int x;\n    int k = (!(y > 10)) ? x = y + 3 : x = y + 10;\n    Console.WriteLine(x + \", \" + y);\n}",
       "options": [
         {
           "key": "a",
@@ -179,11 +185,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since condition y > 10 is false and !(false) = true. So, first statement x = y + 3 is executed which is x = 8 with y = 5.\n\nOutput:\n\n8, 5."
+      "explanation": "1) y > 10 is false. 2) !(false) is true. 3) Since true, 'x = y + 3' (8) is executed. Variable x becomes 8, and y remains 5.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which among the following is a conditional operator?",
+      "question": "Which of the following is the conditional (ternary) operator in C#?",
       "code": null,
       "options": [
         {
@@ -204,37 +211,39 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The ternary operator '?:' is the only conditional operator in C# that takes three operands.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "public static void Main(string[] args)\n{\n    int a = 4;\n    int c = 2;\n    bool b = (a % c == 0 ? true : false);\n    Console.WriteLine(b.ToString());\n    if (a/c == 2)\n    {\n        Console.WriteLine(\"true\");\n    }\n    else\n    {\n        Console.WriteLine(\"false\");\n    }\n    Console.ReadLine();\n}",
+      "code": "public static void Main(string[] args)\n{\n    int a = 4, c = 2;\n    bool b = (a % c == 0 ? true : false);\n    Console.WriteLine(b);\n    if (a / c == 2)\n        Console.WriteLine(\"true\");\n    else\n        Console.WriteLine(\"false\");\n}",
       "options": [
         {
           "key": "a",
-          "text": "True\nFalse"
+          "text": "True, False"
         },
         {
           "key": "b",
-          "text": "False\nTrue"
+          "text": "False, True"
         },
         {
           "key": "c",
-          "text": "True\nTrue"
+          "text": "True\ntrue"
         },
         {
           "key": "d",
-          "text": "False\nFalse"
+          "text": "False\nfalse"
         }
       ],
       "answer": "c",
-      "explanation": "a % c == 0 condition is true as (4 % 2  == 0). So, b is evaluated as true. Now (a/c == 2) which means if condition is also true hence it is evaluated as true.\n\nOutput:\n\n        True\n        True"
+      "explanation": "1) 4 % 2 is 0, so b is true (prints 'True'). 2) 4 / 2 is 2, so the if condition is true (prints 'true').",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Arrange the operators in the increasing order as defined in C#.",
-      "code": "    !=,   ?:,   &,   ++,  &&",
+      "question": "Arrange these C# operators in order of increasing precedence (lowest to highest).",
+      "code": "!=,   ?:,   &,   ++,  &&",
       "options": [
         {
           "key": "a",
@@ -242,19 +251,20 @@
         },
         {
           "key": "b",
-          "text": "?: < && < != < ++ < &"
+          "text": "++ < != < & < && < ?:"
         },
         {
           "key": "c",
-          "text": "?: < && < & <!= < ++"
+          "text": "?: < && < & < != < ++"
         },
         {
           "key": "d",
-          "text": "?: < && < != < & < ++"
+          "text": "& < != < && < ?: < ++"
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The correct order from lowest to highest precedence is: Conditional (?:), Conditional AND (&&), Bitwise AND (&), Equality (!=), and finally Unary (++).",
+      "origin": "local"
     }
   ]
 }

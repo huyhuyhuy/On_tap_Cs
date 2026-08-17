@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Name the exception thrown by read() on failure.",
+      "question": "Which exception is thrown by the Read() method if an I/O failure occurs?",
       "code": null,
       "options": [
         {
@@ -25,65 +25,68 @@
         },
         {
           "key": "d",
-          "text": "I/O Exception"
+          "text": "IOException"
         }
       ],
       "answer": "d",
-      "explanation": "read() throws I/O exception on failure."
+      "explanation": "In C#, methods in the System.IO namespace and Console class throw a System.IO.IOException when a read/write error occurs.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which of these methods are used to read single character from the console?",
+      "question": "Which method is used to read a single character from the standard input stream?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "get()"
+          "text": "Get()"
         },
         {
           "key": "b",
-          "text": "getline()"
+          "text": "GetLine()"
         },
         {
           "key": "c",
-          "text": "read()"
+          "text": "Read()"
         },
         {
           "key": "d",
-          "text": "readLine()"
+          "text": "ReadLine()"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Console.Read() reads the next character from the standard input stream and returns its Unicode value as an integer.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of these method used to read strings from the console?",
+      "question": "Which method is used to read a full line of characters (as a string) from the console?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "get()"
+          "text": "Get()"
         },
         {
           "key": "b",
-          "text": "getline()"
+          "text": "GetLine()"
         },
         {
           "key": "c",
-          "text": "read()"
+          "text": "Read()"
         },
         {
           "key": "d",
-          "text": "readLine()"
+          "text": "ReadLine()"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Console.ReadLine() reads the next line of characters from the input stream and returns it as a string. It returns null if the end of the stream is reached.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which among the following methods are used to write characters to a string?",
+      "question": "Which stream class is designed to write character data into a string (specifically a StringBuilder)?",
       "code": null,
       "options": [
         {
@@ -104,11 +107,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "The stream class method writes characters to the string."
+      "explanation": "StringWriter allows you to treat a StringBuilder like a stream, enabling you to write character data into it using standard stream methods.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which method in Console enables to read individual inputs directly from the keyboard in a non line buffered manner?",
+      "question": "Which method in the Console class allows reading a single key press directly from the keyboard without waiting for the Enter key?",
       "code": null,
       "options": [
         {
@@ -129,61 +133,64 @@
         }
       ],
       "answer": "b",
-      "explanation": "The .NET Framework includes a method in Console that enables you to read individual keystrokes directly from the keyboard, in a non-line-buffered manner. This method is called ReadKey(). When it is called, it waits until a key is pressed. When the key is pressed, ReadKey( ) returns the keystroke immediately."
+      "explanation": "ReadKey() is non-line-buffered, meaning it captures the keystroke immediately as the user presses it, returning a ConsoleKeyInfo object.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "What is the output returned by Console if ReadLine() stores I/O error?",
+      "question": "What happens if Console.ReadLine() encounters a physical I/O error?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "1"
+          "text": "It returns the value 1"
         },
         {
           "key": "b",
-          "text": "0"
+          "text": "It returns the value 0"
         },
         {
           "key": "c",
-          "text": "False"
+          "text": "It returns the boolean False"
         },
         {
           "key": "d",
-          "text": "I/O EXCEPTION ERROR"
+          "text": "It throws an IOException"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Standard library methods in .NET throw a System.IO.IOException when a hardware or stream error occurs during a read operation.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "What will be the output for following input from the console as a character?",
-      "code": " static void Main(string[] args)\n {\n     Console.WriteLine(\"what is your name?\");\n     char s;\n     s = Convert.ToChar(Console.ReadLine());\n     Console.WriteLine(\"how are you: \"+s);\n     Console.Read();\n }",
+      "question": "What will happen when executing the following code if the user enters a full name (e.g., 'Harsh')?",
+      "code": "static void Main(string[] args)\n{\n    Console.WriteLine(\"What is your name?\");\n    char s;\n    s = Convert.ToChar(Console.ReadLine());\n    Console.WriteLine(\"How are you: \" + s);\n}",
       "options": [
         {
           "key": "a",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "b",
-          "text": "Code run successfully prints nothing on console"
+          "text": "Runs successfully but prints only the first letter"
         },
         {
           "key": "c",
-          "text": "Code runs successfully prints input on console"
+          "text": "Runs successfully and prints the full name"
         },
         {
           "key": "d",
-          "text": "Run time error"
+          "text": "Runtime error (FormatException)"
         }
       ],
       "answer": "d",
-      "explanation": "Since only a single character is required to be entered on console when a string is entered, a run time exception is being generated as we had not used Read() which reads single character but used readLine() which reads string and is converted into the char using convert.tochar()."
+      "explanation": "Convert.ToChar(string) only works if the string has exactly one character. If the user enters a longer string (like 'Harsh'), it will throw a System.FormatException at runtime.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Name the method/methods used to read byte streams from the file?",
+      "question": "Which method is used to read a single byte from a file stream?",
       "code": null,
       "options": [
         {
@@ -192,11 +199,11 @@
         },
         {
           "key": "b",
-          "text": "Read"
+          "text": "Read()"
         },
         {
           "key": "c",
-          "text": "Readkey()"
+          "text": "ReadKey()"
         },
         {
           "key": "d",
@@ -204,11 +211,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "The ReadByte() method of the Stream/FileStream class reads a single byte from the current position and returns it as an integer, or -1 if at the end of the stream.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Which of these method/methods are used to read block or array of bytes from the file?",
+      "question": "Which method is used to read a block or an array of bytes from a stream?",
       "code": null,
       "options": [
         {
@@ -225,11 +233,12 @@
         },
         {
           "key": "d",
-          "text": "Readkey()"
+          "text": "ReadKey()"
         }
       ],
       "answer": "a",
-      "explanation": "To read a block of bytes, use Read( ), which has this general form:\n\n              int Read(byte[ ] array, int offset, int count)."
+      "explanation": "The Read(byte[] buffer, int offset, int count) method is used to read a specific number of bytes into a byte array.",
+      "origin": "local"
     }
   ]
 }

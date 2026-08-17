@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of the following cannot further inspect the attribute that is once applied?",
+      "question": "Which of the following generally does NOT inspect the attributes applied to code metadata?",
       "code": null,
       "options": [
         {
@@ -29,16 +29,17 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Compilers, the CLR, and runtimes like ASP.NET use attributes to change behavior or generate metadata. A standard linker primarily combines files and doesn't typically inspect custom attributes for logic.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "To apply an attribute to an Assembly, the correct way of implementation is?",
+      "question": "What is the correct way to apply an attribute to an entire Assembly?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "[AssemblyInfo: AssemblyDescription (\"Csharp\")]"
+          "text": "[AssemblyInfo: AssemblyDescription(\"Csharp\")]"
         },
         {
           "key": "b",
@@ -54,16 +55,17 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Global attributes (like assembly or module attributes) must be placed at the top of the file and use the 'assembly:' or 'module:' target specifier.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "The correct method to pass a parameter to an attribute is?",
+      "question": "Which method can be used to pass a specific parameter to an attribute property in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "By name"
+          "text": "By name (Named parameters)"
         },
         {
           "key": "b",
@@ -71,7 +73,7 @@
         },
         {
           "key": "c",
-          "text": "By value"
+          "text": "By value (Positional parameters)"
         },
         {
           "key": "d",
@@ -79,24 +81,25 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Attributes support both positional parameters (passed to the constructor by value) and named parameters (used to set specific properties or fields by name).",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which among the following is the correct form of applying an attribute?",
+      "question": "Which of the following is the correct form of applying an attribute in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "<Serializable()>class sample\n  {\n\n  }"
+          "text": "<Serializable()> class sample { }"
         },
         {
           "key": "b",
-          "text": "🔥 Enroll Now for Free Python Certification - August 2026\n\n  (Serializable())class sample\n  {\n\n  }"
+          "text": "(Serializable()) class sample { }"
         },
         {
           "key": "c",
-          "text": "[Serializable()] class sample\n  {\n\n  }"
+          "text": "[Serializable()] class sample { }"
         },
         {
           "key": "d",
@@ -104,11 +107,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "In C#, attributes are enclosed in square brackets []. The parenthesis are optional if there are no parameters.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which among the following cannot be a target for a custom attribute?",
+      "question": "Which of the following cannot be a target for a custom attribute?",
       "code": null,
       "options": [
         {
@@ -129,24 +133,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Attributes can be applied to most programming elements (classes, methods, enums, etc.), but Namespaces are not valid targets for attributes in C#.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Select the correct statement about Attributes used in C#.NET?",
+      "question": "Select the correct statement about Attributes used in C#.NET:",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "The CLR can change the behaviour of the code depending on attributes applied to it"
+          "text": "The CLR can change the behavior of the code depending on attributes applied to it"
         },
         {
           "key": "b",
-          "text": "If a bugFixAttribute is to receive three parameters, then the BugFixAttribute class should implement a zero argument constructor"
+          "text": "To receive three parameters, an attribute class must implement a zero-argument constructor"
         },
         {
           "key": "c",
-          "text": "To create a custom attribute we need to create a custom attribute structure and derive it from System.Attribute"
+          "text": "Custom attributes are created by deriving from System.ValueType"
         },
         {
           "key": "d",
@@ -154,24 +159,25 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "The CLR and other tools use attributes (like [Serializable] or [SecurityAttribute]) to alter execution behavior. Custom attributes must be classes derived from 'System.Attribute'.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "The correct way to apply the custom attribute called Employer which receives two arguments - name of the employee and employeeid is?",
+      "question": "What is the correct way to apply a custom attribute called 'Employer' which receives a name and an ID?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Custom attribute can be applied to an assembly"
+          "text": "It can be applied to an assembly"
         },
         {
           "key": "b",
-          "text": "[assembly : Employer(\"Ankit\",employeeid.one)]"
+          "text": "[assembly: Employer(\"Ankit\", 1)]"
         },
         {
           "key": "c",
-          "text": "[ Employer(\"Ankit\",  employeeid.second)] class employee\n   {\n   }"
+          "text": "[Employer(\"Ankit\", 2)] class Employee { }"
         },
         {
           "key": "d",
@@ -179,36 +185,38 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Attributes are versatile; they can be applied globally to an assembly or locally to classes, provided the AttributeUsage allows it.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of the following is the correct statement about inspecting an attribute in C#.NET?",
+      "question": "Which of the following is the most common time to inspect an attribute in C#.NET?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "An attribute can be inspected at link time"
+          "text": "At link time"
         },
         {
           "key": "b",
-          "text": "An attribute can be inspected at design time"
+          "text": "At design time"
         },
         {
           "key": "c",
-          "text": "An attribute can be inspected at run time"
+          "text": "At run time"
         },
         {
           "key": "d",
           "text": "None of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "c",
+      "explanation": "Attributes are primarily inspected at Runtime using Reflection to determine how the code should behave.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Attributes could be applied to ___________",
+      "question": "To which elements can attributes be applied?",
       "code": null,
       "options": [
         {
@@ -229,32 +237,34 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Attributes are highly flexible and can be used to annotate methods, classes, properties, assemblies, and more.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "The [Serializable()] attributes gets inspected at _________",
+      "question": "When is the [Serializable()] attribute typically inspected?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "compile time"
+          "text": "At compile time"
         },
         {
           "key": "b",
-          "text": "run time"
+          "text": "At run time"
         },
         {
           "key": "c",
-          "text": "design time"
+          "text": "At design time"
         },
         {
           "key": "d",
-          "text": "linking time"
+          "text": "At linking time"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The [Serializable] attribute is checked at runtime by serialization engines (like BinaryFormatter) to ensure the object is allowed to be serialized.",
+      "origin": "local"
     }
   ]
 }

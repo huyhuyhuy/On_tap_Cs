@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "From which of these classes, the character based output stream class Stream Writer is derived?",
+      "question": "From which of these base classes is the character-based output class 'StreamWriter' derived?",
       "code": null,
       "options": [
         {
@@ -21,7 +21,33 @@
         },
         {
           "key": "c",
-          "text": "Character Stream"
+          "text": "CharacterStream"
+        },
+        {
+          "key": "d",
+          "text": "Stream"
+        }
+      ],
+      "answer": "a",
+      "explanation": "In C#, 'StreamWriter' inherits from the abstract 'TextWriter' class, which is designed for sequential character output.",
+      "origin": "local"
+    },
+    {
+      "number": 2,
+      "question": "What is the main advantage of using character stream-based file handling over byte streams?",
+      "code": null,
+      "options": [
+        {
+          "key": "a",
+          "text": "They operate directly on Unicode characters"
+        },
+        {
+          "key": "b",
+          "text": "They operate directly on bits"
+        },
+        {
+          "key": "c",
+          "text": "They use less memory than byte streams"
         },
         {
           "key": "d",
@@ -29,36 +55,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "StreamWriter is derived from TextWriter. To create a character-based output stream, wrap a Stream object (such as a FileStream) inside a StreamWriter."
-    },
-    {
-      "number": 2,
-      "question": "The advantages of using character stream based file handling are?",
-      "code": null,
-      "options": [
-        {
-          "key": "a",
-          "text": "they operate directly on unicode characters"
-        },
-        {
-          "key": "b",
-          "text": "they operate directly on bits"
-        },
-        {
-          "key": "c",
-          "text": "they store unicode text"
-        },
-        {
-          "key": "d",
-          "text": "all of the mentioned"
-        }
-      ],
-      "answer": "a",
-      "explanation": "Although byte-oriented file handling is quite common, it is possible to use character-based streams for this purpose. The advantage of the character streams is that they operate directly on Unicode characters. Thus, if you want to store Unicode text, the character streams are certainly the best option."
+      "explanation": "While byte streams handle raw 8-bit data, character streams handle 16-bit Unicode characters, making them the best option for reading and writing international text.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which among the following classes are used to perform the character based file operations?",
+      "question": "Which class is specifically used to perform character-based read operations from a file?",
       "code": null,
       "options": [
         {
@@ -75,40 +77,42 @@
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "BufferedByteStream"
         }
       ],
       "answer": "a",
-      "explanation": "In general, to perform character-based file operations, wrap a FileStream inside a StreamReader or a StreamWriter. These classes automatically convert a byte stream into a character stream, and vice versa."
+      "explanation": "'StreamReader' is designed to read characters from a byte stream (like 'FileStream') using a specific encoding.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of these is a method used to clear all the data present in output buffers?",
+      "question": "Which method is used to clear all data present in output buffers and write them to the underlying stream?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "clear()"
+          "text": "Clear()"
         },
         {
           "key": "b",
-          "text": "flush()"
+          "text": "Flush()"
         },
         {
           "key": "c",
-          "text": "fflush()"
+          "text": "Reset()"
         },
         {
           "key": "d",
-          "text": "close()"
+          "text": "Close()"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The 'Flush()' method ensures that any data previously written to the buffer is immediately moved to the destination device.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which method of the character stream class returns the numbers of characters successfully read starting at index?",
+      "question": "Which method of 'TextReader' attempts to read a specified number of characters into a buffer and blocks until they are read?",
       "code": null,
       "options": [
         {
@@ -121,53 +125,55 @@
         },
         {
           "key": "c",
-          "text": "int ReadBlock(char[ ] buffer, int index, int count)"
+          "text": "int ReadBlock(char[] buffer, int index, int count)"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "Attempts to read the count characters into buffer starting at buffer[index], returning the number of characters successfully read."
+      "explanation": "'ReadBlock' is similar to 'Read', but it blocks until either 'count' characters have been read or the end of the stream is reached.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which method of character stream class returns the numbers of characters successfully read starting at count?",
+      "question": "In the method 'int Read(char[] buffer, int index, int count)', what does the 'index' parameter specify?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "int Read()"
+          "text": "The total number of characters to read"
         },
         {
           "key": "b",
-          "text": "int Read(char[] buffer, int index, int count)"
+          "text": "The starting position in the 'buffer' array at which to begin writing"
         },
         {
           "key": "c",
-          "text": "int ReadBlock(char[ ] buffer, int index, int count)"
+          "text": "The position in the file to start reading from"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "Attempts to read the count characters into buffer starting at buffer[count], returning the number of characters successfully read."
+      "explanation": "The 'index' parameter refers to the offset in the destination array ('buffer'), not the position in the source file.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Which method among the following returns the integer if no character is available?",
+      "question": "Which method obtains the next character from the input stream without consuming it, returning -1 if no characters are available?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "int peek()"
+          "text": "int Peek()"
         },
         {
           "key": "b",
-          "text": "int read()"
+          "text": "int Read()"
         },
         {
           "key": "c",
@@ -175,20 +181,21 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "int GetNext()"
         }
       ],
       "answer": "a",
-      "explanation": "Obtains the next character from the input stream, but does not remove that character. Returns -1 if no character is available."
+      "explanation": "The 'Peek()' method allows you to look at the next character without moving the internal stream pointer.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of the following is used to perform all input & output operations in C#?",
+      "question": "Which concept is used to perform all input and output operations in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "streams"
+          "text": "Streams"
         },
         {
           "key": "b",
@@ -196,7 +203,7 @@
         },
         {
           "key": "c",
-          "text": "classes"
+          "text": "Classes"
         },
         {
           "key": "d",
@@ -204,57 +211,60 @@
         }
       ],
       "answer": "a",
-      "explanation": "Streams are used for input and output operations in any programming language."
+      "explanation": "In .NET, a 'Stream' is an abstraction of a sequence of bytes, used for all types of I/O (files, network, memory).",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Which of the following is a type of stream in C#?",
+      "question": "What are the two primary types of streams defined in the C# System.IO namespace?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Integer stream"
+          "text": "Integer and Float streams"
         },
         {
           "key": "b",
-          "text": "Character stream"
+          "text": "Byte and Character streams"
         },
         {
           "key": "c",
-          "text": "Float stream"
+          "text": "String and Boolean streams"
         },
         {
           "key": "d",
-          "text": "Long stream"
+          "text": "Long and Short streams"
         }
       ],
       "answer": "b",
-      "explanation": "Two types of streams - Byte stream and character stream are defined in C#."
+      "explanation": ".NET categorizes I/O into byte-oriented (Stream class) and character-oriented (TextReader/TextWriter classes).",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "In the given constructor declaration for character based file operation what does 'path' and 'bool specifies?",
-      "code": " StreamWriter(string path, bool append)",
+      "question": "In the constructor 'StreamWriter(string path, bool append)', what happens if 'append' is set to true?",
+      "code": null,
       "options": [
         {
           "key": "a",
-          "text": "the name of the file to open"
+          "text": "The file is opened for reading only"
         },
         {
           "key": "b",
-          "text": "specifies the full path of file"
+          "text": "The file is deleted and recreated"
         },
         {
           "key": "c",
-          "text": "if append is true, the file is appended to the end of the existing file"
+          "text": "New data is added to the end of the existing file"
         },
         {
           "key": "d",
-          "text": "all of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
-      "answer": "d",
-      "explanation": "StreamWriter(string path, bool append). Here, path specifies the name of the file to be opened, which can include a full path specifier. In the second form, if append is true, then the output is appended to the end of an existing file. Otherwise, output overwrites the specified file."
+      "answer": "c",
+      "explanation": "If 'append' is true, data will be written at the end of the file. If false, the file is overwritten.",
+      "origin": "local"
     }
   ]
 }

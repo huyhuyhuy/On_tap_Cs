@@ -9,7 +9,7 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 5;\n     int b = 10;\n     int c;\n     Console.WriteLine(c = ++ a + b ++);\n     Console.WriteLine(b);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 5;\n    int b = 10;\n    int c;\n    Console.WriteLine(c = ++a + b++);\n    Console.WriteLine(b);\n}",
       "options": [
         {
           "key": "a",
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "c = 6 + 10 = 16 and b = 11 as we know ++operator increments and then executes similarly operator++ executes and then increments.\n\nOutput:\n\n16, 11"
+      "explanation": "Calculation: c = (++a) + (b++). ++a increments 5 to 6 first. b++ uses 10 then increments to 11. c = 6 + 10 = 16. Finally, b is printed as 11.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Storage location used by computer memory to store data for usage by an application is?",
+      "question": "Which term refers to a storage location in memory used by an application to store data that can be changed during execution?",
       "code": null,
       "options": [
         {
@@ -54,24 +55,25 @@
         }
       ],
       "answer": "c",
-      "explanation": "'Variables' are essential locations in memory of computer that are reserved for storing data used by an application. Each variable is given a name by programmer and hence assigned a value. The name assigned to variable then used in C# code to access value assigned to variable.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+      "explanation": "Variables are named memory locations reserved to store data. Developers assign names to variables to access and manipulate the values they hold.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "DIFFERENCE BETWEEN KEYWORDS 'VAR' AND 'DYNAMIC'?",
+      "question": "What are the primary differences between the 'var' and 'dynamic' keywords in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "'Var' is introduced in C# (3.0) and 'Dynamic' is introduced in C# (4.0)"
+          "text": "'var' was introduced in C# 3.0, while 'dynamic' was introduced in C# 4.0"
         },
         {
           "key": "b",
-          "text": "'Var' is a type of variable where declaration is done at compile time by compiler while 'Dynamic' declaration is achieved at runtime by compiler"
+          "text": "'var' is statically typed (resolved at compile time), 'dynamic' is resolved at runtime"
         },
         {
           "key": "c",
-          "text": "For 'Var' Error is caught at compile time and for 'Dynamic' Error is caught at runtime"
+          "text": "'var' errors are caught during compilation, 'dynamic' errors only occur at runtime"
         },
         {
           "key": "d",
@@ -79,37 +81,39 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "'var' uses type inference at compile time. 'dynamic' bypasses compile-time type checking and is resolved by the DLR (Dynamic Language Runtime) at execution.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "The following initializations inside a method in C# codes are ____",
-      "code": " 1. Myclass class1;\n    Myclass class2 = null;\n\n 2. int i;\n    int j = 0;",
+      "question": "Consider these initializations inside a method. Which statement is correct?",
+      "code": "1. MyClass obj1; MyClass obj2 = null;\n2. int i; int j = 0;",
       "options": [
         {
           "key": "a",
-          "text": "equivalent for (1), not equivalent for (2)"
+          "text": "Equivalent for (1), not equivalent for (2)"
         },
         {
           "key": "b",
-          "text": "equivalent for (2), not equivalent for (1)"
+          "text": "Equivalent for (2), not equivalent for (1)"
         },
         {
           "key": "c",
-          "text": "Both (1) and (2) are equivalents"
+          "text": "Both (1) and (2) are equivalent"
         },
         {
           "key": "d",
-          "text": "Both (1) and (2) are not equivalents"
+          "text": "Both (1) and (2) are NOT equivalent"
         }
       ],
       "answer": "d",
-      "explanation": "class1 variable is uninitialized whereas class2 variable is initialized. If we use an uninitialized variable in C#, the C# compiler will raise a compile-time error. So, they are not equivalent. Similarly, variable i is uninitialized whereas variable j is initialized. So, they are also not equivalent."
+      "explanation": "In C#, local variables are not automatically initialized. Using 'obj1' or 'i' before assignment causes a compile error, whereas 'obj2' and 'j' have explicit initial values.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code?",
-      "code": "  int a,b;\n  a = (b = 10) + 5;",
+      "question": "What will be the values of 'a' and 'b' after the following code executes?",
+      "code": "int a, b;\na = (b = 10) + 5;",
       "options": [
         {
           "key": "a",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "b is assigned 10 and after that its value is added with 5 and then saved in a, so a will be 15."
+      "explanation": "Assignment expressions in C# return the assigned value. (b = 10) evaluates to 10, then 10 + 5 is 15, which is assigned to 'a'.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "What will be the output of the following C# code conversion?",
-      "code": " static void Main(string[] args)\n {\n     char a = 'A';\n     string b = \"a\";\n     Console.WriteLine(Convert.ToInt32(a));\n     Console.WriteLine(Convert.ToInt32(Convert.ToChar(b)));\n     Console.ReadLine();\n }",
+      "question": "What will be the output of the following C# code snippet?",
+      "code": "static void Main(string[] args)\n{\n    char a = 'A';\n    string b = \"a\";\n    Console.WriteLine(Convert.ToInt32(a));\n    Console.WriteLine(Convert.ToInt32(Convert.ToChar(b)));\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "ASCII value of character 'A'  is 65 and ASCII value of the string \"a\", after the conversion to character 'a' is 97.\n\nOutput:\n\n65, 97"
+      "explanation": "The Unicode/ASCII value of uppercase 'A' is 65. The Unicode value of lowercase 'a' is 97.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    String name = \"Dr.Gupta\";\n    Console.WriteLine(\"Good Morning\" + name);\n}",
+      "code": "static void Main(string[] args)\n{\n    string name = \"Dr.Gupta\";\n    Console.WriteLine(\"Good Morning \" + name);\n}",
       "options": [
         {
           "key": "a",
@@ -171,7 +177,7 @@
         },
         {
           "key": "c",
-          "text": "Good MorningDr.Gupta"
+          "text": "Good Morning Dr.Gupta"
         },
         {
           "key": "d",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Initialize a string variable and concatenate string using '+' operator.\n\nOutput:\n\n Good MorningDr.Gupta"
+      "explanation": "The code performs simple string concatenation using the '+' operator.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 5;\n     int b = 10;\n     int c;\n     Console.WriteLine(c = a-- - ++b);\n     Console.WriteLine(b);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 5;\n    int b = 10;\n    int c;\n    Console.WriteLine(c = a-- - ++b);\n    Console.WriteLine(b);\n}",
       "options": [
         {
           "key": "a",
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n-6, 11"
+      "explanation": "c = (a--) - (++b). a-- uses 5, then a becomes 4. ++b increments 10 to 11. c = 5 - 11 = -6. b is now 11.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     const int a = 5;\n     const int b = 6;\n     for (int i = 1; i <= 5; i++)\n     {\n         a = a * i;\n         b = b * i;\n     }\n     Console.WriteLine(a);\n     Console.WriteLine(b);\n     Console.ReadLine();\n }",
+      "question": "What will happen when compiling and running this code?",
+      "code": "static void Main(string[] args)\n{\n    const int a = 5;\n    const int b = 6;\n    for (int i = 1; i <= 5; i++)\n    {\n        a = a * i;\n        b = b * i;\n    }\n    Console.WriteLine(a);\n}",
       "options": [
         {
           "key": "a",
@@ -217,7 +225,7 @@
         },
         {
           "key": "b",
-          "text": "Compile time error"
+          "text": "Compile-time error"
         },
         {
           "key": "c",
@@ -229,12 +237,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "The left hand side of an assignment must be a variable, property or indexer i.e for both 'a' and 'b'"
+      "explanation": "Variables declared with the 'const' keyword are immutable. Any attempt to modify their value after initialization results in a compile-time error.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     string Name = \"He is playing in a ground.\";\n     char[] characters = Name.ToCharArray();\n     StringBuilder sb = new StringBuilder();\n     for (int i = Name.Length - 1; i >= 0; --i)\n     {\n         sb.Append(characters[i]);\n     }\n     Console.Write(sb.ToString());\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string Name = \"He is playing in a ground.\";\n    char[] characters = Name.ToCharArray();\n    StringBuilder sb = new StringBuilder();\n    for (int i = Name.Length - 1; i >= 0; --i)\n    {\n        sb.Append(characters[i]);\n    }\n    Console.Write(sb.ToString());\n}",
       "options": [
         {
           "key": "a",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Reversal of array of strings character by character.\n\nOutput:\n\n.dnuorg a ni gniyalp si eH"
+      "explanation": "The code reverses the entire string by iterating backwards from the last index to 0 and appending each character to a StringBuilder.",
+      "origin": "local"
     }
   ]
 }

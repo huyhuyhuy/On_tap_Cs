@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Select the namespace on which the stream classes are defined?",
+      "question": "Which namespace contains the core stream classes in C#?",
       "code": null,
       "options": [
         {
@@ -29,24 +29,25 @@
         }
       ],
       "answer": "a",
-      "explanation": "The core stream classes are defined within the System.IO namespace. To use these classes, you will usually include the following statement near the top of your program: using System.IO;"
+      "explanation": "The core stream classes, such as Stream, FileStream, and MemoryStream, are defined within the System.IO namespace.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Choose the class on which all stream classes are defined?",
+      "question": "Which class serves as the abstract base class for all other stream classes in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "System.IO.stream"
+          "text": "System.IO.Stream"
         },
         {
           "key": "b",
-          "text": "Sytem.Input.stream"
+          "text": "System.Input.Stream"
         },
         {
           "key": "c",
-          "text": "System.Output.stream"
+          "text": "System.Output.Stream"
         },
         {
           "key": "d",
@@ -54,36 +55,38 @@
         }
       ],
       "answer": "a",
-      "explanation": "The core stream class is System.IO.Stream. Stream represents a byte stream and is a base class for all other stream classes. It is also abstract, which means that you cannot instantiate a Stream object. Stream defines a set of standard stream operations."
+      "explanation": "System.IO.Stream is an abstract class that provides a generic view of a sequence of bytes. Since it is abstract, it cannot be instantiated directly.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the stream class method which is used to close the connection?",
+      "question": "Which method is used to close the current stream and release any resources associated with it?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "close()"
+          "text": "Close()"
         },
         {
           "key": "b",
-          "text": "static close()"
+          "text": "static Close()"
         },
         {
           "key": "c",
-          "text": "void close()"
+          "text": "void Close()"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "c",
-      "explanation": "void close() closes the stream."
+      "explanation": "The 'void Close()' method closes the stream and releases resources. In modern C#, it is often used alongside the 'using' statement which calls 'Dispose()'.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "The method used to write a single byte to an output stream?",
+      "question": "Which method is used to write a single byte to an output stream?",
       "code": null,
       "options": [
         {
@@ -92,23 +95,24 @@
         },
         {
           "key": "b",
-          "text": "int Write(byte[] buffer ,int offset ,int count)"
+          "text": "void Write(byte[] buffer, int offset, int count)"
         },
         {
           "key": "c",
-          "text": "write()"
+          "text": "Write()"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "a",
-      "explanation": "Writes a single byte to an output stream."
+      "explanation": "WriteByte(byte) writes a single byte to the current position in the stream and advances the position by one byte.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Select the method which writes the contents of the stream to the physical device.",
+      "question": "Which method clears all buffers for the stream and causes any buffered data to be written to the underlying physical device?",
       "code": null,
       "options": [
         {
@@ -125,15 +129,16 @@
         },
         {
           "key": "d",
-          "text": "flush()"
+          "text": "Flush()"
         }
       ],
       "answer": "c",
-      "explanation": "The method used to write the contents of the stream to the physical device.\n\n🔥 Enroll for\nFree Data Structure Certification\n - August 2026"
+      "explanation": "The Flush() method moves data from the intermediate software buffer to the physical destination (like a disk).",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Select the method which returns the number of bytes from the array buffer:",
+      "question": "Which is the correct signature for the method used to write a subrange of bytes to a stream in C#?",
       "code": null,
       "options": [
         {
@@ -142,23 +147,24 @@
         },
         {
           "key": "b",
-          "text": "int Write(byte[] buffer, int offset, int count)"
+          "text": "void Write(byte[] buffer, int offset, int count)"
         },
         {
           "key": "c",
-          "text": "write()"
+          "text": "int Write(byte[] buffer, int offset, int count)"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "Writes a subrange of count bytes from the array buffer, beginning at buffer[offset], returning the number of bytes written."
+      "explanation": "In C#, the Stream.Write method returns 'void'. It writes a sequence of 'count' bytes from the provided buffer starting at the specified offset.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Name the method which returns integer as -1 when the end of file is encountered.",
+      "question": "Which method returns the next available byte of input as an integer, or returns -1 when the end of the stream is reached?",
       "code": null,
       "options": [
         {
@@ -171,19 +177,20 @@
         },
         {
           "key": "c",
-          "text": "void readbyte()"
+          "text": "void ReadByte()"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "Returns an integer representation of the next available byte of input. Returns -1 when the end of the file is encountered."
+      "explanation": "ReadByte() returns the byte cast to an 'int', or -1 if the end of the stream is encountered.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Select the statements which define the stream.",
+      "question": "Which of the following statements correctly define a stream in C#?",
       "code": null,
       "options": [
         {
@@ -192,11 +199,11 @@
         },
         {
           "key": "b",
-          "text": "A stream is linked to a physical device by the I/0 system"
+          "text": "A stream is linked to a physical device by the I/O system"
         },
         {
           "key": "c",
-          "text": "C# programs perform I/O through streams"
+          "text": "C# programs perform all input and output through streams"
         },
         {
           "key": "d",
@@ -204,16 +211,17 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "A stream acts as a logical interface to various physical devices (files, network, memory) and handles data transfer sequentially.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Select the action of the method long seek()?",
+      "question": "What is the function of the 'long Seek(long offset, SeekOrigin origin)' method?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Attempts to readup to count bytes into buffer starting at buffer[offset]"
+          "text": "Attempts to read bytes into a buffer"
         },
         {
           "key": "b",
@@ -221,7 +229,7 @@
         },
         {
           "key": "c",
-          "text": "Sets the current position in the stream to the specified offset from specified origin and hence returns the new position"
+          "text": "Sets the current position in the stream relative to a specified origin and returns the new position"
         },
         {
           "key": "d",
@@ -229,11 +237,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "long Seek(long offset, SeekOrigin origin)\n\nSets the current position in the stream to the specified offset from the specified origin. It returns the new position."
+      "explanation": "Seek() allows random access to a stream by moving the 'cursor' to a specific position based on the beginning, current position, or end of the stream.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which among the following attempts to read up to count bytes into buffer starting at buffer[offset], returning the number of bytes successfully read?",
+      "question": "Which method attempts to read up to 'count' bytes from a stream into a buffer, returning the number of bytes successfully read?",
       "code": null,
       "options": [
         {
@@ -246,7 +255,7 @@
         },
         {
           "key": "c",
-          "text": "Void WriteByte(byte value)"
+          "text": "void WriteByte(byte value)"
         },
         {
           "key": "d",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The Read method returns the actual number of bytes read into the buffer, which may be less than 'count' if the end of the stream is reached.",
+      "origin": "local"
     }
   ]
 }
