@@ -29,12 +29,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "In C#, using the 'params' keyword allows you to pass a variable number of arguments to a method, which is internally handled as a parameter array.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     object[] a = {\" 1 \", 4.0f, \" harsh \"};\n     fun(a);\n     Console.ReadLine();\n }\n static void fun(params object[] b)\n {\n     for (int i = 0; i < b.Length - 1; i++)\n         Console.WriteLine(b[i] + \" \");\n }",
+      "code": "static void Main(string[] args)\n{\n    object[] a = {\" 1 \", 4.0f, \" harsh \"};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params object[] b)\n{\n    for (int i = 0; i < b.Length; i++)\n        Console.Write(b[i] + \" \");\n}",
       "options": [
         {
           "key": "a",
@@ -50,41 +51,43 @@
         },
         {
           "key": "d",
-          "text": "1 4 harsh"
+          "text": "1 4.0 harsh"
         }
       ],
       "answer": "d",
-      "explanation": "'a' is declared as array of objects which is passed as a parameter to a single method fun() using variable number of parameters.\n\nOutput :\n\n    🔥 Enroll for\n - August 2026\n\n 1 4 harsh"
+      "explanation": "The array 'a' is passed to the method 'fun'. The method iterates through the entire array (i < b.Length) and prints each element. Note: I fixed the loop condition to match the intended output.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of the following statements are correct?",
+      "question": "Which of the following statements are correct about functions in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "C SHARP allows a function to have arguments with default values"
+          "text": "C# does not allow functions to have default values"
         },
         {
           "key": "b",
-          "text": "C SHARP allows a function to have variable number of arguments"
+          "text": "C# allows a function to have a variable number of arguments using 'params'"
         },
         {
           "key": "c",
-          "text": "Params are used to specify the syntax for a function having arguments"
+          "text": "The 'params' keyword can be used anywhere in the argument list"
         },
         {
           "key": "d",
-          "text": "Omitting the return value type in method definition results into an exception"
+          "text": "Omitting the return type results in a runtime exception"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "C# provides the 'params' keyword to enable a method to accept a variable number of arguments of a specified type.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    int [] a = {1, 2, 3, 4, 5};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b )\n{\n    int[] k = { 3, 4, 7, 8,'\\0' };\n    for (int i = 0; i < b.Length; i++)\n    {\n        b[i] = b[i] + k[i] ;\n        Console.WriteLine( b[i] + \" \");\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    int[] a = {1, 2, 3, 4, 5};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    int[] k = { 3, 4, 7, 8, 0 };\n    for (int i = 0; i < b.Length; i++)\n    {\n        b[i] = b[i] + k[i];\n        Console.Write(b[i] + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -92,49 +95,51 @@
         },
         {
           "key": "b",
-          "text": "3, 4, 7, 8, 5"
+          "text": "3 4 7 8 5"
         },
         {
           "key": "c",
-          "text": "3, 4, 7, 8, 5, 1, 2, 3, 4, 5"
+          "text": "3 4 7 8 5 1 2 3 4 5"
         },
         {
           "key": "d",
-          "text": "4, 6, 10, 12, 5"
+          "text": "4 6 10 12 5"
         }
       ],
       "answer": "d",
-      "explanation": "Passing of array parameters declared in main() and hence adding elements of array passed using param to another array k[] declared in fun() method.\n\nOutput :\n\n4, 6, 10, 12, 5"
+      "explanation": "The method adds corresponding elements of array 'b' (passed from 'a') and array 'k'. (1+3, 2+4, 3+7, 4+8, 5+0) results in 4, 6, 10, 12, 5.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int [] a = {1, 2, 3, 4, 5};\n     fun(a);\n     Console.ReadLine();\n }\n static void fun(params int[] b )\n {\n     for (int i = 0; i < b.Length; i++)\n     {\n         b[i] = b[i] * 5 ;\n         Console.WriteLine(b[i] + \"\");\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] a = {1, 2, 3, 4, 5};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    for (int i = 0; i < b.Length; i++)\n    {\n        b[i] = b[i] * 5;\n        Console.Write(b[i] + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "1, 2, 3, 4, 5"
+          "text": "1 2 3 4 5"
         },
         {
           "key": "b",
-          "text": "5, 10, 15, 20, 25"
+          "text": "5 10 15 20 25"
         },
         {
           "key": "c",
-          "text": "5, 25, 125, 625, 3125"
+          "text": "5 25 125 625 3125"
         },
         {
           "key": "d",
-          "text": "6, 12, 18, 24, 30"
+          "text": "6 12 18 24 30"
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n 5, 10, 15, 20, 25"
+      "explanation": "Each element of the array is multiplied by 5 and printed.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n  int[] a = {2, 21, 34, 46, 85, 88, 90};\n  fun(a);\n  Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n  int[] c = {1, 2, 3, 4, 5, 6, 7};\n  int i, j = 0;\n  for (i = 0; i < b.Length; i++)\n    if (b[i] % 2 == 0)\n    {\n      c[j++] = b[i];\n    }\n\n  for (i = 0; i < j; i++)\n  {\n    Console.Write(c[i] + \" \");\n  }\n}",
+      "code": "static void Main(string[] args)\n{\n    int[] a = {2, 21, 34, 46, 85, 88, 90};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    int[] c = new int[7];\n    int i, j = 0;\n    for (i = 0; i < b.Length; i++)\n    {\n        if (b[i] % 2 == 0)\n        {\n            c[j++] = b[i];\n        }\n    }\n    for (i = 0; i < j; i++)\n    {\n        Console.Write(c[i] + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -142,24 +147,25 @@
         },
         {
           "key": "b",
-          "text": "2, 21, 34, 4, 6, 46, 88, 90"
+          "text": "2 21 34 46 88 90"
         },
         {
           "key": "c",
-          "text": "2, 4, 34, 46, 6, 88, 90"
+          "text": "2 4 34 46 6 88 90"
         },
         {
           "key": "d",
-          "text": "2, 34, 46, 88, 90"
+          "text": "2 34 46 88 90"
         }
       ],
       "answer": "d",
-      "explanation": "The program is finding even numbers in a given array, storing it into another array and then displaying that to the console."
+      "explanation": "The code filters even numbers from the input array 'a' (2, 34, 46, 88, 90) and prints them.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int[] x = { 80, 82, 65, 72, 83, 67 };\n     fun(x);\n     Console.ReadLine();\n }\n static void fun(params int [] b )\n {\n     int i;\n     for (i = 5; i >=0 ; i--)\n     {\n         Console.WriteLine(Convert.ToChar(b[i]));\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] x = { 80, 82, 65, 72, 83, 67 };\n    fun(x);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    for (int i = 5; i >= 0; i--)\n    {\n        Console.Write(Convert.ToChar(b[i]));\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -179,32 +185,34 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "The integer values correspond to ASCII: 80=P, 82=R, 65=A, 72=H, 83=S, 67=C. The loop runs backwards from index 5 to 0, printing 'C S H A R P'.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int[] x = {65, 66, 67, 68, 69, 70};\n     fun(x);\n     Console.ReadLine();\n }\n static void fun(params int[] b )\n {\n     int i;\n     for (i = 5; i > 0 ; i--)\n     {\n         b[i] = b[i] + 32;\n         Console.WriteLine(Convert.ToChar(b[i]));\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    int[] x = {65, 66, 67, 68, 69, 70};\n    fun(x);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    for (int i = 5; i > 0; i--)\n    {\n        b[i] = b[i] + 32;\n        Console.Write(Convert.ToChar(b[i]) + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "A, B, C, D, E, F"
+          "text": "A B C D E F"
         },
         {
           "key": "b",
-          "text": "F, E, D, C, B, A"
+          "text": "F E D C B A"
         },
         {
           "key": "c",
-          "text": "f, e, d, c, b"
+          "text": "f e d c b"
         },
         {
           "key": "d",
-          "text": "b, c, d, e, f"
+          "text": "b c d e f"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Adding 32 to an uppercase ASCII value converts it to lowercase (e.g., 70+32=102 which is 'f'). The loop runs from index 5 down to 1 (i > 0), so it prints f, e, d, c, b.",
+      "origin": "local"
     }
   ]
 }

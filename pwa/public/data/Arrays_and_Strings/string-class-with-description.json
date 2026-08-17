@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "What is the String in C# meant for?",
+      "question": "What is a string in C#?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "C# Supports a predefined reference type known as string. When we declare a string using string type we are declaring the object to be of type \"System.String\"."
+      "explanation": "In C#, 'string' is a predefined reference type. When you declare a string, you are creating an object of the 'System.String' class.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "What does the term 'immutable' means in term of string objects?",
+      "question": "What does the term 'immutable' mean in term of string objects?",
       "code": null,
       "options": [
         {
@@ -46,7 +47,7 @@
         },
         {
           "key": "c",
-          "text": "We cannot perform various operation of comparison, inserting, appending etc"
+          "text": "We cannot perform operations like comparison or appending"
         },
         {
           "key": "d",
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "String objects are 'immutable' means we cannot modify the characters contained in string. Also operation on string produce a modified version of string rather then modifying characters of string."
+      "explanation": "String objects are immutable, meaning once created, their values cannot be changed. Operations that appear to modify a string actually return a new string object.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "To perform comparison operation on strings supported operations are ____________",
+      "question": "Which operations are supported for performing comparison on strings in C#?",
       "code": null,
       "options": [
         {
@@ -71,7 +73,7 @@
         },
         {
           "key": "c",
-          "text": "Assignment '==' operator"
+          "text": "The '==' operator"
         },
         {
           "key": "d",
@@ -79,12 +81,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "C# supports string comparison through the Compare() method, the Equals() method, and the overloaded '==' operator.",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     string s1 = \"Hello I Love Csharp \";\n     Console.WriteLine(Convert.ToChar( (s1.IndexOf('I') - s1.IndexOf('l')) * s1.IndexOf('p'));\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Hello I Love Csharp \";\n    Console.WriteLine(Convert.ToChar((s1.IndexOf('I') - s1.IndexOf('l')) * s1.IndexOf('p')));\n}",
       "options": [
         {
           "key": "a",
@@ -104,11 +107,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "'I' = index position[6], 'l' = index position[2]. So, I - l = 6-2 = 4*(index position of p = 18) = 72. Character with ASCII Value 72 = 'H'.\n\nOutput : H"
+      "explanation": "IndexOf('I') is 6, IndexOf('l') is 2. (6 - 2) = 4. IndexOf('p') is 18. 4 * 18 = 72. Convert.ToChar(72) is 'H'.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Correct way to convert a string to uppercase using string class method()?",
+      "question": "What is the correct way to convert a string to uppercase in C#?",
       "code": null,
       "options": [
         {
@@ -121,7 +125,7 @@
         },
         {
           "key": "c",
-          "text": "Object.ToUpper()"
+          "text": "stringInstance.ToUpper()"
         },
         {
           "key": "d",
@@ -129,12 +133,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "string s1 = \"Hello I Love Csharp \";\n\n             Console.WriteLine(s1.ToUpper());\n\n             Output: HELLO I LOVE CSHARP."
+      "explanation": "The ToUpper() method is an instance method of the String class. Example: s1.ToUpper().",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     String obj = \"hello\";\n     String obj1 = \"world\";\n     String obj2 = obj;\n     Console.WriteLine (obj.Equals(obj2) + \"  \" + obj2.CompareTo(obj) );\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string obj = \"hello\";\n    string obj2 = obj;\n    Console.WriteLine(obj.Equals(obj2) + \" \" + obj2.CompareTo(obj));\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Equal() checks if two string objects 'obj' and 'obj2' are equal or not and hence returns true or false. Similarly, \"CompareTo\" operator check two objects and since string obj2 = obj, it returns bool value '0'. Hence, they are equal.\n\nOutput :\n\nTrue 0"
+      "explanation": "obj.Equals(obj2) is True because they have the same value. obj2.CompareTo(obj) is 0 because they are identical in the sort order.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     String obj = \"hello\";\n     String obj1 = \"world\";\n     String obj2 = obj;\n     Console.WriteLine(obj + \"  \" + obj1);\n     string s = obj + \"  \" + obj1;\n     Console.WriteLine(s.Length);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string obj = \"hello\";\n    string obj1 = \"world\";\n    string s = obj + \" \" + obj1;\n    Console.WriteLine(s);\n    Console.WriteLine(s.Length);\n}",
       "options": [
         {
           "key": "a",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "Length() method calculates number of characters in a string. 'Obj2' assumes the value of object 'obj' in itself.\n\nOutput:\n\n        hello world\n        11"
+      "explanation": "\"hello\" (5) + \" \" (1) + \"world\" (5) results in \"hello world\", which has a Length of 11.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     String obj = \"hello\";\n     String obj1 = \"world\";\n     String obj2 = obj;\n     string s = obj+\" \"+obj1;\n     Console.WriteLine(s.IndexOf('r'));\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string obj = \"hello\";\n    string obj1 = \"world\";\n    string s = obj + \" \" + obj1;\n    Console.WriteLine(s.IndexOf('r'));\n}",
       "options": [
         {
           "key": "a",
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "IndexOf() used to find absolute position of a character of substring.\n\nOutput:\n\n8"
+      "explanation": "In \"hello world\", the character 'r' is at index 8 (h=0, e=1, l=2, l=3, o=4, space=5, w=6, o=7, r=8).",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     String obj = \"hello\";\n     String obj1 = \"world\";\n     String obj2 = obj;\n     string s = obj + \"  \" + obj1;\n     Console.WriteLine(s.Substring(6 ,5));\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string obj = \"hello\";\n    string obj1 = \"world\";\n    string s = obj + \" \" + obj1;\n    Console.WriteLine(s.Substring(6, 5));\n}",
       "options": [
         {
           "key": "a",
@@ -229,12 +237,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "'Substring()' extract substrings from a given string using overloaded substring() method provided by string class.\n\nOutput:\n\nworld"
+      "explanation": "s.Substring(6, 5) starts at index 6 ('w') and takes 5 characters, which results in \"world\".",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     String obj = \"hello\";\n     String obj1 = \"worn\";\n     String obj2 = obj;\n     Console.WriteLine(obj + \"  \" + (obj1.Replace('w' ,'c')));\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string obj = \"hello\";\n    string obj1 = \"worn\";\n    Console.WriteLine(obj + \" \" + (obj1.Replace('w', 'c')));\n}",
       "options": [
         {
           "key": "a",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Replace() method  provided by string builder class is used to replace characters.\n\nOutput:\n\nhello corn"
+      "explanation": "The Replace('w', 'c') method changes 'worn' to 'corn'. Concatenating it with 'hello ' results in 'hello corn'.",
+      "origin": "local"
     }
   ]
 }

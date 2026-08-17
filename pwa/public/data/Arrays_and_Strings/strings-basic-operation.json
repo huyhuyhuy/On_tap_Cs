@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of the following string() method are used to compare two strings with each other?",
+      "question": "Which of the following String methods is used to compare two strings and determine their relative sort order?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "In C#, the CompareTo() method is used to compare two strings and determine their relationship. It returns 0 if the strings are equal, a negative value if the first string is less, and a positive value if the first string is greater."
+      "explanation": "The 'CompareTo()' method compares the current string instance with another string and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Choose the base class for string() method:",
+      "question": "Choose the base class for the String type in C#:",
       "code": null,
       "options": [
         {
@@ -42,7 +43,7 @@
         },
         {
           "key": "b",
-          "text": "System.char"
+          "text": "System.Char"
         },
         {
           "key": "c",
@@ -54,12 +55,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "String is an alias for the predefined \"System.string\" class from which most of the string() methods are derived."
+      "explanation": "In C#, 'string' is an alias for the 'System.String' class, which is part of the .NET class library.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     string s1 = \" Cshr \";\n     string s2 = s1.Insert(3 , \" a \");\n     string s3 = s2.Insert(5 , \" p \");\n     for (int i = 0;i < s3.Length; i++)\n     Console.WriteLine(s3[i]);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Cshr\";\n    string s2 = s1.Insert(2, \"a\");\n    string s3 = s2.Insert(5, \"p\");\n    Console.WriteLine(s3);\n}",
       "options": [
         {
           "key": "a",
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Insertion of character 'a' at position '3' using insert() which returns a new string with  a substring inserted at a specified location.\n\nOutput:\n\n Csharp"
+      "explanation": "The Insert() method returns a new string. Inserting 'a' at index 2 of 'Cshr' results in 'Csahr'. Inserting 'p' at index 5 of 'Csahr' results in 'Csharp'.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of the following statement is correct about a string in C#.NET?",
+      "question": "Which of the following statements is correct about strings in C#?",
       "code": null,
       "options": [
         {
@@ -100,41 +103,43 @@
         },
         {
           "key": "d",
-          "text": "A string is mutable because it can be modified once it has been created"
+          "text": "A string is mutable and can be modified directly"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Strings in C# are zero-indexed, meaning the first character is at index 0. They are immutable, not mutable.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     string s1 = \"Hello\";\n     string s2 = \"hello\";\n     if (s1 == s2)\n     Console.WriteLine(\"Equal\");\n     else\n     Console.WriteLine(\"Unequal\");\n     if (s1.Equals (s2))\n     Console.WriteLine(\"Equal\");\n     else\n     Console.WriteLine(\"Unequal\");\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Hello\";\n    string s2 = \"hello\";\n    if (s1 == s2)\n        Console.Write(\"Equal \");\n    else\n        Console.Write(\"Unequal \");\n\n    if (s1.Equals(s2))\n        Console.Write(\"Equal\");\n    else\n        Console.Write(\"Unequal\");\n}",
       "options": [
         {
           "key": "a",
-          "text": "Equal\nUnequal"
+          "text": "Equal Unequal"
         },
         {
           "key": "b",
-          "text": "Unequal\nEqual"
+          "text": "Unequal Equal"
         },
         {
           "key": "c",
-          "text": "Equal\nEqual"
+          "text": "Equal Equal"
         },
         {
           "key": "d",
-          "text": "Unequal\nUnequal"
+          "text": "Unequal Unequal"
         }
       ],
       "answer": "d",
-      "explanation": "In first comparison it is being checked either two strings are equal or not but in second comparison it is checked whether two references are equal or not.\n\nOutput:\n\n        Unequal\n        Unequal"
+      "explanation": "C# strings are case-sensitive. Both '==' and '.Equals()' compare the content of the strings. Since 'Hello' and 'hello' differ in casing, both comparisons return false.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    string s1 = \"Hello\" + \" I \" + \"Love\" + \" ComputerScience \";\n    Console.WriteLine(s1);\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Hello\" + \" I \" + \"Love\" + \" ComputerScience \";\n    Console.WriteLine(s1);\n}",
       "options": [
         {
           "key": "a",
@@ -142,7 +147,7 @@
         },
         {
           "key": "b",
-          "text": "Hello I Love ComputerScience"
+          "text": "Hello I Love ComputerScience "
         },
         {
           "key": "c",
@@ -154,11 +159,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "Here '+' defined operator works as concatenation for strings.\n\nOutput :\n\n Hello I Love ComputerScience"
+      "explanation": "The '+' operator is used for string concatenation in C#, joining the strings exactly as they are defined, including spaces.",
+      "origin": "local"
     },
     {
       "number": 7,
-      "question": "Correct way to find if contents of two strings are equal?",
+      "question": "What is the correct way to find if the contents of two strings are equal in C#?",
       "code": null,
       "options": [
         {
@@ -171,32 +177,33 @@
         },
         {
           "key": "c",
-          "text": "if (strcmp (s1 ,s2))"
+          "text": "if (s1 == s2)"
         },
         {
           "key": "d",
-          "text": "if ( s1 is s2)"
+          "text": "if (s1 is s2)"
         }
       ],
       "answer": "c",
-      "explanation": "\"==\" operator used to compare length of two strings and strcmp() is the inbuilt method derived from string class."
+      "explanation": "In C#, the equality operator '==' is overloaded for the string type to compare the content (values) of the strings, not just their references.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Which of the following statements are correct?",
+      "question": "Which of the following statements are correct about C# strings?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "String is value type"
+          "text": "String is a value type"
         },
         {
           "key": "b",
-          "text": "String literals can contain any character literal including escape sequences"
+          "text": "String literals can contain escape sequences like '\\n' or '\\t'"
         },
         {
           "key": "c",
-          "text": "The equality operators are defined to compare values of string objects as well as references"
+          "text": "Strings are fixed-size and stored on the stack"
         },
         {
           "key": "d",
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "C# strings are reference types, stored on the heap. They can contain any character literal, including escape sequences.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -225,15 +233,16 @@
         },
         {
           "key": "d",
-          "text": "||"
+          "text": "Both + and +="
         }
       ],
-      "answer": "a",
-      "explanation": "string s1 = \"Hello\"+ \" I \" + \"Love\" + \" ComputerScience \";\n             Console.WriteLine(s1);\n             Hello I Love ComputerScience."
+      "answer": "d",
+      "explanation": "Both '+' (for joining strings in an expression) and '+=' (for appending to an existing string variable) can be used for concatenation.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "The Method use to remove white space from a string?",
+      "question": "Which method is used to remove all leading and trailing white-space characters from a string?",
       "code": null,
       "options": [
         {
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Perfectly removes whitespace from string whereas TrimStart() removes a string of characters from the end of the string."
+      "explanation": "The 'Trim()' method removes both leading and trailing white space. 'TrimStart()' only removes white space from the beginning of the string.",
+      "origin": "local"
     }
   ]
 }

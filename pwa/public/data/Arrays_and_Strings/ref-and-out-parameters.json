@@ -9,7 +9,7 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         int i = 5;\n         int j;\n         method1(ref i);\n         method2(out j);\n         Console.writeline(i + \"  \" + j);\n     }\n     static void method1(ref int x)\n     {\n         x = x + x;\n     }\n     static void method2(out int x)\n     {\n         x = 6;\n         x = x * x;\n     }\n }",
+      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        int i = 5;\n        int j;\n        method1(ref i);\n        method2(out j);\n        Console.WriteLine(i + \" \" + j);\n    }\n    static void method1(ref int x)\n    {\n        x = x + x;\n    }\n    static void method2(out int x)\n    {\n        x = 6;\n        x = x * x;\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Variable 'i' is passed as reference parameter declared with 'ref' modifier and variable 'j' is passed as a  output parameter declared with 'out' keyword. Reference parameter used to pass value by reference is the same with out parameter.\n\nOutput :\n\n10, 36"
+      "explanation": "Variable 'i' is passed as a ref parameter (5 + 5 = 10). Variable 'j' is passed as an out parameter (initialized to 6 inside the method, then 6 * 6 = 36).",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -42,7 +43,7 @@
         },
         {
           "key": "b",
-          "text": "While using 'ref' keyword any changes made to the parameter in the method will be reflected in the variable when control is passed back to the calling method"
+          "text": "Any changes made to the parameter in the method will be reflected in the variable when control is passed back"
         },
         {
           "key": "c",
@@ -54,37 +55,39 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The 'ref' keyword indicates that a parameter is passed by reference, allowing the method to modify the original variable.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": " static void main(string[] args)\n {\n     int n = 1;\n     method(n);\n     console.Writeline(n);\n     method1(ref n);\n     console.Writeline(n);\n }\n static void method(int num)\n {\n     num += 20;\n     console.writeline(num);\n }\n static void method1(ref int num)\n {\n     num += 20;\n     console.writeline(num);\n }",
+      "code": "static void Main(string[] args)\n{\n    int n = 1;\n    method(n);\n    Console.WriteLine(n);\n    method1(ref n);\n    Console.WriteLine(n);\n}\nstatic void method(int num)\n{\n    num += 20;\n    Console.WriteLine(num);\n}\nstatic void method1(ref int num)\n{\n    num += 20;\n    Console.WriteLine(num);\n}",
       "options": [
         {
           "key": "a",
-          "text": "1\n   1\n   1\n   1"
+          "text": "1, 1, 1, 1"
         },
         {
           "key": "b",
-          "text": "21\n    1\n   21\n    1"
+          "text": "21, 1, 21, 1"
         },
         {
           "key": "c",
-          "text": "11\n   21\n   21\n   11"
+          "text": "11, 21, 21, 11"
         },
         {
           "key": "d",
-          "text": "21\n    1\n   21\n   21"
+          "text": "21, 1, 21, 21"
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput :\n\n21 1 21 21"
+      "explanation": "The first call is call-by-value (n remains 1 in Main). The second call is call-by-reference (n is updated to 21 in Main).",
+      "origin": "local"
     },
     {
       "number": 4,
       "question": "Which method does following C# code explains?",
-      "code": " static void Main(string[] args)\n {\n     int a = 10, b = 20;\n     method(ref a,  ref b);\n     console.writeline(a + \"  \" + b);\n }\n static void swap(ref int i,  ref int j)\n {\n     int t;\n     t = i;\n     i = j;\n     j = t;\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 10, b = 20;\n    swap(ref a, ref b);\n    Console.WriteLine(a + \" \" + b);\n}\nstatic void swap(ref int i, ref int j)\n{\n    int t = i;\n    i = j;\n    j = t;\n}",
       "options": [
         {
           "key": "a",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "The following set of code explains swapping of numbers by reference parameters which makes usage of call by reference process."
+      "explanation": "The code demonstrates swapping values using reference parameters, which is a 'Call by reference' mechanism.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " static void main(string[] args)\n {\n     int []arr = new int[]{ 1, 2, 3, 4, 5};\n     fun (ref arr);\n     for (int i = 0; i < arr.Length ; i++)\n     Console.WriteLine( arr[i] + \"  \");\n }\n static void fun(ref int[]a)\n {\n     a = new int[6];\n     a[3] = 32;\n     a[1] = 24;\n }",
+      "code": "static void Main(string[] args)\n{\n    int []arr = new int[]{ 1, 2, 3, 4, 5};\n    fun (ref arr);\n    for (int i = 0; i < arr.Length ; i++)\n        Console.Write( arr[i] + \" \");\n}\nstatic void fun(ref int[]a)\n{\n    a = new int[6];\n    a[3] = 32;\n    a[1] = 24;\n}",
       "options": [
         {
           "key": "a",
@@ -125,16 +129,17 @@
         },
         {
           "key": "d",
-          "text": "0, 0, 32, 0, 0, 0"
+          "text": "1, 2, 3, 4, 5"
         }
       ],
       "answer": "b",
-      "explanation": "index positions which are assigned the new values are passed as a reference parameter and hence rest positions are filled with zero values.\n\nOutput :\n\n 0 24 0 32 0 0"
+      "explanation": "Because of 'ref', the method 'fun' points the 'arr' variable in Main to a new array of size 6. Unassigned positions in a new int array default to 0.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": " static void main(string[] args)\n {\n     int i;\n     int res = fun (out i);\n     console.writeline(res);\n     console.readline();\n }\n static int fun(out int i)\n {\n     int s = 1;\n     i = 7;\n     for (int j = 1; j <= i; j++ )\n     s = s * j;\n     return s;\n }",
+      "code": "static void Main(string[] args)\n{\n    int i;\n    int res = fun (out i);\n    Console.WriteLine(res);\n}\nstatic int fun(out int i)\n{\n    int s = 1;\n    i = 7;\n    for (int j = 1; j <= i; j++ )\n        s = s * j;\n    return s;\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n5040"
+      "explanation": "The code calculates the factorial of 7 (7! = 5040).",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     int a = 5;\n     int b = 0, c = 0;\n     method (a,  ref b, ref c);\n     Console.WriteLine(b + \"  \" + c);\n     Console.ReadLine();\n }\n static int method(int x, int p, ref int k)\n {\n     p = x + x * x;\n     k = x * x + p;\n     return 0;\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 5;\n    int b = 0, c = 0;\n    method (a, ref b, ref c);\n    Console.WriteLine(b + \" \" + c);\n}\nstatic int method(int x, int p, ref int k)\n{\n    p = x + x * x;\n    k = x * x + p;\n    return 0;\n}",
       "options": [
         {
           "key": "a",
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Error occurrence as mismatch in parameter of method() definition. Keyword 'ref' should be used with parameter 'p' as ref int p."
+      "explanation": "Compilation error occurs because the call uses 'ref b' but the method definition declares 'int p' without the 'ref' keyword.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The 'ref' keyword is used to pass a variable by reference.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "Select the correct match of parameter declaration.",
-      "code": " static Void main(string[] args)\n {\n     int a = 5;\n     int b = 6;\n     float c = 7.2f;\n     math (ref a, ref b, ref c);\n     Console.WriteLine(a + \"  \" + b + \"  \" + c);\n }\n static int math(/*add parameter declaration */)\n {\n     a += b;\n     b *= (int)c;\n     c += a * b;\n     return 0;\n }",
+      "code": "static void Main(string[] args)\n{\n    int a = 5;\n    int b = 6;\n    float c = 7.2f;\n    math (ref a, ref b, ref c);\n}\nstatic int math(/*add parameter declaration */)\n{\n    a += b;\n    b *= (int)c;\n    c += a * b;\n    return 0;\n}",
       "options": [
         {
           "key": "a",
@@ -229,11 +237,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "static Void main(string[] args)\n\n              {\n\n                int a = 5;\n\n                int b = 6;\n\n                float c = 7.2f;\n\n                math(ref a,  ref b,  ref c);\n\n                console.writeLine(a + \" \" + b + \" \" + c);\n\n              }"
+      "explanation": "The parameter list in the definition must match the call, using 'ref' for all three arguments.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which statement is/are correct?",
+      "question": "Which statement is/are correct regarding 'ref' and 'out'?",
       "code": null,
       "options": [
         {
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Statement (a) is wrong because ref must be initialized. (b) is wrong because out does not need initialization. (c) is wrong because both call and definition must use the keyword. Thus, 'None' is correct.",
+      "origin": "local"
     }
   ]
 }

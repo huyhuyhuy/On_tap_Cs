@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these is used as a default specifier for a member of the class if no access specifier is used for it?",
+      "question": "Which of these is used as a default specifier for a member of a class if no access specifier is explicitly used?",
       "code": null,
       "options": [
         {
@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "public, within its own class"
+          "text": "internal"
         },
         {
           "key": "d",
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "By definition if a class has no access specifiers, it defaults to private accessibility."
+      "explanation": "In C#, if no access modifier is specified for a class member (field, property, or method), it defaults to 'private'.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which of these is used to access members of class before the object of that class is created?",
+      "question": "Which of these is used to access members of a class before an object of that class is created?",
       "code": null,
       "options": [
         {
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Static members belong to the class itself rather than any specific instance. They can be accessed using the class name without creating an object.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of these base classes are accessible to the derived class members?",
+      "question": "Which of these base class member types are accessible to members of a derived class?",
       "code": null,
       "options": [
         {
@@ -75,11 +77,12 @@
         },
         {
           "key": "d",
-          "text": "Shared"
+          "text": "sealed"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The 'protected' keyword ensures that a member is accessible within its own class and by derived class instances.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,24 +107,25 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "Encapsulation is one of the pillars of OOP that binds together code and data, and keeps both safe from outside interference and misuse via access modifiers.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code? ⚡ Hurry! Secure Your Free Cyber Security Certification - August 2026",
-      "code": " class sum\n {\n     public int x;\n     private int y;\n     public void math(int a, int b)\n     {\n         x = a * 4;\n         y = b;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         sum p = new sum();\n         p.math(12, 30);\n         Console.WriteLine(p.x + \"  \" + p.y);\n         Console.ReadLine();\n     }\n }",
+      "question": "What will be the output of the following C# code?",
+      "code": "class sum\n{\n    public int x;\n    private int y;\n    public void math(int a, int b)\n    {\n        x = a * 4;\n        y = b;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sum p = new sum();\n        p.math(12, 30);\n        Console.WriteLine(p.x + \" \" + p.y);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "48, 30"
+          "text": "48 30"
         },
         {
           "key": "b",
-          "text": "48, 0"
+          "text": "48 0"
         },
         {
           "key": "c",
-          "text": "0, 0"
+          "text": "0 0"
         },
         {
           "key": "d",
@@ -129,61 +133,64 @@
         }
       ],
       "answer": "d",
-      "explanation": "variable 'y' is not accessible due to its access level.\n\nOutput :\n\nChange private y to public y"
+      "explanation": "The variable 'y' is marked as 'private' in the 'sum' class. Attempting to access 'p.y' from the 'Program' class will result in a compilation error because private members are only accessible within their own class.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": " class sum\n {\n     public int x;\n     public int y;\n     public  int add (int a,  int b)\n     {\n         x = a + b;\n         y = x + b;\n         return 0;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         sum obj1 = new sum();\n         sum obj2 = new sum();\n         int a = 2;\n         obj1.add(a,  a + 1);\n         obj2.add(5,  a);\n         Console.WriteLine(obj1.x + \"  \" + obj2.y);\n         Console.ReadLine();\n     }\n }",
+      "code": "class sum\n{\n    public int x;\n    public int y;\n    public int add(int a, int b)\n    {\n        x = a + b;\n        y = x + b;\n        return 0;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sum obj1 = new sum();\n        sum obj2 = new sum();\n        int a = 2;\n        obj1.add(a, a + 1);\n        obj2.add(5, a);\n        Console.WriteLine(obj1.x + \" \" + obj2.y);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "6, 9"
+          "text": "6 9"
         },
         {
           "key": "b",
-          "text": "5, 9"
+          "text": "5 9"
         },
         {
           "key": "c",
-          "text": "9, 10"
+          "text": "9 10"
         },
         {
           "key": "d",
-          "text": "3, 2"
+          "text": "3 2"
         }
       ],
       "answer": "b",
-      "explanation": "Here, a = 2,  a + 1 = 2 + 1 = 3.\n\nSo, a = 2,  b = 3.\n\nx = 2 + 3  = 5.\n\ny = 5 + 3 = 8.\n\nSimilarly, a = 5,  b = a + 1 = 4.\n\ny =  5 + 4 = 9.\n\nOutput :\n\n5, 9"
+      "explanation": "For obj1: add(2, 3) -> x = 2+3=5, y = 5+3=8. For obj2: add(5, 2) -> x = 5+2=7, y = 7+2=9. Printing obj1.x (5) and obj2.y (9) results in '5 9'.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": " class math\n {\n     public int a,b;\n     public math(int i,  int j)\n     {\n         a = i;\n         b = j;\n     }\n     public  void sum(math m)\n     {\n         m.a *= 2;\n         m.b += 2;\n     }\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         math t = new math(20,  10);\n         t.sum(t);\n         Console.WriteLine(t.a + \"  \" + t.b);\n         Console.ReadLine();\n     }\n }",
+      "code": "class math\n{\n    public int a, b;\n    public math(int i, int j)\n    {\n        a = i;\n        b = j;\n    }\n    public void sum(math m)\n    {\n        m.a *= 2;\n        m.b += 2;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        math t = new math(20, 10);\n        t.sum(t);\n        Console.WriteLine(t.a + \" \" + t.b);\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "10, 20"
+          "text": "10 20"
         },
         {
           "key": "b",
-          "text": "20, 10"
+          "text": "20 10"
         },
         {
           "key": "c",
-          "text": "40, 12"
+          "text": "40 12"
         },
         {
           "key": "d",
-          "text": "5, 40"
+          "text": "5 40"
         }
       ],
       "answer": "c",
-      "explanation": "t.sum(t) sends object 't' as parameter whose variables a & b are multiplied and added by 2 respectively by sum() function of class math. Hence, a & b become 40 and 12 respectively.\n\nOutput :\n\n 40, 12"
+      "explanation": "Since objects are reference types in C#, passing 't' to the 'sum' method means 'm' refers to the same object. m.a *= 2 (20*2=40) and m.b += 2 (10+2=12) modifies the original object 't'.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Accessibility modifier defined in a class are?",
+      "question": "Which of these are valid accessibility modifiers in C#?",
       "code": null,
       "options": [
         {
@@ -200,28 +207,29 @@
         },
         {
           "key": "d",
-          "text": "public, private, protected, internal, protected internal"
+          "text": "public, private, protected, internal, protected internal, private protected"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "C# supports 6 access levels: public, private, protected, internal, protected internal, and private protected (available in later versions).",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Choose the statements which are false in nature?",
+      "question": "Which of the following statements is FALSE?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "The base class member functions can access public member functions of derived class"
+          "text": "A base class member function can access public members of a derived class"
         },
         {
           "key": "b",
-          "text": "An object of a derived class cannot access private member of the base class"
+          "text": "An object of a derived class cannot access private members of the base class"
         },
         {
           "key": "c",
-          "text": "Private members of the base class cannot be accessed by derived class member functions or objects of derived class"
+          "text": "Private members of a base class are not accessible by derived class member functions"
         },
         {
           "key": "d",
@@ -229,11 +237,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Inheritance is one-way. A base class has no knowledge of the members defined in its derived classes, even if those members are public.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "Which of these access specifiers must be used for main() method?",
+      "question": "Which of these access specifiers must be used for the Main() method in C#?",
       "code": null,
       "options": [
         {
@@ -254,7 +263,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "Main does not require a specific access modifier. public, private, internal, and protected (on a nested type) can all work as an entry point.",
+      "explanation": "In C#, the Main method (entry point) does not require a specific access modifier. It can be public, internal, or even private, and the runtime will still be able to execute it.",
       "origin": "local"
     }
   ]

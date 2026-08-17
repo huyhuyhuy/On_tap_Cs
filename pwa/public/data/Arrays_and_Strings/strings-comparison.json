@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these methods of class String is used to compare two String objects for their equality?",
+      "question": "Which of these methods of the String class is used to compare two String objects for equality?",
       "code": null,
       "options": [
         {
@@ -28,17 +28,18 @@
           "text": "Isequal()"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "In C#, methods use PascalCase. The correct method to check string equality is 'Equals()'.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which of these methods is used to compare two strings such that after comparison output returns different integer values as (0 for false, 1 for true)?",
+      "question": "Which of these methods is used to compare two strings and returns an integer (0, 1, or -1) representing their relative sort order?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Equals ()"
+          "text": "Equals()"
         },
         {
           "key": "b",
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "The comparison is case sensitive in nature and hence different integer values are returned for different conditions as under:\n\n             1. zero integer (0), if string s1 equal to string s2.\n\n             2. positive integer(+1), if string s1 greater than s2.\n\n             3. Negative integer(-1), if string s1 is less than s2."
+      "explanation": "The static Compare() method returns: 0 if strings are equal, a positive integer if the first string is 'greater' in sort order, and a negative integer if it is 'lesser'.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of these methods of class String is used to check whether a substring exists at the beginning of the particular string?",
+      "question": "Which of these methods of the String class is used to check whether a substring exists at the beginning of a string?",
       "code": null,
       "options": [
         {
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "Method startswith() of string class is used to check whether a substring exists in the beginning of string or not."
+      "explanation": "The StartsWith() method determines whether the beginning of a string instance matches a specified string.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of these methods returns the string such that some characters which are specified to be removed from the end of strings are removed from string by mentioning the number of characters to be removed?",
+      "question": "Which method returns a new string where a specified number of characters have been deleted from a specific position?",
       "code": null,
       "options": [
         {
@@ -103,38 +106,40 @@
           "text": "Split()"
         }
       ],
-      "answer": "a",
-      "explanation": "Removes a string of characters from the end of string by mentioning the number of characters to be removed from the string."
+      "answer": "b",
+      "explanation": "The 'Remove(int startIndex, int count)' method is the one that deletes a specific number of characters starting from a specified position.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "What is the value returned by function compareTo() if the invoking string is less than the string compared?",
+      "question": "What is the value returned by the CompareTo() function if the invoking string is less than the string compared?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "zero"
+          "text": "Zero"
         },
         {
           "key": "b",
-          "text": "value less than zero"
+          "text": "A value less than zero"
         },
         {
           "key": "c",
-          "text": "value greater than zero"
+          "text": "A value greater than zero"
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "b",
-      "explanation": "compareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared to."
+      "explanation": "CompareTo() returns 0 if strings are equal, a negative value (less than zero) if the instance is less than the value, and a positive value if it is greater.",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String c = \"i love Csharp\";\n         bool a;\n         a = c.StartsWith(\"I\");\n         Console.WriteLine(a);\n         Console.ReadLine();\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    string c = \"i love Csharp\";\n    bool a = c.StartsWith(\"I\");\n    Console.WriteLine(a);\n}",
       "options": [
         {
           "key": "a",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "StartsWith() method is case sensitive \"i\" and \"I\" are treated differently, hence false is stored in a.\n\nOutput:\n\nfalse"
+      "explanation": "StartsWith() is case-sensitive by default. Since the string starts with lowercase 'i' and the check is for uppercase 'I', it returns false.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        String s1 = \"I love You\";\n        String s2 = s1;\n        Console.WriteLine((s1 == s2) + \" \" + s1.Equals(s2));\n        Console.ReadLine();\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"I love You\";\n    string s2 = s1;\n    Console.WriteLine((s1 == s2) + \" \" + s1.Equals(s2));\n}",
       "options": [
         {
           "key": "a",
@@ -179,37 +185,39 @@
         }
       ],
       "answer": "a",
-      "explanation": "The '==' operator tests the equality of strings and since s1 = \"I love You\" and also s2 = s1. So, true is returned. Similarly, Equals() returns true.\n\nsince the content of both s1 and s2 are equal in nature.\n\nOutput :\n\ntrue true"
+      "explanation": "Since s2 is assigned the reference of s1, both '==' and 'Equals()' will return true as they point to the same content.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": " class Program\n {\n     static void Main(string[] args)\n     {\n         String []chars = {\"z\", \"x\", \"y\", \"z\", \"y\"};\n         for (int i = 0; i < chars.Length; ++i)\n         for (int j = i + 1; j < chars.Length; ++j)\n         if(chars[i].CompareTo(chars[j]) == 0)\n         Console.WriteLine(chars[j]);\n         Console.ReadLine();\n     }\n }",
+      "code": "static void Main(string[] args)\n{\n    string[] chars = {\"z\", \"x\", \"y\", \"z\", \"y\"};\n    for (int i = 0; i < chars.Length; ++i)\n        for (int j = i + 1; j < chars.Length; ++j)\n            if (chars[i].CompareTo(chars[j]) == 0)\n                Console.Write(chars[j] + \" \");\n}",
       "options": [
         {
           "key": "a",
-          "text": "zx"
+          "text": "z x"
         },
         {
           "key": "b",
-          "text": "xy"
+          "text": "x y"
         },
         {
           "key": "c",
-          "text": "zy"
+          "text": "z y"
         },
         {
           "key": "d",
-          "text": "yz"
+          "text": "y z"
         }
       ],
       "answer": "c",
-      "explanation": "compareTo() function returns zero when both the strings are equal, it returns a value less than zero if the invoking string is less than the other string being compared and value greater than zero when invoking string is greater than the string compared To 4.\n\nOutput :\n\nzy"
+      "explanation": "The nested loops find duplicate strings. 'z' (index 0) matches 'z' (index 3), and 'y' (index 2) matches 'y' (index 4). The output is 'z y '.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "String a = \"Csharp\";\nString b = \"CSHARP\";\nint c;\nc = a.CompareTo(b);\nConsole.WriteLine(c);",
+      "code": "string a = \"Csharp\";\nstring b = \"CSHARP\";\nint c = a.CompareTo(b);\nConsole.WriteLine(c);",
       "options": [
         {
           "key": "a",
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Negative integer -1 is returned as 'a' is less than 'b' by CompareTo() method.\n\nOutput :\n\n-1"
+      "explanation": "In many culture-sensitive comparisons in .NET, lowercase letters are considered to precede uppercase letters (e.g., a < A). Therefore, \"Csharp\" < \"CSHARP\" and CompareTo returns -1.",
+      "origin": "local"
     }
   ]
 }

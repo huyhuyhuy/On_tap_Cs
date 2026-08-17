@@ -9,32 +9,33 @@
     {
       "number": 1,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    int i, j;\n    int[, ] arr = new int[ 3, 3];\n    for (i = 0; i < 3; ++i)\n    {\n        for (j = 0; j < 3; ++j)\n        {\n            arr[i, j] = i * 2 + i * 2;\n            Console.WriteLine(arr[i, j]);\n        }\n        Console.ReadLine();\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    int i, j;\n    int[, ] arr = new int[3, 3];\n    for (i = 0; i < 3; ++i)\n    {\n        for (j = 0; j < 3; ++j)\n        {\n            arr[i, j] = i * 2 + i * 2;\n            Console.WriteLine(arr[i, j]);\n        }\n        Console.ReadLine();\n    }\n}",
       "options": [
         {
           "key": "a",
-          "text": "0, 0, 0 4, 4, 4 8, 8, 8"
+          "text": "0, 0, 0, 4, 4, 4, 8, 8, 8"
         },
         {
           "key": "b",
-          "text": "4, 4, 4 8, 8, 8 12, 12, 12"
+          "text": "4, 4, 4, 8, 8, 8, 12, 12, 12"
         },
         {
           "key": "c",
-          "text": "8, 8, 8 12, 12, 12 16, 16, 16"
+          "text": "8, 8, 8, 12, 12, 12, 16, 16, 16"
         },
         {
           "key": "d",
-          "text": "0, 0, 0 1, 1, 1 2, 2, 2"
+          "text": "0, 0, 0, 1, 1, 1, 2, 2, 2"
         }
       ],
       "answer": "a",
-      "explanation": "Since, with each value of of 'i' the value of 'j' is executed three times i.e\n\n             for i = 0, j = 0, 0, 0, i = 1, j = 2, 2, 2.\n\nOutput:\n\n0, 0, 0 4, 4, 4 8, 8, 8"
+      "explanation": "With each value of 'i', the inner loop for 'j' executes 3 times. For i=0: 0*2+0*2=0. For i=1: 1*2+1*2=4. For i=2: 2*2+2*2=8.",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     char A = 'K';\n     char B = Convert.ToChar(76);\n     A++;\n     B++;\n     Console.WriteLine(A+ \"  \" +B);\n     Console.ReadLine();\n }",
+      "code": " static void Main(string[] args)\n {\n     char A = 'K';\n     char B = Convert.ToChar(76);\n     A++;\n     B++;\n     Console.WriteLine(A + \" \" + B);\n     Console.ReadLine();\n }",
       "options": [
         {
           "key": "a",
@@ -54,20 +55,21 @@
         }
       ],
       "answer": "c",
-      "explanation": "\"++\" increments the value of character by 1. A and B are given values K and 76, when we use increment operator their  values increments by 1, A and B becomes L and M.\n\nOutput:\n\nL, M."
+      "explanation": "The '++' operator increments the character's Unicode value. 'K' becomes 'L'. 76 is 'L', so B++ becomes 'M'.",
+      "origin": "local"
     },
     {
       "number": 3,
       "question": "Complete the following C# code with \"foreach condition\".",
-      "code": "int[][]a = new int[2][];\na[0] = new int[3]{3, 4, 2};\na[1] = new int[2]{8, 5};\nforeach( int[]i in a)\n{\n/* add for loop */\nconsole.write( j+ \" \");\nconsole.writeline();\n}",
+      "code": "int[][] a = new int[2][];\na[0] = new int[3]{3, 4, 2};\na[1] = new int[2]{8, 5};\nforeach(int[] i in a)\n{\n    /* add for loop */\n    Console.Write(j + \" \");\n    Console.WriteLine();\n}",
       "options": [
         {
           "key": "a",
-          "text": "foreach (int j = 1;(j(<)(a(0).GetUpperBound)); (j++));"
+          "text": "for (int j = 0; j < i.Length; j++)"
         },
         {
           "key": "b",
-          "text": "foreach (int j = 1;(j(<)(a.GetUpperBound(0))); (j++));"
+          "text": "foreach (int j = 1; j < a.Length; j++)"
         },
         {
           "key": "c",
@@ -75,11 +77,12 @@
         },
         {
           "key": "d",
-          "text": "foreach (int j in i);"
+          "text": "foreach (int j in i)"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "To iterate through the elements of the inner array 'i', the syntax 'foreach (int j in i)' is used.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Type casting a larger variable into a smaller variable results in modules of larger variable by range of smaller variable. a is '345.09' which is larger than byte range ie -128 to 127.\n\nOutput :\n\n89"
+      "explanation": "The range of 'byte' is 0 to 255. Casting 345.09 to byte results in 345 modulo 256, which is 89.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "A perfect way of defining single array in C# which is derived automatically from class 'System.Array'."
+      "explanation": "In C#, arrays are objects that derive from the System.Array class.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -142,7 +147,7 @@
         },
         {
           "key": "b",
-          "text": "Allows unlimited elements as well as rows which had '0' or are empty in nature"
+          "text": "Allows unequal number of elements in each row"
         },
         {
           "key": "c",
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "In many applications where 2 dimensional arrays are used, not all rows need to have all the elements i.e they are sparse. Many rows have 0 elements. In such cases it is better to use 2D jagged arrays as they allow unequal number of elements in each row and also allow for empty rows."
+      "explanation": "Jagged arrays allow rows to have different lengths, which is useful for sparse data.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -171,7 +177,7 @@
         },
         {
           "key": "c",
-          "text": "'a' represents rectangular array of 2 columns and 3 arrays"
+          "text": "'a' represents rectangular array of 2 rows and 3 columns"
         },
         {
           "key": "d",
@@ -179,12 +185,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The code defines a rectangular array with 2 rows and 3 columns.",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    Program p = new Program();\n    p.display(2, 3, 8);\n    int []a = { 2, 56, 78, 66 };\n    Console.WriteLine(\"example of array\");\n    Console.WriteLine(\"elements added are\");\n    p.display(a);\n    Console.ReadLine();\n}\npublic void display(params int[] b)\n{\n    foreach (int i in b)\n    {\n        Console.WriteLine(\"ARRAY IS HAVING:{0}\", i);\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    Program p = new Program();\n    p.display(2, 3, 8);\n    int []a = { 2, 56, 78, 66 };\n    Console.WriteLine(\"example of array\");\n    p.display(a);\n    Console.ReadLine();\n}\npublic void display(params int[] b)\n{\n    foreach (int i in b)\n    {\n        Console.WriteLine(\"ARRAY IS HAVING:{0}\", i);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Object 'p' makes a call to invoke function display() and hence consecutively prints the output. Array 'a' is declared with elements again object 'p' makes  a call to display() and hence, consecutively prints the output with given elements.\n\nOutput:\n\n        ARRAY IS HAVING:2\n        ARRAY IS HAVING:3\n        ARRAY IS HAVING:8\n        elements added are:\n        ARRAY IS HAVING:2\n        ARRAY IS HAVING:56\n        ARRAY IS HAVING:78\n        ARRAY IS HAVING:66"
+      "explanation": "The 'params' keyword allows the method to accept a variable number of arguments or an array.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -217,19 +225,20 @@
         },
         {
           "key": "b",
-          "text": "int[] a;\n   a = new int[3];\n   a[1] = 78;\n   a[2] = 9;\n   a[3] = 54;"
+          "text": "int[] a = new int[3]; a[1] = 78; a[2] = 9; a[3] = 54;"
         },
         {
           "key": "c",
-          "text": "int[] a;\n   a = new int{78, 9, 54};"
+          "text": "int[] a = new int{78, 9, 54};"
         },
         {
           "key": "d",
-          "text": "int[] a;\n   a = new int[3]{78, 9, 54};"
+          "text": "int[] a = new int[3]{78, 9, 54};"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Option D is the standard correct syntax for initializing an array of 3 elements in C#.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "i. When declaring an array in C#, the square brackets ([]) come after the type, not the identifier. Brackets after the identifier are not legal syntax in C#.\n\n example :\n\nint[] IntegerArray;\n\nii. The size of the array is not part of its type as it is in the C language. This allows to declare an array and assign any array of int objects to it, regardless of the array's length.\n\n    int[] IntegerArray;\n    IntegerArray = new int[10];\n    IntegerArray = new int[50];"
+      "explanation": "In C#, 'int[] arrayName' is the required syntax, unlike some other languages where 'int arrayName[]' is allowed.",
+      "origin": "local"
     }
   ]
 }

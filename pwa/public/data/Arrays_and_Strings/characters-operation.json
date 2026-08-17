@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these methods of the class String is used to obtain length of String object?",
+      "question": "Which of these properties of the String class is used to obtain the length of a String object in C#?",
       "code": null,
       "options": [
         {
@@ -21,24 +21,25 @@
         },
         {
           "key": "c",
-          "text": "lengthof()"
+          "text": "length()"
         },
         {
           "key": "d",
-          "text": "length()"
+          "text": "Length"
         }
       ],
       "answer": "d",
-      "explanation": "Method length() of string class is used to get the length of the object as string. Length and hence invokes the length() method."
+      "explanation": "In C#, 'Length' is a property of the String class (not a method) used to get the number of characters in the string.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which of these methods is an alternative to getChars() that stores the characters in an array of bytes?",
+      "question": "Which method is commonly used to store string characters into an array of bytes?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "getBytes()"
+          "text": "Encoding.GetBytes()"
         },
         {
           "key": "b",
@@ -50,11 +51,12 @@
         },
         {
           "key": "d",
-          "text": "Give Bytes()"
+          "text": "ToBytes()"
         }
       ],
       "answer": "a",
-      "explanation": "getBytes() stores the character in an array of bytes. It uses default character to byte conversions."
+      "explanation": "The 'Encoding.GetBytes()' method (from System.Text) converts a string into a byte array based on a specific encoding.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -67,11 +69,11 @@
         },
         {
           "key": "b",
-          "text": "getChars()"
+          "text": "GetChars()"
         },
         {
           "key": "c",
-          "text": "TocharArray()"
+          "text": "ToCharArray()"
         },
         {
           "key": "d",
@@ -79,12 +81,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "The 'ToCharArray()' method copies the characters in a string to a Unicode character array.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Choose the effective stringBuilder method which helps in producing output for the following C# code?",
-      "code": " static void Main(string[] args)\n {\n     StringBuilder s = new StringBuilder(\"object\");\n     s./*______*/(\"Oriented Language\");\n     Console.WriteLine(s);\n     Console.ReadLine();\n }\nOutput : objectOriented Language",
+      "question": "Choose the StringBuilder method which helps in producing output for the following C# code?",
+      "code": "static void Main(string[] args)\n{\n    StringBuilder s = new StringBuilder(\"object\");\n    s./*______*/(\"Oriented Language\");\n    Console.WriteLine(s);\n}\n// Output: objectOriented Language",
       "options": [
         {
           "key": "a",
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "static void Main(string[] args)\n              {\n               StringBuilder s = new StringBuilder(\"object\");\n               s.Append(\"Oriented Language\");\n               Console.WriteLine(s);\n               Console.ReadLine();\n               }\nOutput : objectOriented Language"
+      "explanation": "The 'Append()' method of StringBuilder adds a string to the end of the current StringBuilder object.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": "  static void Main(string[] args)\n  {\n      string s = \" i love you\";\n      Console.WriteLine(s.IndexOf('l') + \"  \" + s.lastIndexOf('o') + \"  \" + s.IndexOf('e'));\n      Console.ReadLine();\n  }",
+      "code": "static void Main(string[] args)\n{\n    string s = \" i love you\";\n    Console.WriteLine(s.IndexOf('l') + \" \" + s.LastIndexOf('o') + \" \" + s.IndexOf('e'));\n}",
       "options": [
         {
           "key": "a",
@@ -129,16 +133,17 @@
         }
       ],
       "answer": "c",
-      "explanation": "indexof('l') and lastIndexof('o') are pre defined functions which are used to get the index of first and last occurrence of the character pointed by l and c respectively in the given array.\n\nOutput :\n\n 3, 9, 6"
+      "explanation": "'IndexOf' returns the first occurrence index. 'l' is at index 3. 'LastIndexOf' returns the last occurrence index. 'o' is at index 5 (love) and 9 (you), so it returns 9. 'e' is at index 6.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which of these methods of class String is used to extract all the characters from a String object?",
+      "question": "Which of these methods of class String is used to remove characters from a String object?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "CHARAT()"
+          "text": "Substring()"
         },
         {
           "key": "b",
@@ -146,7 +151,7 @@
         },
         {
           "key": "c",
-          "text": "charAt()"
+          "text": "Clear()"
         },
         {
           "key": "d",
@@ -154,12 +159,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "Replace() replaces all instances of a character with a new character while Remove extracts characters from the string."
+      "explanation": "The 'Remove()' method returns a new string in which a specified number of characters in the current string have been deleted.",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     string c = \"hello\";\n     string  c1 = c.Remove(1);\n     Console.WriteLine(c1);\n     Console.ReadLine();\n }",
+      "code": "static void Main(string[] args)\n{\n    string c = \"hello\";\n    string c1 = c.Remove(1);\n    Console.WriteLine(c1);\n}",
       "options": [
         {
           "key": "a",
@@ -179,11 +185,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "The remove() deletes characters from the string except the character which is specified with its given position.\n\nOutput :\n\nh"
+      "explanation": "c.Remove(1) removes all characters starting from index 1 to the end of the string. Only 'h' (index 0) remains.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "How is a string typically processed?",
+      "question": "How is a string typically processed in low-level operations?",
       "code": null,
       "options": [
         {
@@ -204,11 +211,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Strings are essentially sequences of characters, and many operations (like searching or parsing) process them one character at a time.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "How to print \\\\ on the screen?",
+      "question": "How to print \\\\ on the screen in C#?",
       "code": null,
       "options": [
         {
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Console.WriteLine(\"\\\\\\\\\");\n\nOutput :\n\n \\\\"
+      "explanation": "In C#, the backslash is an escape character. To print one backslash, you need two '\\\\'. To print two backslashes, you need four '\\\\\\\\'.",
+      "origin": "local"
     }
   ]
 }
