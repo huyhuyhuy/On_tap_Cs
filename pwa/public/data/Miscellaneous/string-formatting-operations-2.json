@@ -188,11 +188,11 @@
       "options": [
         {
           "key": "a",
-          "text": "true"
+          "text": "True"
         },
         {
           "key": "b",
-          "text": "false"
+          "text": "False"
         },
         {
           "key": "c",
@@ -204,7 +204,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "StartsWith() method is case sensitive \"i\" and \"I\" are treated differently, hence false is stored in a.\n\nOutput:\n\nfalse"
+      "explanation": "StartsWith() is case-sensitive, so \"i\" and \"I\" differ. Console.WriteLine(bool) prints False or True.\n\nOutput:\n\nFalse",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -234,7 +235,7 @@
     {
       "number": 10,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " static void Main(string[] args)\n {\n     string s = \" i love you\";\n     Console.WriteLine(s.IndexOf('l') + \"  \" + s.lastIndexOf('o') + \"  \" + s.IndexOf('e'));\n     Console.ReadLine();\n }",
+      "code": " static void Main(string[] args)\n {\n     string s = \" i love you\";\n     Console.WriteLine(s.IndexOf('l') + \"  \" + s.LastIndexOf('o') + \"  \" + s.IndexOf('e'));\n     Console.ReadLine();\n }",
       "options": [
         {
           "key": "a",
@@ -254,7 +255,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "indexof('l') and lastIndexof('o') are pre-defined function which are used to get the index of first and last occurrence of the character pointed by l and c respectively in the given array.\n\nOutput:\n\n3, 9, 6"
+      "explanation": "IndexOf('l') is 3, LastIndexOf('o') is 9, IndexOf('e') is 6. C# method names are case-sensitive (LastIndexOf, not lastIndexOf).\n\nOutput:\n\n3  9  6",
+      "origin": "local"
     }
   ]
 }

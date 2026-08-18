@@ -3,7 +3,7 @@
   "topic": "Looping_Statements",
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-if-statements/",
   "sourceFile": "IF Statements - C# Questions & Answers - Sanfoundry.html",
-  "description": "This section of our 1000+ C# multiple choice questions focuses on relational and logical operators in C# Programming Language.",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on if statements in C# Programming Language.",
   "questionCount": 10,
   "questions": [
     {
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Usage of '=' operator instead of  '==' operator. Hence, the condition is not true.\n\nOutput:\n\n         In else\n         In main"
+      "explanation": "25 % 25 is 0, and i = j assigns 0 to i. Convert.ToBoolean(0) is false, so the else branch runs, then \"In main\" is always printed.\n\nOutput:\n\nIn else\nIn main",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "The if condition will never be fulfilled as ((a / b) * 2 == 2) is never true. Hence, only else part of condition will be executed until i! = 4 i.e i = 0, 1, 2, 3.\n\nOutput:\n\n0 1 2 3"
+      "explanation": "Integer division is left-to-right: a / b * 2 is (32 / 8) * 2 = 8, so the if condition is never true. The else-if prints i while i != 4. When i is 4, break ends the loop.\n\nOutput:\n\n0 1 2 3",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n                    Enter a letter :\n                          A\n                          An uppercase letter\n                          Enter a letter :\n                          2\n                          A number"
+      "explanation": "Char.IsDigit('2') is true, so sample c is correct and d is not. Char.IsUpper('A') is true, so sample b is correct. Char.IsLower('a') is true, so sample a (which claims uppercase) is false. Only b and c are true.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "In first row  for i = 2 : j = 0 == 0  as if condition fails for (i == j)\n\n                                i = 2 : j = 1 == 0  as again if condition fails for ( i == j)\n\n                                i = 2 : j = 2 == 1  as (i == j).\n\n              In Second row for i = 1 : j = 0 == 0  as if condition fails for (i == j)\n\n                                i = 1 : j = 1 == 1  (as i==j)\n\n                                i = 1 : j = 2 == 0  as (i==j) not true\n\n              In Third row  for i = 0 : j = 0 == 1 as (i==j) true\n\n                                i = 0 : j = 1 == 0 as (i==j) not true.\n\n                                i = 0 : j = 2 == 0 .\n\n              So, 0 0 1\n\n                  0 1 0\n\n                  1 0 0\n\n Output:  0 0 1\n\n          0 1 0\n\n          1 0 0"
+      "explanation": "Because WriteLine is used, each 0 or 1 is on its own line (and WriteLine(\"\\n\") adds a blank line after each row). The 1s form the anti-diagonal as i goes 2, 1, 0 and j goes 0, 1, 2: row i=2 is 0 0 1, row i=1 is 0 1 0, row i=0 is 1 0 0. Option c is that pattern. Console.ReadLine() inside the outer loop also pauses after each row.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "int []num = {50, 65, 56, 88, 43, 52};\n                int even = 0,odd = 0;\n                for (int i = 0 ;i < num.Length ;i++)\n                {\n                    if (num[i] % 2 == 0)\n                    {\n                    even += 1;\n                    }\n                    else\n                    {\n                    odd += 1;\n                    }\n                }\n                Console.WriteLine(\"Even Numbers: \" +even);\n                Console.WriteLine(\"Odd Numbers: \" +odd);\n                Console.ReadLine();"
+      "explanation": "num is an array, so the element at i must be tested with num[i] % 2 == 0. Option a uses the array itself, option b is not an even/odd test, and option d uses assignment (=) instead of comparison (==).",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Keyword \"break\" is not part of if-else statement. This keyword is used in case of loop or switch case statement."
+      "explanation": "break is legal only inside a loop or switch. Using it in a plain if/else is a compile-time error (CS0139).",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "(0.002 - 0.1f) not equivalent to zero hence it is true. So, only first if clause will execute and  print:Sachin Tendulkar on console. As, first condition is always true so no else if statement will be executed.\n\nOutput:\n\n Sachin Tendulkar"
+      "explanation": "Convert.ToBoolean(float) is true for any non-zero value. 0.002f - 0.1f is about -0.098f, so the first if is true and only \"Sachin Tendulkar\" is printed.\n\nOutput:\n\nSachin Tendulkar",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Both a and b are constants. Illegal to assign a value to constant on left hand of '='operator. Hence, it must be some variable."
+      "explanation": "a and b are variables, not constants. ++a is a value, not an assignable location, so ++a = ++b is illegal (CS0131: the left-hand side of an assignment must be a variable, property, or indexer).",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "oxB: hexadecimal integer constant.\n                  022: It octal integer constant.\n                 '\\xeb': It is hexadecimal character constant.\n\n As zero is false and any non-zero number is true. All, constants return a non-zero value. So, all if conditions in the above program are true.\n\n Output:\n\n java."
+      "explanation": "0xB is hexadecimal 11. 022 is decimal 22 in C# (C# has no octal integer literals). '\\xeb' is a hex char whose int value is 235. Convert.ToBoolean is false only for 0, so every if is true and \"java\" is printed. The dangling else ; statements are empty but legal.\n\nOutput:\n\njava",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Consider the following expression:( ++a || ++b). In this expression || is 'Logical OR operator'. Two important  properties of this operator are:\n\n Property 1:\n\n (Expression1) || (Expression2)\n\n  || operator returns 0 if and only if both expressions return a zero otherwise || operator returns 1.\n\n  initial value of a is 5. So ++a will be 6. Since ++a is returning a non-zero so ++b will not execute.\n\n  Output :\n\n 6 10."
+      "explanation": "|| short-circuits. ++a makes a = 6, which converts to true, so ++b is not evaluated and b stays 10. WriteLine prints a, a newline, then b.\n\nOutput:\n\n6\n10",
+      "origin": "local"
     }
   ]
 }

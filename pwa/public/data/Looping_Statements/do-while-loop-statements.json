@@ -29,7 +29,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "1 AND 1 = True. Similarly, non zero number || non zero number = True.\n\nOutput:\n\nTrue True True"
+      "explanation": "i starts at 1 and j at 2; both become non-zero after the increments, so Convert.ToBoolean is true and true && true prints True. The loop runs while i <= 3, i.e. three times (k is unused).\n\nOutput:\n\nTrue\nTrue\nTrue",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput :\n\n - August 2026\n\n -0.04999995"
+      "explanation": "The body always runs once. i++ uses 1.0f (then i becomes 2.0f) and ++j makes j 1.05f. 1.0f - 1.05f is a float value around -0.04999995. Then i < 2.0f is false, so the loop stops.\n\nOutput:\n\n-0.04999995",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "For first step of loop i = 1 .So, i++ * j = 1 * 5 = 5. For second step of loop i = 5, j = 5. So, i++ * j = 25. As, i = 25 hence, 25 >=10 loop condition breaks.\n\nOutput:\n\n5 25."
+      "explanation": "The right-hand side i++ * j uses the old i, then i is incremented, then the product is assigned back to i. First: 1 * 5 = 5. Second: 5 * 5 = 25. 25 <= 10 is false, so the loop ends.\n\nOutput:\n\n5\n25",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None.\n\nOutput :\n\nstatic void Main(string[] args)\n        {\n              int i = 1234,j = 0;\n              do\n              {\n                  j = j +( i % 10);\n\n              }while ((i = i / 10)!= 0);\n              Console.WriteLine(j);\n\n          }"
+      "explanation": "Only option a updates i (i = i / 10) until i becomes 0, so it terminates and j is the digit sum 10. Option b never changes i, and option c keeps i % 10 == 4, so both loop forever. Option d does not compile: (i / 10 == 0) is bool, and bool != int is illegal.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Reverse of digits using while loop statements.\n\nOutput:\n\n 4321."
+      "explanation": "Each iteration prints x % 10 (the least significant digit) then divides x by 10. For 1234 the console shows 4, 3, 2, 1 — the digits in reverse order.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n         i = 342.\n         s = 526."
+      "explanation": "2 * 4 is 8, so the loop repeatedly takes i % 8 and i / 8 while shifting the place value a by * 10. That is the decimal writing of the octal digits of i. For 342 the printed value is 526 (342 octal).",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "By definition\n\nOutput:\n\ndo\n       {\n          statement;\n        }while (condition);"
+      "explanation": "A do-while must end with while (condition); including the semicolon. Option c is missing that semicolon and will not compile.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Here in do while condition '&&' i.e 'AND'operator return '0' i.e false. So, as condition is false so program comes out of the loop.\n\nOutput :\n\n10."
+      "explanation": "A do-while always runs its body once. WriteLine(x++) prints 10. Convert.ToBoolean(0) is false, so the && chain is false and the loop does not repeat.\n\nOutput:\n\n10",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,12 +237,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "The execution of for loop is done for six consecutive times.\n\nOutput :\n\n1 1 1 1 1 1"
+      "explanation": "The for-loop runs for x = 10 through 15 (six times). Each time the do-while prints 1; continue jumps to while (false), so that inner loop ends, then break leaves the while. Six 1s are printed.\n\nOutput:\n\n1\n1\n1\n1\n1\n1",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    int x = 0;\n    do\n    {\n        x++;\n        if (x == 5)\n        {\n            x++;\n            continue;\n            break;\n        }\n        Console.WriteLine(x + \" \");\n    }\n}while (x < 10);",
+      "code": "static void Main(string[] args)\n{\n    int x = 0;\n    do\n    {\n        x++;\n        if (x == 5)\n        {\n            x++;\n            continue;\n            break;\n        }\n        Console.WriteLine(x + \" \");\n    } while (x < 10);\n}",
       "options": [
         {
           "key": "a",
@@ -246,15 +255,16 @@
         },
         {
           "key": "c",
-          "text": "5 6 7 8 9 10"
+          "text": "1 2 3 4 7 8 9 10"
         },
         {
           "key": "d",
           "text": "1 2 3 4 5 6 7 8 9 10"
         }
       ],
-      "answer": "d",
-      "explanation": "The condition will print the numbers from 1 to 10 when x == 5 and when x does not satisfy if condition until x < 10.\n\nOutput:\n\n1 2 3 4 5 6 7 8 9 10"
+      "answer": "c",
+      "explanation": "The original snippet had a stray } before while, which does not compile; the do-while is shown with correct braces. x is incremented at the start of each iteration and printed unless x == 5. When x is 5, the extra x++ makes x = 6 and continue skips the print, so 5 and 6 are omitted. break after continue is unreachable.\n\nOutput:\n\n1 \n2 \n3 \n4 \n7 \n8 \n9 \n10 ",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -271,7 +281,7 @@
         },
         {
           "key": "c",
-          "text": "12 22 32"
+          "text": "1 2\n2 2\n3 2"
         },
         {
           "key": "d",
@@ -279,7 +289,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n 12 22 32"
+      "explanation": "Each time j starts at 1 and the do-while increments it to 2. Then x % 2 == 2 is false for x = 1, 2, and 3, so j stays 2.\n\nOutput:\n\n1 2\n2 2\n3 2",
+      "origin": "local"
     }
   ]
 }

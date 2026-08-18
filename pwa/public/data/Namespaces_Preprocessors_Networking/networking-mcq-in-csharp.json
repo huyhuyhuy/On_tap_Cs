@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "System.Net.Mail"
+          "text": "System.Net"
         },
         {
           "key": "d",
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Networking support is contained in several namespaces defined by the .NET Framework. The primary namespace for networking is System.Net. It defines a large number of high-level, easy-to-use classes that support various types of operations common to the Internet. Several namespaces nested under System.Net are also provided. Example: System.Net.Mail."
+      "explanation": "The primary networking namespace is System.Net (TcpClient, TcpListener, Dns, IPAddress, WebRequest, and so on). System.Net.Mail is only email. System.Web is ASP.NET. System.in is Java, not .NET.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -79,7 +80,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "WebProxy and HttpResponseHeader are namespaces and enumerations."
+      "explanation": "IAuthenticationModule is a System.Net interface. HttpWebRequest and WebProxy are classes; HttpResponseHeader is an enum.",
+      "origin": "local"
     },
     {
       "number": 4,

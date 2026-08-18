@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of the following String methods is used to compare two strings and determine their relative sort order?",
+      "question": "Which instance method of String compares this string with another string and returns an integer for their relative sort order?",
       "code": null,
       "options": [
         {
@@ -29,12 +29,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "The 'CompareTo()' method compares the current string instance with another string and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order.",
+      "explanation": "CompareTo() is the instance method: it returns 0 if the strings are equal in sort order, a negative value if this instance precedes the argument, and a positive value if it follows. The static Compare() method does a similar comparison, but it is not an instance method.",
       "origin": "local"
     },
     {
       "number": 2,
-      "question": "Choose the base class for the String type in C#:",
+      "question": "Which class does the C# keyword string alias?",
       "code": null,
       "options": [
         {
@@ -55,13 +55,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "In C#, 'string' is an alias for the 'System.String' class, which is part of the .NET class library.",
+      "explanation": "The C# keyword string is an alias for System.String. The base class of System.String is System.Object, which is not listed here.",
       "origin": "local"
     },
     {
       "number": 3,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    string s1 = \"Cshr\";\n    string s2 = s1.Insert(2, \"a\");\n    string s3 = s2.Insert(5, \"p\");\n    Console.WriteLine(s3);\n}",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Cshr\";\n    string s2 = s1.Insert(3, \"a\");\n    string s3 = s2.Insert(5, \"p\");\n    Console.WriteLine(s3);\n}",
       "options": [
         {
           "key": "a",
@@ -81,7 +81,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The Insert() method returns a new string. Inserting 'a' at index 2 of 'Cshr' results in 'Csahr'. Inserting 'p' at index 5 of 'Csahr' results in 'Csharp'.",
+      "explanation": "Insert(index, value) inserts before that index. \"Cshr\".Insert(3, \"a\") yields \"Cshar\". Then \"Cshar\".Insert(5, \"p\") inserts at the end and yields \"Csharp\". Insert does not modify the original string; it returns a new one.",
       "origin": "local"
     },
     {
@@ -190,7 +190,7 @@
     },
     {
       "number": 8,
-      "question": "Which of the following statements are correct about C# strings?",
+      "question": "Which of the following statements is correct about C# strings?",
       "code": null,
       "options": [
         {
@@ -211,7 +211,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "C# strings are reference types, stored on the heap. They can contain any character literal, including escape sequences.",
+      "explanation": "string is a reference type stored on the heap, not a value type on the stack. String literals may include escape sequences such as \\n and \\t.",
       "origin": "local"
     },
     {

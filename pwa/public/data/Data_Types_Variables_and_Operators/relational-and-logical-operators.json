@@ -217,7 +217,7 @@
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": "class method1\n{\n    public int fun(int m) { return (m++ % 10); }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        int a = 23, b = 0, c;\n        method1 z = new method1();\n        c = z.fun(++b * --a % 2); // b=1, a=22, (1*0%2)=0. Returns 0.\n        int d = z.fun(c-- + --a); // c=0, a=21. fun(21) returns 1. \n        Console.WriteLine(c);\n        Console.WriteLine(a++);\n        Console.WriteLine(d);\n    }\n}",
+      "code": "class method1\n{\n    public int fun(int m) { return (m++ % 10); }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        int a = 23, b = 0, c;\n        method1 z = new method1();\n        c = z.fun(++b * --a % 2); // b=1, a=22; 1*22%2=0. fun(0) returns 0.\n        int d = z.fun(c-- + --a); // c becomes -1; a=21; fun(21) returns 1.\n        Console.WriteLine(c);\n        Console.WriteLine(a++);\n        Console.WriteLine(d);\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -237,7 +237,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "After d calculation, c becomes -1. a was 21, prints as 21 then becomes 22. d is 1. Result: -1, 21, 1.",
+      "explanation": "++b * --a % 2: b=1, a=22, then 1*22%2=0; fun(0) returns 0 (post-increment inside fun). Then c-- + --a: c goes from 0 to -1, a=21; fun(21) returns 21%10=1. Prints c, a++, d → -1, 21, 1.",
       "origin": "local"
     },
     {

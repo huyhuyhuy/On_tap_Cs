@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "'Continue' loop cannot be used within 'if' loop. replace while with if(i <7).\n\n Output: Compile time error."
+      "explanation": "continue is legal only inside a loop. An if statement is not a loop, so this is CS0139 (no enclosing loop out of which to continue).",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "\"Undefined label 'even' in main(). The syntax 'goto even:' is incorrect instead use 'goto even;'."
+      "explanation": "goto even: is a syntax error. A jump is written goto even; with a semicolon. The colon belongs on the label (even:), not on the goto.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "for i = 1. When control enters in loop first if condition is checked for where j = 1 and as (j > 2) which is false. Control is now passed to console statement  with i = 1 and j = 2. Now, in while condition value of 'i' reflected is 2 i.e i = 2 as i++. Since, (i < 3) control again enters in for loop with i = 2 but j = 1 not j = 2 for j++ and hence, again same condition executes for console statement.\n\nOutput : 1 2\n\n           2 1"
+      "explanation": "When i is 1, j = 1 is skipped (continue) and j = 2 is printed as \"1 2\". When i is 2, j = 1 is printed as \"2 1\" and j = 2 is skipped. j > 2 then breaks the inner for.\n\nOutput:\n\n1 2\n2 1",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "for i = 10, loop executes for first time in 'if' loop as (i>0) i.e (9 > 0) and hence printing '9'. Similarly, label condition executes again go for (i-) i.e (9-1=8) and hence again prints i = 8. In this way looping condition executes as 9, 8 to 3, 2, 1.\n\nOUTPUT :\n\n9 8 7 6 5 4 3 2 1"
+      "explanation": "Each visit to the label decrements i first, then prints if i > 0. Starting from 10, the first printed value is 9 and the last is 1. j is unused.\n\nOutput:\n\n9 \n8 \n7 \n6 \n5 \n4 \n3 \n2 \n1 ",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Since, i- so, test condition for 'i' never satisfies it fails and hence infinite loop in occurs.\n\noutput:\n\nhi hi hi....."
+      "explanation": "After the first entry, goto l1 jumps to i-- and then prints hi again. i only decreases, so the outer while is never re-tested in a way that can stop, and the inner while always finds j == 0. The program prints hi forever.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -150,11 +155,12 @@
         },
         {
           "key": "d",
-          "text": "Hi…"
+          "text": "HI..."
         }
       ],
       "answer": "d",
-      "explanation": "for i = 0, if condition is satisfied as (i == 0). So, label statement is printed.\n\n Output :\n\nHi"
+      "explanation": "i == 0 is true, so control jumps to the label and prints HI... once. There is no loop back to the label.\n\nOutput:\n\nHI...",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since outer while loop i.e while(i<2) executes only for two times. Hence, loop while executing third time for (j<3) could not be able to satisfy condition i<2 as i = 2. Hence, loop breaks and control goes out of loop.\n\n   Output :\n\nloop loop."
+      "explanation": "Each goto l1 restarts the outer while after i has been incremented. First pass: i becomes 1 and \"loop\" is printed. Second pass: i becomes 2 and \"loop\" is printed again. Then i < 2 is false, so the program stops.\n\nOutput:\n\nloop\n\nloop",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since, if condition is always true. Loop will continue executing always without any end condition.\n\n Output:\n\n0 0 0...."
+      "explanation": "i is never changed, so if (i == 0) is always true and goto label repeats forever, printing 0 each time. k is unused.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\n Output :\n\n            hi\n            hi\n            hi\n            hi\n            hi\n            hi"
+      "explanation": "continue skips the inner body when i > 1 (i = 2 and i = 3). For i = 0 and i = 1 the inner loop prints Hi three times each, so Hi is printed 6 times.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Condition executes until and unless i < 5. So, it prints \"hello\" until  'i'  condition is satisfied.\n\n  Output :\n\n             Hello\n             Hello\n             Hello\n             Hello\n             Hello"
+      "explanation": "continue at the end of the for-body just goes to the next iteration. i runs from 0 through 4, so Hello is printed 5 times. a is incremented but never printed; b is unused.",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -279,7 +289,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Absence of any loop condition in order to make decision of break or continue."
+      "explanation": "continue must appear inside a loop. In Main with no loop this is CS0139, so the program does not compile.",
+      "origin": "local"
     }
   ]
 }

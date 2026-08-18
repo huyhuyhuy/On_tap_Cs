@@ -29,7 +29,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "There are two distinct types of multitasking: process-based and thread-based."
+      "explanation": "Two common views of multitasking are process-based (several programs) and thread-based (several threads inside a program).",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -50,11 +51,12 @@
         },
         {
           "key": "d",
-          "text": "Both A feature that allows our computer to run two or more programs concurrently & A program that acts as a small unit of code that can be dispatched by the scheduler"
+          "text": "A feature that allows the computer to run two or more programs concurrently"
         }
       ],
-      "answer": "d",
-      "explanation": "The process-based multitasking is the feature that allows your computer to run two or more programs concurrently. For example, process-based multitasking allows you to run a word processor at the same time you are using a spreadsheet or browsing the Internet. In process-based multitasking, a program is the smallest unit of code that can be dispatched by the scheduler."
+      "answer": "a",
+      "explanation": "Process-based multitasking means the OS runs two or more programs (processes) at once. Option b describes a thread (the schedulable unit in thread-based multitasking), not a process. Therefore \"both a and b\" is wrong.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -75,11 +77,12 @@
         },
         {
           "key": "d",
-          "text": "Thread-based multitasking deals with the concurrent execution of pieces of the same program"
+          "text": "a and: thread-based multitasking deals with concurrent execution of pieces of the same program"
         }
       ],
-      "answer": "a",
-      "explanation": "The differences between process-based and thread-based multitasking can be summarized like this:Process-based multitasking handles the concurrent execution of programs. Thread-based multitasking deals with the concurrent execution of pieces of the same program."
+      "answer": "d",
+      "explanation": "Process-based multitasking runs programs concurrently. Thread-based multitasking runs multiple threads (pieces) of the same program. Options b and c swap those meanings.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -103,8 +106,9 @@
           "text": "Only Enables to utilize the idle time present in most programs"
         }
       ],
-      "answer": "d",
-      "explanation": "The principal advantage of multithreading is that it enables us to write very efficient programs because it lets us utilize the idle time that is present in most programs."
+      "answer": "b",
+      "explanation": "A main benefit of extra threads is overlapping work with idle time (I/O waits, and on multi-core systems true parallel CPU work). Options a/c/d are redundant wording; b states the idea clearly. (The original key was d, which is the same idea as b.)",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "In .NET a thread is foreground or background (Thread.IsBackground). The process stays alive while any foreground thread is running; background threads do not keep the process alive.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -142,7 +147,7 @@
         },
         {
           "key": "b",
-          "text": "atleast 1"
+          "text": "at least 1"
         },
         {
           "key": "c",
@@ -150,11 +155,12 @@
         },
         {
           "key": "d",
-          "text": "both at most 1 & atleast 1"
+          "text": "both at most 1 & at least 1"
         }
       ],
-      "answer": "d",
-      "explanation": "All processes have at least one thread for execution, which is usually called the main thread because it is the primary thread that is executed when our program begins. From the main thread, we can create other threads."
+      "answer": "b",
+      "explanation": "Every process has at least one thread (the main thread). It may create more. \"At most 1\" and \"at least 1\" cannot both be required, so d is impossible.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -163,7 +169,7 @@
       "options": [
         {
           "key": "a",
-          "text": "System.net"
+          "text": "System.Net"
         },
         {
           "key": "b",
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "The classes that support multithreaded programming are defined in the System.Threading namespace. Thus, you will usually include this statement at the start of any multithreaded program."
+      "explanation": "Thread, Monitor, Mutex, Semaphore, and related types are in System.Threading. (Newer code also uses System.Threading.Tasks.)",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -200,11 +207,12 @@
         },
         {
           "key": "d",
-          "text": "Only Defines a thread & Declaration of a thread constructor"
+          "text": "A Thread constructor that takes a ThreadStart delegate"
         }
       ],
       "answer": "d",
-      "explanation": "To create a thread, instantiate an object of type Thread, which is a class defined in System.Threading. The simplest Thread constructor is shown here:\n\n          public Thread(ThreadStart start)\n\nHere, start specifies the method that will be called to begin execution of the thread. In other words, it specifies the thread's entry point."
+      "explanation": "This is a constructor of Thread. start is the method the new thread will run. Constructing a Thread does not start it; you still call Start().",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,11 +237,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "The multithreading system is built upon the Thread class, which encapsulates a thread of execution. The Thread class is sealed, which means that it cannot be inherited. Thread defines several methods and properties that help manage threads."
+      "explanation": "System.Threading.Thread represents a thread. Runnable is a Java interface, not a C# type. Thread is a sealed class.",
+      "origin": "local"
     },
     {
       "number": 10,
-      "question": "On call of which type of method the new created thread will not start executing?",
+      "question": "Which of the following does not start a newly created thread?",
       "code": null,
       "options": [
         {
@@ -246,7 +255,7 @@
         },
         {
           "key": "c",
-          "text": "New()"
+          "text": "new Thread(...)  (the constructor)"
         },
         {
           "key": "d",
@@ -254,32 +263,34 @@
         }
       ],
       "answer": "c",
-      "explanation": "In multithreading, when a thread is created, it is in the \"New\" state but does not start executing until explicitly started using a method like Start()."
+      "explanation": "new Thread(callback) only creates the object. Thread.Start() actually starts it. There is no Thread.Begin() or Thread.New() method.",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "Which of these methods of Thread class is used to Suspend a thread for a period of time?",
+      "question": "Which of these methods of Thread class is used to suspend a thread for a period of time?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "sleep()"
+          "text": "Sleep()"
         },
         {
           "key": "b",
-          "text": "terminate()"
+          "text": "Terminate()"
         },
         {
           "key": "c",
-          "text": "suspend()"
+          "text": "Suspend()"
         },
         {
           "key": "d",
-          "text": "stop()"
+          "text": "Stop()"
         }
       ],
       "answer": "a",
-      "explanation": "None.\n\nMore MCQs on C# Multithreaded Programming:"
+      "explanation": "Thread.Sleep(milliseconds) pauses the current thread. Suspend and Abort/Stop are obsolete and unsafe; there is no Terminate() on Thread.",
+      "origin": "local"
     }
   ]
 }

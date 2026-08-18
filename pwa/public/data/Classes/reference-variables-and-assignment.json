@@ -268,7 +268,7 @@
     },
     {
       "number": 11,
-      "question": "What is the resulting type of the following C# expression assuming 'a' is int, 'b' is float, and 'c' is long?\n\na += (float) b /= (long) c;",
+      "question": "What is the result of the following C# expression if a is int, b is float, and c is long?\n\na += (float) b /= (long) c;",
       "code": null,
       "options": [
         {
@@ -285,11 +285,11 @@
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Compile-time error"
         }
       ],
-      "answer": "b",
-      "explanation": "In compound assignment (a += ...), the result of the expression is always the type of the variable on the left, which is 'int' in this case.",
+      "answer": "d",
+      "explanation": "(float) b is a value, not a variable, so it cannot be the left-hand side of /=. The expression does not compile (CS0131).",
       "origin": "local"
     },
     {

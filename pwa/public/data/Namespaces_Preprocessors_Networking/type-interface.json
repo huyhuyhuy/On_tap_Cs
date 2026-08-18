@@ -67,7 +67,7 @@
         },
         {
           "key": "b",
-          "text": "public name { /* … */ }"
+          "text": "public T name<T>(T arg) { /* … */ }"
         },
         {
           "key": "c",
@@ -79,7 +79,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "The syntax for a generic method includes a type parameter, inside angle brackets, and appears before the method's return type. For static generic methods, the type parameter section must appear before the method's return type."
+      "explanation": "A generic method declares type parameters in angle brackets after the method name, for example public T name<T>(T arg). C# does not put the type-parameter list before the return type (that is Java).",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -103,8 +104,9 @@
           "text": "Run time error"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput :\n\nCsharp"
+      "answer": "a",
+      "explanation": "Generic<int> only accepts int. g.push(\"Csharp\") is a compile-time type error; generics do not wait until run time to reject the string.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -128,8 +130,9 @@
           "text": "Compile time Error"
         }
       ],
-      "answer": "b",
-      "explanation": "None.\n\nOutput : 30"
+      "answer": "d",
+      "explanation": "Generic<string> only accepts string. g.push(30) does not compile because int is not string.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -203,12 +206,13 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "A generic type, such as Gen<T>, is an abstraction. In C# terminology, a construct such as Gen<T> is called an open constructed type, because the type parameter T (rather than an actual type, such as int) is specified."
+      "answer": "b",
+      "explanation": "A generic type such as Gen<T> is an open constructed type because the type argument is still the parameter T. Gen<int> is closed. Gen<> is the unbound generic type used with typeof, not an open constructed type.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Choose the correct way to call subroutine fun() of the sample class?",
+      "question": "Choose the correct way to call method x() of the sample class?",
       "code": "class a\n{\n    public void x(int p, double k)\n    {\n        Console.WriteLine(\"k : csharp!\");\n    }\n}",
       "options": [
         {
@@ -217,7 +221,7 @@
         },
         {
           "key": "b",
-          "text": "delegate void del(int p,  double k);\n   del d;\n   x s = new x();\n   d = new del(ref s.x);\n   d(8, 2.2f);"
+          "text": "delegate void del(int p,  double k);\n   del d;\n   a s = new a();\n   d = new del(s.x);\n   d(8, 2.2f);"
         },
         {
           "key": "c",
@@ -229,7 +233,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The class is a and the method is x. Create a delegate whose signature matches x, bind it with new del(s.x) (no ref), then invoke it. ref is not used when constructing a delegate from a method group.",
+      "origin": "local"
     },
     {
       "number": 10,

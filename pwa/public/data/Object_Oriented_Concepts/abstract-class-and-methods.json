@@ -28,8 +28,8 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "explanation": "An abstract class cannot be instantiated. It is meant to be a base for derived types that provide the missing implementations.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -67,7 +67,7 @@
         },
         {
           "key": "b",
-          "text": "An abstract method can take either static or virtual modifiers"
+          "text": "An abstract method cannot be static or explicitly virtual"
         },
         {
           "key": "c",
@@ -79,7 +79,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "An abstract method has no body and must be declared in an abstract class. It cannot be static, and it cannot be marked virtual because it is already implicitly virtual.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -129,7 +130,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "obj.i = 1 initializes value of i as 1 as it is the abstract member of abstract class 'A'. Now,'j' is also a same member as class 'A'. Since it is initialized the value of 5 when declared in subclass. But  since abstract method  is redefined in subclass using 'this' keyword as this. j = 3, method will execute only abstract class member 'j' not subclass 'B' own defined data member 'j'.\n\nOutput :\n\n1, 3"
+      "explanation": "B.j hides A.j. this.j in B refers to B.j, so it is set to 3. i is 1. Output is 1  3.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -203,8 +205,8 @@
           "text": "Virtual"
         }
       ],
-      "answer": "b",
-      "explanation": "None."
+      "explanation": "The derived class uses override. (virtual marks the base member that may be overridden.)",
+      "origin": "local"
     },
     {
       "number": 9,

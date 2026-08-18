@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Testing condition for the loop is absent. So, loop will continue executing.\n\nOutput :\n\n         hello\n         hello\n         hello\n         .\n         .\n         ."
+      "explanation": "An omitted for-condition is treated as true, so for (i = 0; ;) is an infinite loop. Console.ReadLine() after the loop is unreachable.\n\nOutput:\n\nhello\nhello\n...",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "f = 0.1 and ++f = 0.1+1 = 1.1. So, 1.1>0.5, Condition fails and hence loop terminates.\n\nOutput :\n\n 1.1"
+      "explanation": "The first condition check uses f = 0.1f, which is <= 0.5. ++f then prints 1.1 and leaves f at 1.1. The iterator f += 1 makes f = 2.1, which fails f <= 0.5.\n\nOutput:\n\n1.1",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Testing condition is always incremented i.e i never '>' (9%2+I). So, loop will never terminate.\n\nOutput :\n\n 5 5 5....."
+      "explanation": "9 % 2 + I is 1 + I, so the test is I <= I + 1, which is always true. X = (3I + 2I) / I = 5 for every I, so 5 is printed forever.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -100,11 +103,12 @@
         },
         {
           "key": "d",
-          "text": "Run time error"
+          "text": "Infinite loop (program hangs)"
         }
       ],
       "answer": "d",
-      "explanation": "Due to presence of ';' after for()loop condition do not work as according to the statement. Remove the ';'.\n\nOutput :\n\n 25"
+      "explanation": "The semicolon after for (I = 1; I < 10; ) is an empty loop body. I is never incremented in the for-header, so I < 10 stays true and the loop never ends. The block that updates J and I is not part of the for-loop. This is a hang, not a runtime exception. (If the semicolon were removed, J would become 25, and the printed message would still be wrong because 1+3+5+7+9 are odd numbers.)",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since, i = 5 and test condition is executed until i!=0. So, i- decrements value of i till condition is satisfied.\n\nOutput:\n\n 5 4 3 2 1"
+      "explanation": "Convert.ToBoolean(i) is true while i != 0. The iterator Console.WriteLine(i--) prints the current i then decrements, so 5 through 1 are printed. When i becomes 0 the condition is false.\n\nOutput:\n\n5\n4\n3\n2\n1",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Since occurrence of termination symbol(;) at end of for loop.\n\nOutput:\n\n 55"
+      "explanation": "The semicolon makes the for-loop body empty; summing happens in the iterator. After i runs from 1 to 10, s is 55. The following block then prints s once.\n\nOutput:\n\n55",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "By definition."
+      "explanation": "for (;;) has an omitted condition, which is treated as true, so it is an infinite loop. A for loop is not inherently faster than an equivalent while loop; that depends on the body and the JIT, not the keyword.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Occurrence of 'main()' condition after for loop.\n\nOutput:\n\n        Hi\n        Hi\n         .\n         .\n        stack overflow exception."
+      "explanation": "Assuming this is the body of Main, each call prints Hi and then recursively calls Main ten more times. Recursion never returns, so the call stack overflows (StackOverflowException).",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -213,23 +221,24 @@
       "options": [
         {
           "key": "a",
-          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 0;j <= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 0;j <= 4; j++)\n        Console.Write(\"* \");\n        Console.WriteLine();\n    }"
         },
         {
           "key": "b",
-          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 4;j <= i; j--)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n   }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for(j = 4;j <= i; j--)\n        Console.Write(\"* \");\n        Console.WriteLine();\n   }"
         },
         {
           "key": "c",
-          "text": "for (i = 0;i <= 4; i++)\n   {\n        for (j = i;j <= 4; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for (i = 0;i <= 4; i++)\n   {\n        for (j = i;j <= 4; j++)\n        Console.Write(\"* \");\n        Console.WriteLine();\n    }"
         },
         {
           "key": "d",
-          "text": "for ( i = 0;i <= 4; i++)\n   {\n        for (j = 0;j <= i; j++)\n        console.WriteLine(\"*\");\n        console.WriteLine(\"\\n\");\n    }"
+          "text": "for ( i = 0;i <= 4; i++)\n   {\n        for (j = 0;j <= i; j++)\n        Console.Write(\"* \");\n        Console.WriteLine();\n    }"
         }
       ],
       "answer": "c",
-      "explanation": "Input in Console and run the code."
+      "explanation": "A decreasing triangle needs an inner loop from j = i to 4 (5, 4, 3, 2, then 1 stars). Console.Write prints on the same line; Console.WriteLine() ends the row. Option a prints a 5x5 rectangle, option d prints an increasing triangle, and option b's inner loop (j = 4; j <= i; j--) does not run for i < 4. (The original options used console.WriteLine, which would not compile: Console is case-sensitive, and WriteLine would put each star on a new line.)",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,32 +263,34 @@
         }
       ],
       "answer": "c",
-      "explanation": "for i = -3, -2, -1 statement executed as B. for i = 0, it is zero and for i = 1, 2, 3 again statement printed as A separately  for each value of i.\n\nOutput:\n\nB B B zero A A A"
+      "explanation": "For i = -3, -2, -1 the else-if prints B. For i = 0 the switch prints zero and neither if branch runs. For i = 1, 2, 3 the if prints A.\n\nOutput:\n\nB\nB\nB\nzero\nA\nA\nA",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "Which of the following is not infinite loop?",
+      "question": "Which of the following is not an infinite loop in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "for( ;'0′; )"
+          "text": "for (; true; )"
         },
         {
           "key": "b",
-          "text": "for( ;0; )"
+          "text": "for (; false; )"
         },
         {
           "key": "c",
-          "text": "for( ;'1′; )"
+          "text": "for (;;)"
         },
         {
           "key": "d",
-          "text": "for( ;1; )"
+          "text": "while (true) { }"
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "A for-loop condition must be a bool. for (; false; ) never enters the body, so it is not infinite. for (;;) and for (; true; ) and while (true) all loop forever. (The original options used C-style integer conditions such as for (;0;), which do not compile in C# because int cannot be converted to bool.)",
+      "origin": "local"
     },
     {
       "number": 12,
@@ -296,7 +307,7 @@
         },
         {
           "key": "c",
-          "text": "j = 0;"
+          "text": "0"
         },
         {
           "key": "d",
@@ -304,7 +315,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since for i = 1, j = 1 and 1 <= 3 also 1 >= 0 we had i == j. But after i++ and j-. The initial value of 'j' which is '0' as j- preferred other than value of 'j' in i = j.\n\nOutput:\n\nj = 0"
+      "explanation": "Start: i = 1, j = 1, so i == j and continue skips printing. Next: i = 2, j = 0; the condition holds and 0 is printed. Next: i = 3, j = -1, but j >= 0 is false so the loop ends.\n\nOutput:\n\n0",
+      "origin": "local"
     },
     {
       "number": 13,
@@ -329,7 +341,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "For first value of i = -10. Condition is executed until i!=0.\n\nOutput:\n\n-10 -9 -8 -7 -6 -5 -4 -3 -2 -1"
+      "explanation": "Convert.ToBoolean(i) is true for every non-zero i. The iterator prints i then increments it, so -10 through -1 are printed. When i becomes 0 the condition is false.\n\nOutput:\n\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1",
+      "origin": "local"
     }
   ]
 }

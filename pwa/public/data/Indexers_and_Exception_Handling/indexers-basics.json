@@ -169,7 +169,7 @@
       "options": [
         {
           "key": "a",
-          "text": "The indexer is accessed using the 'this' keyword on the object"
+          "text": "Indexers are declared using the 'this' keyword"
         },
         {
           "key": "b",
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "Indexers must have parameters (otherwise they would be properties), can be overloaded by changing parameter types (e.g., int index vs string index), and are accessed via the object instance.",
+      "explanation": "Indexers are declared with the 'this' keyword, must have at least one parameter (otherwise they would be properties), and can be overloaded by changing parameter types (e.g., int index vs string index).",
       "origin": "local"
     },
     {
@@ -225,7 +225,7 @@
         },
         {
           "key": "b",
-          "text": "An Interface"
+          "text": "A namespace"
         },
         {
           "key": "c",
@@ -237,7 +237,7 @@
         }
       ],
       "answer": "a",
-      "explanation": "A class that defines an indexer allows its instances to be indexed using the [] operator.",
+      "explanation": "A class (or struct) that defines an indexer allows its instances to be indexed with []. A namespace cannot declare an indexer.",
       "origin": "local"
     },
     {

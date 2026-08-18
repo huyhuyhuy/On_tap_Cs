@@ -28,8 +28,9 @@
           "text": "none of the mentioned"
         }
       ],
-      "answer": "b",
-      "explanation": "main() method must be specified public as it called by Csharp run time system outside of the program, by default main is private in nature if no access specifier is used."
+      "answer": "d",
+      "explanation": "The runtime can invoke Main whether it is public, internal, or private. No particular access modifier is required.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -179,7 +180,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Here, a = 2, a + 1 = 2 + 1 = 3.\n\n             So, a = 2, b = 3.\n\n             x = 2 + 3 = 5.\n\n             y = 5 + 3 = 8.\n\n             Similarly, a = 5, b = a + 1 = 4.\n\n             y = 5 + 4 = 9.\n\nOutput :\n\n5, 9"
+      "explanation": "obj1.add(2, 3) sets obj1.x = 5 and obj1.y = 8. obj2.add(5, a) uses a still equal to 2, so obj2.x = 7 and obj2.y = 9. The program prints obj1.x and obj2.y.\n\nOutput :\n\n5  9",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -228,8 +230,9 @@
           "text": "none of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "d",
+      "explanation": "A class does not have to be public to be inherited. A top-level class defaults to internal and can be a base class in the same assembly. Nested classes default to private and can still be inherited by other nested types in the same enclosing type.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -250,11 +253,12 @@
         },
         {
           "key": "d",
-          "text": "protected members of a class can be inherited by a subclass, and become private members of the subclass"
+          "text": "protected members of a class can be accessed from a derived class"
         }
       ],
       "answer": "c",
-      "explanation": "private members of a class cannot be inherited by a subclass."
+      "explanation": "Private members are not accessible in a derived class and do not become protected. Public, private, and the corrected protected statement are true.",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -300,11 +304,12 @@
         },
         {
           "key": "d",
-          "text": "public, private, protected, internal, protected internal"
+          "text": "public, private, protected, internal, protected internal, private protected"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "C# has six accessibility levels: public, private, protected, internal, protected internal, and private protected (C# 7.2 and later).",
+      "origin": "local"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "topic": "Arrays_and_Strings",
   "sourceUrl": "https://www.sanfoundry.com/csharp-mcqs-array-intialization/",
   "sourceFile": "Array MCQ in C# - Sanfoundry.html",
-  "description": "This section of our 1000+ C# multiple choice questions focuses on array and it's properties in C# Programming Language.",
+  "description": "This section of our 1000+ C# multiple choice questions focuses on arrays and their properties in C# Programming Language.",
   "questionCount": 10,
   "questions": [
     {
@@ -29,7 +29,7 @@
         }
       ],
       "answer": "a",
-      "explanation": "With each value of 'i', the inner loop for 'j' executes 3 times. For i=0: 0*2+0*2=0. For i=1: 1*2+1*2=4. For i=2: 2*2+2*2=8.",
+      "explanation": "With each i, the inner loop runs 3 times and WriteLine prints the same value. i=0 gives 0; i=1 gives 4; i=2 gives 8. Console.ReadLine() only pauses between rows; it does not change the printed numbers.",
       "origin": "local"
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Complete the following C# code with \"foreach condition\".",
+      "question": "Complete the following C# code with the missing inner loop so that j is each element of the inner array.",
       "code": "int[][] a = new int[2][];\na[0] = new int[3]{3, 4, 2};\na[1] = new int[2]{8, 5};\nforeach(int[] i in a)\n{\n    /* add for loop */\n    Console.Write(j + \" \");\n    Console.WriteLine();\n}",
       "options": [
         {
@@ -107,25 +107,25 @@
         }
       ],
       "answer": "b",
-      "explanation": "The range of 'byte' is 0 to 255. Casting 345.09 to byte results in 345 modulo 256, which is 89.",
+      "explanation": "In C#, byte is an unsigned 8-bit type (0 to 255). The cast first truncates 345.09 toward zero to 345, then wraps 345 into the byte range: 345 - 256 = 89.",
       "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which statement is correct about following c#.NET code?",
+      "question": "Which statement is correct about the following C# code?",
       "code": "int[] a= {11, 3, 5, 9, 6};",
       "options": [
         {
           "key": "a",
-          "text": "'a' is a reference to the array created on stack"
+          "text": "'a' is a reference to the array created on the stack"
         },
         {
           "key": "b",
-          "text": "'a' is a reference to an object created on stack"
+          "text": "'a' is a reference to an object created on the stack"
         },
         {
           "key": "c",
-          "text": "'a' is a reference to an object of a class that compiler drives from 'System.Array' class"
+          "text": "'a' is a reference to an array object whose type is derived from System.Array"
         },
         {
           "key": "d",
@@ -133,12 +133,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "In C#, arrays are objects that derive from the System.Array class.",
+      "explanation": "In C#, arrays are reference types allocated on the heap. The array type (here int[]) inherits from System.Array.",
       "origin": "local"
     },
     {
       "number": 6,
-      "question": "What is the advantage of using 2D jagged array over 2D rectangular array?",
+      "question": "What is the advantage of using a 2D jagged array over a 2D rectangular array?",
       "code": null,
       "options": [
         {
@@ -164,7 +164,7 @@
     },
     {
       "number": 7,
-      "question": "Which statement is correct about following C# code?",
+      "question": "Which statement is correct about the following C# code?",
       "code": "int[, ]a={{5, 4, 3},{9, 2, 6}};",
       "options": [
         {
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The code defines a rectangular array with 2 rows and 3 columns.",
+      "explanation": "int[,] with two nested initializer lists of three values each is a rectangular array of 2 rows and 3 columns. GetUpperBound(0) returns 1 (the last row index), not 2 or 9.",
       "origin": "local"
     },
     {
@@ -207,11 +207,11 @@
         },
         {
           "key": "d",
-          "text": "Code runs successfully and prints given on console"
+          "text": "The code runs successfully and prints the values"
         }
       ],
       "answer": "d",
-      "explanation": "The 'params' keyword allows the method to accept a variable number of arguments or an array.",
+      "explanation": "The params keyword lets display() accept either a comma-separated list of ints (2, 3, 8) or an int array. Both calls are valid and the values are printed.",
       "origin": "local"
     },
     {
@@ -237,25 +237,25 @@
         }
       ],
       "answer": "d",
-      "explanation": "Option D is the standard correct syntax for initializing an array of 3 elements in C#.",
+      "explanation": "new int[3]{78, 9, 54} creates an array of length 3. Option a has only two elements. Option b uses a[3], which is out of range (valid indexes are 0..2). Option c is invalid syntax because [] is missing after int.",
       "origin": "local"
     },
     {
       "number": 10,
-      "question": "Choose selective differences between an array in c# and array in other programming languages.",
+      "question": "Which of the following is a real difference between declaring an array in C# and in languages such as C?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "Declaring array in C# the square bracket([]) comes after the type but not after identifier"
+          "text": "In C#, the square brackets come after the type (int[] a), not after the identifier"
         },
         {
           "key": "b",
-          "text": "It is necessary to declare size of an array with its type"
+          "text": "The array size must be part of the declared type"
         },
         {
           "key": "c",
-          "text": "No difference between declaration of array in c# as well as in other programming languages"
+          "text": "There is no difference between array declaration in C# and in C"
         },
         {
           "key": "d",
@@ -263,7 +263,7 @@
         }
       ],
       "answer": "a",
-      "explanation": "In C#, 'int[] arrayName' is the required syntax, unlike some other languages where 'int arrayName[]' is allowed.",
+      "explanation": "C# requires int[] name. Unlike C, int name[] is not legal, and the length is not part of the array type, so the same variable can later refer to arrays of different lengths.",
       "origin": "local"
     }
   ]

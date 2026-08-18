@@ -29,12 +29,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Polymorphism is the ability of a reference to work with objects of different types (overloading at compile time, overriding at run time).",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": " public class sample\n {\n     public static int x = 100;\n     public static int y = 150;\n\n }\n public class newspaper :sample\n {\n     new public static int x = 1000;\n     static void Main(string[] args)\n     {\n         console.writeline(sample.x + \"  \" + sample.y + \"  \" + x);\n     }\n }",
+      "code": " public class sample\n {\n     public static int x = 100;\n     public static int y = 150;\n\n }\n public class newspaper :sample\n {\n     new public static int x = 1000;\n     static void Main(string[] args)\n     {\n         Console.WriteLine(sample.x + \"  \" + sample.y + \"  \" + x);\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "sample.x = 100\n\n              sample.y = 150\n\n              variable within scope of main() is x = 1000\n\nOutput :\n\n 100  150  1000"
+      "explanation": "sample.x is 100, sample.y is 150, and newspaper.x hides sample.x so the unqualified x in Main is 1000.\n\nOutput:\n\n100  150  1000",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "The new modifier hides an inherited member. override replaces a virtual/abstract member for polymorphic dispatch. overloads is not a C# keyword.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -103,8 +106,9 @@
           "text": "all of the mentioned"
         }
       ],
-      "answer": "d",
-      "explanation": "None."
+      "answer": "c",
+      "explanation": "Only the static operator+ form is valid. Operator methods must be public and static.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -128,13 +132,14 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "d",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "The derived method is marked new, so it hides the virtual base method rather than overriding it. A maths reference still calls maths.a().",
+      "origin": "local"
     },
     {
       "number": 6,
       "question": "Select the sequence of execution of function f1(), f2() & f3() in C# .NET CODE?",
-      "code": " class base\n {\n     public void f1() {}\n     public virtual void f2() {}\n     public virtual  void f3() {}\n }\n class derived :base\n {\n     new public void f1() {}\n     public override void f2() {}\n     public new void f3() {}\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         baseclass b = new derived();\n         b.f1 ();\n         b.f2 ();\n         b.f3 ();\n     }\n }",
+      "code": " class baseclass\n {\n     public void f1() {}\n     public virtual void f2() {}\n     public virtual  void f3() {}\n }\n class derived :baseclass\n {\n     new public void f1() {}\n     public override void f2() {}\n     public new void f3() {}\n }\n class Program\n {\n     static void Main(string[] args)\n     {\n         baseclass b = new derived();\n         b.f1 ();\n         b.f2 ();\n         b.f3 ();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Through a baseclass reference: f1 is hidden so the base method runs; f2 is overridden so the derived method runs; f3 is hidden with new so the base virtual method runs.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -185,7 +191,7 @@
     {
       "number": 8,
       "question": "Correct code to be added for overloaded operator - for the following C# code?",
-      "code": " class csharp\n {\n     int x, y, z;\n     public csharp()\n     {\n\n     }\n     public csharp(int a ,int b ,int c)\n     {\n         x = a;\n         y = b;\n         z = c;\n     }\n     Add correct set of code here\n    public void display()\n    {\n        console.writeline(x + \"  \" + y + \"  \" + z);\n    }\n    class program\n    {\n        static void Main(String[] args)\n        {\n            csharp s1 = new csharp(5 ,6 ,8);\n            csharp s3 = new csharp();\n            s3 = - s1;\n            s3.display();\n        }\n    }\n}",
+      "code": " class csharp\n {\n     int x, y, z;\n     public csharp()\n     {\n\n     }\n     public csharp(int a ,int b ,int c)\n     {\n         x = a;\n         y = b;\n         z = c;\n     }\n     Add correct set of code here\n    public void display()\n    {\n        Console.WriteLine(x + \"  \" + y + \"  \" + z);\n    }\n    class program\n    {\n        static void Main(String[] args)\n        {\n            csharp s1 = new csharp(5 ,6 ,8);\n            csharp s3 = new csharp();\n            s3 = - s1;\n            s3.display();\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -205,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Unary operator - must be public static. Negating all components produces -5 -6 -8.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -230,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Choosing an overload from the argument list at compile time is compile-time polymorphism, also called static binding (early binding).",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -255,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "An abstract property (or method) can and typically must be overridden in a non-abstract derived class. a, b, and d are true of override/virtual/abstract.",
+      "origin": "local"
     }
   ]
 }

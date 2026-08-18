@@ -34,7 +34,7 @@
     {
       "number": 2,
       "question": "What will be the Correct statement in the following C# code?",
-      "code": "class sample\n{\n    protected int index;\n    public sample()\n    {\n        index = 0;\n    }\n}\nclass sample 1: sample\n{\n    public void add()\n    {\n        index += 1;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sample 1 z = new sample 1();\n        z . add();\n    }\n}",
+      "code": "class sample\n{\n    protected int index;\n    public sample()\n    {\n        index = 0;\n    }\n}\nclass sample1: sample\n{\n    public void add()\n    {\n        index += 1;\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        sample1 z = new sample1();\n        z.add();\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -54,7 +54,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+      "explanation": "protected index is visible in the derived class. Constructors are not inherited. Constructing sample1 runs the sample constructor first, then sample1.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -146,7 +147,7 @@
         },
         {
           "key": "c",
-          "text": "console.writeline(a + \" \" + base.a);"
+          "text": "Console.WriteLine(a + \" \" + base.a);"
         },
         {
           "key": "d",
@@ -154,12 +155,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "a refers to the derived field (10). base.a refers to the hidden base field (20).",
+      "origin": "local"
     },
     {
       "number": 7,
       "question": "What will be the Correct statement in the following C# code?",
-      "code": " class baseclass\n {\n     int a;\n     public baseclass(int a1)\n     {\n         a = a1;\n         console.writeline(\" a \");\n     }\n     class derivedclass : baseclass\n     {\n         public derivedclass (int a1) : base(a1)\n         {\n             console.writeline(\" b \");\n         }\n     }\n     class program\n     {\n         static void main(string[] args)\n         {\n             derivedclass d =  new derivedclass(20);\n         }\n     }\n }",
+      "code": " class baseclass\n {\n     int a;\n     public baseclass(int a1)\n     {\n         a = a1;\n         Console.WriteLine(\" a \");\n     }\n     class derivedclass : baseclass\n     {\n         public derivedclass (int a1) : base(a1)\n         {\n             Console.WriteLine(\" b \");\n         }\n     }\n     class program\n     {\n         static void main(string[] args)\n         {\n             derivedclass d =  new derivedclass(20);\n         }\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -179,12 +181,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n         a\n         b"
+      "explanation": "The base constructor runs first, then the derived constructor.\n\nOutput:\n\n a \n b ",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "Which C# statement should be added in function a() of class y to get output \"i love csharp\"?",
-      "code": " class x\n {\n     public void a()\n     {\n         console.write(\"bye\");\n     }\n }\n class y : x\n {\n     public void a()\n     {\n     /* add statement here */\n         console.writeline(\"  i love csharp \");\n     }\n }\n class program\n {\n     static void main(string[] args)\n     {\n         y obj =  new obj();\n         obj.a();\n     }\n }",
+      "code": " class x\n {\n     public void a()\n     {\n         Console.Write(\"bye\");\n     }\n }\n class y : x\n {\n     public void a()\n     {\n     /* add statement here */\n         Console.WriteLine(\"  i love csharp \");\n     }\n }\n class program\n {\n     static void Main(string[] args)\n     {\n         y obj =  new y();\n         obj.a();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -204,7 +207,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "base.a() calls the hidden base method, then the derived method prints the rest.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +233,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "A derived object can use inherited members. Multilevel inheritance (A→B→C→D) is legal. If both base and derived define the same name, the derived member is used on a derived-typed reference (hiding or override depending on virtual/new).",
+      "origin": "local"
     },
     {
       "number": 10,

@@ -55,7 +55,7 @@
         }
       ],
       "answer": "a",
-      "explanation": "While byte streams handle raw 8-bit data, character streams handle 16-bit Unicode characters, making them the best option for reading and writing international text.",
+      "explanation": "Character streams (TextReader/TextWriter and StreamReader/StreamWriter) read and write text using an Encoding. Byte streams work with raw bytes. In modern .NET, StreamWriter defaults to UTF-8, not a raw 16-bit dump of System.Char.",
       "origin": "local"
     },
     {

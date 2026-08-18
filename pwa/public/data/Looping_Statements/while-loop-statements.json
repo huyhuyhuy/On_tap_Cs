@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "11 21 31"
+          "text": "1 1\n2 1\n3 1"
         },
         {
           "key": "d",
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Since, condition never satisfied for any value of i and j for which (i % j == 2). Hence, j is always constant '1' and 'i'  increments for  i = 1, 2, 3.\n\nOutput:\n\n 11 21 31."
+      "explanation": "j is reset to 1 each time. i % 1 is always 0, so i % j == 2 is never true and the while body never runs. The for-loop prints i and j for i = 1, 2, 3.\n\nOutput:\n\n1 1\n2 1\n3 1",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "For the first while condition check when s = 0. If it is true as control goes inside loop ++s increments value of s by 1 as  1+0.1 = 1.1. So, for next condition while loop fails and hence, prints final value of s as 1.1.\n\nOutput:\n\n 1.1"
+      "explanation": "s starts at 0.1f, which is <= 0.5f, so the loop runs once. ++s adds 1, making s = 1.1f, which is then printed. 1.1f is not <= 0.5f, so the loop ends.\n\nOutput:\n\n1.1",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "For while(i++ < 5) current value of 'i' is checked first and hence prints incremented value afterwards. So, i =1, 2, 3, 4, 5. But, for while(++i < 5) current value is incremented first and then checks that value with given condition and hence then prints that value. So, i = 1, 2, 3, 4.\n\nOutput:\n\n        1 2 3 4 5\n        1 2 3 4"
+      "explanation": "i++ < 5 tests the old value, then increments, so the body prints 1 through 5. ++i < 5 increments first, so the body prints 1 through 4. Each number is on its own line because WriteLine is used.\n\nOutput:\n\n1\n2\n3\n4\n5\n\n1\n2\n3\n4",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -96,7 +99,7 @@
         },
         {
           "key": "c",
-          "text": "0 2 4 6 8"
+          "text": "0 2 4 6 8, then an infinite loop"
         },
         {
           "key": "d",
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Inner while loop condition checks for even number between 0 an 10 and hence prints number between the given range.\n\nOutput:\n\n0 2 4 6 8"
+      "explanation": "The inner loop prints even values 0, 2, 4, 6, 8 and leaves x at 10. The outer loop still has x < 20, but the inner condition x < 10 is false and x is never incremented again, so the program hangs after those five numbers.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -117,7 +121,7 @@
         },
         {
           "key": "b",
-          "text": "Execute while 2 time\n   Execute while 4 time\n   Execute while 6 time\n   Execute while 8 time"
+          "text": "Execute While 2 time\n   Execute While 4 time\n   Execute While 6 time\n   Execute While 8 time"
         },
         {
           "key": "c",
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Checks condition if number is divisible by 2 then it will print it even number times as given for x = 8 so, prints between 2 to 8 times Similarly, for x = 5, Execute 2 and 4 time.\n\nOUTPUT:\n\n        Execute while 2 time.\n        Execute while 4 time.\n        Execute while 6 time.\n        Execute while 8 time."
+      "explanation": "For x = 8 the loop prints only even values of c from 1 through 8.\n\nOutput:\n\nExecute While 2\ttime\nExecute While 4\ttime\nExecute While 6\ttime\nExecute While 8\ttime",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -146,7 +151,7 @@
         },
         {
           "key": "c",
-          "text": "2345"
+          "text": "2\n3\n4\n5"
         },
         {
           "key": "d",
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Reverse of number using while loop.\n\nOutput:\n\n2345."
+      "explanation": "The loop peels off remainders with n % 10 and prints each digit on its own line. For 5432 that is 2, then 3, then 4, then 5 (the digits of n from right to left). The unary plus on +r does not change the value.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "The standard form is while (condition) { }. Option a puts the condition after the block. Option d's semicolon makes an empty while, so the following block is not the loop body. Option b is syntactically valid (an extra empty statement after the block) but is not the normal while syntax.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "for while(i = 1.0f and j = 0.05f). We, had '&&' condition which gives '1'. So, control enters while loop. Since, i = 1 and i++ = first execute then increment. So, first with 'i' value as 1.0f and ++j = first increment and then executes we had j = 1.05f and Since operation (i++ - ++j) gives us a negative sign number. So, we can stick our choice to option '-0.04999995f' clearly. Now, as  i = 2.0f so loop breaks.\n\nOutput:\n\n-0.04999995f"
+      "explanation": "The loop runs once: i++ uses 1.0f then sets i to 2.0f, and ++j sets j to 1.05f before the subtraction. 1.0f - 1.05f is a float approximation around -0.04999995. Then i is 2.0f, so i < 2.0f fails.\n\nOutput:\n\n-0.04999995",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "i starts at 0, so i % 10 == 0 is true and continue runs immediately. i is never incremented (the i += 10 after continue/break is unreachable), so the loop repeats forever and prints nothing. continue is valid here because it is inside a while.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "As ++i, first increments then execute so, for ++i i is 11 and j++ is first execute then increments. So, j = 10.\n\nOutput:\n\n11 10."
+      "explanation": "++i increments before the test, so the body runs for i = 2 through 10 (9 times). After the failing test, i is 11. j starts at 1 and is incremented 9 times, so j is 10.\n\nOutput:\n\n11  10",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -267,7 +277,7 @@
         },
         {
           "key": "b",
-          "text": "Hello…."
+          "text": "Hello..."
         },
         {
           "key": "c",
@@ -279,7 +289,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Ascii value of 'A' is 65 and 'a' is 97. So, clearly 'A' < 'a'.\n\nOutput:\n\nHello."
+      "explanation": "Char codes: 'A' is 65 and 'a' is 97, so 'A' < 'a' is true. The while body runs once because i is incremented to 2.\n\nOutput:\n\nHello...",
+      "origin": "local"
     },
     {
       "number": 12,
@@ -304,7 +315,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "i++ = first executes then increments as i = 0. So, i++ != 0, which is false clearly  as i = 0. Now, control goes inside loop with i = 1. So, statement prints i = 1.\n\nOutput:\n\n 1."
+      "explanation": "i++ != 0 uses i's current value 0 (false), then increments i to 1. The loop body (empty statement) never runs. WriteLine then prints 1.\n\nOutput:\n\n1",
+      "origin": "local"
     }
   ]
 }

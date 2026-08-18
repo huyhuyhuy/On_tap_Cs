@@ -108,8 +108,8 @@
     },
     {
       "number": 5,
-      "question": "What will be the output of the following C# code?",
-      "code": "  class Program\n  {\n      static void Main(string[] args)\n      {\n          int ch;\n          HttpWebRequest req = (HttpWebRequest) WebRequest.Create(\"http://www.McGraw-Hill.com\");\n          HttpWebResponse resp = (HttpWebResponse) req.GetResponse();\n          Stream istrm = resp.GetResponseStream();\n          for (int i = 1 ;  ;i++)\n          {\n              ch = istrm.ReadByte();\n              if (ch == -1)\n              break;\n              Console.Write((char)ch);\n              if ((i % 400) == 0)\n              {\n                  Console.Write(\"\\nPress Enter.\");\n                  Console.ReadLine();\n              }\n          }\n          resp.Close();\n      }\n  }",
+      "question": "Which MIME type is typically reported by HttpWebResponse.ContentType for an HTML page?",
+      "code": "  class Program\n  {\n      static void Main(string[] args)\n      {\n          HttpWebRequest req = (HttpWebRequest) WebRequest.Create(\"http://www.McGraw-Hill.com\");\n          HttpWebResponse resp = (HttpWebResponse) req.GetResponse();\n          Console.WriteLine(resp.ContentType);\n          resp.Close();\n      }\n  }",
       "options": [
         {
           "key": "a",
@@ -129,7 +129,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "The following program obtains the hypertext contained at a specific website. The program displays the hypertext on the screen."
+      "explanation": "HttpWebResponse.ContentType is the MIME type of the entity. An HTML page is typically text/html (often with a charset parameter). The old snippet printed the response body, not this string.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -158,7 +159,7 @@
     },
     {
       "number": 7,
-      "question": "Which of these data members of HttpResponse class is used to store the response from a http server?",
+      "question": "Which property of HttpWebResponse stores the HTTP status code returned by the server?",
       "code": null,
       "options": [
         {
@@ -175,11 +176,12 @@
         },
         {
           "key": "d",
-          "text": "statusCode"
+          "text": "StatusCode"
         }
       ],
       "answer": "d",
-      "explanation": "When we send a request to http server it responds with a status code. This status code is stored in statusCode and the textual equivalent is stored in reasonPhrase."
+      "explanation": "HttpWebResponse.StatusCode is the HTTP status (HttpStatusCode). The corresponding reason text is StatusDescription, not a Java-style reasonPhrase field.",
+      "origin": "local"
     }
   ]
 }

@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "Which .NET class is the C# 'uint' data type derived from?",
+      "question": "Which .NET type is the C# 'uint' keyword an alias for?",
       "code": null,
       "options": [
         {
@@ -55,7 +55,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "C# types are aliases for .NET System classes: short (Int16), uint (UInt32), ulong (UInt64), and ushort (UInt16).",
+      "explanation": "C# keywords are aliases for .NET types: short (Int16), uint (UInt32), ulong (UInt64), ushort (UInt16).",
       "origin": "local"
     },
     {
@@ -211,7 +211,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "Since (a + b) results in a float, you cannot implicitly assign it to 'int c'. You must either cast 'b' to int before adding or use the Convert class to handle the conversion.",
+      "explanation": "c = a + b does not compile (float cannot convert implicitly to int). B and C both compile, but they are not the same: (int)3.5f truncates to 3 so B is 15; Convert.ToInt32(3.5f) rounds to 4 so C is 16.",
       "origin": "local"
     },
     {
@@ -233,11 +233,11 @@
         },
         {
           "key": "d",
-          "text": "None of the mentioned"
+          "text": "Both B and C print 74"
         }
       ],
-      "answer": "c",
-      "explanation": "Convert.ToInt32(6.2) rounds to 6. Calculation: 12 / 6 + 12 * 6 = 2 + 72 = 74. Casting (int)b would also work (results in 6), but option C is specifically formatted to reach exactly 74.",
+      "answer": "d",
+      "explanation": "Both (int)6.2f and Convert.ToInt32(6.2f) yield 6, so 12/6 + 12*6 = 74. Option A casts the whole float result: (int)(12/6.2 + 12*6.2) is (int)76.33... = 76.",
       "origin": "local"
     },
     {
@@ -307,7 +307,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "a + b = 10.553 + 12 = 22.553. Convert.ToInt32(22.553) rounds to the nearest whole number, which is 23.",
+      "explanation": "10.553f + 12L is a float about 22.553001. Convert.ToInt32 rounds that to 23 (not truncate; (int) would give 22).",
       "origin": "local"
     }
   ]

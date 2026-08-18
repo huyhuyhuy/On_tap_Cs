@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Matching the values passed as parameters. The respective constructors are overloaded according to the matching parameter type.\n\nOutput :\n\n        60\n        144"
+      "explanation": "new maths(20, 40) matches (int, int) and prints 20 + 40 = 60. 12.0 is a double, so new maths(12.0, 12) matches (double, int) and prints 12.0 * 12 = 144.\n\nOutput:\n\n60\n144",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "new maths(6) uses the one-parameter constructor: length = 6 + 1 = 7. new maths(6, 2) uses the two-parameter constructor: length = 6 + 2 = 8. breadth is never set (stays 0) and is not printed.\n\nOutput:\n\n7\n8",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n        constructor 2: 6\n        constructor 1:"
+      "explanation": "Constructors run in the order of the new expressions. new maths(4) prints constructor 2: 6. Then new maths() prints constructor 1 :\n\nOutput:\n\nconstructor 2: 6\nconstructor 1 :",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": ":base(x) runs the base constructor first, which prints \" hello: \", then the derived constructor prints \"bye\". The argument 12 is stored in i but is not written to the console.\n\nOutput:\n\n hello: \nbye",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Derived constructors call :base(...) first, so the chain is maths, then maths1, then maths2. Each constructor overwrites its parameter before printing: 12 * 12 = 144, then 13 + 13 = 26, then 24 / 6 = 4. The 10 passed from Main is never used in the printed expressions.\n\nOutput:\n\n144\n26\n4",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "A derived constructor calls a base constructor with : base(...). this(...) calls another constructor of the same class. C# has no extend keyword for this.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Choosing among overloaded constructors by argument count and types is compile-time (static) polymorphism, also called overload resolution. It is not overriding, which is a runtime dispatch of virtual methods.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -196,7 +203,7 @@
         },
         {
           "key": "c",
-          "text": "Overloaded constructors can have different type of number of arguments as well as differ in number of arguments"
+          "text": "Overloaded constructors may differ in parameter types and/or in the number of parameters"
         },
         {
           "key": "d",
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition of overloaded constructors."
+      "explanation": "Overloads are distinguished by signature (parameter count and types). Constructors are named after the class, so a is also true, but b is false: constructors may use optional parameters. Therefore d is false. c is the statement that actually describes overloading.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n 8, 10"
+      "explanation": "The static constructor runs once before the first instance is created and prints 8. Then the instance constructor prints 10. The argument 0 is unused.\n\nOutput:\n\n8\n10",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n 25, 1000"
+      "explanation": "The base constructor runs first: it sets ii to -25 and prints the absolute value 25. Then the derived constructor sets ll to -1000 and prints 1000. The 6 from Main is unused.\n\nOutput:\n\n25\n1000",
+      "origin": "local"
     }
   ]
 }

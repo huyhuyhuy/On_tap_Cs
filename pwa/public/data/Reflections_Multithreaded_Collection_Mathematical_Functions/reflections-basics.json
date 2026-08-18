@@ -29,7 +29,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Reflection is the feature that enables you to obtain information about a type. The term reflection comes from the way the process works: A Type object mirrors the underlying type that it represents. Reflection is a powerful mechanism because it allows us to learn and use the capabilities of types that are known only at runtime."
+      "explanation": "Reflection lets you inspect (and often invoke) types, members, and assemblies at runtime. A System.Type object describes the type it represents. Attributes store metadata; they are read through reflection, but they are not the inspection mechanism itself.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "Many of the classes that support reflection are part of the .NET Reflection API, which is in the System.Reflection namespace.\n\neg : using System.Reflection;"
+      "explanation": "Most reflection types (Assembly, MethodInfo, FieldInfo, BindingFlags, and so on) live in System.Reflection. System.Type itself is in System, but it is the entry point to that API.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the correct statement about System.Type namespace.",
+      "question": "Choose the correct statement about System.Type.",
       "code": null,
       "options": [
         {
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "System.Type is at the core of the reflection subsystem because it encapsulates a type. It contains many properties and methods that you will use to obtain information about a type at runtime."
+      "explanation": "System.Type is a class (not a namespace). It represents a type and exposes members such as GetMethods, GetFields, IsClass, and FullName that you use at runtime.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Choose the class from which the namespace 'System.Type' is derived?",
+      "question": "Choose the class from which System.Type is derived?",
       "code": null,
       "options": [
         {
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Type is derived from an abstract class called System.Reflection.MemberInfo"
+      "explanation": "Type derives from the abstract class MemberInfo (System.Reflection.MemberInfo). System.Reflection is a namespace, not a base class.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,11 +133,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "This property obtains the kind of the member. This value indicates if the member is a field, method, property, event, or constructor among others."
+      "explanation": "MemberInfo.MemberType returns a MemberTypes value (Constructor, Event, Field, Method, Property, NestedType, and others), so you can tell what kind of member you have.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "The property signifies \"Obtains a Module object that represents the module (an executable file) in which the reflected type resides\". Choose the property which specifies the following statement?",
+      "question": "Which property obtains a Module object that represents the module (an executable file) in which the reflected type resides?",
       "code": null,
       "options": [
         {
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "MemberInfo.Module (and Type.Module) returns the Module that contains the member or type. DeclaringType is the type that declared the member; ReflectedType is the type used to retrieve it.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -171,7 +177,7 @@
         },
         {
           "key": "c",
-          "text": "GetCustomeAttributesData()"
+          "text": "GetCustomAttributesData()"
         },
         {
           "key": "d",
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "MemberInfo includes two abstract methods: GetCustomAttributes( ) and IsDefined( ). These both relate to attributes. The first obtains a list of the custom attributes associated with the invoking object. The second determines if an attribute is defined for the invoking object. The .NET Framework Version 4.0 adds a method called GetCustomAttributesData(), which returns information about custom attributes."
+      "explanation": "MemberInfo defines GetCustomAttributes, IsDefined, and GetCustomAttributesData. They inspect custom attributes on the member. (The original option spelled GetCustomeAttributesData, which is not a real method.)",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "A list of the public methods supported by the type can be obtained by using GetMethods(). It returns an array of MethodInfo objects that describe the methods supported by the invoking type. MethodInfo is in the System.Reflection namespace."
+      "explanation": "Type.GetMethods() with no arguments returns the public methods of the type as MethodInfo[]. Other overloads take BindingFlags to include non-public or static members.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Here, obj is a reference to the object on which the method is invoked. (For static methods, you can pass null to obj.) Any arguments that need to be passed to the method are specified in the array parameters. If no arguments are needed, parameters must be null. Also, parameters must contain exactly the same number of elements as the number of arguments."
+      "explanation": "MethodInfo.Invoke(obj, parameters) calls the method on obj (pass null for a static method). arguments go in parameters (null if none). The boxed return value is what Invoke returns (null for void).",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -250,11 +259,12 @@
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "b and c"
         }
       ],
       "answer": "d",
-      "explanation": "The following method Obtains a list of the type arguments bound to a closed constructed generic type or the type parameters if the specified type is a generic type definition. For an open constructed type, the list may contain both type arguments and type parameters."
+      "explanation": "Type.GetGenericArguments() is a method on Type, not a MemberInfo property. For a closed constructed type it returns the type arguments (for example string in List<string>). For an open or generic type definition the array can include generic parameters.",
+      "origin": "local"
     }
   ]
 }

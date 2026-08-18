@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which procedure among the following should be used to implement a 'Has a' or a 'Kind of' relationship between two entities?",
+      "question": "Which procedure among the following should be used to implement a 'Kind of' (is-a) relationship between two entities?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "An is-a / kind-of relationship is modeled with inheritance (or interface implementation). A has-a relationship is composition or aggregation, not inheritance.",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "The number of levels of inheritance are?",
+      "question": "How many forms of inheritance are commonly listed in OOP (single, multilevel, hierarchical, multiple)?",
       "code": null,
       "options": [
         {
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Textbooks often list four forms: single, multilevel, hierarchical, and multiple. C# allows only one class base (no multiple class inheritance) but a class may implement many interfaces. Inheritance depth is not limited to 4.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "class a is the base class. class b : a declares a derived class that inherits from a.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Which base members a derived class can see is controlled by access modifiers (public, protected, internal, protected internal, private protected). C# has no :: scope-resolution operator for that. The dot operator is for member access, not for opening the inheritance chain.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The usual set taught for types/members is public, private, protected, internal, and protected internal. C# 7.2 also added private protected. Nested types may be private or protected; top-level classes may not.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "A derived class can use public and protected (and internal, in the same assembly) members of the base. private members are not accessible in the derived class. static is not an access level; C# has no shared keyword (that is VB).",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Inheritance is specifically a way to reuse and extend a base class. Construction does run base-then-derived, and a derived object contains the base fields, so a, c are true; b is the false statement.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -230,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "A derived class can use inherited members, override virtual ones, and add new members.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -255,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "You can inherit from a compiled class without its source. Multiple inheritance (many bases) is not the same as multilevel (A→B→C). Nested objects are composition and are legal.",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -280,11 +289,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Instance size depends on non-static fields of the object, including those inherited from the base. Static fields live on the type, not in each instance. Option b is a reasonable description of that layout; a is the general rule. sizeof is not how you measure a class object (it applies to unmanaged types).",
+      "origin": "local"
     },
     {
       "number": 12,
-      "question": "Which is the correct way to create an object of the given class abc?",
+      "question": "Which is the correct way to prevent a class abc from being inherited?",
       "code": null,
       "options": [
         {
@@ -305,7 +315,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "A sealed class cannot be used as a base class, so it cannot be inherited.",
+      "origin": "local"
     },
     {
       "number": 13,
@@ -329,8 +340,9 @@
           "text": "The order of calling constructors depend on whether constructors in class sample and sample 1 are private or public"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "answer": "a",
+      "explanation": "When constructing a derived sample1 object, the base class constructor (sample) runs first, then the derived constructor (sample1).",
+      "origin": "local"
     },
     {
       "number": 14,
@@ -355,7 +367,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "Supported in form of interfaces in secondary form."
+      "explanation": "C# does not allow a class to inherit from more than one class. A class may implement multiple interfaces. Single, multilevel, and hierarchical class inheritance are allowed.",
+      "origin": "local"
     },
     {
       "number": 15,

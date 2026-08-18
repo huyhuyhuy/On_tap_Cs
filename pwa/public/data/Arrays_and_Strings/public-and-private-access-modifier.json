@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these is used as a default specifier for a member of a class if no access specifier is explicitly used?",
+      "question": "Which of these is used as the default access for a class member if no access modifier is written?",
       "code": null,
       "options": [
         {
@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "Which of these is used to access members of a class before an object of that class is created?",
+      "question": "Which of these is used to access a member of a class without creating an instance of that class?",
       "code": null,
       "options": [
         {
@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Which of these base class member types are accessible to members of a derived class?",
+      "question": "Which access modifier makes a base class member visible to a derived class, but not to unrelated code?",
       "code": null,
       "options": [
         {
@@ -86,7 +86,7 @@
     },
     {
       "number": 4,
-      "question": "What is the process by which we can control parts of a program that can access the members of a class?",
+      "question": "What is the OOP principle of restricting which parts of a program can access the members of a class?",
       "code": null,
       "options": [
         {
@@ -211,7 +211,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "C# supports 6 access levels: public, private, protected, internal, protected internal, and private protected (available in later versions).",
+      "explanation": "C# has six accessibility levels: public, private, protected, internal, protected internal, and private protected (C# 7.2 and later).",
       "origin": "local"
     },
     {
@@ -242,7 +242,7 @@
     },
     {
       "number": 10,
-      "question": "Which of these access specifiers must be used for the Main() method in C#?",
+      "question": "Which access modifier must be used for the Main() entry point in C#?",
       "code": null,
       "options": [
         {
@@ -259,11 +259,11 @@
         },
         {
           "key": "d",
-          "text": "none of the mentioned"
+          "text": "None of the mentioned"
         }
       ],
       "answer": "d",
-      "explanation": "In C#, the Main method (entry point) does not require a specific access modifier. It can be public, internal, or even private, and the runtime will still be able to execute it.",
+      "explanation": "The runtime can invoke Main whether it is public, internal, or private. No particular access modifier is required.",
       "origin": "local"
     }
   ]

@@ -54,7 +54,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Both instance methods and constructors can be overloaded by changing the parameter list (count, types, or ref/out/in). Return type alone does not distinguish overloads.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +80,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "The concept of method overloading is implemented in method \"vol\" with same name but different definitions and parameter list which is overloaded three times and each time the return type is different for each method and hence matches the method using types of parameters.\n\nOutput:\n\n - August 2026\n\n        1000\n        98.125\n        100"
+      "explanation": "vol is overloaded three times. vol(10) is 10*10*10 = 1000. vol(2.5f, 5) is 3.14f * 2.5f * 2.5f * 5 = 98.125. 5l is a long, so vol(5l, 4, 5) is 5*4*5 = 100. Overload resolution uses the parameter types, not the return type.\n\nOutput:\n\n1000\n98.125\n100",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +106,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n 7, 8"
+      "explanation": "add(6) sets obj.x = 7. add(6, 2) sets obj1.x = 8 (the second parameter is unused). y is unused.\n\nOutput:\n\n7\n8",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +132,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n         216\n         25"
+      "explanation": "add(6) is the int overload and prints 6*6*6 = 216. add(ref i) squares i in place, so i becomes 25.\n\nOutput:\n\n216\n25",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +158,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None\n\nOutput:\n\n8, 7"
+      "explanation": "add(4, 4) uses the int overload and sets x = 8. add(3.5, 3.5) uses the double overload and sets y = 7.0. WriteLine prints 8 7.\n\nOutput:\n\n8 7",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +184,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput :\n\n         method 1:\n         20\n         method 1:\n         method 2:"
+      "explanation": "maths.fun1() prints method 1 :. fun2(20) prints 20 then calls fun2(), which calls fun1() again and then prints method 2 :.\n\nOutput:\n\nmethod 1 :\n20\nmethod 1 :\nmethod 2 :",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +210,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "A method that calls itself is recursive. That is recursion, not polymorphism.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -225,11 +232,12 @@
         },
         {
           "key": "d",
-          "text": "20\n   3.4f"
+          "text": "20\n   3.4"
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n        20\n        3.4f"
+      "explanation": "Each overload ignores its argument and returns a constant. Console.WriteLine(3.4f) prints 3.4.\n\nOutput:\n\n20\n3.4",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +262,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n         190\n         26"
+      "explanation": "fun(90, 100) returns 190. fun1(12, 14.78f) returns 12 + (int)14.78f = 12 + 14 = 26.\n\nOutput:\n\n190\n26",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -279,7 +288,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n        90,  100,  12\n        12,  14.78"
+      "explanation": "fun prints its three arguments. fun1 prints 12 and 14.78. The return values are unused. d and l are unused locals.\n\nOutput:\n\n90  100  12\n12  14.78",
+      "origin": "local"
     },
     {
       "number": 12,
@@ -304,7 +314,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n 25 100000 12.34"
+      "explanation": "Each fun overload returns the absolute value of its argument. -25, -100000, and -12.34 become 25, 100000, and 12.34.\n\nOutput:\n\n25  100000  12.34",
+      "origin": "local"
     }
   ]
 }

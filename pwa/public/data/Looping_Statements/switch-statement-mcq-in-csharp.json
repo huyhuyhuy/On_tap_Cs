@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "We can put 'default' case in any order and hence write cases in any order.\n\nOutput:\n\nRace."
+      "explanation": "+ has higher precedence than <<, so the expression is movie << (2 + movie) = 1 << 3 = 8. default may appear in any order; case 8 prints \"Race\".\n\nOutput:\n\nRace",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -46,7 +47,7 @@
         },
         {
           "key": "c",
-          "text": "The code reports an error as missing ; before :"
+          "text": "Compile time error"
         },
         {
           "key": "d",
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Syntax error- switch case does not work with syntax  as 3 to 10:\n\nOutput :\n\nHere i = 2, j = 4. So, (i + j * 2) gives output as 10 and case 10 is missing. So, prints nothing for given code."
+      "explanation": "case 3 to 10 is not valid C# (no case ranges of that form here). The compiler reports a syntax error, so the program never runs. (i + j * 2 would be 10, but that does not matter because the code does not compile.)",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -63,23 +65,24 @@
       "options": [
         {
           "key": "a",
-          "text": "2 3 3"
+          "text": "2\n3"
         },
         {
           "key": "b",
-          "text": "3 2 3"
+          "text": "3\n2"
         },
         {
           "key": "c",
-          "text": "3 4 4"
+          "text": "3\n4"
         },
         {
           "key": "d",
-          "text": "5 10 10"
+          "text": "5\n10"
         }
       ],
       "answer": "c",
-      "explanation": "i - k = -1. So, case -1 will be executed only."
+      "explanation": "i - k is -1, so case -1 runs: i becomes 3 and k becomes 4. WriteLine prints them on two lines.\n\nOutput:\n\n3\n4",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "In case expression we don't have constant variable."
+      "explanation": "C# requires const int p, not int const p, so this declaration does not compile. Even if it were written as const int p = 0, case p and case p * 1 would both be 0 and would be duplicate case labels.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -113,15 +117,15 @@
       "options": [
         {
           "key": "a",
-          "text": "1 3 1"
+          "text": "1\n3\n1"
         },
         {
           "key": "b",
-          "text": "2 3 4"
+          "text": "2\n3\n4"
         },
         {
           "key": "c",
-          "text": "5 3 4"
+          "text": "5\n3\n4"
         },
         {
           "key": "d",
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "Solving expression (i + j - k) gives 1 and hence,solving for case 1:case 3:case 5:.\n\nOutput :\n\n         1\n         3\n         1"
+      "explanation": "i + j - k is 1, so the case 1/3/5 group runs: i becomes 1 and k becomes 1. j is unchanged.\n\nOutput:\n\n1\n3\n1",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Invalid expression'7:' in case 9:7:."
+      "explanation": "case 9: 7: is invalid. After case 9:, the token 7: is not a legal statement. (Fall-through would be written as case 9: case 7:.)",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Only integral values are allowed for case expression.\n\n               5.0f = (int)5.0f.\n\n               5.0L = (int)5.0L."
+      "explanation": "The switch expression is int. case 5.0f is a float and is not a valid case label for int. 5.0L is also invalid C# (the L suffix applies to integer literals, not 5.0). The program does not compile.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Continue cannot be used as a part of switch statement."
+      "explanation": "continue is not allowed in a switch (CS0139: no enclosing loop). There is also no fall-through: case 2 and case 3 would need break, and i is used before it is assigned.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Case statement declared last will only be executed as no particular case number is declared is to be called.\n\nOutput:\n\n case D|case d"
+      "explanation": "'a' | 'b' | 'c' is a bitwise OR of the char codes 97, 98, and 99, which yields 99, i.e. 'c'. The switch matches case 'c', which falls through to the shared body that prints \"case D|case d\".\n\nOutput:\n\ncase D|case d",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "ASCII value of 'p' is 112. Hence, coco 112 main.\n\nOutput:\n\ncoco 112 main."
+      "explanation": "Convert.ToInt32('p') is 112. case 'p' prints coco, a tab, and 112, then execution continues after the switch and prints main.\n\nOutput:\n\ncoco\t112\nmain",
+      "origin": "local"
     }
   ]
 }

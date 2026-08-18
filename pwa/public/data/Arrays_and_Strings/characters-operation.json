@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these properties of the String class is used to obtain the length of a String object in C#?",
+      "question": "Which property of the String class gives the number of characters in a string?",
       "code": null,
       "options": [
         {
@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "Which method is commonly used to store string characters into an array of bytes?",
+      "question": "Which method is commonly used to encode a string into a byte array?",
       "code": null,
       "options": [
         {
@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Which of these methods can be used to convert all characters in a String into a character array?",
+      "question": "Which of these methods converts all characters of a string into a character array?",
       "code": null,
       "options": [
         {
@@ -86,7 +86,7 @@
     },
     {
       "number": 4,
-      "question": "Choose the StringBuilder method which helps in producing output for the following C# code?",
+      "question": "Which StringBuilder method completes the following C# code?",
       "code": "static void Main(string[] args)\n{\n    StringBuilder s = new StringBuilder(\"object\");\n    s./*______*/(\"Oriented Language\");\n    Console.WriteLine(s);\n}\n// Output: objectOriented Language",
       "options": [
         {
@@ -138,7 +138,7 @@
     },
     {
       "number": 6,
-      "question": "Which of these methods of class String is used to remove characters from a String object?",
+      "question": "Which of these String methods is used to delete characters from a string?",
       "code": null,
       "options": [
         {
@@ -185,12 +185,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "c.Remove(1) removes all characters starting from index 1 to the end of the string. Only 'h' (index 0) remains.",
+      "explanation": "Remove(1) deletes every character from index 1 through the end. Only the character at index 0 ('h') remains.",
       "origin": "local"
     },
     {
       "number": 8,
-      "question": "How is a string typically processed in low-level operations?",
+      "question": "How is a string typically processed in low-level character operations?",
       "code": null,
       "options": [
         {
@@ -216,7 +216,7 @@
     },
     {
       "number": 9,
-      "question": "How to print \\\\ on the screen in C#?",
+      "question": "How do you print two backslash characters \\\\ on the console in C#?",
       "code": null,
       "options": [
         {

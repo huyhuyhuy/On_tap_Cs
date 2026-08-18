@@ -43,7 +43,7 @@
         },
         {
           "key": "b",
-          "text": "Redefining a method parameter in the method's body causes a compile-time error"
+          "text": "Redefining a method parameter in the method's body causes a runtime exception"
         },
         {
           "key": "c",
@@ -55,7 +55,7 @@
         }
       ],
       "answer": "a",
-      "explanation": "C# supports optional parameters (default values). Option B is also technically true (compile error, not exception). Option C is false (only one 'params' allowed at the end). Option D is a compile error.",
+      "explanation": "C# allows optional parameters with default values. Shadowing a parameter with a local of the same name is a compile-time error, not a runtime exception. Only one params array is allowed, and it must be last. Omitting the return type is also a compile-time error.",
       "origin": "local"
     },
     {
@@ -216,7 +216,7 @@
     },
     {
       "number": 9,
-      "question": "Which of the sau is a correct return statement syntax within a method block?",
+      "question": "Which of the following is correct return statement syntax within a method block?",
       "code": null,
       "options": [
         {

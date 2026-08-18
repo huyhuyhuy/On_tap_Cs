@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "105.8546"
+          "text": "105.85455"
         },
         {
           "key": "d",
@@ -29,7 +29,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "Calculation: c = 16.4 * (12 + 16.4) / (16.4 - 12) = 16.4 * 28.4 / 4.4 = 465.76 / 4.4 = 105.8545... Due to float precision, it results in approximately 105.8546.",
+      "explanation": "c = 16.4f * (12 + 16.4f) / (16.4f - 12). Console.WriteLine of that float prints 105.85455 (binary float is not exactly 16.4).",
       "origin": "local"
     },
     {

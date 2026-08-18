@@ -113,7 +113,7 @@
     {
       "number": 5,
       "question": "What will be the output of the following C# code snippet?",
-      "code": "static void Main(string[] args)\n{\n    StringBuilder sb = new StringBuilder(\"hello world\");\n    sb.Insert(6, \"good \");\n    Console.WriteLine(sb);\n}",
+      "code": "static void Main(string[] args)\n{\n    StringBuilder sb = new StringBuilder(\"hello world\");\n    sb.Insert(6, \"good\");\n    Console.WriteLine(sb);\n}",
       "options": [
         {
           "key": "a",
@@ -125,15 +125,15 @@
         },
         {
           "key": "c",
-          "text": "hello good world"
+          "text": "hello goodworld"
         },
         {
           "key": "d",
           "text": "hello world good"
         }
       ],
-      "answer": "b",
-      "explanation": "The Insert method inserts a string at the specified 0-based index. Index 6 in 'hello world' is the character 'w'. Inserting 'good ' at that position results in 'hello good world'.",
+      "answer": "c",
+      "explanation": "Index 6 in \"hello world\" is 'w'. Insert(\"good\") places those four characters there, so the result is \"hello goodworld\" (no extra space after good).",
       "origin": "local"
     },
     {
@@ -159,7 +159,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The Reverse() method (from System.Linq) reverses the sequence of characters. 'i lovelife' reversed becomes 'efilevol i'.",
+      "explanation": "Enumerable.Reverse (System.Linq) reverses the characters of \"i lovelife\" to \"efilevol i\". Reverse is not an instance method of String.",
       "origin": "local"
     },
     {

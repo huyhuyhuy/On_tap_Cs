@@ -29,7 +29,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "The C# keyword lock is really just shorthand for using the synchronization features defined by the Monitor class, which is defined in the System.Threading namespace."
+      "explanation": "lock (obj) { } is compiler sugar for Monitor.Enter/Exit (with a try/finally). Java's synchronized is not a C# keyword.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "When two or more threads need to access the same shared resource, they need some way to ensure that the resource will be used by only one thread at a time, the process by which this is achieved is called synchronization."
+      "explanation": "Synchronization coordinates threads so that a shared resource is used safely (often one thread at a time for a mutex, or a limited count for a semaphore). It is not \"everyone accesses it at once\".",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "When a thread is temporarily blocked from running, it calls Wait( ). This causes the thread to go to sleep and the lock for that object to be released, allowing another thread to acquire the lock."
+      "explanation": "Monitor.Wait(obj) releases the lock and waits. Pulse/PulseAll wake waiters; they do not put the caller to sleep.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "A SynchronizationLockException will be thrown if Wait(), Pulse(), or PulseAll() is called from code that is not within synchronized code, such as a lock block.\n\n🔥 Enroll for\nFree Data Structure Certification\n - August 2026"
+      "explanation": "Monitor.Wait, Pulse, and PulseAll require the calling thread to own the monitor. Otherwise they throw SynchronizationLockException.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "A mutex is a mutually exclusive synchronization object. This means it can be acquired by one and only one thread at a time. The mutex is designed for those situations in which a shared resource can be used by only one thread at a time."
+      "explanation": "A mutex (System.Threading.Mutex, or lock/Monitor) can be owned by only one thread at a time. Option b is the opposite. Option c is roughly true but poorly worded; a is the definition. d is false because of b.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "A semaphore is similar to a mutex except that it can grant more than one thread access to a shared resource at the same time. Thus, the semaphore is useful when a collection of resources is being synchronized. A semaphore controls access to a shared resource through the use of a counter. If the counter is greater than zero, then access is allowed. If it is zero, access is denied."
+      "explanation": "A semaphore counts available slots. If the count is greater than zero, another thread may enter; Wait decrements and Release increments. That allows a limited number of concurrent users.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -163,15 +169,15 @@
       "options": [
         {
           "key": "a",
-          "text": "sleep()"
+          "text": "Sleep()"
         },
         {
           "key": "b",
-          "text": "terminate()"
+          "text": "Terminate()"
         },
         {
           "key": "c",
-          "text": "suspend()"
+          "text": "Suspend()"
         },
         {
           "key": "d",
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "To terminate a thread prior to its normal conclusion, use Thread.Abort( ). Its simplest form is shown here:\n\n public void Abort()\n\nAbort() causes a ThreadAbortException to be thrown to the thread on which Abort() is called. This exception causes the thread to terminate."
+      "explanation": "Thread.Abort() requested thread termination via ThreadAbortException. It is obsolete and unsafe; prefer cooperative cancellation (CancellationToken). Sleep pauses; Suspend is obsolete; there is no Terminate().",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Thread exists in several states, a thread can be running, suspended, blocked, terminated & ready to run."
+      "explanation": "A thread has more than two states (Unstarted, Running, WaitSleepJoin, Stopped, and others). Two threads may share a priority. a and b are informal but not the false statement being asked for.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Multithreaded programming a process in which two or more parts of same process run simultaneously."
+      "explanation": "Multithreading runs two or more threads in the same process. Running different processes is multiprocessing / process-based multitasking.",
+      "origin": "local"
     }
   ]
 }

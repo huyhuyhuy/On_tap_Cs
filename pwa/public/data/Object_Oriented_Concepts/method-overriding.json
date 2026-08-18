@@ -29,7 +29,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The base member that will be overridden is declared virtual (or abstract). The derived member uses override.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Method overriding is providing a new implementation of a virtual (or abstract) method in a derived class, with the same name and signature, using override. (Same name without virtual/override is method hiding.)",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -104,7 +106,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "An override must match the name, return type, and parameter list of the virtual/abstract method. Static methods cannot be virtual. Abstract methods are already implicitly virtual and cannot also be marked virtual. Non-virtual instance methods cannot be overridden (use new to hide them).",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +132,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+      "explanation": "Fields cannot be virtual. Methods, properties, indexers, and events can be virtual/override. A class itself is not declared virtual.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +158,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "When method display() is called using objects of class 'B'. The method 'display()' for class 'B' is called instead of class 'A' as class 'B' is inherited by class 'A'.\n\nOutput :\n\n2"
+      "explanation": "Calling display() on a B object invokes B.display() (method hiding, not override). It prints j, which is 2.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -229,7 +234,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "A method can be overridden if the member being overridden is virtual, abstract, or itself an override (unless it is sealed). So the base-of-this-class method may be marked virtual, abstract, or override.",
+      "origin": "local"
     },
     {
       "number": 10,

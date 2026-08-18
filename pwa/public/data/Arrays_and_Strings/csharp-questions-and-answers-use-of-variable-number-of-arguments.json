@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "The method in which large or variable number of arguments are handled is known as ________________",
+      "question": "A method that can accept a variable number of arguments uses which kind of parameter?",
       "code": null,
       "options": [
         {
@@ -35,7 +35,7 @@
     {
       "number": 2,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    object[] a = {\" 1 \", 4.0f, \" harsh \"};\n    fun(a);\n    Console.ReadLine();\n}\nstatic void fun(params object[] b)\n{\n    for (int i = 0; i < b.Length; i++)\n        Console.Write(b[i] + \" \");\n}",
+      "code": "static void Main(string[] args)\n{\n    object[] a = {1, 4, \"harsh\"};\n    fun(a);\n}\nstatic void fun(params object[] b)\n{\n    for (int i = 0; i < b.Length; i++)\n        Console.Write(b[i] + \" \");\n}",
       "options": [
         {
           "key": "a",
@@ -51,16 +51,16 @@
         },
         {
           "key": "d",
-          "text": "1 4.0 harsh"
+          "text": "1 4 harsh"
         }
       ],
       "answer": "d",
-      "explanation": "The array 'a' is passed to the method 'fun'. The method iterates through the entire array (i < b.Length) and prints each element. Note: I fixed the loop condition to match the intended output.",
+      "explanation": "Passing an object[] to a params object[] parameter uses that array as the argument list. The loop prints every element. 4 is an int, so it is written as 4, not 4.0. The matching choice is 1 4 harsh.",
       "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of the following statements are correct about functions in C#?",
+      "question": "Which of the following statements is correct about methods in C#?",
       "code": null,
       "options": [
         {
@@ -73,15 +73,15 @@
         },
         {
           "key": "c",
-          "text": "The 'params' keyword can be used anywhere in the argument list"
+          "text": "The params keyword can appear at any position in the parameter list"
         },
         {
           "key": "d",
-          "text": "Omitting the return type results in a runtime exception"
+          "text": "Omitting the return type causes a runtime exception"
         }
       ],
       "answer": "b",
-      "explanation": "C# provides the 'params' keyword to enable a method to accept a variable number of arguments of a specified type.",
+      "explanation": "params lets a method take a variable number of arguments, but that parameter must be the last one. C# does allow optional parameters with default values. A missing return type is a compile-time error, not a runtime exception.",
       "origin": "local"
     },
     {
@@ -165,7 +165,7 @@
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "static void Main(string[] args)\n{\n    int[] x = { 80, 82, 65, 72, 83, 67 };\n    fun(x);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    for (int i = 5; i >= 0; i--)\n    {\n        Console.Write(Convert.ToChar(b[i]));\n    }\n}",
+      "code": "static void Main(string[] args)\n{\n    int[] x = { 80, 82, 65, 72, 83, 67 };\n    fun(x);\n    Console.ReadLine();\n}\nstatic void fun(params int[] b)\n{\n    for (int i = 5; i >= 0; i--)\n    {\n        Console.Write(Convert.ToChar(b[i]) + \" \");\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The integer values correspond to ASCII: 80=P, 82=R, 65=A, 72=H, 83=S, 67=C. The loop runs backwards from index 5 to 0, printing 'C S H A R P'.",
+      "explanation": "Those integers are ASCII/Unicode codes: 80=P, 82=R, 65=A, 72=H, 83=S, 67=C. The loop prints from index 5 down to 0, so the characters are C S H A R P.",
       "origin": "local"
     },
     {

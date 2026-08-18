@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these classes contains only floating point functions?",
+      "question": "Which of these classes contains mathematical functions such as Sin, Pow, and Sqrt?",
       "code": null,
       "options": [
         {
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "Math class contains all the floating point functions that are used for geometry, trigonometry, as well as several general purpose methods. Example : sin(), cos(), exp(), sqrt() etc."
+      "explanation": "System.Math provides trigonometric, exponential, logarithmic, and rounding methods (Sin, Cos, Pow, Sqrt, Abs, Max, and so on). Many overloads take double, but Math is not limited to floating-point: Abs, Max, and Min also have integer overloads.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n8"
+      "explanation": "Math.Pow(2.0, 3.0) is 8.0. Console.WriteLine(double) prints 8 for that whole number.\n\nOutput:\n\n8",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,11 +81,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n4.772"
+      "explanation": "Math.Max returns the larger of the two values, 4.772.\n\nOutput:\n\n4.772",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "What is the value of double consonant 'E' defined in Math class?",
+      "question": "What is the value of the double constant E defined in the Math class?",
       "code": null,
       "options": [
         {
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Math.E is the base of natural logarithms, about 2.71828. Math.PI is about 3.14159.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n 1 2 1 2"
+      "explanation": "This snippet is about reference assignment, not Math. obj2 = obj1 makes both variables refer to the same object, so both display() calls print 1 2.\n\nOutput:\n\n1 2\n1 2",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput :\n\n64"
+      "explanation": "Math.Pow(4, 3) is 64.0 regardless of n. foreach (int i in posNums) explicitly converts each double to int, so 64 is printed once (the array has one element).\n\nOutput:\n\nThe values in nums: 64 ",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n3"
+      "explanation": "Math.Abs(3.14F) is 3.14F. Casting to int truncates toward zero, so y is 3. Abs does not round.\n\nOutput:\n\n3",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "y = 25, z = 25*25 = 625\n\nOutput :\n\n625"
+      "explanation": "y = 5^2 = 25, then z = 25^2 = 625.\n\nOutput:\n\n625",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -217,7 +225,7 @@
         },
         {
           "key": "b",
-          "text": "3"
+          "text": "The average is 3"
         },
         {
           "key": "c",
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Built in method of maths class Avg() id used\n\nOutput :\n\n3"
+      "explanation": "nums.Average() is (3+1+2+5+4)/5 = 3. The query ltAvg is never enumerated, so only the WriteLine runs. Enumerable.Average is LINQ, not a Math method.\n\nOutput:\n\nThe average is 3",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Built in method of maths class, Max() is used to select maximum value among 4 and 2 and then y is squared using Pow() of math class and the value is stored in z.\n\nOutput :\n\n16"
+      "explanation": "Math.Max(4, 2) is 4, then Math.Pow(4, 2) is 16.\n\nOutput:\n\n16",
+      "origin": "local"
     }
   ]
 }

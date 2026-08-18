@@ -129,11 +129,11 @@
         },
         {
           "key": "d",
-          "text": "ReadKey(), ReadLine()"
+          "text": "Read(), ReadKey()"
         }
       ],
       "answer": "c",
-      "explanation": "Read() and ReadLine() have been available since .NET 1.0, while ReadKey() was added in .NET 2.0 to handle individual key presses.",
+      "explanation": "Read() and ReadLine() have been available since .NET 1.0, while ReadKey() was added in .NET 2.0 to handle individual key presses. ReadKey() belongs to Console, not to TextReader (Console.In).",
       "origin": "local"
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "number": 7,
-      "question": "What value does Console.Read() return if the end of the input stream is reached or an error occurs?",
+      "question": "What value does Console.Read() return when the end of the input stream is reached?",
       "code": null,
       "options": [
         {
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "Like many stream reading methods, Console.Read() returns -1 to signify that there is no more data to read.",
+      "explanation": "Console.Read() returns -1 when there are no more characters to read (end of stream). An I/O failure throws IOException instead of returning -1.",
       "origin": "local"
     },
     {

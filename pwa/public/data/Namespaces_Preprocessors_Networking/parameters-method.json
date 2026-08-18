@@ -54,7 +54,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Function overloading is a process of defining more than one method in a class with same name differentiated by function signature i:e return type or parameters type and number. Example - int volume(int length, int width) & int volume(int length,  int width,  int height) can be used to calculate volume."
+      "explanation": "Method overloading uses the same name with a different parameter list (count, types, or order). In C#, a different return type alone is not a valid overload.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -78,8 +79,9 @@
           "text": "private method"
         }
       ],
-      "answer": "c",
-      "explanation": "If a static method is present in the program then it will be executed first, then main will be executed."
+      "answer": "a",
+      "explanation": "The program entry point is Main. Ordinary static methods are not run automatically before Main. A static constructor runs only when its type is first used, which is not the same as 'any static method'.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -96,7 +98,7 @@
         },
         {
           "key": "c",
-          "text": "Return type of method"
+          "text": "ref / out versus a by-value parameter"
         },
         {
           "key": "d",
@@ -104,7 +106,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Overloads may differ by parameter types, count, or passing mode (for example Foo(int) vs Foo(ref int)). They cannot differ only by return type, and ref vs out alone is also not a valid distinction.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -204,7 +207,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "Both conditions for if statements are failed and hence statement after else is executed.\n\nOutput :\n\n 2"
+      "explanation": "x != 10 is false, so && short-circuits and the divide-by-zero is never evaluated. The else branch runs and ++y prints 2.\n\nOutput :\n\n 2",
+      "origin": "local"
     }
   ]
 }

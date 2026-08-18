@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "User-defined operators are declared as public static methods named with the operator keyword, for example public static Vector operator +(Vector a, Vector b).",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "&& and || cannot be overloaded directly (they use true/false and &/|). [] is not overloaded as an operator; you write an indexer. Option c is garbled (\"preference type\"). A type may overload == and !=.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -67,7 +69,7 @@
         },
         {
           "key": "b",
-          "text": "'<<' < '&' < '%' < '-' < '/' < '+'"
+          "text": "'&' < '<<' < '+' < '%' = '/'"
         },
         {
           "key": "c",
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Among these operators, & has the lowest precedence, then shift <<, then additive +, then multiplicative % and / (same level). Overloading does not change precedence.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "+ can be overloaded. || cannot. Compound assignment += is not declared separately; it uses the overloaded +. [] is provided by an indexer, not operator [].",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Those are typical uses of overloaded operators: types that behave like numbers, vectors, points, or money can use + - * and similar so expressions stay readable.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "The form is public static ReturnType operator +(T a, T b). The operator token must appear before the operator symbol.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,11 +185,12 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Operators must be public and static (and not abstract). At least one parameter must be the enclosing type; overloading + for two ints inside sample would not compile unless a parameter is sample.",
+      "origin": "local"
     },
     {
       "number": 8,
-      "question": "Choose the correct statement among the below mentioned statements.",
+      "question": "Which of the following are common mistakes when overloading operators?",
       "code": null,
       "options": [
         {
@@ -204,11 +211,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Operator methods must be public static. Relational operators (== != < > <= >=) should return bool. The original question text did not say these were errors.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "What is the vector in operator overloading?",
+      "question": "In typical operator-overloading examples, what is Vector?",
       "code": null,
       "options": [
         {
@@ -221,7 +229,7 @@
         },
         {
           "key": "c",
-          "text": "data type"
+          "text": "a user-defined type (class or struct)"
         },
         {
           "key": "d",
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "It is a data type of class. It is defined as public static Vector operator + (Vector a, Vector b)."
+      "explanation": "Vector is not a built-in C# type here; it is a sample class or struct that overloads operators, e.g. public static Vector operator +(Vector a, Vector b). Calling it only a \"data type\" is vague; it is a user-defined type.",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "d is false: at least one operand must be the enclosing type. a is awkwardly phrased but means not every operator can be overloaded, which is true. b and c are true.",
+      "origin": "local"
     }
   ]
 }

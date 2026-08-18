@@ -78,8 +78,9 @@
           "text": "Recursive methods are faster that programmer written loop to call the function repeatedly using a stack"
         }
       ],
-      "answer": "c",
-      "explanation": "No matter whatever is the programming language recursion is always managed by the operating system."
+      "answer": "d",
+      "explanation": "Recursive methods are typically slower than an equivalent loop because of call overhead. Recursion uses the call stack (managed by the CLR), and a recursive method should have a base case.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +105,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The CLR uses the call stack to store return addresses and locals for each recursive invocation.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +131,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Absence of base case condition. So absence of limit or end of for execution of a loop and hence results in stackoverflow exception error."
+      "explanation": "There is no base case, so fact calls itself forever until the stack overflows (StackOverflowException). That is a runtime failure, not a compile error.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +157,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "fact() calculates factorial of number '4' but this time base case condition is executed upto 2 only. As soon as n reaches 2 it returns 2."
+      "explanation": "When n == 2 the method returns 1 (not 2). fact(4) = 4 * fact(3) = 4 * 3 * fact(2) = 4 * 3 * 1 = 12.",
+      "origin": "local"
     }
   ]
 }

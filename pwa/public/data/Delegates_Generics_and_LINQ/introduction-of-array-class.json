@@ -132,8 +132,8 @@
           "text": "Both B and C are correct"
         }
       ],
-      "answer": "d",
-      "explanation": "The 'IsReadOnly' property is required by the IList interface. For standard C# arrays, it always returns 'false' because the elements can be modified, even though the array size is fixed.",
+      "answer": "c",
+      "explanation": "For System.Array, IsReadOnly always returns false: elements can be assigned even though Length is fixed. Array.AsReadOnly wraps the array in a ReadOnlyCollection; that wrapper is not an Array.",
       "origin": "local"
     },
     {

@@ -29,7 +29,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "An iterator is a method, operator, or accessor that returns the members of a set of objects, one member at a time, from start to finish."
+      "explanation": "In C#, an iterator is a method, get accessor, or operator that uses yield return (or yield break) to produce a sequence. The compiler builds a state machine that implements IEnumerator / IEnumerable.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -50,11 +51,12 @@
         },
         {
           "key": "d",
-          "text": "Code runs successfully prints A, B, C, D"
+          "text": "A B C D"
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput:\n\n A, B, C, D"
+      "explanation": "GetEnumerator plus yield return makes MyClass usable in foreach. Console.Write prints each character followed by a space.\n\nOutput:\n\nA B C D ",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "This is the definition of the iterator for MyClass. The code implicitly implements the GetEnumerator() method defined by IEnumerable. At the body of the method. It contains a foreach loop that returns the elements in chrs. It does this through the use of a yield return statement. The yield return statement returns the next object in the collection, which in this case is the next character in chrs."
+      "explanation": "This iterator method is named GetEnumerator, which is what foreach looks for (the pattern-based equivalent of IEnumerable.GetEnumerator). Each yield return produces the next char from chrs. The class does not have to list : IEnumerable explicitly for foreach to work if GetEnumerator is public.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "The yield return statement returns the next object in the collection, which in this case is the next character in chrs in the code."
+      "explanation": "yield return pauses the iterator and hands the current value to the consumer. The next MoveNext() resumes after that yield.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "The for loop has no braces, so its body is only the if. The next line uses i after the loop, but i is declared in the for and is out of scope. That is a compile-time error.",
+      "explanation": "The for-loop has no braces, so its body is only the if. yield return uses i after the loop, but i is declared in the for and is out of scope. That does not compile.",
       "origin": "local"
     },
     {
@@ -147,7 +151,7 @@
         },
         {
           "key": "c",
-          "text": "code runs successfully prints even number between 1 to 20"
+          "text": "even numbers from 2 through 20"
         },
         {
           "key": "d",
@@ -155,7 +159,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n2, 4, 6, 8, 10, 12, 14, 16, 18, 20"
+      "explanation": "The iterator yields a[i] only when it is even.\n\nOutput:\n\n2 4 6 8 10 12 14 16 18 20 ",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -168,7 +173,7 @@
         },
         {
           "key": "b",
-          "text": "Iterate the first 7 letters:\n   A B C D E F G\n   Iterate letters from F to L:\n   H I J K L"
+          "text": "Iterate the first 7 letters:\n   A B C D E F G n\n   Iterate letters from F to L:\n   H I J K L"
         },
         {
           "key": "c",
@@ -180,7 +185,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n        Iterate the first 7 letters:\n         A B C D E F G\n        Iterate letters from F to L:\n        H I J K L"
+      "explanation": "MyItr(7) yields 'A'+0 through 'A'+6, i.e. A–G. Console.WriteLine(\"n\") prints a literal n (not a newline escape). MyItr(7, 12) yields i = 7..11, i.e. H–L (the prompt text \"F to L\" does not match those bounds).\n\nOutput:\n\nIterate the first 7 letters:\nA B C D E F G n\nIterate letters from F to L:\nH I J K L",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -205,7 +211,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n 65 66 67 68 69 70"
+      "explanation": "e * k / z is 4 * 9 / 6 = 6. When i == 6, yield break stops. i = 0..5 yields ('A' + i) as int, i.e. 65 through 70.\n\nOutput:\n\n65 66 67 68 69 70 ",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -230,7 +237,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "By definition."
+      "explanation": "A named iterator is a method that returns IEnumerable (not GetEnumerator). You can pass parameters and overload it, as MyItr(int) and MyItr(int, int) do in question 7.",
+      "origin": "local"
     }
   ]
 }

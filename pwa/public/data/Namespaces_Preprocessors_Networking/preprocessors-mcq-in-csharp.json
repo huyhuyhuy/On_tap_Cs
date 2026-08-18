@@ -238,7 +238,7 @@
       "options": [
         {
           "key": "a",
-          "text": "#ifdef"
+          "text": "#region"
         },
         {
           "key": "b",
@@ -254,7 +254,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "C# preprocessor directives include #define, #undef, #if, #elif, #else, #endif, #region, #endregion, #warning, #error, #pragma, #line, and #nullable. There is no #Or. C# also has no #ifdef (use #if instead).",
+      "origin": "local"
     }
   ]
 }

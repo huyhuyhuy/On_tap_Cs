@@ -9,7 +9,7 @@
     {
       "number": 1,
       "question": "What will be the Correct statement in the following C# code?",
-      "code": "interface a1\n{\n    void f1();\n    int f2();\n}\nclass a :a1\n{\n    void f1()\n    {\n    }\n    int a1.f2()\n    {\n    }\n}",
+      "code": "interface a1\n{\n    void f1();\n    int f2();\n}\nclass a :a1\n{\n    void f1()\n    {\n    }\n    int a1.f2()\n    {\n        return 0;\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Implicit interface implementation requires a public method. void f1() is private by default, so it does not implement a1.f1(). Use public void f1() or explicit void a1.f1().",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -42,7 +43,7 @@
         },
         {
           "key": "b",
-          "text": "Interfaces are declared public automatically"
+          "text": "Interface members are public by default"
         },
         {
           "key": "c",
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Interfaces can declare indexers. Interface members are public by default, and explicitly implemented members are accessed through an interface reference.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -67,7 +69,7 @@
         },
         {
           "key": "b",
-          "text": "Class a is an abstract class"
+          "text": "Class a should be declared abstract because it does not implement f2()"
         },
         {
           "key": "c",
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "A non-abstract class must implement every interface member. Here f2() is missing, so the class must be declared abstract or it will not compile.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,12 +107,13 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "The snippet is valid: an interface may declare properties and methods. Option c is false.",
+      "origin": "local"
     },
     {
       "number": 5,
       "question": "What will be the output of the following C# code?",
-      "code": " interface calc\n {\n     void cal(int i);\n }\n public  class maths :calc\n {\n     public int x;\n     public void cal(int i)\n     {\n         x = i * i;\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         display arr = new display();\n         arr.x = 0;\n         arr.cal(2);\n         Console.WriteLine(arr.x);\n         Console.ReadLine();\n     }\n }",
+      "code": " interface calc\n {\n     void cal(int i);\n }\n public  class maths :calc\n {\n     public int x;\n     public void cal(int i)\n     {\n         x = i * i;\n     }\n }\n class Program\n {\n     public static void Main(string[] args)\n     {\n         maths arr = new maths();\n         arr.x = 0;\n         arr.cal(2);\n         Console.WriteLine(arr.x);\n         Console.ReadLine();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput :\n\n 4"
+      "explanation": "cal(2) stores 2 * 2 in x.\n\nOutput:\n\n4",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -159,7 +164,7 @@
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "interface i1\n{\n    void fun();\n}\ninterface i2\n{\n    void fun();\n}\npublic class maths :i1, i2\n{\n    void i1.fun()\n    {\n        Console.WriteLine(\"i1.fun\");\n    }\n    void i2.fun()\n    {\n        Console.WriteLine(\"i2.fun\");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Sample obj = new Sample();\n        i1 i = (i1) obj;\n        i.fun();\n        i2 ii = (i2) obj;\n        ii.fun();\n    }\n}",
+      "code": "interface i1\n{\n    void fun();\n}\ninterface i2\n{\n    void fun();\n}\npublic class maths :i1, i2\n{\n    void i1.fun()\n    {\n        Console.WriteLine(\"i1.fun\");\n    }\n    void i2.fun()\n    {\n        Console.WriteLine(\"i2.fun\");\n    }\n}\nclass Program\n{\n    static void Main(string[] args)\n    {\n        maths obj = new maths();\n        i1 i = (i1) obj;\n        i.fun();\n        i2 ii = (i2) obj;\n        ii.fun();\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -179,7 +184,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Explicit implementations of i1.fun and i2.fun are invoked through the corresponding interface references.\n\nOutput:\n\ni1.fun\ni2.fun",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,12 +210,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "None of a–c implements interface abc. They use the wrong type name (employee/person), Java implements, or a broken property. Correct would be class emp : abc { public string name { get; set; } } (or an explicit abc.name implementation).",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " interface i1\n {\n     void f1();\n }\n interface i2 :i1\n {\n     void f2();\n }\n public class maths :i2\n {\n     public void f2()\n     {\n         Console.WriteLine(\"fun2\");\n     }\n     public void f1()\n     {\n         Console.WriteLine(\"fun1\");\n     }\n }\n class Program\n {\n     static Void Main()\n     {\n         maths m = new maths();\n         m.f1();\n         m.f2();\n     }\n }",
+      "code": " interface i1\n {\n     void f1();\n }\n interface i2 :i1\n {\n     void f2();\n }\n public class maths :i2\n {\n     public void f2()\n     {\n         Console.WriteLine(\"fun2\");\n     }\n     public void f1()\n     {\n         Console.WriteLine(\"fun1\");\n     }\n }\n class Program\n {\n     static void Main()\n     {\n         maths m = new maths();\n         m.f1();\n         m.f2();\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -229,7 +236,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "maths implements both f1 (from i1 via i2) and f2.\n\nOutput:\n\nfun1\nfun2",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +262,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "When two interfaces declare the same method, the class implements each explicitly as void i1.m1() and void i2.m1(). Option a duplicates i1.m1; option b is not valid syntax.",
+      "origin": "local"
     }
   ]
 }

@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which among the following is not the ordered collection class?",
+      "question": "Which among the following is not an ordered sequential collection (FIFO/LIFO) in System.Collections?",
       "code": null,
       "options": [
         {
@@ -29,11 +29,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Queue is FIFO and Stack is LIFO. BitArray is a compact array of bits addressed by index, not a sequential FIFO/LIFO collection. (BitArray is still index-ordered; it is simply not a queue or stack.)",
+      "origin": "local"
     },
     {
       "number": 2,
-      "question": "Which among the following is not an interface declared in System.Collection namespace?",
+      "question": "Which among the following is not an interface declared in the System.Collections namespace?",
       "code": null,
       "options": [
         {
@@ -50,15 +51,16 @@
         },
         {
           "key": "d",
-          "text": "Icomparer"
+          "text": "IComparer"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "System.Collections defines IEnumerable, IEnumerator, IComparer, IComparer, IDictionary, IDictionaryEnumerator, and others. There is no IDictionaryComparer. (The original option Icomparer is the same as IComparer, just misspelled.)",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which among the following is the correct way to find out the number of elements currently present in an ArrayListCollection called arr?",
+      "question": "Which among the following is the correct way to find out the number of elements currently present in an ArrayList called arr?",
       "code": null,
       "options": [
         {
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "ArrayList.Count is the number of elements stored. Capacity is the allocated size, which may be larger than Count.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+      "explanation": "Non-generic Stack stores object, so values of different types are boxed and pushed. The snippet compiles and runs. (Prefer Stack<T> in new code.)",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "ArrayList implements IEnumerable. GetEnumerator returns an enumerator object (historically a nested type) that implements IEnumerator and can see the list's items. foreach uses that enumerator.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "GetEnumerator() returns IEnumerator, which has MoveNext and Current. IEnumerable is the collection side (GetEnumerator), not the enumerator. There is no GetEnumerable().",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Same pattern as Stack: IEnumerator from GetEnumerator(), then MoveNext/Current. Option b uses the wrong interface type; option c is invalid.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,11 +211,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "a–c are false: collections can be serialized, can hold mixed object items (non-generic), and items can be updated. Collection types exist to store and manage groups of objects efficiently.",
+      "origin": "local"
     },
     {
       "number": 9,
-      "question": "Among the given collections which one is I/O index based?",
+      "question": "Among the given collections which are index-based?",
       "code": null,
       "options": [
         {
@@ -225,11 +233,12 @@
         },
         {
           "key": "d",
-          "text": "Queue"
+          "text": "ArrayList and List"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "d",
+      "explanation": "ArrayList and List<T> expose an integer indexer. Non-generic Stack and Queue do not provide an indexer; you use Push/Pop or Enqueue/Dequeue (and Peek).",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -242,7 +251,7 @@
         },
         {
           "key": "b",
-          "text": "It is used to maintain a FILO list"
+          "text": "It is used to maintain a LIFO list"
         },
         {
           "key": "c",
@@ -254,11 +263,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "A stack works on the FILO (First In, Last Out) principle. It is widely used to evaluate expressions like postfix and prefix. The Peek() operation allows accessing the top element of the stack without removing it, so all given statements are correct."
+      "explanation": "A stack is LIFO (last in, first out), also described as FILO. Peek() returns the top without removing it. Stacks are used in expression evaluation and parsing. (The original option said FILO, which is the same idea as LIFO.)",
+      "origin": "local"
     },
     {
       "number": 11,
-      "question": "A HashTable t maintains a collection of names of states and capital city of each state. Which among the following finds out whether \"New delhi\" state is present in the collection or not?",
+      "question": "A Hashtable t maps state names (keys) to capital cities (values). Which call checks whether the capital \"New Delhi\" is present?",
       "code": null,
       "options": [
         {
@@ -278,8 +288,9 @@
           "text": "t.ContainsValue(\"New delhi\");"
         }
       ],
-      "answer": "b",
-      "explanation": "The question explicitly states that \"New delhi\" is a state, so it must be stored as a key in the Hashtable. ContainsKey() is the correct method to check whether a given state exists in the collection."
+      "answer": "d",
+      "explanation": "Capitals are stored as values, so use ContainsValue. ContainsKey looks up a state name. Hashtable has no HasValue or HasKey. (New Delhi is a capital, not a state; the original item treated it as a key.)",
+      "origin": "local"
     },
     {
       "number": 12,
@@ -304,11 +315,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "SortedList stores key/value pairs and is accessed by key (and also by index). BitArray is index-based; Queue and Stack are sequential.",
+      "origin": "local"
     },
     {
       "number": 13,
-      "question": "The wrong statements about a HashTable collection are?",
+      "question": "The wrong statements about a Hashtable collection are?",
       "code": null,
       "options": [
         {
@@ -329,7 +341,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Hashtable is a keyed, unordered dictionary. Enumeration order is not sorted. It is not index-based. GetEnumerator returns IDictionaryEnumerator.",
+      "origin": "local"
     }
   ]
 }

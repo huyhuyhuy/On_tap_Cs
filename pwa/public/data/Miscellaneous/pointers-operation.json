@@ -146,7 +146,7 @@
         },
         {
           "key": "c",
-          "text": "float(*ptr)[6]"
+          "text": "float* ptr"
         },
         {
           "key": "d",
@@ -154,7 +154,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "C# has no C-style pointer-to-array type such as float(*ptr)[6]. A float* points to a float and can address the first of six floats (for example via stackalloc or fixed).",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -184,11 +185,11 @@
     {
       "number": 8,
       "question": "What will be the output of the following C# code snippet?",
-      "code": "class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         int[] nums = new int[10];\n         Console.WriteLine(\"Index pointer like array.\");\n         fixed (int* p = nums)\n         {\n             for (int i = 0 ;i <10 ;i++)\n             p[i] = i;\n             for (int i = 10 ;i >0 ;i--)\n             Console.WriteLine(\"p[{0}]: {1} \", i, p[i]);\n             Console.ReadLine();\n         }\n     }\n }",
+      "code": "class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         int[] nums = new int[10];\n         Console.WriteLine(\"Index pointer like array.\");\n         fixed (int* p = nums)\n         {\n             for (int i = 0 ;i <10 ;i++)\n             p[i] = i;\n             for (int i = 9 ;i >0 ;i--)\n             Console.WriteLine(\"p[{0}]: {1} \", i, p[i]);\n             Console.ReadLine();\n         }\n     }\n }",
       "options": [
         {
           "key": "a",
-          "text": "p[10] :0, p[9] :9, p[8] :8…..p[1]:1"
+          "text": "p[9] :9, p[8] :8…..p[1]:1"
         },
         {
           "key": "b",
@@ -204,12 +205,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "None.\n\nOutput:Index pointer like array:\n\n        p[10] :0, p[9] :9, p[8] :8…p[1]:1"
+      "explanation": "nums has 10 elements (indexes 0–9). The first loop stores p[i] = i. The second loop prints p[9] down to p[1]. Index 10 is out of range.\n\nOutput: Index pointer like array.\n\n        p[9] :9, p[8] :8…p[1]:1",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code snippet?",
-      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         string str = \"this is a test\";\n\n             fixed (char* p = str)\n            {\n                for (int i = str.Length-1 ;p[i] != 0 ;i--)\n                Console.Write(p[i]);\n            }\n        Console.ReadLine();\n    }\n }",
+      "code": " class UnsafeCode\n {\n     unsafe static void Main()\n     {\n         string str = \"this is a test\";\n\n             fixed (char* p = str)\n            {\n                for (int i = str.Length-1 ;i >= 0 ;i--)\n                Console.Write(p[i]);\n            }\n        Console.ReadLine();\n    }\n }",
       "options": [
         {
           "key": "a",
@@ -229,7 +231,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Reversal of string using pointers.\n\nOutput:tset a si siht"
+      "explanation": "fixed pins the string. The loop walks indexes Length-1 down to 0 and writes each char, reversing the text. Using p[i] != 0 would read before index 0.\n\nOutput: tset a si siht",
+      "origin": "local"
     },
     {
       "number": 10,

@@ -173,7 +173,7 @@
         },
         {
           "key": "b",
-          "text": "Boxing and unboxing conversions"
+          "text": "Boxing conversions, and unboxing only to nullable value types"
         },
         {
           "key": "c",
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "The 'as' operator handles reference-type conversions, including boxing and unboxing to nullable types, and identity conversions where the types are the same.",
+      "explanation": "The as operator performs reference conversions, boxing, and unboxing to nullable types (e.g. object as int?). It cannot unbox to a non-nullable value type: 'obj as int' does not compile.",
       "origin": "local"
     },
     {

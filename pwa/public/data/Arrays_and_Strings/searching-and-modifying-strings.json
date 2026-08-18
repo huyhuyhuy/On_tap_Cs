@@ -8,7 +8,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "Which of these methods of class String is used to separate a substring from a String object?",
+      "question": "Which String method is used to extract a substring from a string?",
       "code": null,
       "options": [
         {
@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Which of these methods is used to remove leading and trailing whitespaces in C#?",
+      "question": "Which of these methods is used to remove leading and trailing white-space characters in C#?",
       "code": null,
       "options": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "number": 10,
-      "question": "Which is the correct way to find the index of the second 's' in the string \"She sold her beauty...\"?",
+      "question": "Which is a correct way to find the index of the second lowercase 's' in a string stored in variable a?",
       "code": null,
       "options": [
         {
@@ -263,7 +263,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "To find a second occurrence, you first find the first index using IndexOf(), then call IndexOf() again starting from the next position (index + 1).",
+      "explanation": "Find the first match with IndexOf, then search again starting at the next character (i + 1). There is no SecondIndexOf or FirstIndexOf method.",
       "origin": "local"
     }
   ]

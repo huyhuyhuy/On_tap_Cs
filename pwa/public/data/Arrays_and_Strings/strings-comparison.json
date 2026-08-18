@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "Which of these methods is used to compare two strings and returns an integer (0, 1, or -1) representing their relative sort order?",
+      "question": "Which of these methods is used to compare two strings and returns an integer that indicates their relative sort order?",
       "code": null,
       "options": [
         {
@@ -55,7 +55,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The static Compare() method returns: 0 if strings are equal, a positive integer if the first string is 'greater' in sort order, and a negative integer if it is 'lesser'.",
+      "explanation": "The static Compare() method returns 0 if the strings are equal in sort order, a positive integer if the first string follows the second, and a negative integer if the first string precedes the second. The value is not limited to exactly -1, 0, and 1.",
       "origin": "local"
     },
     {
@@ -143,11 +143,11 @@
       "options": [
         {
           "key": "a",
-          "text": "true"
+          "text": "True"
         },
         {
           "key": "b",
-          "text": "false"
+          "text": "False"
         },
         {
           "key": "c",
@@ -159,7 +159,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "StartsWith() is case-sensitive by default. Since the string starts with lowercase 'i' and the check is for uppercase 'I', it returns false.",
+      "explanation": "StartsWith() is case-sensitive by default. The string starts with lowercase 'i', but the argument is uppercase 'I', so the method returns false. Console.WriteLine prints Boolean values as False or True.",
       "origin": "local"
     },
     {
@@ -169,23 +169,23 @@
       "options": [
         {
           "key": "a",
-          "text": "true true"
+          "text": "True True"
         },
         {
           "key": "b",
-          "text": "false false"
+          "text": "False False"
         },
         {
           "key": "c",
-          "text": "true false"
+          "text": "True False"
         },
         {
           "key": "d",
-          "text": "false true"
+          "text": "False True"
         }
       ],
       "answer": "a",
-      "explanation": "Since s2 is assigned the reference of s1, both '==' and 'Equals()' will return true as they point to the same content.",
+      "explanation": "s2 is assigned s1, so both refer to the same string content. For string, == and Equals() compare the character values, so both are true. Console.WriteLine prints those Booleans as True True.",
       "origin": "local"
     },
     {
@@ -237,7 +237,7 @@
         }
       ],
       "answer": "d",
-      "explanation": "In many culture-sensitive comparisons in .NET, lowercase letters are considered to precede uppercase letters (e.g., a < A). Therefore, \"Csharp\" < \"CSHARP\" and CompareTo returns -1.",
+      "explanation": "String.CompareTo uses culture-sensitive comparison (CurrentCulture). For \"Csharp\" and \"CSHARP\" that comparison returns -1, meaning the first string precedes the second. Ordinal comparison would be different because 's' (115) is greater than 'S' (83).",
       "origin": "local"
     }
   ]

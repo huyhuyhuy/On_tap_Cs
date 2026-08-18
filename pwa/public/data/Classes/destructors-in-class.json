@@ -173,7 +173,7 @@
         },
         {
           "key": "b",
-          "text": "10.5 0"
+          "text": "10.5"
         },
         {
           "key": "c",
@@ -184,8 +184,8 @@
           "text": "10.5 5.5"
         }
       ],
-      "answer": "d",
-      "explanation": "The constructor runs first (8 + 2.5 = 10.5). When the application ends or GC collects the object, the destructor runs (8 - 2.5 = 5.5).",
+      "answer": "b",
+      "explanation": "The constructor always prints 8 + 2.5 = 10.5. A destructor is a finalizer; on .NET Core / .NET 5+ it is not guaranteed to run when the process exits, so 5.5 often never appears.",
       "origin": "local"
     },
     {
@@ -251,7 +251,7 @@
         },
         {
           "key": "b",
-          "text": "Code executes but prints nothing in Main"
+          "text": "Prints nothing (destructor/finalizer is not guaranteed to run)"
         },
         {
           "key": "c",
@@ -262,8 +262,8 @@
           "text": "180"
         }
       ],
-      "answer": "d",
-      "explanation": "The destructor calculates the volume (4 * 5 * 9 = 180) and prints it when the object is finalized by the Garbage Collector.",
+      "answer": "b",
+      "explanation": "Main does not print anything. The destructor would print 4*5*9=180 only if the finalizer runs. On .NET Core / .NET 5+ finalizers are not guaranteed at process exit, so 180 often does not appear.",
       "origin": "local"
     }
   ]

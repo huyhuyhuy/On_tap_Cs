@@ -28,8 +28,9 @@
           "text": "An enum variable cannot have a public access modifier"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "An enum type may be declared in a namespace or nested in a class. Nested enums may be private, protected, public, or internal; top-level enums may be public or internal. So 'cannot have a protected access modifier' is false.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "An enum underlying type must be a built-in signed or unsigned integer (byte, sbyte, short, ushort, int, uint, long, ulong). double and float are not allowed.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -79,7 +81,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Unspecified members continue from the previous value by +1. sunday = -3, so monday is -2 and tuesday is -1.\n\nOutput:\n\n-3\n-2\n-1",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The underlying type is byte (0–255). 500, 1000, and 1300 are outside that range, so the compiler reports an error. An enum may skip values and need not be int.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,7 +133,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "The underlying type of an enum cannot be float or double (Single/Double). Enums may be declared inside or outside a class. You cannot assign an arbitrary object to an enum variable without a conversion.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -159,7 +164,7 @@
     {
       "number": 7,
       "question": "What will be the output of the following C# code?",
-      "code": "enum color:int\n{\n    red,\n    green,\n    blue = 5,\n    cyan,\n    pink = 10,\n    brown\n}\nconsole.writeline((int)color.green);\nconsole.writeline((int)color.brown);",
+      "code": "enum color:int\n{\n    red,\n    green,\n    blue = 5,\n    cyan,\n    pink = 10,\n    brown\n}\nConsole.WriteLine((int)color.green);\nConsole.WriteLine((int)color.brown);",
       "options": [
         {
           "key": "a",
@@ -179,12 +184,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n 1 11"
+      "explanation": "Unspecified members continue from the previous value: green is 1, brown follows pink = 10 so brown is 11.\n\nOutput:\n\n1\n11",
+      "origin": "local"
     },
     {
       "number": 8,
       "question": "What will be the output of the following C# code?",
-      "code": "enum letters\n{\n    a,\n    b,\n    c\n}\nletters l;\nl = letters.a;\nConsole.writeline(l);",
+      "code": "enum letters\n{\n    a,\n    b,\n    c\n}\nletters l;\nl = letters.a;\nConsole.WriteLine(l);",
       "options": [
         {
           "key": "a",
@@ -204,12 +210,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\na"
+      "explanation": "Console.WriteLine of an enum value prints its name by default.\n\nOutput:\n\na",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "What will be the output of the following C# code?",
-      "code": " enum colors\n {\n     red,\n     black,\n     pink\n }\n colors s = colors.black;\n type t;\n t = c.GetType();\n string[] str;\n str = Enum.GetNames(t);\n Console.WriteLine(str[0]);",
+      "code": " enum colors\n {\n     red,\n     black,\n     pink\n }\n colors s = colors.black;\n Type t;\n t = s.GetType();\n string[] str;\n str = Enum.GetNames(t);\n Console.WriteLine(str[0]);",
       "options": [
         {
           "key": "a",
@@ -229,7 +236,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None.\n\nOutput:\n\n red"
+      "explanation": "Enum.GetNames returns the member names in declaration order, so index 0 is red.\n\nOutput:\n\nred",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +262,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Enum members are named compile-time constants; you do not fill the enum definition from a database. By default the first member is 0 and each next is +1. Names cannot contain whitespace.",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -279,7 +288,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "C# enums are strongly typed: you cannot treat them as int without a cast (and you cannot mix them as freely as in C). That is the main language difference among these options. Both C and C# are typed languages, so a is not a differentiator.",
+      "origin": "local"
     }
   ]
 }

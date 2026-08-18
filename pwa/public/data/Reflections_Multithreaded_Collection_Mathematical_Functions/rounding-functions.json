@@ -29,7 +29,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "System.Math provides Round, Floor, Ceiling, Truncate, and related methods.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,11 +55,12 @@
         }
       ],
       "answer": "d",
-      "explanation": "Round() rounds up a variable to nearest integer."
+      "explanation": "Math.Round rounds to the nearest integer or to a given number of fractional digits. It does not always round up; midpoint behavior depends on the overload (ToEven vs AwayFromZero). Max, Min, and Abs are not rounding functions.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Which of these classes contains only floating point functions?",
+      "question": "Which of these classes contains mathematical functions such as Sin, Pow, and Sqrt?",
       "code": null,
       "options": [
         {
@@ -79,32 +81,34 @@
         }
       ],
       "answer": "a",
-      "explanation": "Math class contains all the floating point functions that are used for general purpose mathematics methods. Example : sin(), cos(), exp(), sqrt() etc."
+      "explanation": "Math is the class for these functions. It is not limited to floating-point arguments: several methods also have integer overloads.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "Which of these method returns a smallest whole number greater than or equal to variable X?",
+      "question": "Which of these methods returns the smallest whole number greater than or equal to x?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "double Ciel(double X)"
+          "text": "double Ceiling(double x)"
         },
         {
           "key": "b",
-          "text": "double Floor(double X)"
+          "text": "double Floor(double x)"
         },
         {
           "key": "c",
-          "text": "double Max(double X)"
+          "text": "double Max(double x)"
         },
         {
           "key": "d",
-          "text": "double Min(double X)"
+          "text": "double Min(double x)"
         }
       ],
       "answer": "a",
-      "explanation": "Ciel(double X) returns the smallest whole number greater than or equal to variable X."
+      "explanation": "Math.Ceiling(x) is the smallest integer greater than or equal to x (as a double). The name is Ceiling, not Ciel. Math.Max/Min need two arguments.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -113,23 +117,24 @@
       "options": [
         {
           "key": "a",
-          "text": "double Ciel(double X)"
+          "text": "double Ceiling(double x)"
         },
         {
           "key": "b",
-          "text": "double Floor(double X)"
+          "text": "double Floor(double x)"
         },
         {
           "key": "c",
-          "text": "double Max(double X)"
+          "text": "double Max(double x)"
         },
         {
           "key": "d",
-          "text": "double Min(double X)"
+          "text": "double Min(double x)"
         }
       ],
       "answer": "b",
-      "explanation": "double Floor(double X) returns a largest whole number less than or equal to variable X.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+      "explanation": "Math.Floor(x) is the largest integer less than or equal to x.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "Abs() returns the absolute value of a variable."
+      "explanation": "Math.Abs returns the absolute value. There is no Math.Absolute method.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n 1 2 1 2"
+      "explanation": "Not a rounding example: obj2 = obj1 aliases the same object, so both calls print 1 2.\n\nOutput:\n\n1 2\n1 2",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n  3"
+      "explanation": "Math.Abs(3.14) is 3.14. Casting to int truncates to 3.\n\nOutput:\n\n3",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -229,7 +237,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "Ceiling(double x) returns the smallest whole number greater than or equal to variable x.\n\nOutput:\n\n 4"
+      "explanation": "Math.Ceiling(3.14) is 4.0, then (int) yields 4.\n\nOutput:\n\n4",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "double Floor(double X) returns the largest whole number less than or equal to variable X. Here, the smallest whole number less than 3.14 is 3.\n\nOutput:\n\n 3"
+      "explanation": "Math.Floor(3.14) is 3.0, then (int) yields 3. Floor is the largest integer less than or equal to x, not the smallest.\n\nOutput:\n\n3",
+      "origin": "local"
     }
   ]
 }

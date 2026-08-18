@@ -13,7 +13,7 @@
       "options": [
         {
           "key": "a",
-          "text": "Every property must always consist of both 'get' and 'set' accessors"
+          "text": "A property can have a get accessor, a set accessor, or both"
         },
         {
           "key": "b",
@@ -29,7 +29,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "In C#, properties are very flexible. You can define a property with only a 'get' accessor (read-only) or only a 'set' accessor (write-only). Therefore, saying it *cannot* be read or write only is false.",
+      "explanation": "A property may be read-write (get and set), read-only (get only), or write-only (set only). The claim that a property cannot be read-only or write-only is false.",
       "origin": "local"
     },
     {
@@ -177,7 +177,7 @@
         },
         {
           "key": "c",
-          "text": "Declare it with a private 'set' accessor"
+          "text": "Declare it with a public get accessor and a private set accessor"
         },
         {
           "key": "d",
@@ -185,7 +185,7 @@
         }
       ],
       "answer": "b",
-      "explanation": "A property without a 'get' accessor is write-only. Attempting to read its value will result in a compiler error.",
+      "explanation": "A property without a 'get' accessor is write-only. Attempting to read its value will result in a compiler error. A public get with a private set still allows reading from outside the class.",
       "origin": "local"
     },
     {

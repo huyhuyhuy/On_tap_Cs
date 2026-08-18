@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "What does the term 'immutable' mean in term of string objects?",
+      "question": "What does the term immutable mean for string objects?",
       "code": null,
       "options": [
         {
@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Which operations are supported for performing comparison on strings in C#?",
+      "question": "Which of the following can be used to compare strings in C#?",
       "code": null,
       "options": [
         {
@@ -121,11 +121,11 @@
         },
         {
           "key": "b",
-          "text": "ToUpper()"
+          "text": "s1.upper()"
         },
         {
           "key": "c",
-          "text": "stringInstance.ToUpper()"
+          "text": "s1.ToUpper()"
         },
         {
           "key": "d",
@@ -133,7 +133,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The ToUpper() method is an instance method of the String class. Example: s1.ToUpper().",
+      "explanation": "ToUpper() is an instance method, so it is called on a string object: s1.ToUpper(). Upper() and s1.upper() are not valid C# APIs.",
       "origin": "local"
     },
     {
@@ -159,7 +159,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "obj.Equals(obj2) is True because they have the same value. obj2.CompareTo(obj) is 0 because they are identical in the sort order.",
+      "explanation": "obj.Equals(obj2) is True because the values are the same. CompareTo returns the integer 0 when the strings are equal in sort order, so the printed line is True 0.",
       "origin": "local"
     },
     {
@@ -263,7 +263,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "The Replace('w', 'c') method changes 'worn' to 'corn'. Concatenating it with 'hello ' results in 'hello corn'.",
+      "explanation": "Replace() is a method of String (not StringBuilder in this snippet). obj1.Replace('w', 'c') returns \"corn\", so the printed text is hello corn.",
       "origin": "local"
     }
   ]

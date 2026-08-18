@@ -58,7 +58,7 @@
     },
     {
       "number": 3,
-      "question": "Choose the correct statement among the given statements?",
+      "question": "Which among the given statements is incorrect?",
       "code": null,
       "options": [
         {
@@ -79,11 +79,12 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "A void method, constructor, or iterator does not need a return statement. A method may have several return statements, return; is valid in a void method, and parentheses around the returned value are optional.",
+      "origin": "local"
     },
     {
       "number": 4,
-      "question": "What is the size of a char pointer?",
+      "question": "What is the size of a char in C#?",
       "code": null,
       "options": [
         {
@@ -104,7 +105,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "class UnsafeCode\n             {\n                 unsafe static void Main()\n                 {\n                  char ch;\n                  Console.WriteLine(sizeof(char));\n                  Console.ReadLine();\n                 }\n            }\n\nThe sizeof() method helps in calculating size of char pointer."
+      "explanation": "sizeof(char) is 2 because a C# char is a UTF-16 code unit. sizeof(char*) is 4 or 8 depending on the process (32-bit vs 64-bit), not 2.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -204,7 +206,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "The program will result in compile time error because void pointer cannot point anywhere."
+      "explanation": "A void* may hold the address of an unmanaged value, but C# does not allow dereferencing it. *p is a compile-time error (CS0242); cast to a typed pointer first, for example *((int*)p).",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -225,11 +228,12 @@
         },
         {
           "key": "d",
-          "text": "int*[4] p;"
+          "text": "int*[] p = new int*[4];"
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "int*[] is an array of pointers. C# does not allow a size in the type (int*[4] p is a compile error). int* p is one pointer; int p[4] is not valid C# array syntax.",
+      "origin": "local"
     },
     {
       "number": 10,

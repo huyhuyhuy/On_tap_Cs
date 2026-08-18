@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "Equal\n   Equal\n🔥 Enroll Now for Free Python Certification - August 2026"
+          "text": "Equal\n   Equal"
         },
         {
           "key": "d",
@@ -29,12 +29,13 @@
         }
       ],
       "answer": "d",
-      "explanation": "In the first comparison it is being checked if two strings are equal or not, but in the second comparison it is checked if two string references are equal or not. Also the length of the string and characters match is tested for the equality of strings.\n\nOutput :\n\nUnequal\nUnequal"
+      "explanation": "String == and Equals(string) both compare character contents (ordinal/value), not references. \"olleH\" and \"olleh\" differ in case, so both tests print Unequal.\n\nOutput :\n\nUnequal\nUnequal",
+      "origin": "local"
     },
     {
       "number": 2,
       "question": "What will be the output of the following C# code snippet?",
-      "code": "static void Main(string[] args)\n{\n    string s1 = \" Ixg\";\n    string s2 = s1.Insert(3,\"i\");\n    string s3 = s2.Insert(5, \"o\");\n    for (int i = 0; i < s3.Length; i++)\n    Console.WriteLine(s3[i]);\n    Console.ReadLine();\n}",
+      "code": "static void Main(string[] args)\n{\n    string s1 = \"Ixg\";\n    string s2 = s1.Insert(2,\"i\");\n    string s3 = s2.Insert(4, \"o\");\n    for (int i = 0; i < s3.Length; i++)\n    Console.WriteLine(s3[i]);\n    Console.ReadLine();\n}",
       "options": [
         {
           "key": "a",
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Insert() the built in method inserts characters at specified position mentioned with index positions.\n\nOutput:\n\nIxigo"
+      "explanation": "Insert(2, \"i\") turns Ixg into Ixig. Insert(4, \"o\") then yields Ixigo. The loop writes each character on its own line.\n\nOutput:\n\nIxigo",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -153,8 +155,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "d",
+      "explanation": "System.String has no public parameterless constructor, so new String() does not compile. Use \"\" or string.Empty for an empty string.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -175,11 +178,12 @@
         },
         {
           "key": "d",
-          "text": "Length()"
+          "text": "Length"
         }
       ],
       "answer": "d",
-      "explanation": "Method Length() of string class is used to get the length of the object which invoked the method Length()."
+      "explanation": "Length is a property, not a method. Use s.Length; s.Length() does not compile.",
+      "origin": "local"
     },
     {
       "number": 8,

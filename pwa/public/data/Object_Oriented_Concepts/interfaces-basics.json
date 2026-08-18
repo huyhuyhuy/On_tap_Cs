@@ -21,7 +21,7 @@
         },
         {
           "key": "c",
-          "text": "Interfaces consists of only method declaration"
+          "text": "Interfaces cannot contain instance fields"
         },
         {
           "key": "d",
@@ -29,7 +29,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Interfaces specify the methods, properties, and events that a class must implement. Interfaces don't contain the implementation of members; they only declare them. Thus, interfaces serve as blueprint for functionality."
+      "explanation": "Interfaces cannot contain instance fields. They declare methods, properties, events, and indexers that implementing types must provide. Since C# 8, interfaces may also include default method implementations and static members.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,7 +55,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Interfaces may declare properties, methods, and events. They cannot declare instance fields, and a struct is not an interface member kind.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -78,8 +80,9 @@
           "text": "24 bytes"
         }
       ],
-      "answer": "d",
-      "explanation": "None."
+      "answer": "b",
+      "explanation": "Interface maps live on the type's method table, not as extra instance fields. A class with no instance data still has an object header; on a 64-bit CLR the minimum object size is 16 bytes.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Interface dispatch uses the interface map on the method table. Explicit implementation (option b) is also valid. Option c is false: one interface inherits another with :, it does not implement it.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -129,11 +133,12 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\n⚡ Hurry! Secure Your\nFree Cyber Security Certification\n - August 2026"
+      "explanation": "Interfaces may declare properties (and methods, events, indexers). A class may implement many interfaces, and interfaces can inherit other interfaces.",
+      "origin": "local"
     },
     {
       "number": 6,
-      "question": "Which keyword is used for correct implementation of an interface in C#.NET?",
+      "question": "Which keyword is used to declare an interface in C#?",
       "code": null,
       "options": [
         {
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "An interface is declared with the interface keyword (lowercase). Implementing a class uses class Name : IFace, not implements.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -163,7 +169,7 @@
       "options": [
         {
           "key": "a",
-          "text": "Unlike classes, interfaces consists of only declaration but not implementation"
+          "text": "Unlike classes, interfaces cannot contain instance fields (since C# 8 they may have default method implementations)"
         },
         {
           "key": "b",
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "Interfaces cannot be instantiated and cannot contain instance fields. They declare methods, properties, events, and nested types. Since C# 8, instance methods may include default implementations.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,7 +211,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "A class implements an interface with a colon: class maths : addition { }. Java's implements and VB's Implements are not C#.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -246,7 +254,7 @@
         },
         {
           "key": "c",
-          "text": "class a: a1\n {\n     int a1.fun(int i)\n     {\n     }\n }"
+          "text": "class a: a1\n {\n     int a1.fun(int i)\n     {\n         return i;\n     }\n }"
         },
         {
           "key": "d",
@@ -254,7 +262,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Explicit interface implementation uses InterfaceName.Member. A non-void method must return a value.",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -279,7 +288,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "An interface is a contract: callers depend on the members, not on a particular class. That separates the abstraction from the implementation.",
+      "origin": "local"
     },
     {
       "number": 12,
@@ -304,7 +314,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "Access specifier of an interface is either public or none. When no access specifier is specified then only default access specifier is used due to which interface is available only to other members of the package in which it is declared, when declared public it can be used by any code declared anywhere in the class area."
+      "explanation": "A top-level interface may be public or internal (the default). Nested interfaces may also be private, protected, internal, or protected internal. Of the listed choices, public is valid for both top-level and nested interfaces.",
+      "origin": "local"
     }
   ]
 }

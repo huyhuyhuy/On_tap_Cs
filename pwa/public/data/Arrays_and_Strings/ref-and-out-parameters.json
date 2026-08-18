@@ -17,7 +17,7 @@
         },
         {
           "key": "b",
-          "text": "10, 36"
+          "text": "10 36"
         },
         {
           "key": "c",
@@ -34,7 +34,7 @@
     },
     {
       "number": 2,
-      "question": "Statements about 'ref' keyword used in C#.NET are?",
+      "question": "Which of the following statements about the ref keyword in C# is true?",
       "code": null,
       "options": [
         {
@@ -86,7 +86,7 @@
     },
     {
       "number": 4,
-      "question": "Which method does following C# code explains?",
+      "question": "Which parameter passing style does the following C# code use?",
       "code": "static void Main(string[] args)\n{\n    int a = 10, b = 20;\n    swap(ref a, ref b);\n    Console.WriteLine(a + \" \" + b);\n}\nstatic void swap(ref int i, ref int j)\n{\n    int t = i;\n    i = j;\n    j = t;\n}",
       "options": [
         {
@@ -103,7 +103,7 @@
         },
         {
           "key": "d",
-          "text": "parameter arrays"
+          "text": "Parameter arrays"
         }
       ],
       "answer": "a",
@@ -121,7 +121,7 @@
         },
         {
           "key": "b",
-          "text": "0, 24, 0, 32, 0, 0"
+          "text": "0 24 0 32 0 0"
         },
         {
           "key": "c",
@@ -190,7 +190,7 @@
     },
     {
       "number": 8,
-      "question": "Keyword used to define call by reference parameter in C# .NET?",
+      "question": "Which keyword is used to pass an argument by reference when the variable must already be assigned?",
       "code": null,
       "options": [
         {
@@ -216,7 +216,7 @@
     },
     {
       "number": 9,
-      "question": "Select the correct match of parameter declaration.",
+      "question": "Select the parameter list that matches this method call.",
       "code": "static void Main(string[] args)\n{\n    int a = 5;\n    int b = 6;\n    float c = 7.2f;\n    math (ref a, ref b, ref c);\n}\nstatic int math(/*add parameter declaration */)\n{\n    a += b;\n    b *= (int)c;\n    c += a * b;\n    return 0;\n}",
       "options": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "number": 10,
-      "question": "Which statement is/are correct regarding 'ref' and 'out'?",
+      "question": "Which of the following statements about ref and out is correct?",
       "code": null,
       "options": [
         {

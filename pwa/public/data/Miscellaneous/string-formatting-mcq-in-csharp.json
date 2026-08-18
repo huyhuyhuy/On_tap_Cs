@@ -53,8 +53,9 @@
           "text": "None of the mentioned"
         }
       ],
-      "answer": "a",
-      "explanation": "None."
+      "answer": "d",
+      "explanation": "System.String lives in the System namespace. System.Text contains types such as StringBuilder and Encoding, not String.",
+      "origin": "local"
     },
     {
       "number": 3,
@@ -178,8 +179,9 @@
           "text": "Hello"
         }
       ],
-      "answer": "a",
-      "explanation": "Here '+' operator works as concatenation for strings.\n\nOutput :\n\nHello c Sharp"
+      "answer": "b",
+      "explanation": "'+' concatenates with no extra spaces, so \"Hello\" + \"c\" + \"Sharp\" is HellocSharp.\n\nOutput :\n\nHellocSharp",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -304,7 +306,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "Perfectly removes whitespace from string whereas TrimStart() removes a string of characters from the end of the string.\n\nMore MCQs on C# String Formatting:"
+      "explanation": "Trim() removes leading and trailing whitespace. TrimStart() removes from the start only; TrimEnd() removes from the end only.",
+      "origin": "local"
     }
   ]
 }

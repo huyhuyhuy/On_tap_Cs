@@ -25,11 +25,12 @@
         },
         {
           "key": "d",
-          "text": "When the program terminates, variable b will get garbage collected"
+          "text": "The structure variable 'b' will be created on the heap"
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "A local struct variable is a value-type local and is stored on the stack (or in a register). Structs cannot be inherited, and locals are not garbage-collected as objects.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -54,32 +55,34 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\n🔥 Enroll Now for\nFree Python Certification\n - August 2026"
+      "explanation": "s is a local struct, so it lives on the stack (or in a register). z is a reference-type field stored inside that struct; new sample() does not allocate a trial object, so z is null. A trial instance would live on the heap only after it is constructed.",
+      "origin": "local"
     },
     {
       "number": 3,
-      "question": "Choose the correct statement among the following which supports the fact that C# does not allow the creation of empty structures?",
+      "question": "Choose the correct statement about empty structures in C#?",
       "code": null,
       "options": [
         {
           "key": "a",
-          "text": "C#.NET supports creation of abstract user-defined data types using structures"
+          "text": "C# does not allow empty structures"
         },
         {
           "key": "b",
-          "text": "By having empty structures, it would mean that the new data types have no data associated with, which does not make any sense in C#.NET"
+          "text": "An empty structure is allowed and occupies at least 1 byte"
         },
         {
           "key": "c",
-          "text": "Basic reason to create structures is the inability to represent real life objects using standard data types offered by the language"
+          "text": "An empty structure has size 0"
         },
         {
           "key": "d",
-          "text": "All of the mentioned"
+          "text": "Empty structures can only be declared as classes"
         }
       ],
-      "answer": "d",
-      "explanation": "Basic definition of structures in C#.NET."
+      "answer": "b",
+      "explanation": "Empty structs compile in C#. Their size is at least 1 byte so each instance has a unique address.",
+      "origin": "local"
     },
     {
       "number": 4,
@@ -104,7 +107,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Local structs are value types and typically live on the stack while in scope. They are a good fit for small data. Boxed structs or struct fields of a class live on the heap with the object.",
+      "origin": "local"
     },
     {
       "number": 5,
@@ -125,11 +129,12 @@
         },
         {
           "key": "d",
-          "text": "A structure cannot be empty"
+          "text": "A structure is a value type"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "A struct cannot be declared inside a method. Structs may implement interfaces, cannot inherit from another struct, cannot have protected members, and are value types.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -154,7 +159,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "abc e = new abc(); constructs the struct. new abc without () is a syntax error.",
+      "origin": "local"
     },
     {
       "number": 7,
@@ -179,7 +185,8 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Assign public fields with the variable name: e.name = \"Ankit\". C# has no With block like VB.",
+      "origin": "local"
     },
     {
       "number": 8,
@@ -204,12 +211,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "A local struct is destroyed when it goes out of scope. It is not garbage-collected as a heap object unless boxed. C# has no free()/delete() for managed structs.",
+      "origin": "local"
     },
     {
       "number": 9,
       "question": "Calculate the number of bytes a structure variable s occupies in the memory if it is defined as follows.",
-      "code": "  class abc\n  {\n      int i;\n      Decimal d;\n  }\n  struct sample\n  {\n     private int x;\n     private Single y;\n     private trial z;\n  }\n  sample s = new sample();",
+      "code": "  class abc\n  {\n      int i;\n      Decimal d;\n  }\n  struct sample\n  {\n     private int x;\n     private Single y;\n     private abc z;\n  }\n  sample s = new sample();",
       "options": [
         {
           "key": "a",
@@ -228,13 +236,14 @@
           "text": "12 bytes"
         }
       ],
-      "answer": "d",
-      "explanation": "None.\n\nOutput -\n\n12 bytes"
+      "answer": "c",
+      "explanation": "The struct contains int (4 bytes), Single (4 bytes), and a class reference (8 bytes on 64-bit), totaling 16 bytes. Marshal.SizeOf confirms 16 on a 64-bit runtime.",
+      "origin": "local"
     },
     {
       "number": 10,
       "question": "What will be the output of the following C# code?",
-      "code": "{\n    struct abc\n    {\n        public int i;\n    }\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            sample a = new sample();\n            a.i = 10;\n            fun(ref a);\n            Console.WriteLine(a.i);\n        }\n        public static voidn fun(ref sample x)\n        {\n            x.i = 20;\n            Console.WriteLine(x.i);\n        }\n    }\n}",
+      "code": "{\n    struct sample\n    {\n        public int i;\n    }\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            sample a = new sample();\n            a.i = 10;\n            fun(ref a);\n            Console.WriteLine(a.i);\n        }\n        public static void fun(ref sample x)\n        {\n            x.i = 20;\n            Console.WriteLine(x.i);\n        }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -254,7 +263,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None.\n\nOutput -\n\n         20\n         20"
+      "explanation": "Passing a struct with ref updates the caller's copy, so both writes print 20.\n\nOutput:\n\n20\n20",
+      "origin": "local"
     },
     {
       "number": 11,
@@ -279,12 +289,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "Structs cannot declare protected members because they do not support inheritance. They may have properties, constructors, and constants.",
+      "origin": "local"
     },
     {
       "number": 12,
       "question": "Which of the following is the correct result for the given statement in the C#.NET statement given below? p = q",
-      "code": "struct employee\n{\n    private int employee id;\n    private string city;\n}\nemployee q = new employee();\nemployee p;\np = q;",
+      "code": "struct employee\n{\n    private int employeeId;\n    private string city;\n}\nemployee q = new employee();\nemployee p;\np = q;",
       "options": [
         {
           "key": "a",
@@ -304,12 +315,13 @@
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "Assigning one struct to another copies field values (value semantics), not a reference.",
+      "origin": "local"
     },
     {
       "number": 13,
       "question": "What will be the output of the following C# code?",
-      "code": " {\n     struct abc\n     {\n         int i;\n     }\n     class Program\n     {\n         static void Main(string[] args)\n         {\n             abc x = new abc();\n             abc z;\n             x.i = 10;\n             z = x;\n             z.i = 15;\n             console.Writeline(x.i + \"  \" + y.i)\n         }\n     }\n }",
+      "code": " {\n     struct abc\n     {\n         public int i;\n     }\n     class Program\n     {\n         static void Main(string[] args)\n         {\n             abc x = new abc();\n             abc z;\n             x.i = 10;\n             z = x;\n             z.i = 15;\n             Console.WriteLine(x.i + \"  \" + z.i);\n         }\n     }\n }",
       "options": [
         {
           "key": "a",
@@ -329,7 +341,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None.\n\nOutput:\n\n 10 15"
+      "explanation": "z = x copies the struct. Changing z.i does not change x.i.\n\nOutput:\n\n10  15",
+      "origin": "local"
     }
   ]
 }

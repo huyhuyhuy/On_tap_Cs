@@ -60,7 +60,7 @@
     },
     {
       "number": 3,
-      "question": "Which of these exception classes is the parent for handling divide-by-zero errors in C#?",
+      "question": "Which exception is thrown when integer division by zero occurs in C#?",
       "code": null,
       "options": [
         {
@@ -80,8 +80,8 @@
           "text": "DivideByZeroException"
         }
       ],
-      "answer": "a",
-      "explanation": "While 'DivideByZeroException' is the specific exception, it inherits from 'ArithmeticException'. In a multiple-choice context where both might be valid, 'ArithmeticException' is the broader class often cited in fundamental questions.",
+      "answer": "d",
+      "explanation": "Integer division by zero throws DivideByZeroException. It inherits from ArithmeticException, so catching ArithmeticException would also work, but DivideByZeroException is the type that is actually thrown.",
       "origin": "local"
     },
     {

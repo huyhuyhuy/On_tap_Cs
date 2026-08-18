@@ -133,7 +133,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "Option C correctly uses a double for 'a', a float for 'b', and casts 'a' to float before adding, which is a standard valid operation in C#.",
+      "explanation": "A, B, and D do not compile (double cannot be assigned to float without a cast). C compiles: (float)12.502 + 12.802f prints 25.304.",
       "origin": "local"
     },
     {
@@ -307,7 +307,7 @@
         },
         {
           "key": "c",
-          "text": "NaN"
+          "text": "RESULT: NaN"
         },
         {
           "key": "d",
@@ -315,7 +315,7 @@
         }
       ],
       "answer": "c",
-      "explanation": "In floating-point arithmetic, dividing zero by zero results in 'NaN' (Not a Number) rather than throwing an exception as integer division would.",
+      "explanation": "0 / ZERO is double division (ZERO is double 0). IEEE floating-point 0/0 yields NaN, so WriteLine prints 'RESULT: NaN'. Integer 0/0 would throw DivideByZeroException.",
       "origin": "local"
     },
     {

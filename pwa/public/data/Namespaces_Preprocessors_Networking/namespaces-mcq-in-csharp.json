@@ -25,11 +25,12 @@
         },
         {
           "key": "d",
-          "text": "System.xml"
+          "text": "System.Xml"
         }
       ],
       "answer": "a",
-      "explanation": "None."
+      "explanation": "System.Process is not a namespace (Process lives in System.Diagnostics). System.Security, System.Threading, and System.Xml are BCL namespaces.",
+      "origin": "local"
     },
     {
       "number": 2,
@@ -96,7 +97,7 @@
         },
         {
           "key": "c",
-          "text": "If not mentioned, a namespace takes the name of the current project"
+          "text": "If a namespace is not specified, types are placed in the global namespace"
         },
         {
           "key": "d",
@@ -104,12 +105,13 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "C# does not invent a namespace from the project name. Types declared outside any namespace go in the global namespace. Classes and structs follow the same rule, and a namespace may span multiple files.",
+      "origin": "local"
     },
     {
       "number": 5,
-      "question": "Which among the given is not a correct way to call the method Issue() defined in the following C# code snippet? 🔥 Enroll Now for Free Python Certification - August 2026",
-      "code": "class Book\n{\n    public void issue()\n    {\n      /* code */\n    }\n}\nclass Journel\n{\n     public void issue()\n     {\n         /* code */\n     }\n}",
+      "question": "Which among the given is not a correct way to call the method issue() defined in the following C# code snippet?",
+      "code": "namespace College.Lib\n{\n    class Book\n    {\n        public void issue()\n        {\n          /* code */\n        }\n    }\n    class Journel\n    {\n         public void issue()\n         {\n             /* code */\n         }\n    }\n}",
       "options": [
         {
           "key": "a",
@@ -129,7 +131,8 @@
         }
       ],
       "answer": "b",
-      "explanation": "None."
+      "explanation": "Book lives in College.Lib. A fully qualified name or a using College.Lib; directive is required. Book b = new Book(); without importing that namespace does not compile.",
+      "origin": "local"
     },
     {
       "number": 6,
@@ -196,7 +199,7 @@
         },
         {
           "key": "c",
-          "text": "class Program\n   {\n     static void Main(string[] args)\n     {\n       using n1;\n       csharp x = new csharp();\n       x.fun();\n       using n2;\n       csharp y = new csharp();\n        y.fun();\n     }\n   }"
+          "text": "class Program\n   {\n     static void Main(string[] args)\n     {\n       n1.csharp x = new n1.csharp();\n       x.fun();\n       n2.csharp y = new n2.csharp();\n       y.fun();\n     }\n   }"
         },
         {
           "key": "d",
@@ -204,7 +207,8 @@
         }
       ],
       "answer": "c",
-      "explanation": "None."
+      "explanation": "When the same type name exists in two namespaces, use fully qualified names (n1.csharp / n2.csharp) or using aliases. using directives cannot appear inside a method, and import is Java, not C#.",
+      "origin": "local"
     },
     {
       "number": 9,
@@ -221,7 +225,7 @@
         },
         {
           "key": "c",
-          "text": "using LBControl I = new System.Windows.Forms.ListBox;"
+          "text": "using LBControl = System.Windows.Forms.ListBox;\nLBControl I = new LBControl();"
         },
         {
           "key": "d",
@@ -229,7 +233,8 @@
         }
       ],
       "answer": "d",
-      "explanation": "None."
+      "explanation": "You may import the namespace, use a fully qualified name, or introduce a using alias for the type (using Alias = Namespace.Type;).",
+      "origin": "local"
     },
     {
       "number": 10,
@@ -253,8 +258,9 @@
           "text": "Using statement can be placed anywhere in the C#.NET source code file"
         }
       ],
-      "answer": "c",
-      "explanation": "None."
+      "answer": "a",
+      "explanation": "A file may contain any number of using directives. They belong at compilation-unit or namespace level, not inside methods. A using alias may name a namespace or a type; it does not define a namespace member.",
+      "origin": "local"
     }
   ]
 }
